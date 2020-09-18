@@ -1,4 +1,4 @@
-# Tên project: Quản lý nhà sách**
+# Tên project: Quản lý nhà sách
 ## Miêu tả sản phẩm:
 ### + Nhập sách
 ### + Lập hóa đơn bán sách
