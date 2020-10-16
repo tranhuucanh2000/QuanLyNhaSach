@@ -37,7 +37,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
+            this.lbForgotPass = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.ptClose = new System.Windows.Forms.PictureBox();
@@ -49,9 +49,9 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(130, 299);
+            this.pictureBox1.Location = new System.Drawing.Point(121, 196);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(201, 158);
+            this.pictureBox1.Size = new System.Drawing.Size(260, 242);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -62,7 +62,7 @@
             this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label1.Font = new System.Drawing.Font("Segoe UI Black", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(50)))), ((int)(((byte)(94)))));
-            this.label1.Location = new System.Drawing.Point(109, 460);
+            this.label1.Location = new System.Drawing.Point(138, 466);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(247, 38);
             this.label1.TabIndex = 1;
@@ -75,7 +75,7 @@
             this.groupBox1.Controls.Add(this.panel1);
             this.groupBox1.Controls.Add(this.textBox2);
             this.groupBox1.Controls.Add(this.textBox1);
-            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.lbForgotPass);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Location = new System.Drawing.Point(680, 224);
@@ -130,15 +130,16 @@
             this.textBox1.Size = new System.Drawing.Size(335, 27);
             this.textBox1.TabIndex = 1;
             // 
-            // label4
+            // lbForgotPass
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(116, 267);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(172, 28);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "Forgot Password?";
+            this.lbForgotPass.AutoSize = true;
+            this.lbForgotPass.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbForgotPass.Location = new System.Drawing.Point(116, 267);
+            this.lbForgotPass.Name = "lbForgotPass";
+            this.lbForgotPass.Size = new System.Drawing.Size(172, 28);
+            this.lbForgotPass.TabIndex = 0;
+            this.lbForgotPass.Text = "Forgot Password?";
+            this.lbForgotPass.Click += new System.EventHandler(this.lbForgotPass_Click);
             // 
             // label3
             // 
@@ -176,7 +177,7 @@
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1200, 720);
+            this.ClientSize = new System.Drawing.Size(1200, 754);
             this.Controls.Add(this.ptClose);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
@@ -207,7 +208,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lbForgotPass;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox ptClose;
     }

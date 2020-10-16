@@ -25,5 +25,11 @@ namespace QuanLyNhaSach
         {
             Application.Exit();
         }
+
+        private void lbForgotPass_Click(object sender, EventArgs e)
+        {
+            FForgotPassword fForgotPassword = new FForgotPassword();
+            fForgotPassword.ShowDialog();
+        }
     }
 }
