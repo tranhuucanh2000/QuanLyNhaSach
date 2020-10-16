@@ -16,5 +16,10 @@ namespace QuanLyNhaSach
         {
             InitializeComponent();
         }
+
+        private void pctCloseApp_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

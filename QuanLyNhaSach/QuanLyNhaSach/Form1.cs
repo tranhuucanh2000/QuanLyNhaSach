@@ -16,5 +16,14 @@ namespace QuanLyNhaSach
         {
             InitializeComponent();
         }
+        bool isTrueAccount(string usn, string psw)
+        {
+            return true;
+        }
+
+        private void ptClose_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
