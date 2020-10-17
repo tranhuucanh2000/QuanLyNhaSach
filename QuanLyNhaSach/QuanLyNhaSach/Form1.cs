@@ -42,38 +42,39 @@ namespace QuanLyNhaSach
             Application.Exit();
         }
 
-        private void lbForgotPass_Click(object sender, EventArgs e)
+        private void lbQuenMatKhau_Click(object sender, EventArgs e)
         {
             FForgotPassword fForgotPassword = new FForgotPassword();
             fForgotPassword.ShowDialog();
         }
 
-        private void btnLogin_Click(object sender, EventArgs e)
+        private void btnDangNhap_Click(object sender, EventArgs e)
         {
-            if(isTrueAccount(txbUserName.Text,txbPassword.Text)==true)
+            if(isTrueAccount(txbTaiKhoan.Text,txbMatKhau.Text)==true)
             {
                 MainForm mainForm = new MainForm();
                 mainForm.ShowDialog();
             }
             else
-            { 
-                MessageBox.Show("Accout is incorrect. Please re-enter account!","Account is incorrect");
+            {
+                groupBox1.Text = "Sai Tài Khoản";
+                groupBox1.ForeColor = Color.Red;
             }   
         }
 
-        private void txbUserName_KeyDown(object sender, KeyEventArgs e)
+        private void txbTaiKhoan_KeyDown(object sender, KeyEventArgs e)
         {
             if(e.KeyCode==Keys.Enter)
             {
-                txbPassword.Focus();
+                txbMatKhau.Focus();
             }    
         }
 
-        private void txbPassword_KeyDown(object sender, KeyEventArgs e)
+        private void txbMatKhau_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
-                btnLogin_Click(sender, e);
+                btnDangNhap_Click(sender, e);
             }
         }
     }

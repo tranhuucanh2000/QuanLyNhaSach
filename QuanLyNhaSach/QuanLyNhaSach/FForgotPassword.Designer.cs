@@ -31,20 +31,19 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FForgotPassword));
             this.label3 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.txbCode = new System.Windows.Forms.TextBox();
+            this.txbMa = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnNewPassword = new System.Windows.Forms.Panel();
-            this.btnCFNewPass = new System.Windows.Forms.Button();
+            this.btnXNMK = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.txbNewPass = new System.Windows.Forms.TextBox();
+            this.txbMKM = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.txbRePass = new System.Windows.Forms.TextBox();
+            this.txbXNMK = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.btnExit = new System.Windows.Forms.Button();
-            this.btnConfirmCode = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.lbSupport = new System.Windows.Forms.Label();
+            this.btnThoat = new System.Windows.Forms.Button();
+            this.btnXacNhanMa = new System.Windows.Forms.Button();
+            this.lbHoTro = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnNewPassword.SuspendLayout();
             this.SuspendLayout();
@@ -55,9 +54,9 @@
             this.label3.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label3.Location = new System.Drawing.Point(53, 311);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(64, 28);
+            this.label3.Size = new System.Drawing.Size(45, 28);
             this.label3.TabIndex = 0;
-            this.label3.Text = "Code:";
+            this.label3.Text = "Mã:";
             // 
             // panel1
             // 
@@ -68,16 +67,16 @@
             this.panel1.Size = new System.Drawing.Size(370, 1);
             this.panel1.TabIndex = 2;
             // 
-            // txbCode
+            // txbMa
             // 
-            this.txbCode.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(163)))), ((int)(((byte)(215)))));
-            this.txbCode.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txbCode.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.txbCode.Location = new System.Drawing.Point(138, 311);
-            this.txbCode.Name = "txbCode";
-            this.txbCode.Size = new System.Drawing.Size(356, 27);
-            this.txbCode.TabIndex = 3;
-            this.txbCode.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txbCode_KeyDown);
+            this.txbMa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(163)))), ((int)(((byte)(215)))));
+            this.txbMa.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txbMa.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.txbMa.Location = new System.Drawing.Point(138, 311);
+            this.txbMa.Name = "txbMa";
+            this.txbMa.Size = new System.Drawing.Size(356, 27);
+            this.txbMa.TabIndex = 3;
+            this.txbMa.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txbMa_KeyDown);
             // 
             // pictureBox1
             // 
@@ -91,12 +90,12 @@
             // 
             // pnNewPassword
             // 
-            this.pnNewPassword.Controls.Add(this.btnCFNewPass);
+            this.pnNewPassword.Controls.Add(this.btnXNMK);
             this.pnNewPassword.Controls.Add(this.label2);
             this.pnNewPassword.Controls.Add(this.label1);
-            this.pnNewPassword.Controls.Add(this.txbNewPass);
+            this.pnNewPassword.Controls.Add(this.txbMKM);
             this.pnNewPassword.Controls.Add(this.panel2);
-            this.pnNewPassword.Controls.Add(this.txbRePass);
+            this.pnNewPassword.Controls.Add(this.txbXNMK);
             this.pnNewPassword.Controls.Add(this.panel3);
             this.pnNewPassword.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.pnNewPassword.Enabled = false;
@@ -105,46 +104,46 @@
             this.pnNewPassword.Size = new System.Drawing.Size(581, 240);
             this.pnNewPassword.TabIndex = 5;
             // 
-            // btnCFNewPass
+            // btnXNMK
             // 
-            this.btnCFNewPass.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(209)))), ((int)(((byte)(29)))));
-            this.btnCFNewPass.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCFNewPass.ForeColor = System.Drawing.Color.White;
-            this.btnCFNewPass.Location = new System.Drawing.Point(145, 169);
-            this.btnCFNewPass.Name = "btnCFNewPass";
-            this.btnCFNewPass.Size = new System.Drawing.Size(290, 40);
-            this.btnCFNewPass.TabIndex = 6;
-            this.btnCFNewPass.Text = "Confirm";
-            this.btnCFNewPass.UseVisualStyleBackColor = false;
-            this.btnCFNewPass.Click += new System.EventHandler(this.btnCFNewPass_Click);
+            this.btnXNMK.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(209)))), ((int)(((byte)(29)))));
+            this.btnXNMK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnXNMK.ForeColor = System.Drawing.Color.White;
+            this.btnXNMK.Location = new System.Drawing.Point(145, 169);
+            this.btnXNMK.Name = "btnXNMK";
+            this.btnXNMK.Size = new System.Drawing.Size(290, 40);
+            this.btnXNMK.TabIndex = 6;
+            this.btnXNMK.Text = "Xác Nhận";
+            this.btnXNMK.UseVisualStyleBackColor = false;
+            this.btnXNMK.Click += new System.EventHandler(this.btnXNMK_Click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(7, 110);
+            this.label2.Location = new System.Drawing.Point(18, 110);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(180, 28);
+            this.label2.Size = new System.Drawing.Size(196, 28);
             this.label2.TabIndex = 0;
-            this.label2.Text = "Re-Enter Password";
+            this.label2.Text = "Xác Nhận Mật Khẩu:";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(37, 46);
+            this.label1.Location = new System.Drawing.Point(58, 46);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(144, 28);
+            this.label1.Size = new System.Drawing.Size(145, 28);
             this.label1.TabIndex = 0;
-            this.label1.Text = "New Password";
+            this.label1.Text = "Mật Khẩu Mới:";
             // 
-            // txbNewPass
+            // txbMKM
             // 
-            this.txbNewPass.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(163)))), ((int)(((byte)(215)))));
-            this.txbNewPass.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txbNewPass.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.txbNewPass.Location = new System.Drawing.Point(190, 36);
-            this.txbNewPass.Name = "txbNewPass";
-            this.txbNewPass.Size = new System.Drawing.Size(350, 27);
-            this.txbNewPass.TabIndex = 3;
+            this.txbMKM.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(163)))), ((int)(((byte)(215)))));
+            this.txbMKM.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txbMKM.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.txbMKM.Location = new System.Drawing.Point(190, 36);
+            this.txbMKM.Name = "txbMKM";
+            this.txbMKM.Size = new System.Drawing.Size(350, 27);
+            this.txbMKM.TabIndex = 3;
             // 
             // panel2
             // 
@@ -155,15 +154,15 @@
             this.panel2.Size = new System.Drawing.Size(350, 1);
             this.panel2.TabIndex = 2;
             // 
-            // txbRePass
+            // txbXNMK
             // 
-            this.txbRePass.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(163)))), ((int)(((byte)(215)))));
-            this.txbRePass.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txbRePass.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.txbRePass.Location = new System.Drawing.Point(189, 100);
-            this.txbRePass.Name = "txbRePass";
-            this.txbRePass.Size = new System.Drawing.Size(350, 27);
-            this.txbRePass.TabIndex = 3;
+            this.txbXNMK.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(163)))), ((int)(((byte)(215)))));
+            this.txbXNMK.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txbXNMK.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.txbXNMK.Location = new System.Drawing.Point(189, 100);
+            this.txbXNMK.Name = "txbXNMK";
+            this.txbXNMK.Size = new System.Drawing.Size(350, 27);
+            this.txbXNMK.TabIndex = 3;
             // 
             // panel3
             // 
@@ -174,51 +173,42 @@
             this.panel3.Size = new System.Drawing.Size(350, 1);
             this.panel3.TabIndex = 2;
             // 
-            // btnExit
+            // btnThoat
             // 
-            this.btnExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(84)))), ((int)(((byte)(84)))));
-            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExit.ForeColor = System.Drawing.Color.White;
-            this.btnExit.Location = new System.Drawing.Point(314, 394);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(221, 40);
-            this.btnExit.TabIndex = 6;
-            this.btnExit.Text = "Exit";
-            this.btnExit.UseVisualStyleBackColor = false;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            this.btnThoat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(84)))), ((int)(((byte)(84)))));
+            this.btnThoat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnThoat.ForeColor = System.Drawing.Color.White;
+            this.btnThoat.Location = new System.Drawing.Point(314, 394);
+            this.btnThoat.Name = "btnThoat";
+            this.btnThoat.Size = new System.Drawing.Size(221, 40);
+            this.btnThoat.TabIndex = 6;
+            this.btnThoat.Text = "Thoát";
+            this.btnThoat.UseVisualStyleBackColor = false;
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
-            // btnConfirmCode
+            // btnXacNhanMa
             // 
-            this.btnConfirmCode.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(209)))), ((int)(((byte)(29)))));
-            this.btnConfirmCode.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConfirmCode.ForeColor = System.Drawing.Color.White;
-            this.btnConfirmCode.Location = new System.Drawing.Point(45, 394);
-            this.btnConfirmCode.Name = "btnConfirmCode";
-            this.btnConfirmCode.Size = new System.Drawing.Size(221, 40);
-            this.btnConfirmCode.TabIndex = 6;
-            this.btnConfirmCode.Text = "Confirm";
-            this.btnConfirmCode.UseVisualStyleBackColor = false;
-            this.btnConfirmCode.Click += new System.EventHandler(this.btnConfirmCode_Click);
+            this.btnXacNhanMa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(209)))), ((int)(((byte)(29)))));
+            this.btnXacNhanMa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnXacNhanMa.ForeColor = System.Drawing.Color.White;
+            this.btnXacNhanMa.Location = new System.Drawing.Point(45, 394);
+            this.btnXacNhanMa.Name = "btnXacNhanMa";
+            this.btnXacNhanMa.Size = new System.Drawing.Size(221, 40);
+            this.btnXacNhanMa.TabIndex = 6;
+            this.btnXacNhanMa.Text = "Xác Nhận";
+            this.btnXacNhanMa.UseVisualStyleBackColor = false;
+            this.btnXacNhanMa.Click += new System.EventHandler(this.btnXacNhanMa_Click);
             // 
-            // label4
+            // lbHoTro
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(0, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(67, 28);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "label4";
-            // 
-            // lbSupport
-            // 
-            this.lbSupport.AutoSize = true;
-            this.lbSupport.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbSupport.ForeColor = System.Drawing.Color.SteelBlue;
-            this.lbSupport.Location = new System.Drawing.Point(150, 256);
-            this.lbSupport.Name = "lbSupport";
-            this.lbSupport.Size = new System.Drawing.Size(274, 23);
-            this.lbSupport.TabIndex = 8;
-            this.lbSupport.Text = "Don\'t worry if you have the code";
+            this.lbHoTro.AutoSize = true;
+            this.lbHoTro.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbHoTro.ForeColor = System.Drawing.Color.SteelBlue;
+            this.lbHoTro.Location = new System.Drawing.Point(170, 256);
+            this.lbHoTro.Name = "lbHoTro";
+            this.lbHoTro.Size = new System.Drawing.Size(243, 23);
+            this.lbHoTro.TabIndex = 8;
+            this.lbHoTro.Text = "Đừng lo lắng nếu bạn có mã!";
             // 
             // FForgotPassword
             // 
@@ -226,13 +216,12 @@
             this.AutoValidate = System.Windows.Forms.AutoValidate.Disable;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(163)))), ((int)(((byte)(215)))));
             this.ClientSize = new System.Drawing.Size(581, 720);
-            this.Controls.Add(this.lbSupport);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.btnConfirmCode);
-            this.Controls.Add(this.btnExit);
+            this.Controls.Add(this.lbHoTro);
+            this.Controls.Add(this.btnXacNhanMa);
+            this.Controls.Add(this.btnThoat);
             this.Controls.Add(this.pnNewPassword);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.txbCode);
+            this.Controls.Add(this.txbMa);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label3);
             this.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -253,19 +242,18 @@
         #endregion
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox txbCode;
+        private System.Windows.Forms.TextBox txbMa;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel pnNewPassword;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txbRePass;
+        private System.Windows.Forms.TextBox txbXNMK;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Button btnExit;
-        private System.Windows.Forms.Button btnConfirmCode;
-        private System.Windows.Forms.Button btnCFNewPass;
-        private System.Windows.Forms.TextBox txbNewPass;
+        private System.Windows.Forms.Button btnThoat;
+        private System.Windows.Forms.Button btnXacNhanMa;
+        private System.Windows.Forms.Button btnXNMK;
+        private System.Windows.Forms.TextBox txbMKM;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label lbSupport;
+        private System.Windows.Forms.Label lbHoTro;
     }
 }

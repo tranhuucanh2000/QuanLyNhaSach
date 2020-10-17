@@ -18,37 +18,37 @@ namespace QuanLyNhaSach
             InitializeComponent();
         }
 
-        private void btnExit_Click(object sender, EventArgs e)
+        private void btnThoat_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void btnConfirmCode_Click(object sender, EventArgs e)
+        private void btnXacNhanMa_Click(object sender, EventArgs e)
         {
-            if (txbCode.Text == File.ReadAllText("./txt/code.txt"))
+            if (txbMa.Text == File.ReadAllText("./txt/code.txt"))
             {
                 pnNewPassword.Enabled = true;
-                txbNewPass.Focus();
+                txbMKM.Focus();
             }
 
             else
             {
-                lbSupport.Text = "You have no code. Contact us or exit";
-                lbSupport.ForeColor = Color.Red;
+                lbHoTro.Text = "Bạn không có mã. Hãy liên hệ chúng tôi!";
+                lbHoTro.ForeColor = Color.Red;
             }    
         }
 
-        private void txbCode_KeyDown(object sender, KeyEventArgs e)
+        private void txbMa_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
-                btnConfirmCode_Click(sender, e);
+                btnXacNhanMa_Click(sender, e);
             }
         }
 
-        private void btnCFNewPass_Click(object sender, EventArgs e)
+        private void btnXNMK_Click(object sender, EventArgs e)
         {
-            if(txbRePass.Text==txbNewPass.Text)
+            if(txbXNMK.Text==txbMKM.Text)
             {
                 //Xử lí sữa mật khẩu
                 this.Close();
