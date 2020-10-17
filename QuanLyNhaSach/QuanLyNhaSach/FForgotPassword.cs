@@ -32,7 +32,10 @@ namespace QuanLyNhaSach
             }
 
             else
-                MessageBox.Show("Code Incorrect!");
+            {
+                lbSupport.Text = "You have no code. Contact us or exit";
+                lbSupport.ForeColor = Color.Red;
+            }    
         }
 
         private void txbCode_KeyDown(object sender, KeyEventArgs e)

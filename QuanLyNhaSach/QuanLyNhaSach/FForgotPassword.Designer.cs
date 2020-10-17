@@ -43,6 +43,8 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnExit = new System.Windows.Forms.Button();
             this.btnConfirmCode = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.lbSupport = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnNewPassword.SuspendLayout();
             this.SuspendLayout();
@@ -68,7 +70,7 @@
             // 
             // txbCode
             // 
-            this.txbCode.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(224)))), ((int)(((byte)(225)))));
+            this.txbCode.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(163)))), ((int)(((byte)(215)))));
             this.txbCode.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txbCode.ForeColor = System.Drawing.SystemColors.ControlText;
             this.txbCode.Location = new System.Drawing.Point(138, 311);
@@ -136,7 +138,7 @@
             // 
             // txbNewPass
             // 
-            this.txbNewPass.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(224)))), ((int)(((byte)(225)))));
+            this.txbNewPass.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(163)))), ((int)(((byte)(215)))));
             this.txbNewPass.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txbNewPass.ForeColor = System.Drawing.SystemColors.ControlText;
             this.txbNewPass.Location = new System.Drawing.Point(190, 36);
@@ -155,7 +157,7 @@
             // 
             // txbRePass
             // 
-            this.txbRePass.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(224)))), ((int)(((byte)(225)))));
+            this.txbRePass.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(163)))), ((int)(((byte)(215)))));
             this.txbRePass.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txbRePass.ForeColor = System.Drawing.SystemColors.ControlText;
             this.txbRePass.Location = new System.Drawing.Point(189, 100);
@@ -198,12 +200,34 @@
             this.btnConfirmCode.UseVisualStyleBackColor = false;
             this.btnConfirmCode.Click += new System.EventHandler(this.btnConfirmCode_Click);
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(0, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(67, 28);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "label4";
+            // 
+            // lbSupport
+            // 
+            this.lbSupport.AutoSize = true;
+            this.lbSupport.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbSupport.ForeColor = System.Drawing.Color.SteelBlue;
+            this.lbSupport.Location = new System.Drawing.Point(150, 256);
+            this.lbSupport.Name = "lbSupport";
+            this.lbSupport.Size = new System.Drawing.Size(274, 23);
+            this.lbSupport.TabIndex = 8;
+            this.lbSupport.Text = "Don\'t worry if you have the code";
+            // 
             // FForgotPassword
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoValidate = System.Windows.Forms.AutoValidate.Disable;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(224)))), ((int)(((byte)(225)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(163)))), ((int)(((byte)(215)))));
             this.ClientSize = new System.Drawing.Size(581, 720);
+            this.Controls.Add(this.lbSupport);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.btnConfirmCode);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.pnNewPassword);
@@ -215,6 +239,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FForgotPassword";
             this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FForgotPassword";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -240,5 +265,7 @@
         private System.Windows.Forms.Button btnCFNewPass;
         private System.Windows.Forms.TextBox txbNewPass;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lbSupport;
     }
 }

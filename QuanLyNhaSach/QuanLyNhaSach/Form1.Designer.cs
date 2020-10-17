@@ -41,6 +41,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.ptClose = new System.Windows.Forms.PictureBox();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptClose)).BeginInit();
@@ -60,13 +61,13 @@
             // 
             this.label1.AutoSize = true;
             this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Black", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(50)))), ((int)(((byte)(94)))));
-            this.label1.Location = new System.Drawing.Point(138, 466);
+            this.label1.Location = new System.Drawing.Point(99, 456);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(247, 38);
+            this.label1.Size = new System.Drawing.Size(331, 54);
             this.label1.TabIndex = 1;
-            this.label1.Text = "KVC BOOK SHOP";
+            this.label1.Text = "KVC BOOKSHOP";
             // 
             // groupBox1
             // 
@@ -78,6 +79,7 @@
             this.groupBox1.Controls.Add(this.lbForgotPass);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.groupBox1.Location = new System.Drawing.Point(680, 224);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(390, 393);
@@ -88,6 +90,7 @@
             // btnLogin
             // 
             this.btnLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(50)))), ((int)(((byte)(94)))));
+            this.btnLogin.FlatAppearance.BorderSize = 0;
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogin.ForeColor = System.Drawing.Color.White;
             this.btnLogin.Location = new System.Drawing.Point(30, 316);
@@ -116,6 +119,7 @@
             // 
             // txbPassword
             // 
+            this.txbPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(156)))), ((int)(((byte)(214)))));
             this.txbPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txbPassword.Location = new System.Drawing.Point(30, 209);
             this.txbPassword.Name = "txbPassword";
@@ -126,6 +130,7 @@
             // 
             // txbUserName
             // 
+            this.txbUserName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(156)))), ((int)(((byte)(214)))));
             this.txbUserName.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txbUserName.Location = new System.Drawing.Point(30, 86);
             this.txbUserName.Name = "txbUserName";
@@ -176,11 +181,23 @@
             this.ptClose.TabStop = false;
             this.ptClose.Click += new System.EventHandler(this.ptClose_Click);
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(235)))), ((int)(((byte)(239)))));
+            this.label5.Location = new System.Drawing.Point(22, 683);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(353, 23);
+            this.label5.TabIndex = 5;
+            this.label5.Text = "Email support: tranhuucanh2000@gmail.com";
+            // 
             // Form1
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(156)))), ((int)(((byte)(214)))));
             this.ClientSize = new System.Drawing.Size(1200, 720);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.ptClose);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
@@ -191,7 +208,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "KVCBOOKSHOP";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -215,6 +232,7 @@
         private System.Windows.Forms.Label lbForgotPass;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox ptClose;
+        private System.Windows.Forms.Label label5;
     }
 }
 

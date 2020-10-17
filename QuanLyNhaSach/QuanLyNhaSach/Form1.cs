@@ -57,7 +57,7 @@ namespace QuanLyNhaSach
             }
             else
             { 
-                MessageBox.Show("Accout is incorrect.Please re-enter account!");
+                MessageBox.Show("Accout is incorrect. Please re-enter account!","Account is incorrect");
             }   
         }
 
