@@ -24,3 +24,16 @@ D:\Đồ Án\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.csproj.CopyComp
 D:\Đồ Án\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.exe
 D:\Đồ Án\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.pdb
 D:\Đồ Án\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.FForgotPassword.resources
+D:\LTTQ\tranhuucanh2000\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\bin\Debug\QuanLyNhaSach.exe.config
+D:\LTTQ\tranhuucanh2000\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\bin\Debug\QuanLyNhaSach.exe
+D:\LTTQ\tranhuucanh2000\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\bin\Debug\QuanLyNhaSach.pdb
+D:\LTTQ\tranhuucanh2000\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.csprojAssemblyReference.cache
+D:\LTTQ\tranhuucanh2000\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.FForgotPassword.resources
+D:\LTTQ\tranhuucanh2000\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.Form1.resources
+D:\LTTQ\tranhuucanh2000\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.MainForm.resources
+D:\LTTQ\tranhuucanh2000\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.Properties.Resources.resources
+D:\LTTQ\tranhuucanh2000\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.csproj.GenerateResource.cache
+D:\LTTQ\tranhuucanh2000\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.csproj.CoreCompileInputs.cache
+D:\LTTQ\tranhuucanh2000\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.csproj.CopyComplete
+D:\LTTQ\tranhuucanh2000\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.exe
+D:\LTTQ\tranhuucanh2000\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.pdb
