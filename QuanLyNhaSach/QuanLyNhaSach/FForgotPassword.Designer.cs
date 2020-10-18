@@ -72,7 +72,7 @@
             // 
             // txbMa
             // 
-            this.txbMa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(163)))), ((int)(((byte)(215)))));
+            this.txbMa.BackColor = System.Drawing.Color.White;
             this.txbMa.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txbMa.ForeColor = System.Drawing.SystemColors.ControlText;
             this.txbMa.Location = new System.Drawing.Point(115, 80);
@@ -140,7 +140,7 @@
             // 
             // txbMKM
             // 
-            this.txbMKM.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(163)))), ((int)(((byte)(215)))));
+            this.txbMKM.BackColor = System.Drawing.Color.White;
             this.txbMKM.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txbMKM.ForeColor = System.Drawing.SystemColors.ControlText;
             this.txbMKM.Location = new System.Drawing.Point(190, 36);
@@ -160,7 +160,7 @@
             // 
             // txbXNMK
             // 
-            this.txbXNMK.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(163)))), ((int)(((byte)(215)))));
+            this.txbXNMK.BackColor = System.Drawing.Color.White;
             this.txbXNMK.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txbXNMK.ForeColor = System.Drawing.SystemColors.ControlText;
             this.txbXNMK.Location = new System.Drawing.Point(189, 100);
@@ -230,7 +230,7 @@
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoValidate = System.Windows.Forms.AutoValidate.Disable;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(163)))), ((int)(((byte)(215)))));
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(581, 720);
             this.Controls.Add(this.ptClose);
             this.Controls.Add(this.pnMa);

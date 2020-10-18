@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QuanLyNhaSach.DAO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,23 +16,32 @@ namespace QuanLyNhaSach
     {
         public MainForm()
         {
+
             InitializeComponent();
+            LayTaiKhoan();
         }
 
+        bool isAdmin()
+        {
+            //Xử lý xem có phải admin hay không
+            return true;
+        }
         private void pctCloseApp_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+        private void ptClose_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
         void LayTaiKhoan()
         {
-            string connectionSTR = @"Data Source =.\sqlexpress; Initial Catalog = QuanLyNhaSach; Integrated Security = True";
-            SqlConnection sqlConnection = new SqlConnection(connectionSTR);
-
+            dtgTaiKhoan.DataSource= DataProvider.Instance.ExecuteQuery("SELECT TenDangNhap as [Tên Đăng Nhập], Ten as [Tên], MatKhau as [Mật Khẩu] FROM dbo.TaiKhoan");
         }
-        private void ptClose_Click(object sender, EventArgs e)
+        private void label1_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+
         }
     }
 }

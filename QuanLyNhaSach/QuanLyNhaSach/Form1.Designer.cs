@@ -119,7 +119,7 @@
             // 
             // txbMatKhau
             // 
-            this.txbMatKhau.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(156)))), ((int)(((byte)(214)))));
+            this.txbMatKhau.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(243)))), ((int)(((byte)(206)))));
             this.txbMatKhau.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txbMatKhau.Location = new System.Drawing.Point(30, 209);
             this.txbMatKhau.Name = "txbMatKhau";
@@ -130,7 +130,7 @@
             // 
             // txbTaiKhoan
             // 
-            this.txbTaiKhoan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(156)))), ((int)(((byte)(214)))));
+            this.txbTaiKhoan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(243)))), ((int)(((byte)(206)))));
             this.txbTaiKhoan.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txbTaiKhoan.Location = new System.Drawing.Point(30, 86);
             this.txbTaiKhoan.Name = "txbTaiKhoan";
@@ -185,7 +185,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(235)))), ((int)(((byte)(239)))));
+            this.label5.ForeColor = System.Drawing.Color.Black;
             this.label5.Location = new System.Drawing.Point(22, 683);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(289, 23);
@@ -195,7 +195,7 @@
             // Form1
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(156)))), ((int)(((byte)(214)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(243)))), ((int)(((byte)(206)))));
             this.ClientSize = new System.Drawing.Size(1200, 720);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.ptClose);
