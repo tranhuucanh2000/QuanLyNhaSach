@@ -63,3 +63,17 @@ CREATE TABLE ThongTinHoaDon
 	FOREIGN KEY (idHoaDon) REFERENCES dbo.HoaDon(id)
 )
 GO
+
+INSERT INTO dbo.TaiKhoan
+(
+	TenDangNhap,
+	Ten,
+	MatKhau
+)
+VALUES
+(
+	N'admin',
+	N'Chủ Tịch',
+	N'admin'
+)
+SELECT * FROM dbo.TaiKhoan

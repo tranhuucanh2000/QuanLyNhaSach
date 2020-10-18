@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -22,6 +23,10 @@ namespace QuanLyNhaSach
             Application.Exit();
         }
 
+        void LayTaiKhoan()
+        {
+            SqlConnection sqlConnection = new SqlConnection();
+        }
         private void ptClose_Click(object sender, EventArgs e)
         {
             Application.Exit();
