@@ -25,7 +25,9 @@ namespace QuanLyNhaSach
 
         void LayTaiKhoan()
         {
-            SqlConnection sqlConnection = new SqlConnection();
+            string connectionSTR = @"Data Source =.\sqlexpress; Initial Catalog = QuanLyNhaSach; Integrated Security = True";
+            SqlConnection sqlConnection = new SqlConnection(connectionSTR);
+
         }
         private void ptClose_Click(object sender, EventArgs e)
         {
