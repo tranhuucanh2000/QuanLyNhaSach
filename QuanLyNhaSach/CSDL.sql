@@ -76,4 +76,16 @@ VALUES
 	N'Chủ Tịch',
 	N'admin'
 )
-SELECT * FROM dbo.TaiKhoan
+INSERT INTO dbo.TaiKhoan
+(
+	TenDangNhap,
+	Ten,
+	MatKhau
+)
+VALUES
+(
+	N'HuuCanh',
+	N'Trần Hữu Cảnh',
+	N'huucanh'
+)
+SELECT TenDangNhap as [Tên Đăng Nhập], Ten as [Tên], MatKhau as [Mật Khẩu] FROM dbo.TaiKhoan
