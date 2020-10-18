@@ -14,19 +14,16 @@ namespace QuanLyNhaSach
 {
     public partial class Form1 : Form
     {
-        string infoUser = File.ReadAllText("./txt/account.txt");
         string username;
-        string name;
         string password;
         public Form1()
         {
-            UpdateAccount();
             InitializeComponent();
         }
-        void UpdateAccount()
+        void CapNhatTaiKhoan()
         {
+            string infoUser = File.ReadAllText("./txt/account.txt");
             string[] account = infoUser.Split('\t');
-            name = account[0];
             username = account[1];
             password = account[2];
         }
@@ -50,7 +47,8 @@ namespace QuanLyNhaSach
 
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
-            if(isTrueAccount(txbTaiKhoan.Text,txbMatKhau.Text)==true)
+            CapNhatTaiKhoan();
+            if (isTrueAccount(txbTaiKhoan.Text,txbMatKhau.Text)==true)
             {
                 MainForm mainForm = new MainForm();
                 mainForm.ShowDialog();
