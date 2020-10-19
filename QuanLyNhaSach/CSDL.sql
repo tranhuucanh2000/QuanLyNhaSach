@@ -144,15 +144,11 @@ INSERT INTO dbo.Sach
 )
 VALUES
 (
-	N'Tiểu Thuyết',
-	N'Nhà Giả Kim',
-	N'Paulo Coelho',
-	N'NXB Hội Nhà Văn',
-	N'12',
-	N'67000'
+	N'Tiểu Thuyết',	N'Nhà Giả Kim',N'Paulo Coelho',N'NXB Hội Nhà Văn',N'12',N'67000'
 )
 GO
 
-SELECT id as [ID], TenSach as [Tên Sách], TacGia as[Tác Giả], NhaXuatBan as [Nhà Xuất Bản], TheLoai as [Thể Loại], SoLuong as [Số Lượng], GiaTien as [Giá Tiền] FROM dbo.Sach 
+SELECT TenSach as [Tên Sách], TacGia as[Tác Giả], NhaXuatBan as [Nhà Xuất Bản], TheLoai as [Thể Loại], SoLuong as [Số Lượng], GiaTien as [Giá Tiền] FROM dbo.Sach 
 
 
+INSERT INTO dbo.Sach(TheLoai, TenSach, TacGia, NhaXuatBan, SoLuong, GiaTien) VALUES (N'cc', N'aa', N'bb', N'đd', N'5', N'100000')

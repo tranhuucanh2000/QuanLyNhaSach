@@ -75,6 +75,7 @@ namespace QuanLyNhaSach
                         DuaThongDiep("Bạn đã thêm thành công!");
                         dtgSach.Refresh();
                         KetNoiKhoSach();
+                        TroVeTrangThaiNhap();
                     }
                     catch (FormatException)
                     {
@@ -118,6 +119,7 @@ namespace QuanLyNhaSach
             DuaThongDiep("Bạn đã sửa thành công!");
             lbHoTro.ForeColor = Color.BlueViolet;
             LamMoi();
+            TroVeTrangThaiNhap();
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
@@ -129,6 +131,7 @@ namespace QuanLyNhaSach
                 DuaThongDiep("Bạn đã xóa thành công!");
                 lbHoTro.ForeColor = Color.BlueViolet;
                 LamMoi();
+                TroVeTrangThaiNhap();
             }
         }
 
