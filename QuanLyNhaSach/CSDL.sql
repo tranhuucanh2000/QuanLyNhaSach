@@ -29,7 +29,7 @@ CREATE TABLE Sach
 	TenSach NVARCHAR(100) NOT NULL,
 	TacGia NVARCHAR(100) NOT NULL,
 	NhaXuatBan NVARCHAR(100) NOT NULL,
-	TheLoai INT NOT NULL,
+	TheLoai NVARCHAR(100) NOT NULL,
 	SoLuong INT NOT NULL,
 	GiaTien INT NOT NULL DEFAULT 0,
 )
@@ -63,6 +63,7 @@ CREATE TABLE ThongTinHoaDon
 	FOREIGN KEY (idHoaDon) REFERENCES dbo.HoaDon(id)
 )
 GO
+DROP TABLE dbo.Sach
 
 INSERT INTO dbo.TaiKhoan
 (
@@ -89,3 +90,69 @@ VALUES
 	N'huucanh'
 )
 SELECT TenDangNhap as [Tên Đăng Nhập], Ten as [Tên], MatKhau as [Mật Khẩu] FROM dbo.TaiKhoan
+
+
+
+INSERT INTO dbo.Sach
+(
+	TheLoai,
+	TenSach,
+	TacGia,
+	NhaXuatBan,
+	SoLuong,
+	GiaTien
+)
+VALUES
+(
+	N'Tâm Lý',
+	N'Khéo Ăn Nói Sẽ Có Được Thiên Hạ',
+	N'Trác Nhã',
+	N'NXB Văn Học',
+	N'10',
+	N'72000'
+)
+GO
+
+INSERT INTO dbo.Sach
+(
+	TheLoai,
+	TenSach,
+	TacGia,
+	NhaXuatBan,
+	SoLuong,
+	GiaTien
+)
+VALUES
+(
+	N'Tâm Lý',
+	N'Vì Con Cần Có Mẹ',
+	N'ATY biên soạn',
+	N'NXB Đại Học Sư Phạm',
+	N'15',
+	N'50000'
+)
+GO
+
+INSERT INTO dbo.Sach
+(
+	TheLoai,
+	TenSach,
+	TacGia,
+	NhaXuatBan,
+	SoLuong,
+	GiaTien
+)
+VALUES
+(
+	N'Tiểu Thuyết',
+	N'Nhà Giả Kim',
+	N'Paulo Coelho',
+	N'NXB Hội Nhà Văn',
+	N'12',
+	N'67000'
+)
+GO
+
+SELECT id as [ID], TenSach as [Tên Sách], TacGia as[Tác Giả], NhaXuatBan as [Nhà Xuất Bản], TheLoai as [Thể Loại], SoLuong as [Số Lượng], GiaTien as [Giá Tiền] FROM dbo.Sach 
+
+
