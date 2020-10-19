@@ -166,19 +166,19 @@ namespace QuanLyNhaSach
         private void txbTacGia_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
-                txbTacGia.Focus();
+                txbNXB.Focus();
         }
 
         private void txbNXB_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
-                txbTacGia.Focus();
+                txbSoLuong.Focus();
         }
 
         private void txbSoLuong_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
-                txbTacGia.Focus();
+                txbGiaTien.Focus();
         }
     }
 }
