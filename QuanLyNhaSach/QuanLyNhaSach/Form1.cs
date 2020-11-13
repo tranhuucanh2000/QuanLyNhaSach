@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using QuanLyNhaSach.DAO;
 
 namespace QuanLyNhaSach
 {
@@ -19,13 +20,6 @@ namespace QuanLyNhaSach
         public Form1()
         {
             InitializeComponent();
-        }
-        void CapNhatTaiKhoan()
-        {
-            string infoUser = File.ReadAllText("./txt/account.txt");
-            string[] account = infoUser.Split('\t');
-            username = account[1];
-            password = account[2];
         }
         bool isTrueAccount(string usn, string psw)
         {
@@ -47,8 +41,9 @@ namespace QuanLyNhaSach
 
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
-            CapNhatTaiKhoan();
-            if (isTrueAccount(txbTaiKhoan.Text,txbMatKhau.Text)==true)
+            string usn = txbTaiKhoan.Text;
+            string psw = txbMatKhau.Text;
+            if (AccountDAO.Instance.isAccount(usn,psw))
             {
                 MainForm mainForm = new MainForm();
                 mainForm.ShowDialog();
