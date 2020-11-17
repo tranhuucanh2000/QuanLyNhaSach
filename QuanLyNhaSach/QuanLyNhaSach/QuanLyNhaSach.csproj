@@ -51,6 +51,14 @@
   <ItemGroup>
     <Compile Include="DAO\AccountDAO.cs" />
     <Compile Include="DAO\DataProvider.cs" />
+    <Compile Include="DAO\SachDAO.cs" />
+    <Compile Include="DTO\Account.cs" />
+    <Compile Include="FAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FAdmin.Designer.cs">
+      <DependentUpon>FAdmin.cs</DependentUpon>
+    </Compile>
     <Compile Include="FForgotPassword.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -63,6 +71,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="FTesst.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FTesst.Designer.cs">
+      <DependentUpon>FTesst.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -71,11 +85,17 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FAdmin.resx">
+      <DependentUpon>FAdmin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FForgotPassword.resx">
       <DependentUpon>FForgotPassword.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FTesst.resx">
+      <DependentUpon>FTesst.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
@@ -103,7 +123,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="DTO\" />
+    <Content Include="HinhAnh\AdminSetting.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

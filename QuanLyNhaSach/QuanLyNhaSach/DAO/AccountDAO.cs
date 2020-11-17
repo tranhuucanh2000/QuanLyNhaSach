@@ -22,5 +22,14 @@ namespace QuanLyNhaSach.DAO
             DataTable data = DataProvider.Instance.ExecuteQuery("DangNhap @userName , @passWord", new object[] { usn, psw });
             return data.Rows.Count > 0;
         }
+        public bool isAdmin(string usn, string psw)
+        {
+            DataTable data = DataProvider.Instance.ExecuteQuery("DangNhap @userName , @passWord", new object[] { usn, psw });
+            DataRow dataRow = data.Rows[0];
+            object[] array = dataRow.ItemArray;
+            string loai = array[2].ToString();
+            if (loai == "admin") return true;
+            return false;
+        }
     }
 }

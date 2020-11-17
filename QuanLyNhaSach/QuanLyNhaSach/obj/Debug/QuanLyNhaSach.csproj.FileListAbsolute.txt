@@ -50,3 +50,5 @@ C:\Users\ADMIN\Desktop\LTTQ\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.
 C:\Users\ADMIN\Desktop\LTTQ\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.csproj.CopyComplete
 C:\Users\ADMIN\Desktop\LTTQ\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.exe
 C:\Users\ADMIN\Desktop\LTTQ\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.pdb
+D:\LTTQ\tranhuucanh2000\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.FAdmin.resources
+D:\LTTQ\tranhuucanh2000\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.FTesst.resources
