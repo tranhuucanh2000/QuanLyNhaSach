@@ -20,6 +20,7 @@ namespace QuanLyNhaSach
 
             InitializeComponent();
             KetNoiKhoSach();
+            HienThiAdmin();
         }
         #region Methods
         void KetNoiKhoSach()
@@ -27,10 +28,11 @@ namespace QuanLyNhaSach
             DataTable data = SachDAO.Instance.LayDSSach();
             dtgSach.DataSource = data;
         }
-        bool isAdmin()
+        void HienThiAdmin()
         {
-            //Xử lý xem có phải admin hay không
-            return true;
+            if (AccountDAO.Type == true) ptbAdmin.Visible = true;
+            else
+                ptbAdmin.Visible = false;
         }
         //Để xuất thông báo
         void DuaThongDiep(string str, int mucDo)
@@ -203,21 +205,6 @@ namespace QuanLyNhaSach
             }
         }
 
-<<<<<<< HEAD
-        private void textBox7_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox8_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dtgvSearchBook_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-=======
         #endregion
 
         private void ptbDangXuat_Click(object sender, EventArgs e)
@@ -225,13 +212,12 @@ namespace QuanLyNhaSach
             FLogin login = new FLogin();
             login.ShowDialog();
             this.Close();
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> ThietKeLaiGiaoDien
-=======
->>>>>>> parent of 3174a6a... Them phan thong tin tai khoan
-=======
->>>>>>> parent of 3174a6a... Them phan thong tin tai khoan
+        }
+
+        private void ptbThongTin_Click(object sender, EventArgs e)
+        {
+            FInfomationAccount fInfomation = new FInfomationAccount();
+            fInfomation.ShowDialog();
         }
     }
 }
