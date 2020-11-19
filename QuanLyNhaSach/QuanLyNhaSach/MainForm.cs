@@ -225,7 +225,10 @@ namespace QuanLyNhaSach
             FLogin login = new FLogin();
             login.ShowDialog();
             this.Close();
+<<<<<<< HEAD
 >>>>>>> ThietKeLaiGiaoDien
+=======
+>>>>>>> parent of 3174a6a... Them phan thong tin tai khoan
         }
     }
 }
