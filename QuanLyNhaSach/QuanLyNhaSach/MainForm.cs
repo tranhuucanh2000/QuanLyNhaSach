@@ -226,7 +226,10 @@ namespace QuanLyNhaSach
             login.ShowDialog();
             this.Close();
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> ThietKeLaiGiaoDien
+=======
+>>>>>>> parent of 3174a6a... Them phan thong tin tai khoan
 =======
 >>>>>>> parent of 3174a6a... Them phan thong tin tai khoan
         }
