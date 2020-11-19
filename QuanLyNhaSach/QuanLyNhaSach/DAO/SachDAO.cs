@@ -18,7 +18,7 @@ namespace QuanLyNhaSach.DAO
 
         public DataTable LayDSSach()
         {
-            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT TenSach as [Tên Sách], TacGia as[Tác Giả], NhaXuatBan as [Nhà Xuất Bản], TheLoai as [Thể Loại], SoLuong as [Số Lượng], GiaTien as [Giá Tiền] FROM dbo.Sach ");
+            DataTable data = DataProvider.Instance.ExecuteQuery("EXEC USP_HienThiSach");
             return data;
         }
         public DataTable TimSachQuaTen(string tenSach)

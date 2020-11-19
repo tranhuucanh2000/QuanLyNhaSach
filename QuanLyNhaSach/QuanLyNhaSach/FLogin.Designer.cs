@@ -1,6 +1,6 @@
 ﻿namespace QuanLyNhaSach
 {
-    partial class Form1
+    partial class FLogin
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FLogin));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -126,6 +126,7 @@
             this.txbMatKhau.PasswordChar = '*';
             this.txbMatKhau.Size = new System.Drawing.Size(335, 27);
             this.txbMatKhau.TabIndex = 2;
+            this.txbMatKhau.Text = "admin";
             this.txbMatKhau.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txbMatKhau_KeyDown);
             // 
             // txbTaiKhoan
@@ -136,6 +137,7 @@
             this.txbTaiKhoan.Name = "txbTaiKhoan";
             this.txbTaiKhoan.Size = new System.Drawing.Size(335, 27);
             this.txbTaiKhoan.TabIndex = 1;
+            this.txbTaiKhoan.Text = "admin";
             this.txbTaiKhoan.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txbTaiKhoan_KeyDown);
             // 
             // lbQuenMatKhau
@@ -173,9 +175,9 @@
             // 
             this.ptClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.ptClose.Image = ((System.Drawing.Image)(resources.GetObject("ptClose.Image")));
-            this.ptClose.Location = new System.Drawing.Point(1132, 1);
+            this.ptClose.Location = new System.Drawing.Point(1150, 0);
             this.ptClose.Name = "ptClose";
-            this.ptClose.Size = new System.Drawing.Size(68, 50);
+            this.ptClose.Size = new System.Drawing.Size(50, 50);
             this.ptClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.ptClose.TabIndex = 3;
             this.ptClose.TabStop = false;
@@ -192,7 +194,7 @@
             this.label5.TabIndex = 5;
             this.label5.Text = "Email: tranhuucanh2000@gmail.com";
             // 
-            // Form1
+            // FLogin
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(243)))), ((int)(((byte)(206)))));
@@ -206,7 +208,7 @@
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "Form1";
+            this.Name = "FLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "KVCBOOKSHOP";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
