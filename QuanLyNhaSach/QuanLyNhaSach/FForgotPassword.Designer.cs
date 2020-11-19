@@ -218,9 +218,9 @@
             // 
             this.ptClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.ptClose.Image = ((System.Drawing.Image)(resources.GetObject("ptClose.Image")));
-            this.ptClose.Location = new System.Drawing.Point(517, 1);
+            this.ptClose.Location = new System.Drawing.Point(531, 0);
             this.ptClose.Name = "ptClose";
-            this.ptClose.Size = new System.Drawing.Size(68, 50);
+            this.ptClose.Size = new System.Drawing.Size(50, 50);
             this.ptClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.ptClose.TabIndex = 11;
             this.ptClose.TabStop = false;

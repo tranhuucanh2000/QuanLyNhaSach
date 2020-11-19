@@ -13,11 +13,11 @@ using QuanLyNhaSach.DAO;
 
 namespace QuanLyNhaSach
 {
-    public partial class Form1 : Form
+    public partial class FLogin : Form
     {
         string username;
         string password;
-        public Form1()
+        public FLogin()
         {
             InitializeComponent();
         }

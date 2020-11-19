@@ -65,11 +65,17 @@
     <Compile Include="FForgotPassword.Designer.cs">
       <DependentUpon>FForgotPassword.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
+    <Compile Include="FInfomationAccount.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="FInfomationAccount.Designer.cs">
+      <DependentUpon>FInfomationAccount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FLogin.Designer.cs">
+      <DependentUpon>FLogin.cs</DependentUpon>
     </Compile>
     <Compile Include="FTesst.cs">
       <SubType>Form</SubType>
@@ -91,8 +97,11 @@
     <EmbeddedResource Include="FForgotPassword.resx">
       <DependentUpon>FForgotPassword.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="FInfomationAccount.resx">
+      <DependentUpon>FInfomationAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FLogin.resx">
+      <DependentUpon>FLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FTesst.resx">
       <DependentUpon>FTesst.cs</DependentUpon>

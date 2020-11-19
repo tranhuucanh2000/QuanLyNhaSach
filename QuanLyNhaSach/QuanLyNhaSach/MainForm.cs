@@ -33,9 +33,12 @@ namespace QuanLyNhaSach
             return true;
         }
         //Để xuất thông báo
-        void DuaThongDiep(string str)
+        void DuaThongDiep(string str, int mucDo)
         {
             string ThongDiep = String.Concat("BỒ CÂU: \"", str, "\"");
+            if (mucDo == 1) lbHoTro.ForeColor = Color.Green;
+            if (mucDo == 2) lbHoTro.ForeColor = Color.Violet;
+            if (mucDo == 3) lbHoTro.ForeColor = Color.Red;
             lbHoTro.Text = ThongDiep;
         }
         void LamMoiTongTien()
@@ -75,96 +78,6 @@ namespace QuanLyNhaSach
                 txbGiaTien.Text = row.Cells[5].Value.ToString();
             }
         }
-        //void ThemDuLieuVaoCSDL(string tensach,string tacgia,string theloai, string nxb, int soluong,int giatien)
-        //{
-        //    string query = String.Concat("INSERT INTO dbo.Sach",@"(TheLoai, TenSach, TacGia, NhaXuatBan, SoLuong, GiaTien) VALUES (N'",theloai, @"', N'", tensach, @"', N'", tacgia, @"', N'", nxb, @"', N'", soluong, @"', N'", giatien, "')");
-        //    DataProvider.Instance.ExecuteNonQuery(query);
-        //}       
-        //void TroVeTrangThaiNhap()
-        //{
-        //    txbLoaiSach.Text = ""; 
-        //    txbTenSach.Text = ""; 
-        //    txbTacGia.Text = ""; 
-        //    txbNXB.Text = ""; 
-        //    txbSoLuong.Text = ""; 
-        //    txbGiaTien.Text = "";
-        //    txbLoaiSach.Focus();
-        //}
-        //private void btnThem_Click(object sender, EventArgs e)
-        //{
-        //    if (txbLoaiSach.Text != "" && txbTenSach.Text != "" && txbTacGia.Text != "" && txbNXB.Text != "" && txbSoLuong.Text != "" && txbGiaTien.Text != "")
-        //    {
-        //        try
-        //        {
-        //            int soLuong = int.Parse(txbSoLuong.Text);
-        //            try
-        //            {
-        //                int giaTien = int.Parse(txbGiaTien.Text);
-        //                ThemDuLieuVaoCSDL(txbTenSach.Text.ToString(), txbTacGia.Text.ToString(), txbLoaiSach.Text.ToString(), txbNXB.Text.ToString(), int.Parse(txbSoLuong.Text.ToString()), int.Parse(txbGiaTien.Text.ToString()));
-        //                DuaThongDiep("Bạn đã thêm thành công!");
-        //                dtgSach.Refresh();
-        //                KetNoiKhoSach();
-        //                TroVeTrangThaiNhap();
-        //            }
-        //            catch (FormatException)
-        //            {
-        //                DuaThongDiep("Bạn đã nhập sai dữ liệu giá tiền!");
-        //                lbHoTro.ForeColor = Color.Red;
-        //            }
-        //        }
-        //        catch (FormatException)
-        //        {
-        //            DuaThongDiep("Bạn đã nhập sai dữ liệu số lượng!");
-        //            lbHoTro.ForeColor = Color.Red;
-        //        }
-        //    }
-        //    else
-        //    {
-        //        DuaThongDiep("Bạn nhập thiếu thông tin");
-        //    }
-        //}
-        //void LamMoi()
-        //{
-        //    DataProvider.Instance.ExecuteNonQuery("delete from dbo.Sach");
-        //    ThemDuLieuTuDtgSangCSDL();
-        //}
-        //void ThemDuLieuTuDtgSangCSDL()
-        //{
-        //    int n = dtgSach.RowCount;
-        //    for (int i = 0; i < n - 1;i++)
-        //    {
-        //        ThemDuLieuVaoCSDL(dtgSach[0, i].Value.ToString(), dtgSach[1, i].Value.ToString(),  dtgSach[3, i].Value.ToString(), dtgSach[2, i].Value.ToString(), int.Parse(dtgSach[4, i].Value.ToString()), int.Parse(dtgSach[5, i].Value.ToString()));
-        //    }    
-        //}
-        //private void btnSua_Click(object sender, EventArgs e)
-        //{
-        //    int viTri = dtgSach.CurrentCell.RowIndex;
-        //    dtgSach[0, viTri].Value = txbTenSach.Text;
-        //    dtgSach[1, viTri].Value = txbTacGia.Text;
-        //    dtgSach[2, viTri].Value = txbNXB.Text;
-        //    dtgSach[3, viTri].Value = txbLoaiSach.Text;
-        //    dtgSach[4, viTri].Value = txbSoLuong.Text;
-        //    dtgSach[5, viTri].Value = txbGiaTien.Text;
-        //    DuaThongDiep("Bạn đã sửa thành công!");
-        //    lbHoTro.ForeColor = Color.BlueViolet;
-        //    LamMoi();
-        //    TroVeTrangThaiNhap();
-        //}
-
-        //private void btnXoa_Click(object sender, EventArgs e)
-        //{
-        //    int viTri = dtgSach.CurrentCell.RowIndex;
-        //    if (MessageBox.Show("Bạn có thực sự muốn xóa thông tin này", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question)==DialogResult.Yes)
-        //    {
-        //        dtgSach.Rows.RemoveAt(viTri);
-        //        DuaThongDiep("Bạn đã xóa thành công!");
-        //        lbHoTro.ForeColor = Color.BlueViolet;
-        //        LamMoi();
-        //        TroVeTrangThaiNhap();
-        //    }
-        //}
-        #endregion
-
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
             string tenSach = txbTenSachT.Text;
@@ -172,7 +85,7 @@ namespace QuanLyNhaSach
             string theLoai = txbTheLoai.Text;
             if (ckbTenSach.Checked == false && ckbTacGia.Checked == false && ckbTheLoai.Checked == false)
             {
-                DuaThongDiep("Bạn vui lòng đánh dấu các thông tin cần tìm!");
+                DuaThongDiep("Bạn vui lòng đánh dấu các thông tin cần tìm!",2);
             }
             if (ckbTenSach.Checked == true && ckbTacGia.Checked == false && ckbTheLoai.Checked == false)
             {
@@ -206,6 +119,7 @@ namespace QuanLyNhaSach
 
         private void btnLamMoi_Click(object sender, EventArgs e)
         {
+            DuaThongDiep("Tôi đã vừa làm mới lại danh sách giúp bạn!", 1);
             KetNoiKhoSach();
         }
 
@@ -218,22 +132,23 @@ namespace QuanLyNhaSach
                 dtgThanhToan.Rows.Add(new object[] { txbTenSach.Text, txbSoLuong.Text, txbGiaTien.Text, tien.ToString() });
                 LamMoiTongTien();
                 txbSoLuong.Text = "";
+                DuaThongDiep("Bạn vừa thêm sách vào danh sách thanh toán!", 1);
             }
             else
             {
                 if (txbSoLuong.Text == "")
                 {
-                    DuaThongDiep("Bạn vui lòng nhập vào số lượng sách!");
+                    DuaThongDiep("Bạn vui lòng nhập vào số lượng sách!",2);
                     txbSoLuong.Focus();
                 }
                 if (int.TryParse(txbSoLuong.Text.ToString(), out soLuong) == false)
                 {
-                    DuaThongDiep("Bạn vui lòng nhập lại số lượng sách!");
+                    DuaThongDiep("Bạn vui lòng nhập lại số lượng sách!",2);
                     txbSoLuong.Focus();
                 }
                 if (int.TryParse(txbGiaTien.Text.ToString(), out giaTien) == false)
                 {
-                    DuaThongDiep("Bạn vui lòng nhập lại giá tiền!");
+                    DuaThongDiep("Bạn vui lòng nhập lại giá tiền!",2);
                     txbGiaTien.Focus();
                 }
             }
@@ -253,6 +168,7 @@ namespace QuanLyNhaSach
             }
             KetNoiKhoSach();
             dtgThanhToan.Rows.Clear();
+            DuaThongDiep("Bạn đã thanh toán thành công!", 1);
         }
 
         private void dtgThanhToan_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -274,6 +190,7 @@ namespace QuanLyNhaSach
             int.TryParse(txbGiaTien.Text.ToString(), out giaTien);
             tien = soLuong * giaTien;
             dtgThanhToan.Rows[dtgThanhToan.CurrentCell.RowIndex].SetValues(new object[] { txbTenSach.Text, txbSoLuong.Text, txbGiaTien.Text, tien });
+            DuaThongDiep("Bạn đã sửa thành công!", 1);
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
@@ -282,8 +199,17 @@ namespace QuanLyNhaSach
             if (MessageBox.Show("Bạn có thực sự muốn xóa thông tin này", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 dtgThanhToan.Rows.RemoveAt(viTri);
-                DuaThongDiep("Bạn đã xóa thành công!");
+                DuaThongDiep("Bạn đã xóa thành công!",1);
             }
+        }
+
+        #endregion
+
+        private void ptbDangXuat_Click(object sender, EventArgs e)
+        {
+            FLogin login = new FLogin();
+            login.ShowDialog();
+            this.Close();
         }
     }
 }
