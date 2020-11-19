@@ -20,7 +20,6 @@ namespace QuanLyNhaSach
 
             InitializeComponent();
             KetNoiKhoSach();
-            HienThiAdmin();
         }
         #region Methods
         void KetNoiKhoSach()
@@ -28,11 +27,10 @@ namespace QuanLyNhaSach
             DataTable data = SachDAO.Instance.LayDSSach();
             dtgSach.DataSource = data;
         }
-        void HienThiAdmin()
+        bool isAdmin()
         {
-            if (AccountDAO.Type == true) ptbAdmin.Visible = true;
-            else
-                ptbAdmin.Visible = false;
+            //Xử lý xem có phải admin hay không
+            return true;
         }
         //Để xuất thông báo
         void DuaThongDiep(string str, int mucDo)
@@ -228,12 +226,6 @@ namespace QuanLyNhaSach
             login.ShowDialog();
             this.Close();
 >>>>>>> ThietKeLaiGiaoDien
-        }
-
-        private void ptbThongTin_Click(object sender, EventArgs e)
-        {
-            FInfomationAccount fInfomation = new FInfomationAccount();
-            fInfomation.ShowDialog();
         }
     }
 }
