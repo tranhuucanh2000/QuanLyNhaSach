@@ -76,8 +76,9 @@ namespace QuanLyNhaSach
             if (dtgSach.SelectedCells.Count > 0)
             {
                 DataGridViewRow row = dtgSach.Rows[dtgSach.CurrentCell.RowIndex];
-                txbTenSach.Text = row.Cells[0].Value.ToString();
-                txbGiaTien.Text = row.Cells[5].Value.ToString();
+                txbTenSach.Text = row.Cells[1].Value.ToString();
+                txbGiaTien.Text = row.Cells[6].Value.ToString();
+                txbID.Text = row.Cells[0].Value.ToString();
             }
         }
         private void btnTimKiem_Click(object sender, EventArgs e)
@@ -131,7 +132,7 @@ namespace QuanLyNhaSach
             if(txbSoLuong.Text != "" && int.TryParse(txbSoLuong.Text.ToString(), out soLuong) == true && int.TryParse(txbGiaTien.Text.ToString(), out giaTien) == true)
             {
                 int tien = soLuong * giaTien;
-                dtgThanhToan.Rows.Add(new object[] { txbTenSach.Text, txbSoLuong.Text, txbGiaTien.Text, tien.ToString() });
+                dtgThanhToan.Rows.Add(new object[] { txbID.Text,txbTenSach.Text, txbSoLuong.Text, txbGiaTien.Text, tien.ToString() });
                 LamMoiTongTien();
                 txbSoLuong.Text = "";
                 DuaThongDiep("Bạn vừa thêm sách vào danh sách thanh toán!", 1);
@@ -164,7 +165,7 @@ namespace QuanLyNhaSach
                 {
                     if (row.Index < dtgThanhToan.Rows.Count - 1)
                     {
-                        SachDAO.Instance.ThanhToanSach(row.Cells[0].Value.ToString(), row.Cells[1].Value.ToString());
+                        SachDAO.Instance.ThanhToanSach(row.Cells[0].Value.ToString(), row.Cells[2].Value.ToString());
                     }
                 }
             }
@@ -178,9 +179,10 @@ namespace QuanLyNhaSach
             if (dtgThanhToan.SelectedCells.Count > 0)
             {
                 DataGridViewRow row = dtgThanhToan.Rows[dtgThanhToan.CurrentCell.RowIndex];
-                txbTenSach.Text = row.Cells[0].Value.ToString();
-                txbSoLuong.Text = row.Cells[1].Value.ToString();
-                txbGiaTien.Text = row.Cells[2].Value.ToString();
+                txbID.Text = row.Cells[0].Value.ToString();
+                txbTenSach.Text = row.Cells[1].Value.ToString();
+                txbSoLuong.Text = row.Cells[2].Value.ToString();
+                txbGiaTien.Text = row.Cells[3].Value.ToString();
             }
         }
 
@@ -191,7 +193,7 @@ namespace QuanLyNhaSach
             int.TryParse(txbSoLuong.Text.ToString(), out soLuong);
             int.TryParse(txbGiaTien.Text.ToString(), out giaTien);
             tien = soLuong * giaTien;
-            dtgThanhToan.Rows[dtgThanhToan.CurrentCell.RowIndex].SetValues(new object[] { txbTenSach.Text, txbSoLuong.Text, txbGiaTien.Text, tien });
+            dtgThanhToan.Rows[dtgThanhToan.CurrentCell.RowIndex].SetValues(new object[] { txbID.Text, txbTenSach.Text, txbSoLuong.Text, txbGiaTien.Text, tien });
             DuaThongDiep("Bạn đã sửa thành công!", 1);
         }
 
