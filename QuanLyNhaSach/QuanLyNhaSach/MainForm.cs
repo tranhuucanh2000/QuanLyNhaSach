@@ -1,4 +1,5 @@
 ﻿using QuanLyNhaSach.DAO;
+using QuanLyNhaSach.DTO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,12 +16,20 @@ namespace QuanLyNhaSach
 {
     public partial class MainForm : Form
     {
-        public MainForm()
-        {
+        private Account loginAccount;
 
+        public Account LoginAccount 
+        { get => loginAccount; 
+          set { loginAccount = value;
+                HienThiAdmin(loginAccount.Type);
+            }
+        }
+
+        public MainForm(Account acc)
+        {
             InitializeComponent();
+            LoginAccount = acc;
             KetNoiKhoSach();
-            HienThiAdmin();
         }
         #region Methods
         void KetNoiKhoSach()
@@ -28,11 +37,10 @@ namespace QuanLyNhaSach
             DataTable data = SachDAO.Instance.LayDSSach();
             dtgSach.DataSource = data;
         }
-        void HienThiAdmin()
+        void HienThiAdmin(int loai)
         {
-            if (AccountDAO.Type == true) ptbAdmin.Visible = true;
-            else
-                ptbAdmin.Visible = false;
+            if (loai == 1) pbAdmin.Visible = true;
+            else pbAdmin.Visible = false;
         }
         //Để xuất thông báo
         void DuaThongDiep(string str, int mucDo)
@@ -53,7 +61,7 @@ namespace QuanLyNhaSach
                     if (row.Index < dtgThanhToan.Rows.Count - 1)
                     {
                         int tien = 0;
-                        tien = int.Parse(row.Cells[3].Value.ToString());
+                        tien = int.Parse(row.Cells[4].Value.ToString());
                         tongtien += tien;
                     }
                 }
@@ -195,6 +203,7 @@ namespace QuanLyNhaSach
             tien = soLuong * giaTien;
             dtgThanhToan.Rows[dtgThanhToan.CurrentCell.RowIndex].SetValues(new object[] { txbID.Text, txbTenSach.Text, txbSoLuong.Text, txbGiaTien.Text, tien });
             DuaThongDiep("Bạn đã sửa thành công!", 1);
+            LamMoiTongTien();
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
@@ -204,10 +213,10 @@ namespace QuanLyNhaSach
             {
                 dtgThanhToan.Rows.RemoveAt(viTri);
                 DuaThongDiep("Bạn đã xóa thành công!",1);
+                LamMoiTongTien();
             }
         }
 
-        #endregion
 
         private void ptbDangXuat_Click(object sender, EventArgs e)
         {
@@ -218,8 +227,18 @@ namespace QuanLyNhaSach
 
         private void ptbThongTin_Click(object sender, EventArgs e)
         {
-            FInfomationAccount fInfomation = new FInfomationAccount();
+            FInfomationAccount fInfomation = new FInfomationAccount(loginAccount);
             fInfomation.ShowDialog();
         }
+
+        private void ptbAdmin_Click(object sender, EventArgs e)
+        {
+            FAdmin fAdmin = new FAdmin();
+            fAdmin.ShowDialog();
+            this.Close();
+        }
+
+
+        #endregion
     }
 }

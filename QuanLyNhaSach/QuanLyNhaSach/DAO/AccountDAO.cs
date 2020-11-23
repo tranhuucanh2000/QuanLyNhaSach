@@ -1,9 +1,11 @@
-﻿using System;
+﻿using QuanLyNhaSach.DTO;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace QuanLyNhaSach.DAO
 {
@@ -31,6 +33,15 @@ namespace QuanLyNhaSach.DAO
                 return true;
             }
             return false;
+        }
+        public Account LayTaiKhoanTuTenDN(string userName)
+        {
+            DataTable data = DataProvider.Instance.ExecuteQuery("Select * from TaiKhoan where TenDN = '" + userName + "'");
+            foreach (DataRow item in data.Rows)
+            {
+                return new Account(item);
+            }
+            return null;
         }
     }
 }

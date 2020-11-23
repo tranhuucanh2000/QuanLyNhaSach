@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using QuanLyNhaSach.DAO;
+using QuanLyNhaSach.DTO;
 
 namespace QuanLyNhaSach
 {
@@ -45,7 +46,8 @@ namespace QuanLyNhaSach
             string psw = txbMatKhau.Text;
             if (AccountDAO.Instance.isAccount(usn,psw))
             {
-                MainForm mainForm = new MainForm();
+                Account account = AccountDAO.Instance.LayTaiKhoanTuTenDN(usn);
+                MainForm mainForm = new MainForm(account);
                 mainForm.ShowDialog();
             }
             else

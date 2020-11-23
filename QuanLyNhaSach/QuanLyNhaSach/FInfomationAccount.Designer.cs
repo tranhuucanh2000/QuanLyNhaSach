@@ -31,10 +31,10 @@ namespace QuanLyNhaSach
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FInfomationAccount));
             this.panel6 = new System.Windows.Forms.Panel();
-            this.txbTenSach = new System.Windows.Forms.TextBox();
+            this.txbTenDN = new System.Windows.Forms.TextBox();
             this.lbTenSach = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txbTenHT = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -60,15 +60,16 @@ namespace QuanLyNhaSach
             this.panel6.Size = new System.Drawing.Size(350, 1);
             this.panel6.TabIndex = 13;
             // 
-            // txbTenSach
+            // txbTenDN
             // 
-            this.txbTenSach.BackColor = System.Drawing.Color.LemonChiffon;
-            this.txbTenSach.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txbTenSach.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbTenSach.Location = new System.Drawing.Point(199, 142);
-            this.txbTenSach.Name = "txbTenSach";
-            this.txbTenSach.Size = new System.Drawing.Size(350, 27);
-            this.txbTenSach.TabIndex = 1;
+            this.txbTenDN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(206)))), ((int)(((byte)(201)))));
+            this.txbTenDN.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txbTenDN.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbTenDN.Location = new System.Drawing.Point(199, 142);
+            this.txbTenDN.Name = "txbTenDN";
+            this.txbTenDN.ReadOnly = true;
+            this.txbTenDN.Size = new System.Drawing.Size(350, 27);
+            this.txbTenDN.TabIndex = 1;
             // 
             // lbTenSach
             // 
@@ -92,15 +93,16 @@ namespace QuanLyNhaSach
             this.label1.Text = "Tên hiển thị:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // textBox1
+            // txbTenHT
             // 
-            this.textBox1.BackColor = System.Drawing.Color.LemonChiffon;
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(199, 196);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(350, 27);
-            this.textBox1.TabIndex = 2;
+            this.txbTenHT.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(206)))), ((int)(((byte)(201)))));
+            this.txbTenHT.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txbTenHT.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbTenHT.Location = new System.Drawing.Point(199, 196);
+            this.txbTenHT.Name = "txbTenHT";
+            this.txbTenHT.ReadOnly = true;
+            this.txbTenHT.Size = new System.Drawing.Size(350, 27);
+            this.txbTenHT.TabIndex = 2;
             // 
             // panel1
             // 
@@ -123,7 +125,7 @@ namespace QuanLyNhaSach
             // 
             // textBox2
             // 
-            this.textBox2.BackColor = System.Drawing.Color.LemonChiffon;
+            this.textBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(206)))), ((int)(((byte)(201)))));
             this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox2.Location = new System.Drawing.Point(199, 253);
@@ -152,7 +154,7 @@ namespace QuanLyNhaSach
             // 
             // textBox3
             // 
-            this.textBox3.BackColor = System.Drawing.Color.LemonChiffon;
+            this.textBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(206)))), ((int)(((byte)(201)))));
             this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox3.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox3.Location = new System.Drawing.Point(199, 314);
@@ -181,7 +183,7 @@ namespace QuanLyNhaSach
             // 
             // textBox4
             // 
-            this.textBox4.BackColor = System.Drawing.Color.LemonChiffon;
+            this.textBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(206)))), ((int)(((byte)(201)))));
             this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox4.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox4.Location = new System.Drawing.Point(199, 371);
@@ -214,7 +216,7 @@ namespace QuanLyNhaSach
             this.label5.ForeColor = System.Drawing.Color.Teal;
             this.label5.Location = new System.Drawing.Point(183, 35);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(317, 46);
+            this.label5.Size = new System.Drawing.Size(307, 45);
             this.label5.TabIndex = 15;
             this.label5.Text = "Thông Tin Cá Nhân";
             // 
@@ -257,7 +259,7 @@ namespace QuanLyNhaSach
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.LemonChiffon;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(206)))), ((int)(((byte)(201)))));
             this.ClientSize = new System.Drawing.Size(600, 500);
             this.Controls.Add(this.btnThoat);
             this.Controls.Add(this.button1);
@@ -271,8 +273,8 @@ namespace QuanLyNhaSach
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.txbTenSach);
+            this.Controls.Add(this.txbTenHT);
+            this.Controls.Add(this.txbTenDN);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -292,10 +294,10 @@ namespace QuanLyNhaSach
 
         #endregion
         private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.TextBox txbTenSach;
+        private System.Windows.Forms.TextBox txbTenDN;
         private System.Windows.Forms.Label lbTenSach;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txbTenHT;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox2;
