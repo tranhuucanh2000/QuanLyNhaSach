@@ -4,45 +4,48 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
-using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace QuanLyNhaSach
 {
-    public partial class MainForm : Form
+    public partial class UCBanSach : UserControl
     {
         private Account loginAccount;
-
-        public Account LoginAccount 
-        { get => loginAccount; 
-          set { loginAccount = value;
-                HienThiAdmin(loginAccount.Type);
-            }
-        }
-
-        public MainForm(Account acc)
+        public UCBanSach(Account acc)
         {
             InitializeComponent();
             LoginAccount = acc;
-            DuaThongDiep(string.Concat("Xin chào ", loginAccount.Ten), 3);
             KetNoiKhoSach();
+            HienTen();
+            DuaVeTrangThaiTimKiem();
         }
-        #region Methods
+        private static UCBanSach instance;
+        public static UCBanSach Instance { 
+            get { /*if (instance == null) instance = new UCBanSach()*/return instance; }
+            set => instance = value; 
+        }
+
+        public Account LoginAccount 
+        { 
+            get => loginAccount; 
+            set => loginAccount = value; 
+        }
+
+        #region Method
+
+        void HienTen()
+        {
+            DuaThongDiep(string.Concat("Xin chào ",LoginAccount.Ten), 3);
+        }
         void KetNoiKhoSach()
         {
             DataTable data = SachDAO.Instance.LayDSSach();
             dtgSach.DataSource = data;
             DieuChinhHienThiSach();
-        }
-        void HienThiAdmin(int loai)
-        {
-            if (loai == 1) pbAdmin.Visible = true;
-            else pbAdmin.Visible = false;
         }
         void DuaVeTrangThaiTimKiem()
         {
@@ -55,7 +58,7 @@ namespace QuanLyNhaSach
             txbTenSachT.Focus();
         }
         //Để xuất thông báo
-        void DuaThongDiep(string str, int mucDo)
+        public void DuaThongDiep(string str, int mucDo)
         {
             string ThongDiep = String.Concat("BỒ CÂU: \"", str, "\"");
             if (mucDo == 1) lbHoTro.ForeColor = Color.FromArgb(102, 255, 102);
@@ -65,12 +68,12 @@ namespace QuanLyNhaSach
         }
         void DieuChinhHienThiSach()
         {
-            
+
         }
         void LamMoiTongTien()
         {
             int tongtien = 0;
-            if(dtgThanhToan.Rows.Count>1)
+            if (dtgThanhToan.Rows.Count > 1)
             {
                 foreach (DataGridViewRow row in dtgThanhToan.Rows)
                 {
@@ -85,7 +88,7 @@ namespace QuanLyNhaSach
             txbThanhTien.Text = tongtien.ToString();
         }
         #endregion
-        #region Events
+
         private void pctCloseApp_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -112,7 +115,7 @@ namespace QuanLyNhaSach
             string theLoai = txbTheLoai.Text;
             if (ckbTenSach.Checked == false && ckbTacGia.Checked == false && ckbTheLoai.Checked == false)
             {
-                DuaThongDiep("Bạn vui lòng đánh dấu các thông tin cần tìm!",2);
+                DuaThongDiep("Bạn vui lòng đánh dấu các thông tin cần tìm!", 2);
             }
             if (ckbTenSach.Checked == true && ckbTacGia.Checked == false && ckbTheLoai.Checked == false)
             {
@@ -153,10 +156,10 @@ namespace QuanLyNhaSach
         private void btnThem_Click(object sender, EventArgs e)
         {
             int soLuong, giaTien;
-            if(txbSoLuong.Text != "" && int.TryParse(txbSoLuong.Text.ToString(), out soLuong) == true && int.TryParse(txbGiaTien.Text.ToString(), out giaTien) == true)
+            if (txbSoLuong.Text != "" && int.TryParse(txbSoLuong.Text.ToString(), out soLuong) == true && int.TryParse(txbGiaTien.Text.ToString(), out giaTien) == true)
             {
                 int tien = soLuong * giaTien;
-                dtgThanhToan.Rows.Add(new object[] { txbID.Text,txbTenSach.Text, txbSoLuong.Text, txbGiaTien.Text, tien.ToString() });
+                dtgThanhToan.Rows.Add(new object[] { txbID.Text, txbTenSach.Text, txbSoLuong.Text, txbGiaTien.Text, tien.ToString() });
                 LamMoiTongTien();
                 txbSoLuong.Text = "";
                 DuaThongDiep("Bạn vừa thêm sách vào danh sách thanh toán!", 1);
@@ -165,17 +168,17 @@ namespace QuanLyNhaSach
             {
                 if (txbSoLuong.Text == "")
                 {
-                    DuaThongDiep("Bạn vui lòng nhập vào số lượng sách!",2);
+                    DuaThongDiep("Bạn vui lòng nhập vào số lượng sách!", 2);
                     txbSoLuong.Focus();
                 }
                 if (int.TryParse(txbSoLuong.Text.ToString(), out soLuong) == false)
                 {
-                    DuaThongDiep("Bạn vui lòng nhập lại số lượng sách!",2);
+                    DuaThongDiep("Bạn vui lòng nhập lại số lượng sách!", 2);
                     txbSoLuong.Focus();
                 }
                 if (int.TryParse(txbGiaTien.Text.ToString(), out giaTien) == false)
                 {
-                    DuaThongDiep("Bạn vui lòng nhập lại giá tiền!",2);
+                    DuaThongDiep("Bạn vui lòng nhập lại giá tiền!", 2);
                     txbGiaTien.Focus();
                 }
             }
@@ -214,7 +217,7 @@ namespace QuanLyNhaSach
         {
             int soLuong, giaTien;
             int tien = 0;
-            if(int.TryParse(txbSoLuong.Text.ToString(), out soLuong) == true) 
+            if (int.TryParse(txbSoLuong.Text.ToString(), out soLuong) == true)
             {
                 int.TryParse(txbGiaTien.Text.ToString(), out giaTien);
                 tien = soLuong * giaTien;
@@ -234,22 +237,9 @@ namespace QuanLyNhaSach
             if (MessageBox.Show("Bạn có thực sự muốn xóa thông tin này", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 dtgThanhToan.Rows.RemoveAt(viTri);
-                DuaThongDiep("Bạn đã xóa thành công!",1);
+                DuaThongDiep("Bạn đã xóa thành công!", 1);
                 LamMoiTongTien();
             }
-        }
-
-
-        private void ptbDangXuat_Click(object sender, EventArgs e)
-        {           
-            Application.Restart();
-        }
-
-        private void ptbThongTin_Click(object sender, EventArgs e)
-        {
-            FInfomationAccount fInfomation = new FInfomationAccount(loginAccount);
-            fInfomation.CapNhatTaiKhoanEvent += FInfomation_CapNhatTaiKhoanEvent;
-            fInfomation.ShowDialog();
         }
 
         private void FInfomation_CapNhatTaiKhoanEvent(object sender, TaiKhoanSuKien e)
@@ -257,16 +247,9 @@ namespace QuanLyNhaSach
             DuaThongDiep(string.Concat("Xin chào ", e.Acc.Ten), 3);
         }
 
-        private void ptbAdmin_Click(object sender, EventArgs e)
-        {
-            FChinh fAdmin = new FChinh(loginAccount);
-            fAdmin.ShowDialog();
-            this.Close();
-        }
-
         private void txbTenSachT_KeyDown(object sender, KeyEventArgs e)
         {
-            if(e.KeyCode == Keys.Enter)
+            if (e.KeyCode == Keys.Enter)
             {
                 ckbTenSach.Checked = true;
                 btnTimKiem_Click(sender, e);
@@ -290,6 +273,10 @@ namespace QuanLyNhaSach
                 btnTimKiem_Click(sender, e);
             }
         }
-        #endregion
+
+        private void pbDangXuat_Click(object sender, EventArgs e)
+        {
+            Application.Restart();
+        }
     }
 }

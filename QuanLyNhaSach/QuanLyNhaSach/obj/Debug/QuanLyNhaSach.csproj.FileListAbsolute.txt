@@ -72,7 +72,6 @@ C:\Users\tranh\Desktop\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\bin\Debug\QuanL
 C:\Users\tranh\Desktop\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\bin\Debug\QuanLyNhaSach.exe
 C:\Users\tranh\Desktop\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\bin\Debug\QuanLyNhaSach.pdb
 C:\Users\tranh\Desktop\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.csprojAssemblyReference.cache
-C:\Users\tranh\Desktop\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.FAdmin.resources
 C:\Users\tranh\Desktop\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.FForgotPassword.resources
 C:\Users\tranh\Desktop\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.FInfomationAccount.resources
 C:\Users\tranh\Desktop\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.FLogin.resources
@@ -84,3 +83,5 @@ C:\Users\tranh\Desktop\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanL
 C:\Users\tranh\Desktop\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.csproj.CopyComplete
 C:\Users\tranh\Desktop\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.exe
 C:\Users\tranh\Desktop\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.pdb
+C:\Users\tranh\Desktop\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.UCBanSach.resources
+C:\Users\tranh\Desktop\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.FChinh.resources

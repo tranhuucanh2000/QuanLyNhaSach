@@ -53,11 +53,11 @@
     <Compile Include="DAO\DataProvider.cs" />
     <Compile Include="DAO\SachDAO.cs" />
     <Compile Include="DTO\Account.cs" />
-    <Compile Include="FAdmin.cs">
+    <Compile Include="FChinh.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FAdmin.Designer.cs">
-      <DependentUpon>FAdmin.cs</DependentUpon>
+    <Compile Include="FChinh.Designer.cs">
+      <DependentUpon>FChinh.cs</DependentUpon>
     </Compile>
     <Compile Include="FForgotPassword.cs">
       <SubType>Form</SubType>
@@ -91,8 +91,14 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="FAdmin.resx">
-      <DependentUpon>FAdmin.cs</DependentUpon>
+    <Compile Include="UCBanSach.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCBanSach.Designer.cs">
+      <DependentUpon>UCBanSach.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="FChinh.resx">
+      <DependentUpon>FChinh.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FForgotPassword.resx">
       <DependentUpon>FForgotPassword.cs</DependentUpon>
@@ -118,6 +124,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UCBanSach.resx">
+      <DependentUpon>UCBanSach.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

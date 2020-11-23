@@ -1,14 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.IO;
 using QuanLyNhaSach.DAO;
 using QuanLyNhaSach.DTO;
 
@@ -16,17 +8,9 @@ namespace QuanLyNhaSach
 {
     public partial class FLogin : Form
     {
-        string username;
-        string password;
         public FLogin()
         {
             InitializeComponent();
-        }
-        bool isTrueAccount(string usn, string psw)
-        {
-            if (usn == username && psw == password)
-                return true;
-            return false;
         }
 
         private void ptClose_Click(object sender, EventArgs e)
@@ -47,8 +31,10 @@ namespace QuanLyNhaSach
             if (AccountDAO.Instance.isAccount(usn,psw))
             {
                 Account account = AccountDAO.Instance.LayTaiKhoanTuTenDN(usn);
-                MainForm mainForm = new MainForm(account);
-                mainForm.ShowDialog();
+                //MainForm mainForm = new MainForm(account);
+                //mainForm.ShowDialog();
+                FChinh fChinh = new FChinh(account);
+                fChinh.ShowDialog();
             }
             else
             {
