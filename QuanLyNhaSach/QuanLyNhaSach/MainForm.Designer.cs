@@ -87,14 +87,14 @@
             this.ckbTheLoai = new System.Windows.Forms.CheckBox();
             this.ckbTenSach = new System.Windows.Forms.CheckBox();
             this.tltThongTin = new System.Windows.Forms.ToolTip(this.components);
+            this.ptbThongTin = new System.Windows.Forms.PictureBox();
             this.tltDangXuat = new System.Windows.Forms.ToolTip(this.components);
+            this.ptbDangXuat = new System.Windows.Forms.PictureBox();
             this.tltThoat = new System.Windows.Forms.ToolTip(this.components);
+            this.ptbThoat = new System.Windows.Forms.PictureBox();
             this.tltAdmin = new System.Windows.Forms.ToolTip(this.components);
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.ptbDangXuat = new System.Windows.Forms.PictureBox();
-            this.ptbThongTin = new System.Windows.Forms.PictureBox();
             this.pbAdmin = new System.Windows.Forms.PictureBox();
-            this.ptbThoat = new System.Windows.Forms.PictureBox();
             this.lbHoTro = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2.SuspendLayout();
@@ -106,11 +106,11 @@
             this.panel3.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbDangXuat)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbThongTin)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbAdmin)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbDangXuat)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbThoat)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbAdmin)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -203,7 +203,7 @@
             this.btnThanhToan.Location = new System.Drawing.Point(359, 0);
             this.btnThanhToan.Name = "btnThanhToan";
             this.btnThanhToan.Size = new System.Drawing.Size(150, 92);
-            this.btnThanhToan.TabIndex = 12;
+            this.btnThanhToan.TabIndex = 14;
             this.btnThanhToan.Text = "Thanh Toán";
             this.btnThanhToan.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnThanhToan.UseVisualStyleBackColor = false;
@@ -426,7 +426,7 @@
             this.btnXoa.Location = new System.Drawing.Point(571, 151);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(158, 59);
-            this.btnXoa.TabIndex = 14;
+            this.btnXoa.TabIndex = 13;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnXoa.UseVisualStyleBackColor = false;
@@ -444,7 +444,7 @@
             this.btnSua.Location = new System.Drawing.Point(571, 81);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(158, 59);
-            this.btnSua.TabIndex = 13;
+            this.btnSua.TabIndex = 12;
             this.btnSua.Text = "Sửa";
             this.btnSua.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSua.UseVisualStyleBackColor = false;
@@ -462,7 +462,7 @@
             this.btnThem.Location = new System.Drawing.Point(571, 11);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(158, 59);
-            this.btnThem.TabIndex = 12;
+            this.btnThem.TabIndex = 11;
             this.btnThem.Text = "Thêm";
             this.btnThem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnThem.UseVisualStyleBackColor = false;
@@ -475,7 +475,7 @@
             this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(0);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(263, 34);
-            this.dateTimePicker1.TabIndex = 11;
+            this.dateTimePicker1.TabIndex = 10;
             // 
             // panel7
             // 
@@ -529,7 +529,7 @@
             this.txbGiaTien.Name = "txbGiaTien";
             this.txbGiaTien.ReadOnly = true;
             this.txbGiaTien.Size = new System.Drawing.Size(119, 27);
-            this.txbGiaTien.TabIndex = 8;
+            this.txbGiaTien.TabIndex = 9;
             this.txbGiaTien.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txbID
@@ -541,7 +541,7 @@
             this.txbID.Name = "txbID";
             this.txbID.ReadOnly = true;
             this.txbID.Size = new System.Drawing.Size(87, 27);
-            this.txbID.TabIndex = 8;
+            this.txbID.TabIndex = 7;
             // 
             // txbTenSach
             // 
@@ -552,7 +552,7 @@
             this.txbTenSach.Name = "txbTenSach";
             this.txbTenSach.ReadOnly = true;
             this.txbTenSach.Size = new System.Drawing.Size(414, 27);
-            this.txbTenSach.TabIndex = 8;
+            this.txbTenSach.TabIndex = 6;
             // 
             // label3
             // 
@@ -663,7 +663,8 @@
             this.txbTacGia.Location = new System.Drawing.Point(138, 127);
             this.txbTacGia.Name = "txbTacGia";
             this.txbTacGia.Size = new System.Drawing.Size(285, 27);
-            this.txbTacGia.TabIndex = 11;
+            this.txbTacGia.TabIndex = 3;
+            this.txbTacGia.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txbTacGia_KeyDown);
             // 
             // txbTheLoai
             // 
@@ -673,7 +674,8 @@
             this.txbTheLoai.Location = new System.Drawing.Point(137, 77);
             this.txbTheLoai.Name = "txbTheLoai";
             this.txbTheLoai.Size = new System.Drawing.Size(285, 27);
-            this.txbTheLoai.TabIndex = 11;
+            this.txbTheLoai.TabIndex = 2;
+            this.txbTheLoai.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txbTheLoai_KeyDown);
             // 
             // txbTenSachT
             // 
@@ -683,7 +685,8 @@
             this.txbTenSachT.Location = new System.Drawing.Point(138, 26);
             this.txbTenSachT.Name = "txbTenSachT";
             this.txbTenSachT.Size = new System.Drawing.Size(285, 27);
-            this.txbTenSachT.TabIndex = 11;
+            this.txbTenSachT.TabIndex = 1;
+            this.txbTenSachT.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txbTenSachT_KeyDown);
             // 
             // btnLamMoi
             // 
@@ -696,7 +699,7 @@
             this.btnLamMoi.Location = new System.Drawing.Point(249, 165);
             this.btnLamMoi.Name = "btnLamMoi";
             this.btnLamMoi.Size = new System.Drawing.Size(140, 48);
-            this.btnLamMoi.TabIndex = 2;
+            this.btnLamMoi.TabIndex = 5;
             this.btnLamMoi.Text = "Làm Mới";
             this.btnLamMoi.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnLamMoi.UseVisualStyleBackColor = false;
@@ -713,7 +716,7 @@
             this.btnTimKiem.Location = new System.Drawing.Point(58, 165);
             this.btnTimKiem.Name = "btnTimKiem";
             this.btnTimKiem.Size = new System.Drawing.Size(140, 48);
-            this.btnTimKiem.TabIndex = 2;
+            this.btnTimKiem.TabIndex = 4;
             this.btnTimKiem.Text = "Tìm Kiếm";
             this.btnTimKiem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnTimKiem.UseVisualStyleBackColor = false;
@@ -755,15 +758,18 @@
             this.ckbTenSach.Text = "Tên sách:";
             this.ckbTenSach.UseVisualStyleBackColor = true;
             // 
-            // pictureBox1
+            // ptbThongTin
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(50, 50);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
+            this.ptbThongTin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
+            this.ptbThongTin.Image = ((System.Drawing.Image)(resources.GetObject("ptbThongTin.Image")));
+            this.ptbThongTin.Location = new System.Drawing.Point(1030, 0);
+            this.ptbThongTin.Name = "ptbThongTin";
+            this.ptbThongTin.Size = new System.Drawing.Size(50, 50);
+            this.ptbThongTin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.ptbThongTin.TabIndex = 1;
+            this.ptbThongTin.TabStop = false;
+            this.tltThongTin.SetToolTip(this.ptbThongTin, "Thông tin tài khoản");
+            this.ptbThongTin.Click += new System.EventHandler(this.ptbThongTin_Click);
             // 
             // ptbDangXuat
             // 
@@ -778,31 +784,6 @@
             this.tltDangXuat.SetToolTip(this.ptbDangXuat, "Đăng xuất tài khoản");
             this.ptbDangXuat.Click += new System.EventHandler(this.ptbDangXuat_Click);
             // 
-            // ptbThongTin
-            // 
-            this.ptbThongTin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
-            this.ptbThongTin.Image = ((System.Drawing.Image)(resources.GetObject("ptbThongTin.Image")));
-            this.ptbThongTin.Location = new System.Drawing.Point(1030, 0);
-            this.ptbThongTin.Name = "ptbThongTin";
-            this.ptbThongTin.Size = new System.Drawing.Size(50, 50);
-            this.ptbThongTin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.ptbThongTin.TabIndex = 1;
-            this.ptbThongTin.TabStop = false;
-            this.tltThongTin.SetToolTip(this.ptbThongTin, "Thông tin tài khoản");
-            this.ptbThongTin.Click += new System.EventHandler(this.ptbThongTin_Click);
-            // 
-            // pbAdmin
-            // 
-            this.pbAdmin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
-            this.pbAdmin.Image = ((System.Drawing.Image)(resources.GetObject("pbAdmin.Image")));
-            this.pbAdmin.Location = new System.Drawing.Point(969, 0);
-            this.pbAdmin.Name = "pbAdmin";
-            this.pbAdmin.Size = new System.Drawing.Size(50, 50);
-            this.pbAdmin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbAdmin.TabIndex = 1;
-            this.pbAdmin.TabStop = false;
-            this.pbAdmin.Click += new System.EventHandler(this.ptbAdmin_Click);
-            // 
             // ptbThoat
             // 
             this.ptbThoat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
@@ -816,16 +797,38 @@
             this.tltThoat.SetToolTip(this.ptbThoat, "Thoát");
             this.ptbThoat.Click += new System.EventHandler(this.ptClose_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pbAdmin
+            // 
+            this.pbAdmin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
+            this.pbAdmin.Image = ((System.Drawing.Image)(resources.GetObject("pbAdmin.Image")));
+            this.pbAdmin.Location = new System.Drawing.Point(969, 0);
+            this.pbAdmin.Name = "pbAdmin";
+            this.pbAdmin.Size = new System.Drawing.Size(50, 50);
+            this.pbAdmin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbAdmin.TabIndex = 1;
+            this.pbAdmin.TabStop = false;
+            this.pbAdmin.Click += new System.EventHandler(this.ptbAdmin_Click);
+            // 
             // lbHoTro
             // 
             this.lbHoTro.AutoSize = true;
-            this.lbHoTro.Font = new System.Drawing.Font("Segoe UI Black", 10.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbHoTro.Font = new System.Drawing.Font("Segoe UI", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbHoTro.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lbHoTro.Location = new System.Drawing.Point(56, 15);
+            this.lbHoTro.Location = new System.Drawing.Point(56, 11);
             this.lbHoTro.Name = "lbHoTro";
-            this.lbHoTro.Size = new System.Drawing.Size(334, 25);
+            this.lbHoTro.Size = new System.Drawing.Size(418, 32);
             this.lbHoTro.TabIndex = 1;
-            this.lbHoTro.Text = "BỒ CÂU: \"Tôi ở đây để hổ trợ bạn\"";
+            this.lbHoTro.Text = "BỒ CÂU: \"Xin chào Trần Hữu Cảnh\"";
             // 
             // panel1
             // 
@@ -871,11 +874,11 @@
             this.panel5.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbDangXuat)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbThongTin)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbAdmin)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbDangXuat)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbThoat)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbAdmin)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

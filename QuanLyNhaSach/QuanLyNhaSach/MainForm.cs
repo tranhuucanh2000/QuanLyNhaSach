@@ -29,6 +29,7 @@ namespace QuanLyNhaSach
         {
             InitializeComponent();
             LoginAccount = acc;
+            DuaThongDiep(string.Concat("Xin chào ", loginAccount.Ten), 3);
             KetNoiKhoSach();
         }
         #region Methods
@@ -36,20 +37,35 @@ namespace QuanLyNhaSach
         {
             DataTable data = SachDAO.Instance.LayDSSach();
             dtgSach.DataSource = data;
+            DieuChinhHienThiSach();
         }
         void HienThiAdmin(int loai)
         {
             if (loai == 1) pbAdmin.Visible = true;
             else pbAdmin.Visible = false;
         }
+        void DuaVeTrangThaiTimKiem()
+        {
+            ckbTacGia.Checked = false;
+            ckbTenSach.Checked = false;
+            ckbTheLoai.Checked = false;
+            txbTenSachT.Text = "";
+            txbTheLoai.Text = "";
+            txbTacGia.Text = "";
+            txbTenSachT.Focus();
+        }
         //Để xuất thông báo
         void DuaThongDiep(string str, int mucDo)
         {
             string ThongDiep = String.Concat("BỒ CÂU: \"", str, "\"");
-            if (mucDo == 1) lbHoTro.ForeColor = Color.Green;
-            if (mucDo == 2) lbHoTro.ForeColor = Color.Violet;
-            if (mucDo == 3) lbHoTro.ForeColor = Color.Red;
+            if (mucDo == 1) lbHoTro.ForeColor = Color.FromArgb(102, 255, 102);
+            if (mucDo == 2) lbHoTro.ForeColor = Color.FromArgb(255, 255, 77);
+            if (mucDo == 3) lbHoTro.ForeColor = Color.Black;
             lbHoTro.Text = ThongDiep;
+        }
+        void DieuChinhHienThiSach()
+        {
+            
         }
         void LamMoiTongTien()
         {
@@ -127,10 +143,10 @@ namespace QuanLyNhaSach
                 dtgSach.DataSource = SachDAO.Instance.TimSachQuaTenVaTheLoaiVaTacGia(tenSach, theLoai, tacGia);
             }
         }
-
         private void btnLamMoi_Click(object sender, EventArgs e)
         {
             DuaThongDiep("Tôi đã vừa làm mới lại danh sách giúp bạn!", 1);
+            DuaVeTrangThaiTimKiem();
             KetNoiKhoSach();
         }
 
@@ -198,12 +214,18 @@ namespace QuanLyNhaSach
         {
             int soLuong, giaTien;
             int tien = 0;
-            int.TryParse(txbSoLuong.Text.ToString(), out soLuong);
-            int.TryParse(txbGiaTien.Text.ToString(), out giaTien);
-            tien = soLuong * giaTien;
-            dtgThanhToan.Rows[dtgThanhToan.CurrentCell.RowIndex].SetValues(new object[] { txbID.Text, txbTenSach.Text, txbSoLuong.Text, txbGiaTien.Text, tien });
-            DuaThongDiep("Bạn đã sửa thành công!", 1);
-            LamMoiTongTien();
+            if(int.TryParse(txbSoLuong.Text.ToString(), out soLuong) == true) 
+            {
+                int.TryParse(txbGiaTien.Text.ToString(), out giaTien);
+                tien = soLuong * giaTien;
+                dtgThanhToan.Rows[dtgThanhToan.CurrentCell.RowIndex].SetValues(new object[] { txbID.Text, txbTenSach.Text, txbSoLuong.Text, txbGiaTien.Text, tien });
+                DuaThongDiep("Bạn đã sửa thành công!", 1);
+                LamMoiTongTien();
+            }
+            else
+            {
+                DuaThongDiep("Bạn vui lòng nhập lại số lượng!", 2);
+            }
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
@@ -228,7 +250,13 @@ namespace QuanLyNhaSach
         private void ptbThongTin_Click(object sender, EventArgs e)
         {
             FInfomationAccount fInfomation = new FInfomationAccount(loginAccount);
+            fInfomation.CapNhatTaiKhoanEvent += FInfomation_CapNhatTaiKhoanEvent;
             fInfomation.ShowDialog();
+        }
+
+        private void FInfomation_CapNhatTaiKhoanEvent(object sender, TaiKhoanSuKien e)
+        {
+            DuaThongDiep(string.Concat("Xin chào ", e.Acc.Ten), 3);
         }
 
         private void ptbAdmin_Click(object sender, EventArgs e)
@@ -240,5 +268,32 @@ namespace QuanLyNhaSach
 
 
         #endregion
+
+        private void txbTenSachT_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                ckbTenSach.Checked = true;
+                btnTimKiem_Click(sender, e);
+            }
+        }
+
+        private void txbTheLoai_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                ckbTheLoai.Checked = true;
+                btnTimKiem_Click(sender, e);
+            }
+        }
+
+        private void txbTacGia_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                ckbTacGia.Checked = true;
+                btnTimKiem_Click(sender, e);
+            }
+        }
     }
 }

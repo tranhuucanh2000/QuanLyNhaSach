@@ -37,17 +37,17 @@ namespace QuanLyNhaSach
             this.txbTenHT = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txbMatKhau = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txbMatKhauMoi = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txbNhapLaiMKM = new System.Windows.Forms.TextBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnLuu = new System.Windows.Forms.Button();
             this.btnThoat = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -100,7 +100,6 @@ namespace QuanLyNhaSach
             this.txbTenHT.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbTenHT.Location = new System.Drawing.Point(199, 196);
             this.txbTenHT.Name = "txbTenHT";
-            this.txbTenHT.ReadOnly = true;
             this.txbTenHT.Size = new System.Drawing.Size(350, 27);
             this.txbTenHT.TabIndex = 2;
             // 
@@ -123,15 +122,16 @@ namespace QuanLyNhaSach
             this.label2.Text = "Mật khẩu:";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // textBox2
+            // txbMatKhau
             // 
-            this.textBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(206)))), ((int)(((byte)(201)))));
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(199, 253);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(350, 27);
-            this.textBox2.TabIndex = 3;
+            this.txbMatKhau.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(206)))), ((int)(((byte)(201)))));
+            this.txbMatKhau.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txbMatKhau.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbMatKhau.Location = new System.Drawing.Point(199, 253);
+            this.txbMatKhau.Name = "txbMatKhau";
+            this.txbMatKhau.PasswordChar = '*';
+            this.txbMatKhau.Size = new System.Drawing.Size(350, 27);
+            this.txbMatKhau.TabIndex = 3;
             // 
             // panel2
             // 
@@ -152,15 +152,15 @@ namespace QuanLyNhaSach
             this.label3.Text = "Mật khẩu mới:";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // textBox3
+            // txbMatKhauMoi
             // 
-            this.textBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(206)))), ((int)(((byte)(201)))));
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox3.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(199, 314);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(350, 27);
-            this.textBox3.TabIndex = 4;
+            this.txbMatKhauMoi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(206)))), ((int)(((byte)(201)))));
+            this.txbMatKhauMoi.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txbMatKhauMoi.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbMatKhauMoi.Location = new System.Drawing.Point(199, 314);
+            this.txbMatKhauMoi.Name = "txbMatKhauMoi";
+            this.txbMatKhauMoi.Size = new System.Drawing.Size(350, 27);
+            this.txbMatKhauMoi.TabIndex = 4;
             // 
             // panel3
             // 
@@ -181,15 +181,15 @@ namespace QuanLyNhaSach
             this.label4.Text = "Nhập lại:";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // textBox4
+            // txbNhapLaiMKM
             // 
-            this.textBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(206)))), ((int)(((byte)(201)))));
-            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox4.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(199, 371);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(350, 27);
-            this.textBox4.TabIndex = 5;
+            this.txbNhapLaiMKM.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(206)))), ((int)(((byte)(201)))));
+            this.txbNhapLaiMKM.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txbNhapLaiMKM.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbNhapLaiMKM.Location = new System.Drawing.Point(199, 371);
+            this.txbNhapLaiMKM.Name = "txbNhapLaiMKM";
+            this.txbNhapLaiMKM.Size = new System.Drawing.Size(350, 27);
+            this.txbNhapLaiMKM.TabIndex = 5;
             // 
             // panel4
             // 
@@ -220,22 +220,23 @@ namespace QuanLyNhaSach
             this.label5.TabIndex = 15;
             this.label5.Text = "Thông Tin Cá Nhân";
             // 
-            // button1
+            // btnLuu
             // 
-            this.button1.BackColor = System.Drawing.Color.Khaki;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(262, 422);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(135, 55);
-            this.button1.TabIndex = 16;
-            this.button1.Text = "Lưu";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnLuu.BackColor = System.Drawing.Color.Khaki;
+            this.btnLuu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnLuu.FlatAppearance.BorderSize = 0;
+            this.btnLuu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLuu.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLuu.Image = ((System.Drawing.Image)(resources.GetObject("btnLuu.Image")));
+            this.btnLuu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLuu.Location = new System.Drawing.Point(262, 422);
+            this.btnLuu.Name = "btnLuu";
+            this.btnLuu.Size = new System.Drawing.Size(135, 55);
+            this.btnLuu.TabIndex = 16;
+            this.btnLuu.Text = "Lưu";
+            this.btnLuu.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnLuu.UseVisualStyleBackColor = false;
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // btnThoat
             // 
@@ -262,7 +263,7 @@ namespace QuanLyNhaSach
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(206)))), ((int)(((byte)(201)))));
             this.ClientSize = new System.Drawing.Size(600, 500);
             this.Controls.Add(this.btnThoat);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnLuu);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel4);
@@ -270,9 +271,9 @@ namespace QuanLyNhaSach
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel6);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txbNhapLaiMKM);
+            this.Controls.Add(this.txbMatKhauMoi);
+            this.Controls.Add(this.txbMatKhau);
             this.Controls.Add(this.txbTenHT);
             this.Controls.Add(this.txbTenDN);
             this.Controls.Add(this.label4);
@@ -300,17 +301,17 @@ namespace QuanLyNhaSach
         private System.Windows.Forms.TextBox txbTenHT;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txbMatKhau;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txbMatKhauMoi;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txbNhapLaiMKM;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnLuu;
         private System.Windows.Forms.Button btnThoat;
     }
 }
