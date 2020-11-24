@@ -70,17 +70,17 @@ namespace QuanLyNhaSach
             CapNhatTaiKhoan();
         }
     }
-    public class TaiKhoanSuKien:EventArgs
-    {
-        private Account acc;
+    //public class TaiKhoanSuKien:EventArgs
+    //{
+    //    private Account acc;
 
-        public Account Acc 
-        {   get => acc; 
-            set => acc = value; 
-        }
-        public TaiKhoanSuKien(Account account)
-        {
-            this.Acc = account;
-        }
-    }
+    //    public Account Acc 
+    //    {   get => acc; 
+    //        set => acc = value; 
+    //    }
+    //    public TaiKhoanSuKien(Account account)
+    //    {
+    //        this.Acc = account;
+    //    }
+    //}
 }

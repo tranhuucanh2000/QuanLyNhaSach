@@ -75,7 +75,6 @@ C:\Users\tranh\Desktop\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanL
 C:\Users\tranh\Desktop\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.FForgotPassword.resources
 C:\Users\tranh\Desktop\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.FInfomationAccount.resources
 C:\Users\tranh\Desktop\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.FLogin.resources
-C:\Users\tranh\Desktop\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.FTesst.resources
 C:\Users\tranh\Desktop\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.MainForm.resources
 C:\Users\tranh\Desktop\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.Properties.Resources.resources
 C:\Users\tranh\Desktop\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.csproj.GenerateResource.cache
@@ -85,3 +84,9 @@ C:\Users\tranh\Desktop\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanL
 C:\Users\tranh\Desktop\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.pdb
 C:\Users\tranh\Desktop\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.UCBanSach.resources
 C:\Users\tranh\Desktop\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.FChinh.resources
+C:\Users\tranh\Desktop\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.UCCaiDat.resources
+C:\Users\tranh\Desktop\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.UCKeSach.resources
+C:\Users\tranh\Desktop\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.UCNhapSach.resources
+C:\Users\tranh\Desktop\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.UCTaiKhoan.resources
+C:\Users\tranh\Desktop\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.UCThemDuLieu.resources
+C:\Users\tranh\Desktop\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.UCThongKe.resources

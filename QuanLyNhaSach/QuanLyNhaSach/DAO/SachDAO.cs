@@ -61,5 +61,10 @@ namespace QuanLyNhaSach.DAO
         {
             DataProvider.Instance.ExecuteQuery("EXEC USP_ThanhToanSach @maSach , @soLuong", new object[] { maSach, int.Parse(soLuong) });
         }
+        public DataTable LayDSSachTK()
+        {
+            DataTable data = DataProvider.Instance.ExecuteQuery("EXEC USP_HIenThiSachTimKiem");
+            return data;
+        }
     }
 }

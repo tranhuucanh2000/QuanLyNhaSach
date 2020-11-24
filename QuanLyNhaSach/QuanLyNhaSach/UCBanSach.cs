@@ -37,15 +37,10 @@ namespace QuanLyNhaSach
 
         #region Method
 
-        void HienTen()
-        {
-            DuaThongDiep(string.Concat("Xin chào ",LoginAccount.Ten), 3);
-        }
         void KetNoiKhoSach()
         {
             DataTable data = SachDAO.Instance.LayDSSach();
             dtgSach.DataSource = data;
-            DieuChinhHienThiSach();
         }
         void DuaVeTrangThaiTimKiem()
         {
@@ -63,12 +58,12 @@ namespace QuanLyNhaSach
             string ThongDiep = String.Concat("BỒ CÂU: \"", str, "\"");
             if (mucDo == 1) lbHoTro.ForeColor = Color.FromArgb(102, 255, 102);
             if (mucDo == 2) lbHoTro.ForeColor = Color.FromArgb(255, 255, 102);
-            if (mucDo == 3) lbHoTro.ForeColor = Color.Black;
+            if (mucDo == 3) lbHoTro.ForeColor = Color.White;
             lbHoTro.Text = ThongDiep;
         }
-        void DieuChinhHienThiSach()
+        void HienTen()
         {
-
+            DuaThongDiep(string.Concat("Xin chào ", LoginAccount.Ten), 3);
         }
         void LamMoiTongTien()
         {
@@ -277,6 +272,33 @@ namespace QuanLyNhaSach
         private void pbDangXuat_Click(object sender, EventArgs e)
         {
             Application.Restart();
+        }
+
+        private void txbTenSachT_KeyDown_1(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode==Keys.Enter)
+            {
+                ckbTenSach.Checked = true;
+                btnTimKiem_Click(sender, e);
+            }    
+        }
+
+        private void txbTheLoai_KeyDown_1(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                ckbTheLoai.Checked = true;
+                btnTimKiem_Click(sender, e);
+            }
+        }
+
+        private void txbTacGia_KeyDown_1(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                ckbTheLoai.Checked = true;
+                btnTimKiem_Click(sender, e);
+            }
         }
     }
 }

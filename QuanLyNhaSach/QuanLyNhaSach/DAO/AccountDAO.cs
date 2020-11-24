@@ -48,5 +48,10 @@ namespace QuanLyNhaSach.DAO
             int data = DataProvider.Instance.ExecuteNonQuery("EXEC USP_CapNhatTaiKhoan @tenDN , @tenHT , @matKhau , @matKhauMoi", new object[] { usn, name, psw, pswn });
             return data > 0;
         }
+        public DataTable CaiDatTaiKhoan()
+        {
+            DataTable data = DataProvider.Instance.ExecuteQuery("EXEC USP_CaiDatTaiKhoan");
+            return data;
+        }
     }
 }

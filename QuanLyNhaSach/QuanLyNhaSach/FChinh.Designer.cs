@@ -30,22 +30,20 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FChinh));
             this.pnThanh = new System.Windows.Forms.Panel();
+            this.pnTrang = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnTaiKhoan = new System.Windows.Forms.Button();
+            this.btnThoat = new System.Windows.Forms.Button();
             this.btnCaiDat = new System.Windows.Forms.Button();
             this.btnThemDL = new System.Windows.Forms.Button();
             this.btnKeSach = new System.Windows.Forms.Button();
             this.btnNhapSach = new System.Windows.Forms.Button();
             this.btnThongKe = new System.Windows.Forms.Button();
             this.btnBanSach = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.pnChinh = new System.Windows.Forms.Panel();
-            this.btnThoat = new System.Windows.Forms.Button();
-            this.pnTrang = new System.Windows.Forms.Panel();
             this.pnThanh.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnThanh
@@ -67,6 +65,14 @@
             this.pnThanh.Name = "pnThanh";
             this.pnThanh.Size = new System.Drawing.Size(200, 720);
             this.pnThanh.TabIndex = 2;
+            // 
+            // pnTrang
+            // 
+            this.pnTrang.BackColor = System.Drawing.Color.White;
+            this.pnTrang.Location = new System.Drawing.Point(0, 173);
+            this.pnTrang.Name = "pnTrang";
+            this.pnTrang.Size = new System.Drawing.Size(5, 60);
+            this.pnTrang.TabIndex = 0;
             // 
             // label1
             // 
@@ -106,6 +112,24 @@
             this.btnTaiKhoan.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnTaiKhoan.UseVisualStyleBackColor = false;
             this.btnTaiKhoan.Click += new System.EventHandler(this.btnTaiKhoan_Click);
+            // 
+            // btnThoat
+            // 
+            this.btnThoat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            this.btnThoat.FlatAppearance.BorderSize = 0;
+            this.btnThoat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnThoat.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThoat.ForeColor = System.Drawing.Color.White;
+            this.btnThoat.Image = ((System.Drawing.Image)(resources.GetObject("btnThoat.Image")));
+            this.btnThoat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnThoat.Location = new System.Drawing.Point(5, 630);
+            this.btnThoat.Name = "btnThoat";
+            this.btnThoat.Size = new System.Drawing.Size(195, 60);
+            this.btnThoat.TabIndex = 0;
+            this.btnThoat.Text = "Thoát";
+            this.btnThoat.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnThoat.UseVisualStyleBackColor = false;
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
             // btnCaiDat
             // 
@@ -215,64 +239,29 @@
             this.btnBanSach.UseVisualStyleBackColor = false;
             this.btnBanSach.Click += new System.EventHandler(this.btnBanSach_Click);
             // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.pnChinh);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(200, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1000, 720);
-            this.panel1.TabIndex = 3;
-            // 
             // pnChinh
             // 
             this.pnChinh.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnChinh.Location = new System.Drawing.Point(0, 0);
+            this.pnChinh.Location = new System.Drawing.Point(200, 0);
             this.pnChinh.Name = "pnChinh";
             this.pnChinh.Size = new System.Drawing.Size(1000, 720);
-            this.pnChinh.TabIndex = 1;
-            // 
-            // btnThoat
-            // 
-            this.btnThoat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
-            this.btnThoat.FlatAppearance.BorderSize = 0;
-            this.btnThoat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnThoat.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThoat.ForeColor = System.Drawing.Color.White;
-            this.btnThoat.Image = ((System.Drawing.Image)(resources.GetObject("btnThoat.Image")));
-            this.btnThoat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThoat.Location = new System.Drawing.Point(5, 630);
-            this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(195, 60);
-            this.btnThoat.TabIndex = 0;
-            this.btnThoat.Text = "Thoát";
-            this.btnThoat.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnThoat.UseVisualStyleBackColor = false;
-            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
-            // 
-            // pnTrang
-            // 
-            this.pnTrang.BackColor = System.Drawing.Color.White;
-            this.pnTrang.Location = new System.Drawing.Point(0, 173);
-            this.pnTrang.Name = "pnTrang";
-            this.pnTrang.Size = new System.Drawing.Size(5, 60);
-            this.pnTrang.TabIndex = 0;
+            this.pnChinh.TabIndex = 3;
             // 
             // FChinh
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1200, 720);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pnChinh);
             this.Controls.Add(this.pnThanh);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FChinh";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FAdmin";
+            this.Text = "Màn Hình Chính";
             this.pnThanh.ResumeLayout(false);
             this.pnThanh.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -287,10 +276,9 @@
         private System.Windows.Forms.Button btnThongKe;
         private System.Windows.Forms.Button btnBanSach;
         private System.Windows.Forms.Button btnTaiKhoan;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel pnChinh;
         private System.Windows.Forms.Button btnCaiDat;
         private System.Windows.Forms.Panel pnTrang;
         private System.Windows.Forms.Button btnThoat;
+        private System.Windows.Forms.Panel pnChinh;
     }
 }
