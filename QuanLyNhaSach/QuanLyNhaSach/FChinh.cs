@@ -27,8 +27,17 @@ namespace QuanLyNhaSach
         {
             InitializeComponent();
             loginAccount = acc;
+            QuyenTruyCap();
             TaiUCTrang();
             TrangThaiBanDau();
+        }
+
+        void QuyenTruyCap()
+        {
+            if (loginAccount.ThongKe == 0) btnKeSach.Enabled = false;
+            if (loginAccount.NhapSach == 0) btnNhapSach.Enabled = false;
+            if (loginAccount.ThemDuLieu == 0) btnThemDL.Enabled = false;
+            if (loginAccount.KeSach == 0) btnThongKe.Enabled = false;
         }
         void TaiUCTrang()
         {

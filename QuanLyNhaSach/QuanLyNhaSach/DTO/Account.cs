@@ -9,6 +9,10 @@ namespace QuanLyNhaSach.DTO
 {
     public class Account
     {
+        private int nhapSach;
+        private int thongKe;
+        private int keSach;
+        private int themDuLieu;
         private string tenDN;
         private string ten;
         private string passWord;
@@ -17,13 +21,22 @@ namespace QuanLyNhaSach.DTO
         public string Ten { get => ten; set => ten = value; }
         public string PassWord { get => passWord; set => passWord = value; }
         public int Type { get => type; set => type = value; }
+        public int NhapSach { get => nhapSach; set => nhapSach = value; }
+        public int ThongKe { get => thongKe; set => thongKe = value; }
+        public int KeSach { get => keSach; set => keSach = value; }
+        public int ThemDuLieu { get => themDuLieu; set => themDuLieu = value; }
+
         public Account () { }
-        public Account(string tendn,string ten, int type , string pass = null)
+        public Account(string tendn,string ten, int type , int thongke, int nhapsach,int kesach,int themdulieu, string pass = null)
         {
             this.TenDN = tendn;
             this.Ten = ten;
             this.PassWord = pass;
             this.Type = type;
+            this.KeSach = kesach;
+            this.NhapSach = nhapsach;
+            this.ThemDuLieu = themdulieu;
+            this.ThongKe = thongke;
         }
         public Account(DataRow row)
         {
@@ -31,6 +44,10 @@ namespace QuanLyNhaSach.DTO
             this.Ten = row["HoTen"].ToString();
             this.PassWord = row["MatKhau"].ToString();
             this.Type = int.Parse(row["Loai"].ToString());
+            this.NhapSach = int.Parse(row["NhapSach"].ToString());
+            this.ThemDuLieu = int.Parse(row["ThongKe"].ToString());
+            this.KeSach = int.Parse(row["KeSach"].ToString());
+            this.ThongKe = int.Parse(row["ThongKe"].ToString());
         }
     }
 }

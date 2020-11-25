@@ -37,9 +37,9 @@
             this.btnThoat = new System.Windows.Forms.Button();
             this.btnCaiDat = new System.Windows.Forms.Button();
             this.btnThemDL = new System.Windows.Forms.Button();
-            this.btnKeSach = new System.Windows.Forms.Button();
-            this.btnNhapSach = new System.Windows.Forms.Button();
             this.btnThongKe = new System.Windows.Forms.Button();
+            this.btnNhapSach = new System.Windows.Forms.Button();
+            this.btnKeSach = new System.Windows.Forms.Button();
             this.btnBanSach = new System.Windows.Forms.Button();
             this.pnChinh = new System.Windows.Forms.Panel();
             this.pnThanh.SuspendLayout();
@@ -56,9 +56,9 @@
             this.pnThanh.Controls.Add(this.btnThoat);
             this.pnThanh.Controls.Add(this.btnCaiDat);
             this.pnThanh.Controls.Add(this.btnThemDL);
-            this.pnThanh.Controls.Add(this.btnKeSach);
-            this.pnThanh.Controls.Add(this.btnNhapSach);
             this.pnThanh.Controls.Add(this.btnThongKe);
+            this.pnThanh.Controls.Add(this.btnNhapSach);
+            this.pnThanh.Controls.Add(this.btnKeSach);
             this.pnThanh.Controls.Add(this.btnBanSach);
             this.pnThanh.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnThanh.Location = new System.Drawing.Point(0, 0);
@@ -167,23 +167,23 @@
             this.btnThemDL.UseVisualStyleBackColor = false;
             this.btnThemDL.Click += new System.EventHandler(this.btnThemDL_Click);
             // 
-            // btnKeSach
+            // btnThongKe
             // 
-            this.btnKeSach.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
-            this.btnKeSach.FlatAppearance.BorderSize = 0;
-            this.btnKeSach.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnKeSach.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnKeSach.ForeColor = System.Drawing.Color.White;
-            this.btnKeSach.Image = ((System.Drawing.Image)(resources.GetObject("btnKeSach.Image")));
-            this.btnKeSach.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnKeSach.Location = new System.Drawing.Point(5, 433);
-            this.btnKeSach.Name = "btnKeSach";
-            this.btnKeSach.Size = new System.Drawing.Size(195, 60);
-            this.btnKeSach.TabIndex = 0;
-            this.btnKeSach.Text = "Kệ Sách";
-            this.btnKeSach.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnKeSach.UseVisualStyleBackColor = false;
-            this.btnKeSach.Click += new System.EventHandler(this.btnKeSach_Click);
+            this.btnThongKe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            this.btnThongKe.FlatAppearance.BorderSize = 0;
+            this.btnThongKe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnThongKe.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThongKe.ForeColor = System.Drawing.Color.White;
+            this.btnThongKe.Image = ((System.Drawing.Image)(resources.GetObject("btnThongKe.Image")));
+            this.btnThongKe.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnThongKe.Location = new System.Drawing.Point(5, 433);
+            this.btnThongKe.Name = "btnThongKe";
+            this.btnThongKe.Size = new System.Drawing.Size(195, 60);
+            this.btnThongKe.TabIndex = 0;
+            this.btnThongKe.Text = "Thống Kê";
+            this.btnThongKe.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnThongKe.UseVisualStyleBackColor = false;
+            this.btnThongKe.Click += new System.EventHandler(this.btnThongKe_Click);
             // 
             // btnNhapSach
             // 
@@ -203,23 +203,23 @@
             this.btnNhapSach.UseVisualStyleBackColor = false;
             this.btnNhapSach.Click += new System.EventHandler(this.btnNhapSach_Click);
             // 
-            // btnThongKe
+            // btnKeSach
             // 
-            this.btnThongKe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
-            this.btnThongKe.FlatAppearance.BorderSize = 0;
-            this.btnThongKe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnThongKe.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThongKe.ForeColor = System.Drawing.Color.White;
-            this.btnThongKe.Image = ((System.Drawing.Image)(resources.GetObject("btnThongKe.Image")));
-            this.btnThongKe.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThongKe.Location = new System.Drawing.Point(5, 303);
-            this.btnThongKe.Name = "btnThongKe";
-            this.btnThongKe.Size = new System.Drawing.Size(195, 60);
-            this.btnThongKe.TabIndex = 0;
-            this.btnThongKe.Text = "Thống Kê";
-            this.btnThongKe.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnThongKe.UseVisualStyleBackColor = false;
-            this.btnThongKe.Click += new System.EventHandler(this.btnThongKe_Click);
+            this.btnKeSach.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            this.btnKeSach.FlatAppearance.BorderSize = 0;
+            this.btnKeSach.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnKeSach.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnKeSach.ForeColor = System.Drawing.Color.White;
+            this.btnKeSach.Image = ((System.Drawing.Image)(resources.GetObject("btnKeSach.Image")));
+            this.btnKeSach.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnKeSach.Location = new System.Drawing.Point(5, 303);
+            this.btnKeSach.Name = "btnKeSach";
+            this.btnKeSach.Size = new System.Drawing.Size(195, 60);
+            this.btnKeSach.TabIndex = 0;
+            this.btnKeSach.Text = "Kệ Sách";
+            this.btnKeSach.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnKeSach.UseVisualStyleBackColor = false;
+            this.btnKeSach.Click += new System.EventHandler(this.btnKeSach_Click);
             // 
             // btnBanSach
             // 
@@ -271,9 +271,9 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button btnThemDL;
-        private System.Windows.Forms.Button btnKeSach;
-        private System.Windows.Forms.Button btnNhapSach;
         private System.Windows.Forms.Button btnThongKe;
+        private System.Windows.Forms.Button btnNhapSach;
+        private System.Windows.Forms.Button btnKeSach;
         private System.Windows.Forms.Button btnBanSach;
         private System.Windows.Forms.Button btnTaiKhoan;
         private System.Windows.Forms.Button btnCaiDat;

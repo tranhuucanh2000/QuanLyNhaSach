@@ -117,7 +117,6 @@ namespace QuanLyNhaSach
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1000, 670);
             this.panel2.TabIndex = 3;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // pictureBox1
             // 
@@ -138,7 +137,7 @@ namespace QuanLyNhaSach
             this.btnLuu.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLuu.Image = ((System.Drawing.Image)(resources.GetObject("btnLuu.Image")));
             this.btnLuu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLuu.Location = new System.Drawing.Point(414, 509);
+            this.btnLuu.Location = new System.Drawing.Point(434, 507);
             this.btnLuu.Margin = new System.Windows.Forms.Padding(2);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(201, 66);
@@ -152,7 +151,7 @@ namespace QuanLyNhaSach
             // 
             this.panel6.BackColor = System.Drawing.Color.Black;
             this.panel6.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel6.Location = new System.Drawing.Point(238, 376);
+            this.panel6.Location = new System.Drawing.Point(254, 373);
             this.panel6.Margin = new System.Windows.Forms.Padding(2);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(377, 1);
@@ -163,7 +162,7 @@ namespace QuanLyNhaSach
             this.txbMatKhauMoi.BackColor = System.Drawing.Color.White;
             this.txbMatKhauMoi.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txbMatKhauMoi.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbMatKhauMoi.Location = new System.Drawing.Point(239, 343);
+            this.txbMatKhauMoi.Location = new System.Drawing.Point(255, 340);
             this.txbMatKhauMoi.Margin = new System.Windows.Forms.Padding(2);
             this.txbMatKhauMoi.Name = "txbMatKhauMoi";
             this.txbMatKhauMoi.Size = new System.Drawing.Size(377, 32);
@@ -173,7 +172,7 @@ namespace QuanLyNhaSach
             // 
             this.panel5.BackColor = System.Drawing.Color.Black;
             this.panel5.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel5.Location = new System.Drawing.Point(240, 440);
+            this.panel5.Location = new System.Drawing.Point(256, 437);
             this.panel5.Margin = new System.Windows.Forms.Padding(2);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(377, 1);
@@ -184,7 +183,7 @@ namespace QuanLyNhaSach
             this.txbNhapLaiMKM.BackColor = System.Drawing.Color.White;
             this.txbNhapLaiMKM.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txbNhapLaiMKM.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbNhapLaiMKM.Location = new System.Drawing.Point(242, 407);
+            this.txbNhapLaiMKM.Location = new System.Drawing.Point(258, 404);
             this.txbNhapLaiMKM.Margin = new System.Windows.Forms.Padding(2);
             this.txbNhapLaiMKM.Name = "txbNhapLaiMKM";
             this.txbNhapLaiMKM.Size = new System.Drawing.Size(377, 32);
@@ -194,7 +193,7 @@ namespace QuanLyNhaSach
             // 
             this.panel4.BackColor = System.Drawing.Color.Black;
             this.panel4.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel4.Location = new System.Drawing.Point(238, 304);
+            this.panel4.Location = new System.Drawing.Point(254, 301);
             this.panel4.Margin = new System.Windows.Forms.Padding(2);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(377, 1);
@@ -204,7 +203,7 @@ namespace QuanLyNhaSach
             // 
             this.panel3.BackColor = System.Drawing.Color.Black;
             this.panel3.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel3.Location = new System.Drawing.Point(236, 236);
+            this.panel3.Location = new System.Drawing.Point(252, 233);
             this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(377, 1);
@@ -215,7 +214,7 @@ namespace QuanLyNhaSach
             this.txbMatKhau.BackColor = System.Drawing.Color.White;
             this.txbMatKhau.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txbMatKhau.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbMatKhau.Location = new System.Drawing.Point(240, 270);
+            this.txbMatKhau.Location = new System.Drawing.Point(256, 267);
             this.txbMatKhau.Margin = new System.Windows.Forms.Padding(2);
             this.txbMatKhau.Name = "txbMatKhau";
             this.txbMatKhau.Size = new System.Drawing.Size(377, 32);
@@ -227,7 +226,7 @@ namespace QuanLyNhaSach
             this.txbTenHT.BackColor = System.Drawing.Color.White;
             this.txbTenHT.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txbTenHT.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbTenHT.Location = new System.Drawing.Point(238, 203);
+            this.txbTenHT.Location = new System.Drawing.Point(254, 200);
             this.txbTenHT.Margin = new System.Windows.Forms.Padding(2);
             this.txbTenHT.Name = "txbTenHT";
             this.txbTenHT.Size = new System.Drawing.Size(377, 32);
@@ -237,7 +236,7 @@ namespace QuanLyNhaSach
             // 
             this.panel7.BackColor = System.Drawing.Color.Black;
             this.panel7.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel7.Location = new System.Drawing.Point(238, 161);
+            this.panel7.Location = new System.Drawing.Point(254, 158);
             this.panel7.Margin = new System.Windows.Forms.Padding(2);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(377, 1);
@@ -248,7 +247,7 @@ namespace QuanLyNhaSach
             this.txbTenDN.BackColor = System.Drawing.Color.White;
             this.txbTenDN.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txbTenDN.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbTenDN.Location = new System.Drawing.Point(240, 128);
+            this.txbTenDN.Location = new System.Drawing.Point(256, 125);
             this.txbTenDN.Margin = new System.Windows.Forms.Padding(2);
             this.txbTenDN.Name = "txbTenDN";
             this.txbTenDN.ReadOnly = true;
@@ -270,7 +269,7 @@ namespace QuanLyNhaSach
             // label4
             // 
             this.label4.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Black;
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
             this.label4.Location = new System.Drawing.Point(2, 400);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
@@ -282,7 +281,7 @@ namespace QuanLyNhaSach
             // label3
             // 
             this.label3.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Black;
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
             this.label3.Location = new System.Drawing.Point(0, 336);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
@@ -294,7 +293,7 @@ namespace QuanLyNhaSach
             // label2
             // 
             this.label2.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Black;
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
             this.label2.Location = new System.Drawing.Point(0, 263);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
@@ -306,7 +305,7 @@ namespace QuanLyNhaSach
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
             this.label1.Location = new System.Drawing.Point(-2, 196);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
@@ -318,7 +317,7 @@ namespace QuanLyNhaSach
             // lbTenSach
             // 
             this.lbTenSach.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTenSach.ForeColor = System.Drawing.Color.Black;
+            this.lbTenSach.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
             this.lbTenSach.Location = new System.Drawing.Point(2, 121);
             this.lbTenSach.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbTenSach.Name = "lbTenSach";

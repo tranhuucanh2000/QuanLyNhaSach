@@ -28,15 +28,10 @@ namespace QuanLyNhaSach
             set => loginAccount = value; 
         }
 
-        void KetNoiTaiKhoan()
-        {
-            dtgCaiDatTaiKhoan.DataSource = AccountDAO.Instance.CaiDatTaiKhoan();
-        }    
         public UCCaiDat(Account acc)
         {
             InitializeComponent();
             loginAccount = acc;
-            KetNoiTaiKhoan();
             HienTen();
         }
         public void HienTen()
@@ -52,5 +47,9 @@ namespace QuanLyNhaSach
             lbHoTro.Text = ThongDiep;
         }
 
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

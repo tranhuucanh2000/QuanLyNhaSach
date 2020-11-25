@@ -60,10 +60,6 @@ namespace QuanLyNhaSach
             Application.Restart();
         }
 
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
         void LayThongTinTaiKhoan(Account acc)
         {
             txbTenDN.Text = acc.TenDN;

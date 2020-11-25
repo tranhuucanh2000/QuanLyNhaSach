@@ -35,6 +35,7 @@ namespace QuanLyNhaSach
                 //mainForm.ShowDialog();
                 FChinh fChinh = new FChinh(account);
                 fChinh.ShowDialog();
+                this.Hide();
             }
             else
             {
