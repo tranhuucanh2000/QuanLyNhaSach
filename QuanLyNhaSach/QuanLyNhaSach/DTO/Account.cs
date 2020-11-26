@@ -17,6 +17,9 @@ namespace QuanLyNhaSach.DTO
         private string ten;
         private string passWord;
         private int type;
+        private int caiDat;
+        private int banSach;
+        private int ttTaiKhoan;
         public string TenDN { get => tenDN; set => tenDN = value; }
         public string Ten { get => ten; set => ten = value; }
         public string PassWord { get => passWord; set => passWord = value; }
@@ -25,9 +28,12 @@ namespace QuanLyNhaSach.DTO
         public int ThongKe { get => thongKe; set => thongKe = value; }
         public int KeSach { get => keSach; set => keSach = value; }
         public int ThemDuLieu { get => themDuLieu; set => themDuLieu = value; }
+        public int CaiDat { get => caiDat; set => caiDat = value; }
+        public int BanSach { get => banSach; set => banSach = value; }
+        public int TtTaiKhoan { get => ttTaiKhoan; set => ttTaiKhoan = value; }
 
         public Account () { }
-        public Account(string tendn,string ten, int type , int thongke, int nhapsach,int kesach,int themdulieu, string pass = null)
+        public Account(string tendn,string ten, int type , int thongke, int nhapsach,int kesach,int themdulieu, int caidat, int tttaikhoan, int bansach, string pass = null)
         {
             this.TenDN = tendn;
             this.Ten = ten;
@@ -37,6 +43,9 @@ namespace QuanLyNhaSach.DTO
             this.NhapSach = nhapsach;
             this.ThemDuLieu = themdulieu;
             this.ThongKe = thongke;
+            this.TtTaiKhoan = ttTaiKhoan;
+            this.banSach = bansach;
+            this.caiDat = caidat;
         }
         public Account(DataRow row)
         {
@@ -48,6 +57,9 @@ namespace QuanLyNhaSach.DTO
             this.ThemDuLieu = int.Parse(row["ThongKe"].ToString());
             this.KeSach = int.Parse(row["KeSach"].ToString());
             this.ThongKe = int.Parse(row["ThongKe"].ToString());
+            this.caiDat = int.Parse(row["CaiDat"].ToString());
+            this.banSach = int.Parse(row["BanSach"].ToString());
+            this.TtTaiKhoan = int.Parse(row["TTTaiKhoan"].ToString());
         }
     }
 }
