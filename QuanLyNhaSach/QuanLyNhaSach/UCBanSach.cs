@@ -34,6 +34,10 @@ namespace QuanLyNhaSach
             get => loginAccount; 
             set => loginAccount = value; 
         }
+        void LamMoiTxb()
+        {
+            txbTenSach.Text = txbSoLuong.Text = txbID.Text = txbGiaTien.Text = "";
+        }
 
         #region Method
 
@@ -41,6 +45,7 @@ namespace QuanLyNhaSach
         {
             DataTable data = SachDAO.Instance.LayDSSach();
             dtgSach.DataSource = data;
+            dtgSach.Columns[0].FillWeight = 90;
         }
         void DuaVeTrangThaiTimKiem()
         {
@@ -101,6 +106,8 @@ namespace QuanLyNhaSach
                 txbTenSach.Text = row.Cells[1].Value.ToString();
                 txbGiaTien.Text = row.Cells[6].Value.ToString();
                 txbID.Text = row.Cells[0].Value.ToString();
+                txbSoLuong.Text = "";
+                txbSoLuong.Focus();
             }
         }
         private void btnTimKiem_Click(object sender, EventArgs e)
@@ -146,6 +153,7 @@ namespace QuanLyNhaSach
             DuaThongDiep("Tôi đã vừa làm mới lại danh sách giúp bạn!", 1);
             DuaVeTrangThaiTimKiem();
             KetNoiKhoSach();
+            LamMoiTxb();
         }
 
         private void btnThem_Click(object sender, EventArgs e)
@@ -157,6 +165,7 @@ namespace QuanLyNhaSach
                 dtgThanhToan.Rows.Add(new object[] { txbID.Text, txbTenSach.Text, txbSoLuong.Text, txbGiaTien.Text, tien.ToString() });
                 LamMoiTongTien();
                 txbSoLuong.Text = "";
+                LamMoiTxb();
                 DuaThongDiep("Bạn vừa thêm sách vào danh sách thanh toán!", 1);
             }
             else
@@ -191,6 +200,7 @@ namespace QuanLyNhaSach
                     }
                 }
             }
+            LamMoiTxb();
             KetNoiKhoSach();
             dtgThanhToan.Rows.Clear();
             DuaThongDiep("Bạn đã thanh toán thành công!", 1);
@@ -204,6 +214,7 @@ namespace QuanLyNhaSach
                 txbID.Text = row.Cells[0].Value.ToString();
                 txbTenSach.Text = row.Cells[1].Value.ToString();
                 txbSoLuong.Text = row.Cells[2].Value.ToString();
+                txbSoLuong.Focus();
                 txbGiaTien.Text = row.Cells[3].Value.ToString();
             }
         }
@@ -218,6 +229,7 @@ namespace QuanLyNhaSach
                 tien = soLuong * giaTien;
                 dtgThanhToan.Rows[dtgThanhToan.CurrentCell.RowIndex].SetValues(new object[] { txbID.Text, txbTenSach.Text, txbSoLuong.Text, txbGiaTien.Text, tien });
                 DuaThongDiep("Bạn đã sửa thành công!", 1);
+                LamMoiTxb();
                 LamMoiTongTien();
             }
             else
@@ -233,6 +245,7 @@ namespace QuanLyNhaSach
             {
                 dtgThanhToan.Rows.RemoveAt(viTri);
                 DuaThongDiep("Bạn đã xóa thành công!", 1);
+                LamMoiTxb();
                 LamMoiTongTien();
             }
         }

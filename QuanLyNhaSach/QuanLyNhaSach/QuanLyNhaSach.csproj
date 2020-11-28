@@ -59,29 +59,11 @@
     <Compile Include="FChinh.Designer.cs">
       <DependentUpon>FChinh.cs</DependentUpon>
     </Compile>
-    <Compile Include="FForgotPassword.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FForgotPassword.Designer.cs">
-      <DependentUpon>FForgotPassword.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FInfomationAccount.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FInfomationAccount.Designer.cs">
-      <DependentUpon>FInfomationAccount.cs</DependentUpon>
-    </Compile>
     <Compile Include="FLogin.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FLogin.Designer.cs">
       <DependentUpon>FLogin.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MainForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MainForm.Designer.cs">
-      <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -130,17 +112,8 @@
     <EmbeddedResource Include="FChinh.resx">
       <DependentUpon>FChinh.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FForgotPassword.resx">
-      <DependentUpon>FForgotPassword.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FInfomationAccount.resx">
-      <DependentUpon>FInfomationAccount.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FLogin.resx">
       <DependentUpon>FLogin.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MainForm.resx">
-      <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -184,9 +157,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="HinhAnh\AdminSetting.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

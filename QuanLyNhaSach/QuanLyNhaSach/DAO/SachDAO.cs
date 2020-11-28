@@ -66,5 +66,29 @@ namespace QuanLyNhaSach.DAO
             DataTable data = DataProvider.Instance.ExecuteQuery("EXEC USP_HIenThiSachTimKiem");
             return data;
         }
+        public DataTable LayDSTacGia()
+        {
+            DataTable data = DataProvider.Instance.ExecuteQuery("EXEC USP_HienThiTacGia");
+            return data;
+        }
+        public DataTable LayDSTheLoai()
+        {
+            DataTable data = DataProvider.Instance.ExecuteQuery("EXEC USP_HienThiTheLoai");
+            return data;
+        }
+        public DataTable LayDSNXB()
+        {
+            DataTable data = DataProvider.Instance.ExecuteQuery("EXEC USP_HienThiNhaXuatBan");
+            return data;
+        }
+        public void ThemSLChoSach(string masach, int soluong)
+        {
+            DataProvider.Instance.ExecuteQuery("EXEC USP_ThemSLChoSach @maSach , @soluong", new object[] { soluong,masach });
+        }
+        public void ThemSach(string masach, string tensach, string sopn, string matl, string matg, string manxb, int soluong, int giatien)
+        {
+            string date = DateTime.Today.ToShortDateString();
+            DataProvider.Instance.ExecuteNonQuery("USP_ThemSach @masach , @tenSach , @sopn , @soluong , @giatien , @matl , @matg , @manxb , @ngaynhap", new object[] { masach, tensach, sopn, soluong, giatien, matl, matg, manxb, date });
+        }
     }
 }
