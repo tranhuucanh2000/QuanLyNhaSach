@@ -52,19 +52,19 @@ namespace QuanLyNhaSach
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.pnSo = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.panel16 = new System.Windows.Forms.Panel();
             this.panel17 = new System.Windows.Forms.Panel();
+            this.txbSoPN = new System.Windows.Forms.TextBox();
             this.txbSoLuongS = new System.Windows.Forms.TextBox();
             this.txbMaSach = new System.Windows.Forms.TextBox();
             this.lbNXB = new System.Windows.Forms.Label();
             this.txbTen = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.lbSo = new System.Windows.Forms.Label();
             this.lbMa = new System.Windows.Forms.Label();
             this.lbTen = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.txbSoPN = new System.Windows.Forms.TextBox();
-            this.panel4 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbDangXuat)).BeginInit();
             this.panel2.SuspendLayout();
@@ -129,7 +129,7 @@ namespace QuanLyNhaSach
             this.btnThemDC.Location = new System.Drawing.Point(415, 144);
             this.btnThemDC.Name = "btnThemDC";
             this.btnThemDC.Size = new System.Drawing.Size(192, 37);
-            this.btnThemDC.TabIndex = 9;
+            this.btnThemDC.TabIndex = 2;
             this.btnThemDC.Text = "Thêm";
             this.btnThemDC.UseVisualStyleBackColor = false;
             this.btnThemDC.Click += new System.EventHandler(this.btnThemDC_Click);
@@ -141,7 +141,7 @@ namespace QuanLyNhaSach
             this.txbSoLuong.Location = new System.Drawing.Point(807, 77);
             this.txbSoLuong.Name = "txbSoLuong";
             this.txbSoLuong.Size = new System.Drawing.Size(100, 35);
-            this.txbSoLuong.TabIndex = 8;
+            this.txbSoLuong.TabIndex = 1;
             // 
             // label4
             // 
@@ -174,7 +174,7 @@ namespace QuanLyNhaSach
             this.cbSach.Location = new System.Drawing.Point(195, 74);
             this.cbSach.Name = "cbSach";
             this.cbSach.Size = new System.Drawing.Size(362, 38);
-            this.cbSach.TabIndex = 6;
+            this.cbSach.TabIndex = 0;
             // 
             // label1
             // 
@@ -229,7 +229,7 @@ namespace QuanLyNhaSach
             this.btnThemSach.Location = new System.Drawing.Point(420, 374);
             this.btnThemSach.Name = "btnThemSach";
             this.btnThemSach.Size = new System.Drawing.Size(192, 37);
-            this.btnThemSach.TabIndex = 9;
+            this.btnThemSach.TabIndex = 11;
             this.btnThemSach.Text = "Thêm";
             this.btnThemSach.UseVisualStyleBackColor = false;
             this.btnThemSach.Click += new System.EventHandler(this.btnThemSach_Click);
@@ -263,7 +263,7 @@ namespace QuanLyNhaSach
             this.txbGiaTien.Location = new System.Drawing.Point(806, 224);
             this.txbGiaTien.Name = "txbGiaTien";
             this.txbGiaTien.Size = new System.Drawing.Size(119, 28);
-            this.txbGiaTien.TabIndex = 62;
+            this.txbGiaTien.TabIndex = 9;
             this.txbGiaTien.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // cbNXB
@@ -286,7 +286,7 @@ namespace QuanLyNhaSach
             this.cbTheLoai.Location = new System.Drawing.Point(171, 217);
             this.cbTheLoai.Name = "cbTheLoai";
             this.cbTheLoai.Size = new System.Drawing.Size(412, 38);
-            this.cbTheLoai.TabIndex = 6;
+            this.cbTheLoai.TabIndex = 5;
             // 
             // cbTacGia
             // 
@@ -297,7 +297,7 @@ namespace QuanLyNhaSach
             this.cbTacGia.Location = new System.Drawing.Point(171, 155);
             this.cbTacGia.Name = "cbTacGia";
             this.cbTacGia.Size = new System.Drawing.Size(412, 38);
-            this.cbTacGia.TabIndex = 6;
+            this.cbTacGia.TabIndex = 4;
             // 
             // lbGiaTien
             // 
@@ -341,6 +341,15 @@ namespace QuanLyNhaSach
             this.pnSo.Size = new System.Drawing.Size(119, 1);
             this.pnSo.TabIndex = 50;
             // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.Black;
+            this.panel4.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel4.Location = new System.Drawing.Point(807, 128);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(119, 1);
+            this.panel4.TabIndex = 51;
+            // 
             // panel16
             // 
             this.panel16.BackColor = System.Drawing.Color.Black;
@@ -359,6 +368,18 @@ namespace QuanLyNhaSach
             this.panel17.Size = new System.Drawing.Size(408, 1);
             this.panel17.TabIndex = 53;
             // 
+            // txbSoPN
+            // 
+            this.txbSoPN.BackColor = System.Drawing.Color.White;
+            this.txbSoPN.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txbSoPN.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbSoPN.ForeColor = System.Drawing.Color.Black;
+            this.txbSoPN.Location = new System.Drawing.Point(807, 102);
+            this.txbSoPN.Name = "txbSoPN";
+            this.txbSoPN.Size = new System.Drawing.Size(119, 28);
+            this.txbSoPN.TabIndex = 7;
+            this.txbSoPN.TextChanged += new System.EventHandler(this.txbSoPN_TextChanged);
+            // 
             // txbSoLuongS
             // 
             this.txbSoLuongS.BackColor = System.Drawing.Color.White;
@@ -368,7 +389,7 @@ namespace QuanLyNhaSach
             this.txbSoLuongS.Location = new System.Drawing.Point(807, 284);
             this.txbSoLuongS.Name = "txbSoLuongS";
             this.txbSoLuongS.Size = new System.Drawing.Size(119, 28);
-            this.txbSoLuongS.TabIndex = 45;
+            this.txbSoLuongS.TabIndex = 10;
             this.txbSoLuongS.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txbMaSach
@@ -380,7 +401,7 @@ namespace QuanLyNhaSach
             this.txbMaSach.Location = new System.Drawing.Point(806, 163);
             this.txbMaSach.Name = "txbMaSach";
             this.txbMaSach.Size = new System.Drawing.Size(119, 28);
-            this.txbMaSach.TabIndex = 44;
+            this.txbMaSach.TabIndex = 8;
             this.txbMaSach.TextChanged += new System.EventHandler(this.txbMaSach_TextChanged);
             // 
             // lbNXB
@@ -403,7 +424,18 @@ namespace QuanLyNhaSach
             this.txbTen.Location = new System.Drawing.Point(175, 102);
             this.txbTen.Name = "txbTen";
             this.txbTen.Size = new System.Drawing.Size(408, 28);
-            this.txbTen.TabIndex = 43;
+            this.txbTen.TabIndex = 3;
+            // 
+            // label8
+            // 
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            this.label8.Location = new System.Drawing.Point(630, 102);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(174, 30);
+            this.label8.TabIndex = 47;
+            this.label8.Text = "Mã Phiếu Nhập:";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lbSo
             // 
@@ -448,38 +480,6 @@ namespace QuanLyNhaSach
             this.label2.Size = new System.Drawing.Size(192, 30);
             this.label2.TabIndex = 0;
             this.label2.Text = "NHẬP SÁCH MỚI";
-            // 
-            // label8
-            // 
-            this.label8.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
-            this.label8.Location = new System.Drawing.Point(630, 102);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(174, 30);
-            this.label8.TabIndex = 47;
-            this.label8.Text = "Mã Phiếu Nhập:";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // txbSoPN
-            // 
-            this.txbSoPN.BackColor = System.Drawing.Color.White;
-            this.txbSoPN.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txbSoPN.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbSoPN.ForeColor = System.Drawing.Color.Black;
-            this.txbSoPN.Location = new System.Drawing.Point(807, 102);
-            this.txbSoPN.Name = "txbSoPN";
-            this.txbSoPN.Size = new System.Drawing.Size(119, 28);
-            this.txbSoPN.TabIndex = 44;
-            this.txbSoPN.TextChanged += new System.EventHandler(this.txbSoPN_TextChanged);
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.Black;
-            this.panel4.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel4.Location = new System.Drawing.Point(807, 128);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(119, 1);
-            this.panel4.TabIndex = 51;
             // 
             // UCNhapSach
             // 

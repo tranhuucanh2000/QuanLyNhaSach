@@ -265,7 +265,7 @@ namespace QuanLyNhaSach
             this.txbGiaTien.Name = "txbGiaTien";
             this.txbGiaTien.ReadOnly = true;
             this.txbGiaTien.Size = new System.Drawing.Size(119, 26);
-            this.txbGiaTien.TabIndex = 52;
+            this.txbGiaTien.TabIndex = 7;
             this.txbGiaTien.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // lbGiaTien
@@ -307,7 +307,7 @@ namespace QuanLyNhaSach
             this.txbTheLoai.Name = "txbTheLoai";
             this.txbTheLoai.ReadOnly = true;
             this.txbTheLoai.Size = new System.Drawing.Size(288, 26);
-            this.txbTheLoai.TabIndex = 46;
+            this.txbTheLoai.TabIndex = 6;
             // 
             // txbTacGia
             // 
@@ -319,7 +319,7 @@ namespace QuanLyNhaSach
             this.txbTacGia.Name = "txbTacGia";
             this.txbTacGia.ReadOnly = true;
             this.txbTacGia.Size = new System.Drawing.Size(288, 26);
-            this.txbTacGia.TabIndex = 47;
+            this.txbTacGia.TabIndex = 5;
             // 
             // label6
             // 
@@ -389,7 +389,7 @@ namespace QuanLyNhaSach
             this.txbNXB.Name = "txbNXB";
             this.txbNXB.ReadOnly = true;
             this.txbNXB.Size = new System.Drawing.Size(288, 26);
-            this.txbNXB.TabIndex = 31;
+            this.txbNXB.TabIndex = 3;
             // 
             // txbSo
             // 
@@ -400,7 +400,7 @@ namespace QuanLyNhaSach
             this.txbSo.Location = new System.Drawing.Point(199, 172);
             this.txbSo.Name = "txbSo";
             this.txbSo.Size = new System.Drawing.Size(288, 26);
-            this.txbSo.TabIndex = 33;
+            this.txbSo.TabIndex = 2;
             this.txbSo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txbMa
@@ -413,7 +413,7 @@ namespace QuanLyNhaSach
             this.txbMa.Name = "txbMa";
             this.txbMa.ReadOnly = true;
             this.txbMa.Size = new System.Drawing.Size(288, 26);
-            this.txbMa.TabIndex = 32;
+            this.txbMa.TabIndex = 1;
             // 
             // lbNXB
             // 
@@ -436,7 +436,7 @@ namespace QuanLyNhaSach
             this.txbTen.Name = "txbTen";
             this.txbTen.ReadOnly = true;
             this.txbTen.Size = new System.Drawing.Size(288, 26);
-            this.txbTen.TabIndex = 31;
+            this.txbTen.TabIndex = 0;
             // 
             // lbSo
             // 
