@@ -33,8 +33,6 @@ namespace QuanLyNhaSach
             InitializeComponent();
             loginAccount = acc;
             HienTen();
-            KetNoiKhoSach();
-
         }
 
         void LamMoiTxb()

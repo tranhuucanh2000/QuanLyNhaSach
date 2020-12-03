@@ -42,7 +42,7 @@ namespace QuanLyNhaSach
             DataTable data = DataProvider.Instance.ExecuteQuery("SELECT	* FROM TaiKhoan");
             foreach(DataRow item in data.Rows)
             {
-                cbTaiKhoan.Items.Add(item["TenDN"]);
+                if(item["Loai"].ToString() == "0") cbTaiKhoan.Items.Add(item["TenDN"]);
             }    
         }
         public void HienTen()

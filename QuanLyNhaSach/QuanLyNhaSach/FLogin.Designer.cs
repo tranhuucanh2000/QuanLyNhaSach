@@ -121,10 +121,15 @@
             // 
             this.txbMatKhau.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(243)))), ((int)(((byte)(206)))));
             this.txbMatKhau.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txbMatKhau.Location = new System.Drawing.Point(30, 209);
+            this.txbMatKhau.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbMatKhau.Location = new System.Drawing.Point(30, 212);
             this.txbMatKhau.Name = "txbMatKhau";
             this.txbMatKhau.PasswordChar = '*';
+<<<<<<< HEAD
             this.txbMatKhau.Size = new System.Drawing.Size(335, 27);
+=======
+            this.txbMatKhau.Size = new System.Drawing.Size(335, 26);
+>>>>>>> ca546ed20c9fb03e99c02a039ff4477a113d163d
             this.txbMatKhau.TabIndex = 2;
             this.txbMatKhau.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txbMatKhau_KeyDown);
             // 
@@ -132,9 +137,14 @@
             // 
             this.txbTaiKhoan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(243)))), ((int)(((byte)(206)))));
             this.txbTaiKhoan.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txbTaiKhoan.Location = new System.Drawing.Point(30, 86);
+            this.txbTaiKhoan.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbTaiKhoan.Location = new System.Drawing.Point(30, 89);
             this.txbTaiKhoan.Name = "txbTaiKhoan";
+<<<<<<< HEAD
             this.txbTaiKhoan.Size = new System.Drawing.Size(335, 27);
+=======
+            this.txbTaiKhoan.Size = new System.Drawing.Size(335, 26);
+>>>>>>> ca546ed20c9fb03e99c02a039ff4477a113d163d
             this.txbTaiKhoan.TabIndex = 1;
             this.txbTaiKhoan.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txbTaiKhoan_KeyDown);
             // 

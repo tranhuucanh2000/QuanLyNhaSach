@@ -141,7 +141,7 @@ namespace QuanLyNhaSach
             this.btnLuu.Margin = new System.Windows.Forms.Padding(2);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(201, 66);
-            this.btnLuu.TabIndex = 32;
+            this.btnLuu.TabIndex = 5;
             this.btnLuu.Text = "Lưu";
             this.btnLuu.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnLuu.UseVisualStyleBackColor = false;
@@ -166,7 +166,7 @@ namespace QuanLyNhaSach
             this.txbMatKhauMoi.Margin = new System.Windows.Forms.Padding(2);
             this.txbMatKhauMoi.Name = "txbMatKhauMoi";
             this.txbMatKhauMoi.Size = new System.Drawing.Size(377, 32);
-            this.txbMatKhauMoi.TabIndex = 17;
+            this.txbMatKhauMoi.TabIndex = 3;
             // 
             // panel5
             // 
@@ -187,7 +187,7 @@ namespace QuanLyNhaSach
             this.txbNhapLaiMKM.Margin = new System.Windows.Forms.Padding(2);
             this.txbNhapLaiMKM.Name = "txbNhapLaiMKM";
             this.txbNhapLaiMKM.Size = new System.Drawing.Size(377, 32);
-            this.txbNhapLaiMKM.TabIndex = 17;
+            this.txbNhapLaiMKM.TabIndex = 4;
             // 
             // panel4
             // 
@@ -218,7 +218,7 @@ namespace QuanLyNhaSach
             this.txbMatKhau.Margin = new System.Windows.Forms.Padding(2);
             this.txbMatKhau.Name = "txbMatKhau";
             this.txbMatKhau.Size = new System.Drawing.Size(377, 32);
-            this.txbMatKhau.TabIndex = 17;
+            this.txbMatKhau.TabIndex = 2;
             this.txbMatKhau.UseSystemPasswordChar = true;
             // 
             // txbTenHT
@@ -230,7 +230,7 @@ namespace QuanLyNhaSach
             this.txbTenHT.Margin = new System.Windows.Forms.Padding(2);
             this.txbTenHT.Name = "txbTenHT";
             this.txbTenHT.Size = new System.Drawing.Size(377, 32);
-            this.txbTenHT.TabIndex = 17;
+            this.txbTenHT.TabIndex = 1;
             // 
             // panel7
             // 
@@ -252,7 +252,7 @@ namespace QuanLyNhaSach
             this.txbTenDN.Name = "txbTenDN";
             this.txbTenDN.ReadOnly = true;
             this.txbTenDN.Size = new System.Drawing.Size(377, 32);
-            this.txbTenDN.TabIndex = 17;
+            this.txbTenDN.TabIndex = 0;
             // 
             // lbChucVu
             // 

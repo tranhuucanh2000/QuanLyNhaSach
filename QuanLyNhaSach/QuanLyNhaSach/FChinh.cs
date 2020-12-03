@@ -34,6 +34,7 @@ namespace QuanLyNhaSach
 
         void QuyenTruyCap()
         {
+            if (loginAccount.Type == 0) btnCaiDat.Enabled = false;
             if (loginAccount.ThongKe == 0) btnKeSach.Enabled = false;
             if (loginAccount.NhapSach == 0) btnNhapSach.Enabled = false;
             if (loginAccount.ThemDuLieu == 0) btnThemDL.Enabled = false;
