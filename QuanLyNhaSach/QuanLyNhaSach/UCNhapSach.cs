@@ -110,30 +110,38 @@ namespace QuanLyNhaSach
 
         private void btnThemSach_Click(object sender, EventArgs e)
         {
-            string[] strtg = cbTacGia.SelectedItem.ToString().Split('-');
-            string matg = strtg[0].Trim();
-            string[] strtl = cbTheLoai.SelectedItem.ToString().Split('-');
-            string matl = strtl[0].Trim();
-            string[] strnxb = cbNXB.SelectedItem.ToString().Split('-');
-            string mannxb = strnxb[0].Trim();
-            int soluong;
-            int giatien;
-            if (int.TryParse(txbSoLuongS.Text, out soluong))
+            
+            if (txbTen.Text == "")
             {
-                if(int.TryParse(txbGiaTien.Text,out giatien))
-                {
-                    SachDAO.Instance.ThemSach(txbMaSach.Text,txbTen.Text,txbSoPN.Text,matl,matg,mannxb,soluong,giatien);
-                    DuaThongDiep("Đã thêm sách thành công!",1);
-                }
-                else
-                {
-                    DuaThongDiep("Bạn vui lòng nhập lại gia tien!", 2);
-                }
+                DuaThongDiep("Bạn vui lòng nhập vào tên sách", 2);
             }
             else
             {
-                DuaThongDiep("Bạn vui lòng nhập lại số lượng!", 2);
-            }
+                string[] strtg = cbTacGia.SelectedItem.ToString().Split('-');
+                string matg = strtg[0].Trim();
+                string[] strtl = cbTheLoai.SelectedItem.ToString().Split('-');
+                string matl = strtl[0].Trim();
+                string[] strnxb = cbNXB.SelectedItem.ToString().Split('-');
+                string mannxb = strnxb[0].Trim();
+                int soluong;
+                int giatien;
+                if (int.TryParse(txbSoLuongS.Text, out soluong))
+                {
+                    if (int.TryParse(txbGiaTien.Text, out giatien))
+                    {
+                        SachDAO.Instance.ThemSach(txbMaSach.Text, txbTen.Text, txbSoPN.Text, matl, matg, mannxb, soluong, giatien);
+                        DuaThongDiep("Đã thêm sách thành công!", 1);
+                    }
+                    else
+                    {
+                        DuaThongDiep("Bạn vui lòng nhập lại gia tien!", 2);
+                    }
+                }
+                else
+                {
+                    DuaThongDiep("Bạn vui lòng nhập lại số lượng!", 2);
+                }
+            }          
         }
         List<string> dsMaSach = new List<string>();
         List<string> dsMaPN = new List<string>();

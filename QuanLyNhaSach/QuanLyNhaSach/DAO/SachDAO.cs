@@ -90,5 +90,20 @@ namespace QuanLyNhaSach.DAO
             string date = DateTime.Today.ToShortDateString();
             DataProvider.Instance.ExecuteNonQuery("USP_ThemSach @masach , @tenSach , @sopn , @soluong , @giatien , @matl , @matg , @manxb , @ngaynhap", new object[] { masach, tensach, sopn, soluong, giatien, matl, matg, manxb, date });
         }
+        public void ThemTacGia(string matg, string tentg, string sdt)
+        {
+
+            DataProvider.Instance.ExecuteNonQuery("USP_ThemTacGia @tentg , @matg , @sdt", new object[] { matg, tentg, sdt });
+        }
+        public void ThemTheLoai(string tentl, string matl)
+        {
+          
+            DataProvider.Instance.ExecuteNonQuery("USP_ThemTheLoai @tentl , @matl", new object[] { tentl, matl});
+        }
+        public void ThemNXB(string tennxb,string manxb,string diachi,string sdt)
+        {
+          
+            DataProvider.Instance.ExecuteNonQuery("USP_ThemNXB @tennxb , @manxb , @diachi , @sdt", new object[] { tennxb, manxb, diachi, sdt });
+        }
     }
 }

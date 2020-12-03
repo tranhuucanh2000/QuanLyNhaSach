@@ -163,5 +163,10 @@ namespace QuanLyNhaSach
                 cbTaiKhoan.Focus();
             }
         }
+
+        private void pbDangXuat_Click(object sender, EventArgs e)
+        {
+            Application.Restart();
+        }
     }
 }

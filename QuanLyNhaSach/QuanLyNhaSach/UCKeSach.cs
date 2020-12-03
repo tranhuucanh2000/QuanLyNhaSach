@@ -106,7 +106,7 @@ namespace QuanLyNhaSach
         private void cbThuocTinh_SelectedIndexChanged(object sender, EventArgs e)
         {
             LamMoiTxb();
-            if (cbThuocTinh.SelectedItem.ToString()=="Tên Sách")
+            if (cbThuocTinh.SelectedItem.ToString()=="Sách")
             {
                 dtgSach.DataSource = null;
                 dtgSach.DataSource = SachDAO.Instance.LayDSSach();
@@ -134,7 +134,7 @@ namespace QuanLyNhaSach
 
         private void dtgSach_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (cbThuocTinh.SelectedItem.ToString() == "Tên Sách")
+            if (cbThuocTinh.SelectedItem.ToString() == "Sách")
             {
                 int vitri = dtgSach.CurrentRow.Index;
                 DataGridViewRow row = dtgSach.Rows[vitri];
@@ -171,5 +171,7 @@ namespace QuanLyNhaSach
                 txbNXB.Text = row.Cells[2].Value.ToString();
             }
         }
+
+   
     }
 }

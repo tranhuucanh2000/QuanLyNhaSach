@@ -432,7 +432,7 @@ namespace QuanLyNhaSach
             this.txbTen.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txbTen.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbTen.ForeColor = System.Drawing.Color.Black;
-            this.txbTen.Location = new System.Drawing.Point(198, 87);
+            this.txbTen.Location = new System.Drawing.Point(199, 87);
             this.txbTen.Name = "txbTen";
             this.txbTen.ReadOnly = true;
             this.txbTen.Size = new System.Drawing.Size(288, 26);
@@ -453,7 +453,7 @@ namespace QuanLyNhaSach
             // 
             this.lbMa.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbMa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
-            this.lbMa.Location = new System.Drawing.Point(34, 131);
+            this.lbMa.Location = new System.Drawing.Point(31, 131);
             this.lbMa.Name = "lbMa";
             this.lbMa.Size = new System.Drawing.Size(161, 30);
             this.lbMa.TabIndex = 37;
@@ -464,7 +464,7 @@ namespace QuanLyNhaSach
             // 
             this.lbTen.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTen.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
-            this.lbTen.Location = new System.Drawing.Point(34, 87);
+            this.lbTen.Location = new System.Drawing.Point(31, 87);
             this.lbTen.Name = "lbTen";
             this.lbTen.Size = new System.Drawing.Size(161, 30);
             this.lbTen.TabIndex = 38;
@@ -508,7 +508,7 @@ namespace QuanLyNhaSach
             this.cbThuocTinh.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbThuocTinh.FormattingEnabled = true;
             this.cbThuocTinh.Items.AddRange(new object[] {
-            "Tên Sách",
+            "Sách",
             "Tác Giả",
             "Thể Loại",
             "Nhà Xuất Bản"});

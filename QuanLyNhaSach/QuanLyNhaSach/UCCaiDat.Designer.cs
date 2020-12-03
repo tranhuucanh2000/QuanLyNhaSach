@@ -59,10 +59,10 @@ namespace QuanLyNhaSach
             this.btnLuu = new System.Windows.Forms.Button();
             this.btnThemTaiKhoan = new System.Windows.Forms.Button();
             this.cbTaiKhoan = new System.Windows.Forms.ComboBox();
+            this.btnXoa = new System.Windows.Forms.Button();
             this.lbHoTro = new System.Windows.Forms.Label();
             this.pbDangXuat = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnXoa = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
             this.grbThongTinTaiKhoan.SuspendLayout();
@@ -416,6 +416,21 @@ namespace QuanLyNhaSach
             this.cbTaiKhoan.TabIndex = 0;
             this.cbTaiKhoan.SelectedIndexChanged += new System.EventHandler(this.cbTaiKhoan_SelectedIndexChanged);
             // 
+            // btnXoa
+            // 
+            this.btnXoa.BackColor = System.Drawing.Color.Red;
+            this.btnXoa.FlatAppearance.BorderSize = 0;
+            this.btnXoa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnXoa.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXoa.ForeColor = System.Drawing.Color.Black;
+            this.btnXoa.Location = new System.Drawing.Point(546, 33);
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.Size = new System.Drawing.Size(180, 40);
+            this.btnXoa.TabIndex = 1;
+            this.btnXoa.Text = "Xóa Tài Khoản";
+            this.btnXoa.UseVisualStyleBackColor = false;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
+            // 
             // lbHoTro
             // 
             this.lbHoTro.AutoSize = true;
@@ -435,6 +450,7 @@ namespace QuanLyNhaSach
             this.pbDangXuat.Size = new System.Drawing.Size(50, 50);
             this.pbDangXuat.TabIndex = 2;
             this.pbDangXuat.TabStop = false;
+            this.pbDangXuat.Click += new System.EventHandler(this.pbDangXuat_Click);
             // 
             // panel1
             // 
@@ -447,21 +463,6 @@ namespace QuanLyNhaSach
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1000, 50);
             this.panel1.TabIndex = 2;
-            // 
-            // btnXoa
-            // 
-            this.btnXoa.BackColor = System.Drawing.Color.Red;
-            this.btnXoa.FlatAppearance.BorderSize = 0;
-            this.btnXoa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnXoa.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXoa.ForeColor = System.Drawing.Color.Black;
-            this.btnXoa.Location = new System.Drawing.Point(546, 33);
-            this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(180, 40);
-            this.btnXoa.TabIndex = 1;
-            this.btnXoa.Text = "Xóa Tài Khoản";
-            this.btnXoa.UseVisualStyleBackColor = false;
-            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // UCCaiDat
             // 
