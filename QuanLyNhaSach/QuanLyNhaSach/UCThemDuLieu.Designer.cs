@@ -367,8 +367,9 @@ namespace QuanLyNhaSach
             // 
             // UCThemDuLieu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+<<<<<<< HEAD
             this.Controls.Add(this.dtgSach);
             this.Controls.Add(this.pnTT);
             this.Controls.Add(this.panel1);
@@ -382,6 +383,12 @@ namespace QuanLyNhaSach
             this.pnTG.ResumeLayout(false);
             this.pnTG.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgSach)).EndInit();
+=======
+            this.BackColor = System.Drawing.Color.White;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Name = "UCThemDuLieu";
+            this.Size = new System.Drawing.Size(1333, 886);
+>>>>>>> da800a47da1ea1957c0d8ff6633956d88875e553
             this.ResumeLayout(false);
 
         }

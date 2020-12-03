@@ -65,7 +65,7 @@
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(50)))), ((int)(((byte)(94)))));
             this.label1.Location = new System.Drawing.Point(99, 456);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(258, 45);
+            this.label1.Size = new System.Drawing.Size(319, 54);
             this.label1.TabIndex = 1;
             this.label1.Text = "NHÀ SÁCH KVC";
             // 
@@ -125,7 +125,11 @@
             this.txbMatKhau.Location = new System.Drawing.Point(30, 212);
             this.txbMatKhau.Name = "txbMatKhau";
             this.txbMatKhau.PasswordChar = '*';
+<<<<<<< HEAD
+            this.txbMatKhau.Size = new System.Drawing.Size(335, 27);
+=======
             this.txbMatKhau.Size = new System.Drawing.Size(335, 26);
+>>>>>>> ca546ed20c9fb03e99c02a039ff4477a113d163d
             this.txbMatKhau.TabIndex = 2;
             this.txbMatKhau.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txbMatKhau_KeyDown);
             // 
@@ -136,7 +140,11 @@
             this.txbTaiKhoan.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbTaiKhoan.Location = new System.Drawing.Point(30, 89);
             this.txbTaiKhoan.Name = "txbTaiKhoan";
+<<<<<<< HEAD
+            this.txbTaiKhoan.Size = new System.Drawing.Size(335, 27);
+=======
             this.txbTaiKhoan.Size = new System.Drawing.Size(335, 26);
+>>>>>>> ca546ed20c9fb03e99c02a039ff4477a113d163d
             this.txbTaiKhoan.TabIndex = 1;
             this.txbTaiKhoan.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txbTaiKhoan_KeyDown);
             // 
@@ -146,7 +154,7 @@
             this.lbQuenMatKhau.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbQuenMatKhau.Location = new System.Drawing.Point(133, 267);
             this.lbQuenMatKhau.Name = "lbQuenMatKhau";
-            this.lbQuenMatKhau.Size = new System.Drawing.Size(129, 21);
+            this.lbQuenMatKhau.Size = new System.Drawing.Size(164, 28);
             this.lbQuenMatKhau.TabIndex = 0;
             this.lbQuenMatKhau.Text = "Quên Mật Khẩu?";
             this.lbQuenMatKhau.Click += new System.EventHandler(this.lbQuenMatKhau_Click);
@@ -157,7 +165,7 @@
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(25, 165);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(83, 21);
+            this.label3.Size = new System.Drawing.Size(104, 28);
             this.label3.TabIndex = 0;
             this.label3.Text = "Mật Khẩu:";
             // 
@@ -167,7 +175,7 @@
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(25, 42);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(85, 21);
+            this.label2.Size = new System.Drawing.Size(107, 28);
             this.label2.TabIndex = 0;
             this.label2.Text = "Tải Khoản:";
             // 
@@ -190,7 +198,7 @@
             this.label5.ForeColor = System.Drawing.Color.Black;
             this.label5.Location = new System.Drawing.Point(22, 683);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(239, 19);
+            this.label5.Size = new System.Drawing.Size(289, 23);
             this.label5.TabIndex = 5;
             this.label5.Text = "Email: tranhuucanh2000@gmail.com";
             // 
