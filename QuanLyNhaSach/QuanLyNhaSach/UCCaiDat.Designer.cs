@@ -229,6 +229,7 @@ namespace QuanLyNhaSach
             this.txbMatKhauMoi.Name = "txbMatKhauMoi";
             this.txbMatKhauMoi.Size = new System.Drawing.Size(390, 32);
             this.txbMatKhauMoi.TabIndex = 4;
+            this.txbMatKhauMoi.UseSystemPasswordChar = true;
             // 
             // pnNL
             // 
@@ -250,6 +251,7 @@ namespace QuanLyNhaSach
             this.txbNhapLaiMKM.Name = "txbNhapLaiMKM";
             this.txbNhapLaiMKM.Size = new System.Drawing.Size(390, 32);
             this.txbNhapLaiMKM.TabIndex = 5;
+            this.txbNhapLaiMKM.UseSystemPasswordChar = true;
             // 
             // panel3
             // 
@@ -281,6 +283,7 @@ namespace QuanLyNhaSach
             this.txbMatKhau.Name = "txbMatKhau";
             this.txbMatKhau.Size = new System.Drawing.Size(390, 32);
             this.txbMatKhau.TabIndex = 3;
+            this.txbMatKhau.UseSystemPasswordChar = true;
             // 
             // txbTenHT
             // 

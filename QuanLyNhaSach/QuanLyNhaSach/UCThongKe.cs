@@ -31,5 +31,30 @@ namespace QuanLyNhaSach
             InitializeComponent();
             loginAccount = acc;
         }
+
+        private void cbThuocTinh_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnThem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSua_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
