@@ -35,15 +35,30 @@ namespace QuanLyNhaSach
         }
         void LamMoiTxb()
         {
-            txbMa.Text = txbSo.Text = txbTen.Text =txbDC.Text= "";
+           txbSo.Text = txbTen.Text =txbDC.Text= "";
         }
-       
-        
+
+        void KetNoiKhoTacGia()
+        {
+            DataTable data = SachDAO.Instance.LayDSTacGia();
+            dtgSach.DataSource = data;
+            dtgSach.Columns[0].FillWeight = 90;
+        }
+        void KetNoiKhoTheLoai()
+        {
+            DataTable data = SachDAO.Instance.LayDSTheLoai();
+            dtgSach.DataSource = data;
+            dtgSach.Columns[0].FillWeight = 90;
+        }
+        void KetNoiKhoNXB()
+        {
+            DataTable data = SachDAO.Instance.LayDSNXB();
+            dtgSach.DataSource = data;
+            dtgSach.Columns[0].FillWeight = 90;
+        }
         void HienThiTTTacGia()
         {
-
             lbTen.Text = "Tên Tác Giả:";
-            lbMa.Text = "Mã Tác Giả:";
             lbSo.Text = "Số Điện Thoại:";
             panelTG.Visible = true;
             panelTL.Visible = false;
@@ -53,7 +68,6 @@ namespace QuanLyNhaSach
         void HienThiTTTheLoai()
         {
             lbTen.Text = "Tên Thể Loại:";
-            lbMa.Text = "Mã Thể Loại";
             panelTG.Visible = txbSo.Visible=txbDC.Visible=false;
             panelTL.Visible = true;
         }
@@ -61,7 +75,6 @@ namespace QuanLyNhaSach
         {
             txbSo.Visible = lbSo.Visible = lbDC.Visible = txbDC.Visible = true;
             lbTen.Text = "Tên NXB:";
-            lbMa.Text = "Mã NXB:";
             lbSo.Text = "Số Điện Thoại:";
             lbDC.Text = "Địa Chỉ:";
             panelTG.Visible = panelTL.Visible = false;
@@ -77,7 +90,6 @@ namespace QuanLyNhaSach
             {
                 int vitri = dtgSach.CurrentRow.Index;
                 DataGridViewRow row = dtgSach.Rows[vitri];
-                txbMa.Text = row.Cells[0].Value.ToString();
                 txbTen.Text = row.Cells[1].Value.ToString();
                 txbSo.Text = row.Cells[2].Value.ToString();
             }
@@ -85,14 +97,12 @@ namespace QuanLyNhaSach
             {
                 int vitri = dtgSach.CurrentRow.Index;
                 DataGridViewRow row = dtgSach.Rows[vitri];
-                txbMa.Text = row.Cells[0].Value.ToString();
                 txbTen.Text = row.Cells[1].Value.ToString();
             }
             else
             {
                 int vitri = dtgSach.CurrentRow.Index;
                 DataGridViewRow row = dtgSach.Rows[vitri];
-                txbMa.Text = row.Cells[0].Value.ToString();
                 txbTen.Text = row.Cells[1].Value.ToString();
                 txbSo.Text = row.Cells[3].Value.ToString();
 
@@ -139,28 +149,46 @@ namespace QuanLyNhaSach
         private void btnThem_Click(object sender, EventArgs e)
         {
             string ten = txbTen.Text;
-            string ma = txbMa.Text;
             string diachi = txbDC.Text;
             string sdt = txbSo.Text;
 
             if (panelTG.Visible == true&&panelTL.Visible==false)
             {
-                SachDAO.Instance.ThemTacGia(ten,ma,sdt);
-                DuaThongDiep("Đã thêm tác giả thành công!", 1);
-                LamMoiDSMaTacGia();
-
+                int sodt;
+                if (int.TryParse(txbSo.Text, out sodt))
+                {
+                    SachDAO.Instance.ThemTacGia(ten, sdt);
+                    DuaThongDiep("Đã thêm tác giả thành công!", 1);
+                    LamMoiDSMaTacGia();
+                    LamMoiTxb();
+                }
+                else
+                {
+                    DuaThongDiep("Bạn vui lòng nhập lại số điện thoại!", 2);
+                }
             }
             else if (panelTL.Visible == true&&panelTG.Visible==false)
             {
-                SachDAO.Instance.ThemTheLoai(ten,ma);
+                SachDAO.Instance.ThemTheLoai(ten);
                 DuaThongDiep("Đã thêm thể loại thành công!", 1);
                 LamMoiDSMaTheLoai();
+                LamMoiTxb();
             }
             else
             {
-                SachDAO.Instance.ThemNXB(ten,ma,diachi,sdt);
-                DuaThongDiep("Đã thêm nhà xuất bản thành công!", 1);
-                LamMoiDSMaNXB();
+                int sodt;
+                if (int.TryParse(txbSo.Text, out sodt))
+                {
+                    SachDAO.Instance.ThemNhaXuatBan(ten, diachi, sdt);
+
+                    DuaThongDiep("Đã thêm nhà xuất bản thành công!", 1);
+                    LamMoiDSMaNXB();
+                    LamMoiTxb();
+                }
+                else
+                {
+                    DuaThongDiep("Bạn vui lòng nhập lại số điện thoại!", 2);
+                }
             }
         }
         List<string> dsMatg = new List<string>();
@@ -197,6 +225,7 @@ namespace QuanLyNhaSach
             }
         }
 
+        
     }
 
 }

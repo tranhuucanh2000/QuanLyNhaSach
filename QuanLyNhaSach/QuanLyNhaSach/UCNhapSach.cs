@@ -129,7 +129,7 @@ namespace QuanLyNhaSach
                 {
                     if (int.TryParse(txbGiaTien.Text, out giatien))
                     {
-                        SachDAO.Instance.ThemSach(txbMaSach.Text, txbTen.Text, txbSoPN.Text, matl, matg, mannxb, soluong, giatien);
+                        SachDAO.Instance.ThemSach(txbTen.Text, matl, matg, mannxb, soluong, giatien);
                         DuaThongDiep("Đã thêm sách thành công!", 1);
                     }
                     else
@@ -163,32 +163,6 @@ namespace QuanLyNhaSach
             {
                 string iteam = row["SoPN"].ToString().Trim();
                 dsMaPN.Add(iteam);
-            }
-        }
-
-        private void txbMaSach_TextChanged(object sender, EventArgs e)
-        {
-            LamMoiDSMaSach();
-            if (dsMaSach.Contains(txbMaSach.Text))
-            {
-                txbMaSach.ForeColor = Color.Red;
-            }
-            else
-            {
-                txbMaSach.ForeColor = Color.Black;
-            }
-        }
-
-        private void txbSoPN_TextChanged(object sender, EventArgs e)
-        {
-            LamMoiDSMaPN();
-            if (dsMaPN.Contains(txbSoPN.Text))
-            {
-                txbSoPN.ForeColor = Color.Red;
-            }
-            else
-            {
-                txbSoPN.ForeColor = Color.Black;
             }
         }
     }

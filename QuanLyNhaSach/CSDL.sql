@@ -5,7 +5,7 @@ GO
 
 CREATE TABLE NhaXuatBan
 (
-	MaNXB CHAR(10) not NULL,
+	MaNXB VARCHAR(10) not NULL,
 	TenNXB NVARCHAR(100),
 	DiaChiNXB NVARCHAR(100),
 	DienThoai VARCHAR(20),
@@ -15,9 +15,9 @@ GO
 
 CREATE TABLE PhieuNhap
 (
-	SoPN CHAR(10) NOT NULL,
+	SoPN CHAR(4) NOT NULL,
 	NgayNhap SMALLDATETIME,
-	MaNXB CHAR(10),
+	MaNXB VARCHAR(10),
 	CONSTRAINT pk_PN PRIMARY KEY (SoPN),
 	CONSTRAINT fk_PN FOREIGN KEY (MaNXB) REFERENCES dbo.NhaXuatBan(MaNXB)
 )
@@ -33,7 +33,7 @@ GO
 
 CREATE TABLE TacGia
 (
-	MaTG CHAR(10) NOT NULL,
+	MaTG VARCHAR(10) NOT NULL,
 	TenTG NVARCHAR(40),
 	LienLac NVARCHAR(40),
 	CONSTRAINT pk_TG PRIMARY KEY (MaTG)
@@ -42,8 +42,8 @@ GO
 
 CREATE TABLE TheLoai
 (
-	MaTL CHAR(10) NOT NULL,
-	TenTL CHAR(10),
+	MaTL VARCHAR(10) NOT NULL,
+	TenTL NVARCHAR(10),
 	CONSTRAINT pk_TL PRIMARY KEY (MaTL)
 )
 GO
@@ -53,9 +53,9 @@ CREATE TABLE Sach
 	MaSach CHAR(10) NOT NULL,
 	TenSach NVARCHAR(40),
 	SoLuongTon INT,
-	MaTL CHAR(10),
-	MaTG CHAR(10),
-	MaNXB CHAR(10),
+	MaTL VARCHAR(10),
+	MaTG VARCHAR(10),
+	MaNXB VARCHAR(10),
 	CONSTRAINT pk_S PRIMARY KEY (MaSach),
 	CONSTRAINT fk_S_MaTL FOREIGN KEY (MaTL) REFERENCES dbo.TheLoai(MaTL),
 	CONSTRAINT fk_S_MaTG FOREIGN KEY (MaTG) REFERENCES dbo.TacGia(MaTG),
@@ -66,7 +66,7 @@ GO
 CREATE TABLE ChiTietPhieuNhap
 (
 	MaSach CHAR(10) NOT NULL,
-	SoPN CHAR(10) NOT NULL,
+	SoPN CHAR(4) NOT NULL,
 	SoLuongNhap INT,
 	GiaNhap MONEY,
 	CONSTRAINT pk_CTPN PRIMARY KEY(MaSach,SoPN),
@@ -321,9 +321,8 @@ INSERT INTO dbo.TheLoai VALUES  ( 'TL008',N'Tiểu thuyết' )
 INSERT INTO dbo.TheLoai VALUES  ( 'TL009',N'Tâm lý' )
 INSERT INTO dbo.TheLoai VALUES  ( 'TL010',N'Tôn giáo' )
 
-	
-ALTER TABLE Sach
-ALTER COLUMN MaNXB CHAR(10)
+
+
 
 INSERT INTO dbo.Sach  
 (
@@ -468,6 +467,7 @@ INSERT INTO Sach
 	s.MaNXB
 )
 VALUES  ( 'S013' ,N'Trà hoa nữ' ,200,67000,'TL001','TG005','NXB007')
+
 INSERT INTO Sach
 (
 	s.MaSach,
@@ -546,9 +546,6 @@ INSERT INTO Sach
 )
 VALUES  ( 'S020' ,N'Cafe cùng Tony' ,400,64000,'TL008','TG002','NXB010')
 
-ALTER TABLE Sach
-ALTER COLUMN TenSach NVARCHAR(100)
-
 
 INSERT INTO dbo.ChiTietPhieuNhap VALUES  ( 'S001','PN010', 20, 60000)
 INSERT INTO dbo.ChiTietPhieuNhap VALUES  ( 'S002','PN009', 20, 50000)
@@ -593,6 +590,8 @@ BEGIN
 END
 
 --Cập nhật tài khoản
+ALTER Table TaiKhoan
+add ThemDuLieu INT
 CREATE PROC USP_CapNhatTaiKhoan
 @tendn NVARCHAR(50), @tenht NVARCHAR(50), @nhapsach INT, @thongke INT, @kesach INT, @themdl INT, @bansach INT, @tttaikhoan INT, @mkmoi NVARCHAR(50)
 AS
@@ -618,8 +617,117 @@ AS
 BEGIN
 	DELETE FROM TaiKhoan WHERE TenDN = @tenDN
 END
+--Thêm mã thể loại
 
+ALTER TABLE TheLoai
+ADD CONSTRAINT df_ID_TL DEFAULT DBO.AUTO_MATL() FOR MaTL
+DROP FUNCTION AUTO_MATL
+CREATE FUNCTION AUTO_MATL()
+RETURNS VARCHAR(5)
+AS
+BEGIN
+	DECLARE @ma VARCHAR(5)
+	IF (SELECT COUNT(MaTL) FROM TheLoai) = 0
+		SET @ma = '0'
+	ELSE
+		SELECT @ma = MAX(RIGHT(MaTL, 3)) FROM TheLoai
+		SELECT @ma = CASE
+			WHEN @ma >= 0 and @ma < 9 THEN 'TL00' + CONVERT(CHAR, CONVERT(INT, @ma) + 1)
+			WHEN @ma >= 9 THEN 'TL0' + CONVERT(CHAR, CONVERT(INT, @ma) + 1)
+		END
+	RETURN @ma
+END
+--Thêm Mã Tác Giả
+ALTER TABLE TacGia
+ADD CONSTRAINT df_ID_TG DEFAULT DBO.AUTO_MATG() FOR MaTG
+CREATE FUNCTION AUTO_MATG()
+RETURNS VARCHAR(5)
+AS
+BEGIN
+	DECLARE @ma VARCHAR(5)
+	IF (SELECT COUNT(MaTG) FROM TacGia) = 0
+		SET @ma = '0'
+	ELSE
+		SELECT @ma = MAX(RIGHT(MaTG, 3)) FROM TacGia
+		SELECT @ma = CASE
+			WHEN @ma >= 0 and @ma < 9 THEN 'TG00' + CONVERT(CHAR, CONVERT(INT, @ma) + 1)
+			WHEN @ma >= 9 THEN 'TG0' + CONVERT(CHAR, CONVERT(INT, @ma) + 1)
+		END
+	RETURN @ma
+END
+--Thêm Mã Nhà Xuất Bản
+ALTER TABLE NhaXuatBan
+ADD CONSTRAINT df_ID_NXB DEFAULT DBO.AUTO_MANXB() FOR MaNXB
+ALTER TABLE NhaXuatBan
+DROP CONSTRAINT df_ID_NXB
+DROP FUNCTION AUTO_MANXB
+
+CREATE FUNCTION AUTO_MANXB()
+RETURNS VARCHAR(6)
+AS
+BEGIN
+	DECLARE @ma VARCHAR(6)
+	IF (SELECT COUNT(MaNXB) FROM NhaXuatBan) = 0
+		SET @ma = '0'
+	ELSE
+		SELECT @ma = MAX(RIGHT(MaNXB, 3)) FROM NhaXuatBan
+		SELECT @ma = CASE
+			WHEN @ma >= 0 and @ma < 9 THEN 'NXB00' + CONVERT(VARCHAR, CONVERT(INT, @ma) + 1)
+			WHEN @ma >= 9 THEN 'NXB0' + CONVERT(VARCHAR, CONVERT(INT, @ma) + 1)
+		END
+	RETURN @ma
+END
+-- Thêm Thể Loại
+CReate proc USP_ThemTheLoai
+@tentl NVARCHAR(50)
+AS
+Begin
+	insert into TheLoai
+		(
+			TenTL
+		)
+	values 
+		(
+			@tentl
+		)
+END
+--Thêm tác giả
+CReate proc USP_ThemTacGia
+@tentg NVARCHAR(50), @sdt NVARCHAR(40)
+AS
+Begin
+	insert into TacGia
+		(
+			TenTG,
+			LienLac
+		)
+	values 
+		(
+			@tentg,
+			@sdt
+		)
+END
+--Thêm nhà xuất bản
+CReate proc USP_ThemNhaXuatBan
+@tennxb NVARCHAR(50), @diachi NVARCHAR(100), @sdt NVARCHAR(50)
+AS
+Begin
+	insert into NhaXuatBan
+		(
+			TenNXB,
+			DiaChiNXB,
+			DienThoai
+		)
+	values 
+		(
+			@tennxb,
+			@diachi,
+			@sdt
+		)
+END
 --Thêm tài khoản
+alter table TaiKhoan
+add CaiDat INT
 CREATE PROC USP_ThemTaiKhoan
 @tendn NVARCHAR(50),@matkhau NVARCHAR(50), @tenht NVARCHAR(50), @loai INT, @nhapsach INT, @thongke INT, @kesach INT, @themdl INT, @bansach INT, @tttaikhoan INT
 AS
@@ -701,30 +809,98 @@ BEGIN
 	WHERE
 		MaSach = @maSach
 END
+--Thêm Mã PN-Trong Bảng PhieuNhap
+ALTER TABLE PhieuNhap
+ADD CONSTRAINT df_ID_PN DEFAULT DBO.AUTO_MAPN() FOR SoPN
 
+
+CREATE FUNCTION AUTO_MAPN()
+RETURNS VARCHAR(5)
+AS
+BEGIN
+	DECLARE @ma VARCHAR(5)
+	IF (SELECT COUNT(SoPN) FROM PhieuNhap) = 0
+		SET @ma = '0'
+	ELSE
+		SELECT @ma = MAX(RIGHT(SoPN, 3)) FROM PhieuNhap
+		SELECT @ma = CASE
+			WHEN @ma >= 0 and @ma < 9 THEN 'PN00' + CONVERT(CHAR, CONVERT(INT, @ma) + 1)
+			WHEN @ma >= 9 THEN 'PN0' + CONVERT(CHAR, CONVERT(INT, @ma) + 1)
+		END
+	RETURN @ma
+END
+--Thêm Mã PN--Trong Bảng ChiTietPhieuNhap
+ALTER TABLE ChiTietPhieuNhap
+ADD CONSTRAINT df_ID_PN_CTPN DEFAULT DBO.AUTO_MAPN() FOR SoPN
+Alter table ChiTietPhieuNhap
+drop constraint df_ID_PN_CTPN
+
+CREATE FUNCTION AUTO_MAPN_CTPN()
+RETURNS VARCHAR(5)
+AS
+BEGIN
+	DECLARE @ma VARCHAR(5)
+	IF (SELECT COUNT(SoPN) FROM ChiTietPhieuNhap) = 0
+		SET @ma = '0'
+	ELSE
+		SELECT @ma = MAX(RIGHT(SoPN, 3)) FROM ChiTietPhieuNhap
+		SELECT @ma = CASE
+			WHEN @ma >= 0 and @ma < 9 THEN 'PN00' + CONVERT(CHAR, CONVERT(INT, @ma) + 1)
+			WHEN @ma >= 9 THEN 'PN0' + CONVERT(CHAR, CONVERT(INT, @ma) + 1)
+		END
+	RETURN @ma
+END
+--Thêm Mã Sách-Trong Bảng Sách
+ALTER TABLE Sach
+ADD CONSTRAINT df_ID_SACH DEFAULT DBO.AUTO_MASACH() FOR MaSach
+alter table Sach
+drop constraint df_ID_SACH
+DROP FUNCTION AUTO_MASACH;
+
+CREATE FUNCTION AUTO_MASACH()
+RETURNS VARCHAR(5)
+AS
+BEGIN
+	DECLARE @ma VARCHAR(5)
+	IF (SELECT COUNT(MaSach) FROM Sach) = 0
+		SET @ma = '0'
+	ELSE
+		SELECT @ma = MAX(RIGHT(MaSach, 3)) FROM dbo.Sach
+		SELECT @ma = CASE
+			WHEN @ma >= 0 and @ma < 9 THEN 'S00' + CONVERT(VARCHAR, CONVERT(INT, @ma) + 1)
+			WHEN @ma >= 9 THEN 'S0' + CONVERT(VARCHAR, CONVERT(INT, @ma) + 1)
+		END
+	RETURN @ma
+END
+--Thêm Mã Sách-- Trong Bảng ChiTietPhieuNhap
+ALTER TABLE ChiTietPhieuNhap
+ADD CONSTRAINT df_ID_SACH_CTPN DEFAULT DBO.AUTO_MASACH_CTPN() FOR MaSach
+
+CREATE FUNCTION AUTO_MASACH_CTPN()
+RETURNS VARCHAR(5)
+AS
+BEGIN
+	DECLARE @ma VARCHAR(5)
+	IF (SELECT COUNT(MaSach) FROM ChiTietPhieuNhap) = 0
+		SET @ma = '0'
+	ELSE
+		SELECT @ma = MAX(RIGHT(MaSach, 3)) FROM ChiTietPhieuNhap
+		SELECT @ma = CASE
+			WHEN @ma >= 0 and @ma < 9 THEN 'S00' + CONVERT(VARCHAR, CONVERT(INT, @ma) + 1)
+			WHEN @ma >= 9 THEN 'S0' + CONVERT(VARCHAR, CONVERT(INT, @ma) + 1)
+		END
+	RETURN @ma
+END
 --Thêm sách
+Drop proc USP_ThemSach
 CREATE PROC USP_ThemSach
-@masach NVARCHAR(50), @tenSach NVARCHAR(100), @sopn NVARCHAR(50), @soluong INT, @giatien INT, @matl NVARCHAR(50), @matg NVARCHAR(50), @manxb NVARCHAR(50), @ngaynhap NVARCHAR(50)
+@tenSach NVARCHAR(100), @soluong INT, @giatien INT, @matl CHAR(5), @matg CHAR(5), @manxb CHAR(6), @ngaynhap smalldatetime
 AS
 BEGIN
 	SET DATEFORMAT DMY
-	
-	INSERT INTO PhieuNhap
-	(
-		SoPN,
-		NgayNhap,
-		MaNXB
-	)
-	VALUES
-	(
-		@sopn,
-		@ngaynhap,
-		@manxb
-	)
-	
+
 	INSERT INTO Sach
 (
-	MaSach,
 	TenSach,
 	SoLuongTon,
 	GiaTien,
@@ -734,7 +910,6 @@ BEGIN
 )
 VALUES
 (
-	@masach,
 	@tenSach,
 	@soluong,
 	@giatien,
@@ -742,19 +917,35 @@ VALUES
 	@matg,
 	@manxb
 )
+	INSERT INTO PhieuNhap
+	(
+		NgayNhap,
+		MaNXB
+	)
+	VALUES
+	(
+		@ngaynhap,
+		@manxb
+	)
+	
+	
 
 	INSERT INTO ChiTietPhieuNhap
 	(
 		MaSach,
-		SoPN,
 		SoLuongNhap,
 		GiaNhap
 	)
 	VALUES
 	(
-		@masach,
-		@sopn,
+
 		@soluong,
 		@giatien
+
 	)
 END
+
+
+
+
+

@@ -14,10 +14,10 @@ namespace QuanLyNhaSach
     public partial class FChinh : Form
     {
         private Account loginAccount;
-        public Account LoginAccount 
-        { 
+        public Account LoginAccount
+        {
             get => loginAccount;
-            set 
+            set
             {
                 loginAccount = value;
             }
@@ -34,14 +34,15 @@ namespace QuanLyNhaSach
 
         void QuyenTruyCap()
         {
-            if (loginAccount.Type == 0) btnCaiDat.Enabled = false;
-            if (loginAccount.ThongKe == 0) btnKeSach.Enabled = false;
-            if (loginAccount.NhapSach == 0) btnNhapSach.Enabled = false;
-            if (loginAccount.ThemDuLieu == 0) btnThemDL.Enabled = false;
-            if (loginAccount.KeSach == 0) btnThongKe.Enabled = false;
+            if (loginAccount.Type == 0) btnCaiDat.Hide();
+            if (loginAccount.ThongKe == 0) btnKeSach.Hide();
+            if (loginAccount.NhapSach == 0) btnNhapSach.Hide();
+            if (loginAccount.ThemDuLieu == 0) btnThemDL.Hide();
+            if (loginAccount.KeSach == 0) btnThongKe.Hide();
         }
         void TaiUCTrang()
         {
+            
             UCBanSach.Instance = new UCBanSach(LoginAccount);
             UCTaiKhoan.Instance = new UCTaiKhoan(LoginAccount);
             UCCaiDat.Instance = new UCCaiDat(LoginAccount);
@@ -52,9 +53,9 @@ namespace QuanLyNhaSach
 
             pnChinh.Controls.Add(UCBanSach.Instance);
             pnChinh.Controls.Add(UCCaiDat.Instance);
+            pnChinh.Controls.Add(UCTaiKhoan.Instance);
             pnChinh.Controls.Add(UCKeSach.Instance);
             pnChinh.Controls.Add(UCNhapSach.Instance);
-            pnChinh.Controls.Add(UCTaiKhoan.Instance);
             pnChinh.Controls.Add(UCThemDuLieu.Instance);
             pnChinh.Controls.Add(UCThongKe.Instance);
 

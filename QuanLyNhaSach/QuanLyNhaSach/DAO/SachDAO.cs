@@ -83,27 +83,26 @@ namespace QuanLyNhaSach.DAO
         }
         public void ThemSLChoSach(string masach, int soluong)
         {
-            DataProvider.Instance.ExecuteQuery("EXEC USP_ThemSLChoSach @maSach , @soluong", new object[] { soluong,masach });
+            DataProvider.Instance.ExecuteQuery("EXEC USP_ThemSLChoSach @maSach , @soluong", new object[] { soluong, masach });
         }
-        public void ThemSach(string masach, string tensach, string sopn, string matl, string matg, string manxb, int soluong, int giatien)
+        public void ThemSach(string tensach, string matl, string matg, string manxb, int soluong, int giatien)
         {
             string date = DateTime.Today.ToShortDateString();
-            DataProvider.Instance.ExecuteNonQuery("USP_ThemSach @masach , @tenSach , @sopn , @soluong , @giatien , @matl , @matg , @manxb , @ngaynhap", new object[] { masach, tensach, sopn, soluong, giatien, matl, matg, manxb, date });
+            DataProvider.Instance.ExecuteNonQuery("USP_ThemSach @tenSach , @soluong , @giatien , @matl , @matg , @manxb , @ngaynhap", new object[] { tensach, soluong, giatien, matl, matg, manxb, date });
         }
-        public void ThemTacGia(string matg, string tentg, string sdt)
+        public void ThemTacGia(string tentg, string sdt)
         {
 
-            DataProvider.Instance.ExecuteNonQuery("USP_ThemTacGia @tentg , @matg , @sdt", new object[] { matg, tentg, sdt });
+            DataProvider.Instance.ExecuteNonQuery("USP_ThemTacGia @tentg , @sdt ", new object[] { tentg, sdt });
         }
-        public void ThemTheLoai(string tentl, string matl)
+        public void ThemTheLoai(string tentl)
+        {
+            DataProvider.Instance.ExecuteNonQuery("USP_ThemTheLoai @tentl ", new object[] { tentl });
+        }
+        public void ThemNhaXuatBan(string tennxb,string diachi,string sdt)
         {
           
-            DataProvider.Instance.ExecuteNonQuery("USP_ThemTheLoai @tentl , @matl", new object[] { tentl, matl});
-        }
-        public void ThemNXB(string tennxb,string manxb,string diachi,string sdt)
-        {
-          
-            DataProvider.Instance.ExecuteNonQuery("USP_ThemNXB @tennxb , @manxb , @diachi , @sdt", new object[] { tennxb, manxb, diachi, sdt });
+            DataProvider.Instance.ExecuteNonQuery("USP_ThemNhaXuatBan @tennxb , @diachi , @sdt ", new object[] { tennxb, diachi, sdt });
         }
     }
 }
