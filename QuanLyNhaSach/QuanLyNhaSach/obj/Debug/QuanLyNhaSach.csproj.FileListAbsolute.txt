@@ -1,54 +1,19 @@
-D:\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\bin\Debug\QuanLyNhaSach.exe.config
-D:\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\bin\Debug\QuanLyNhaSach.exe
-D:\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\bin\Debug\QuanLyNhaSach.pdb
-D:\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.Form1.resources
-D:\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.Properties.Resources.resources
-D:\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.csproj.GenerateResource.cache
-D:\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.csproj.CoreCompileInputs.cache
-D:\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.exe
-D:\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.pdb
-D:\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.MainForm.resources
-D:\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\bin\Debug\MetroFramework.dll
-D:\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.csprojAssemblyReference.cache
-D:\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.csproj.CopyComplete
-D:\Đồ Án\QuanLyNhaSach\QuanLyNhaSach\bin\Debug\QuanLyNhaSach.exe.config
-D:\Đồ Án\QuanLyNhaSach\QuanLyNhaSach\bin\Debug\QuanLyNhaSach.exe
-D:\Đồ Án\QuanLyNhaSach\QuanLyNhaSach\bin\Debug\QuanLyNhaSach.pdb
-D:\Đồ Án\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.csprojAssemblyReference.cache
-D:\Đồ Án\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.Form1.resources
-D:\Đồ Án\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.MainForm.resources
-D:\Đồ Án\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.Properties.Resources.resources
-D:\Đồ Án\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.csproj.GenerateResource.cache
-D:\Đồ Án\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.csproj.CoreCompileInputs.cache
-D:\Đồ Án\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.csproj.CopyComplete
-D:\Đồ Án\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.exe
-D:\Đồ Án\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.pdb
-D:\Đồ Án\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.FForgotPassword.resources
-D:\LTTQ\tranhuucanh2000\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\bin\Debug\QuanLyNhaSach.exe.config
-D:\LTTQ\tranhuucanh2000\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\bin\Debug\QuanLyNhaSach.exe
-D:\LTTQ\tranhuucanh2000\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\bin\Debug\QuanLyNhaSach.pdb
-D:\LTTQ\tranhuucanh2000\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.csprojAssemblyReference.cache
-D:\LTTQ\tranhuucanh2000\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.FForgotPassword.resources
-D:\LTTQ\tranhuucanh2000\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.Form1.resources
-D:\LTTQ\tranhuucanh2000\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.MainForm.resources
-D:\LTTQ\tranhuucanh2000\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.Properties.Resources.resources
-D:\LTTQ\tranhuucanh2000\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.csproj.GenerateResource.cache
-D:\LTTQ\tranhuucanh2000\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.csproj.CoreCompileInputs.cache
-D:\LTTQ\tranhuucanh2000\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.csproj.CopyComplete
-D:\LTTQ\tranhuucanh2000\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.exe
-D:\LTTQ\tranhuucanh2000\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.pdb
-C:\Users\ADMIN\Desktop\LTTQ\QuanLyNhaSach\QuanLyNhaSach\bin\Debug\QuanLyNhaSach.exe.config
-C:\Users\ADMIN\Desktop\LTTQ\QuanLyNhaSach\QuanLyNhaSach\bin\Debug\QuanLyNhaSach.exe
-C:\Users\ADMIN\Desktop\LTTQ\QuanLyNhaSach\QuanLyNhaSach\bin\Debug\QuanLyNhaSach.pdb
-C:\Users\ADMIN\Desktop\LTTQ\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.csprojAssemblyReference.cache
-C:\Users\ADMIN\Desktop\LTTQ\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.FForgotPassword.resources
-C:\Users\ADMIN\Desktop\LTTQ\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.Form1.resources
-C:\Users\ADMIN\Desktop\LTTQ\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.MainForm.resources
-C:\Users\ADMIN\Desktop\LTTQ\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.Properties.Resources.resources
-C:\Users\ADMIN\Desktop\LTTQ\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.csproj.GenerateResource.cache
-C:\Users\ADMIN\Desktop\LTTQ\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.csproj.CoreCompileInputs.cache
-C:\Users\ADMIN\Desktop\LTTQ\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.csproj.CopyComplete
-C:\Users\ADMIN\Desktop\LTTQ\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.exe
-C:\Users\ADMIN\Desktop\LTTQ\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.pdb
-D:\LTTQ\tranhuucanh2000\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.FAdmin.resources
-D:\LTTQ\tranhuucanh2000\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.FTesst.resources
+C:\Users\18521\Desktop\QLNS\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\bin\Debug\QuanLyNhaSach.exe.config
+C:\Users\18521\Desktop\QLNS\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\bin\Debug\QuanLyNhaSach.exe
+C:\Users\18521\Desktop\QLNS\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\bin\Debug\QuanLyNhaSach.pdb
+C:\Users\18521\Desktop\QLNS\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.csprojAssemblyReference.cache
+C:\Users\18521\Desktop\QLNS\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.FChinh.resources
+C:\Users\18521\Desktop\QLNS\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.FLogin.resources
+C:\Users\18521\Desktop\QLNS\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.Properties.Resources.resources
+C:\Users\18521\Desktop\QLNS\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.UCBanSach.resources
+C:\Users\18521\Desktop\QLNS\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.UCCaiDat.resources
+C:\Users\18521\Desktop\QLNS\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.UCKeSach.resources
+C:\Users\18521\Desktop\QLNS\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.UCNhapSach.resources
+C:\Users\18521\Desktop\QLNS\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.UCTaiKhoan.resources
+C:\Users\18521\Desktop\QLNS\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.UCThemDuLieu.resources
+C:\Users\18521\Desktop\QLNS\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.UCThongKe.resources
+C:\Users\18521\Desktop\QLNS\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.csproj.GenerateResource.cache
+C:\Users\18521\Desktop\QLNS\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.csproj.CoreCompileInputs.cache
+C:\Users\18521\Desktop\QLNS\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.csproj.CopyComplete
+C:\Users\18521\Desktop\QLNS\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.exe
+C:\Users\18521\Desktop\QLNS\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.pdb

@@ -53,52 +53,67 @@
     <Compile Include="DAO\DataProvider.cs" />
     <Compile Include="DAO\SachDAO.cs" />
     <Compile Include="DTO\Account.cs" />
-    <Compile Include="FAdmin.cs">
+    <Compile Include="FChinh.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FAdmin.Designer.cs">
-      <DependentUpon>FAdmin.cs</DependentUpon>
+    <Compile Include="FChinh.Designer.cs">
+      <DependentUpon>FChinh.cs</DependentUpon>
     </Compile>
-    <Compile Include="FForgotPassword.cs">
+    <Compile Include="FLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FForgotPassword.Designer.cs">
-      <DependentUpon>FForgotPassword.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FTesst.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FTesst.Designer.cs">
-      <DependentUpon>FTesst.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MainForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MainForm.Designer.cs">
-      <DependentUpon>MainForm.cs</DependentUpon>
+    <Compile Include="FLogin.Designer.cs">
+      <DependentUpon>FLogin.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="FAdmin.resx">
-      <DependentUpon>FAdmin.cs</DependentUpon>
+    <Compile Include="UCBanSach.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCBanSach.Designer.cs">
+      <DependentUpon>UCBanSach.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCCaiDat.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCCaiDat.Designer.cs">
+      <DependentUpon>UCCaiDat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCKeSach.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCKeSach.Designer.cs">
+      <DependentUpon>UCKeSach.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCNhapSach.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCNhapSach.Designer.cs">
+      <DependentUpon>UCNhapSach.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCTaiKhoan.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCTaiKhoan.Designer.cs">
+      <DependentUpon>UCTaiKhoan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCThemDuLieu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCThemDuLieu.Designer.cs">
+      <DependentUpon>UCThemDuLieu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCThongKe.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCThongKe.Designer.cs">
+      <DependentUpon>UCThongKe.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="FChinh.resx">
+      <DependentUpon>FChinh.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FForgotPassword.resx">
-      <DependentUpon>FForgotPassword.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FTesst.resx">
-      <DependentUpon>FTesst.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MainForm.resx">
-      <DependentUpon>MainForm.cs</DependentUpon>
+    <EmbeddedResource Include="FLogin.resx">
+      <DependentUpon>FLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -109,6 +124,27 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UCBanSach.resx">
+      <DependentUpon>UCBanSach.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCCaiDat.resx">
+      <DependentUpon>UCCaiDat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCKeSach.resx">
+      <DependentUpon>UCKeSach.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCNhapSach.resx">
+      <DependentUpon>UCNhapSach.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCTaiKhoan.resx">
+      <DependentUpon>UCTaiKhoan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCThemDuLieu.resx">
+      <DependentUpon>UCThemDuLieu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCThongKe.resx">
+      <DependentUpon>UCThongKe.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -121,9 +157,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="HinhAnh\AdminSetting.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
