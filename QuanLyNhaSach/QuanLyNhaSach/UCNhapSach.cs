@@ -111,16 +111,36 @@ namespace QuanLyNhaSach
         private void btnThemSach_Click(object sender, EventArgs e)
         {
             DataTable Sach = SachDAO.Instance.LayDSSach();
+            int soMSC;
+            int soPNC;
             int soLuongSach = Sach.Rows.Count;
-            DataRow sachCuoi = Sach.Rows[soLuongSach - 1];
-            string maSachCuoi = sachCuoi["ID"].ToString();
-            int soMSC = int.Parse(maSachCuoi.Substring(1).ToString());
+            DataRow sachCuoi;
+            string maSachCuoi;
+            if (soLuongSach > 0)
+            {
+                sachCuoi = Sach.Rows[soLuongSach - 1];
+                maSachCuoi = sachCuoi["ID"].ToString();
+                soMSC = int.Parse(maSachCuoi.Substring(1).ToString());
+            }
+            else
+            {
+                soMSC = 0;
+            }    
+
             DataTable PN = DataProvider.Instance.ExecuteQuery("select * from PhieuNhap");
             int soLuongPN = PN.Rows.Count;
-            DataRow pnCuoi = PN.Rows[soLuongPN - 1];
-            string maPN = pnCuoi["SoPN"].ToString();
-            int soPNC = int.Parse(maPN.Substring(3).ToString());
-
+            DataRow pnCuoi;
+            string maPN;
+            if (soLuongSach > 0)
+            {
+                pnCuoi = PN.Rows[soLuongPN - 1];
+                maPN = pnCuoi["SoPN"].ToString();
+                soPNC = int.Parse(maPN.Substring(3).ToString());
+            }
+            else
+            {
+                soPNC = 0;
+            }
 
             if (txbTen.Text == "")
             {
