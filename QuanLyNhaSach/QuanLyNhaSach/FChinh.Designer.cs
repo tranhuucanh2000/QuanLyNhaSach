@@ -42,24 +42,22 @@
             this.btnKeSach = new System.Windows.Forms.Button();
             this.btnBanSach = new System.Windows.Forms.Button();
             this.pnChinh = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.pnThanh.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnThanh
             // 
             this.pnThanh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
-            this.pnThanh.Controls.Add(this.pnTrang);
-            this.pnThanh.Controls.Add(this.label1);
-            this.pnThanh.Controls.Add(this.pictureBox2);
-            this.pnThanh.Controls.Add(this.btnTaiKhoan);
-            this.pnThanh.Controls.Add(this.btnThoat);
-            this.pnThanh.Controls.Add(this.btnCaiDat);
-            this.pnThanh.Controls.Add(this.btnThemDL);
-            this.pnThanh.Controls.Add(this.btnThongKe);
-            this.pnThanh.Controls.Add(this.btnNhapSach);
-            this.pnThanh.Controls.Add(this.btnKeSach);
-            this.pnThanh.Controls.Add(this.btnBanSach);
+            this.pnThanh.Controls.Add(this.flowLayoutPanel1);
+            this.pnThanh.Controls.Add(this.panel2);
+            this.pnThanh.Controls.Add(this.panel1);
             this.pnThanh.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnThanh.Location = new System.Drawing.Point(0, 0);
             this.pnThanh.Name = "pnThanh";
@@ -69,7 +67,7 @@
             // pnTrang
             // 
             this.pnTrang.BackColor = System.Drawing.Color.White;
-            this.pnTrang.Location = new System.Drawing.Point(0, 173);
+            this.pnTrang.Location = new System.Drawing.Point(3, 3);
             this.pnTrang.Name = "pnTrang";
             this.pnTrang.Size = new System.Drawing.Size(5, 60);
             this.pnTrang.TabIndex = 0;
@@ -79,7 +77,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(9, 134);
+            this.label1.Location = new System.Drawing.Point(12, 137);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(182, 30);
             this.label1.TabIndex = 2;
@@ -88,7 +86,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(22, 0);
+            this.pictureBox2.Location = new System.Drawing.Point(23, 3);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(155, 131);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -104,7 +102,7 @@
             this.btnTaiKhoan.ForeColor = System.Drawing.Color.White;
             this.btnTaiKhoan.Image = ((System.Drawing.Image)(resources.GetObject("btnTaiKhoan.Image")));
             this.btnTaiKhoan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTaiKhoan.Location = new System.Drawing.Point(5, 238);
+            this.btnTaiKhoan.Location = new System.Drawing.Point(3, 69);
             this.btnTaiKhoan.Name = "btnTaiKhoan";
             this.btnTaiKhoan.Size = new System.Drawing.Size(195, 60);
             this.btnTaiKhoan.TabIndex = 0;
@@ -122,7 +120,7 @@
             this.btnThoat.ForeColor = System.Drawing.Color.White;
             this.btnThoat.Image = ((System.Drawing.Image)(resources.GetObject("btnThoat.Image")));
             this.btnThoat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThoat.Location = new System.Drawing.Point(5, 630);
+            this.btnThoat.Location = new System.Drawing.Point(3, 465);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(195, 60);
             this.btnThoat.TabIndex = 0;
@@ -140,7 +138,7 @@
             this.btnCaiDat.ForeColor = System.Drawing.Color.White;
             this.btnCaiDat.Image = ((System.Drawing.Image)(resources.GetObject("btnCaiDat.Image")));
             this.btnCaiDat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCaiDat.Location = new System.Drawing.Point(5, 564);
+            this.btnCaiDat.Location = new System.Drawing.Point(3, 399);
             this.btnCaiDat.Name = "btnCaiDat";
             this.btnCaiDat.Size = new System.Drawing.Size(195, 60);
             this.btnCaiDat.TabIndex = 0;
@@ -158,7 +156,7 @@
             this.btnThemDL.ForeColor = System.Drawing.Color.White;
             this.btnThemDL.Image = ((System.Drawing.Image)(resources.GetObject("btnThemDL.Image")));
             this.btnThemDL.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThemDL.Location = new System.Drawing.Point(5, 498);
+            this.btnThemDL.Location = new System.Drawing.Point(3, 333);
             this.btnThemDL.Name = "btnThemDL";
             this.btnThemDL.Size = new System.Drawing.Size(195, 60);
             this.btnThemDL.TabIndex = 0;
@@ -176,7 +174,7 @@
             this.btnThongKe.ForeColor = System.Drawing.Color.White;
             this.btnThongKe.Image = ((System.Drawing.Image)(resources.GetObject("btnThongKe.Image")));
             this.btnThongKe.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThongKe.Location = new System.Drawing.Point(5, 433);
+            this.btnThongKe.Location = new System.Drawing.Point(3, 267);
             this.btnThongKe.Name = "btnThongKe";
             this.btnThongKe.Size = new System.Drawing.Size(195, 60);
             this.btnThongKe.TabIndex = 0;
@@ -194,7 +192,7 @@
             this.btnNhapSach.ForeColor = System.Drawing.Color.White;
             this.btnNhapSach.Image = ((System.Drawing.Image)(resources.GetObject("btnNhapSach.Image")));
             this.btnNhapSach.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNhapSach.Location = new System.Drawing.Point(5, 368);
+            this.btnNhapSach.Location = new System.Drawing.Point(3, 201);
             this.btnNhapSach.Name = "btnNhapSach";
             this.btnNhapSach.Size = new System.Drawing.Size(195, 60);
             this.btnNhapSach.TabIndex = 0;
@@ -212,7 +210,7 @@
             this.btnKeSach.ForeColor = System.Drawing.Color.White;
             this.btnKeSach.Image = ((System.Drawing.Image)(resources.GetObject("btnKeSach.Image")));
             this.btnKeSach.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnKeSach.Location = new System.Drawing.Point(5, 303);
+            this.btnKeSach.Location = new System.Drawing.Point(3, 135);
             this.btnKeSach.Name = "btnKeSach";
             this.btnKeSach.Size = new System.Drawing.Size(195, 60);
             this.btnKeSach.TabIndex = 0;
@@ -230,7 +228,7 @@
             this.btnBanSach.ForeColor = System.Drawing.Color.White;
             this.btnBanSach.Image = ((System.Drawing.Image)(resources.GetObject("btnBanSach.Image")));
             this.btnBanSach.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBanSach.Location = new System.Drawing.Point(5, 173);
+            this.btnBanSach.Location = new System.Drawing.Point(3, 3);
             this.btnBanSach.Name = "btnBanSach";
             this.btnBanSach.Size = new System.Drawing.Size(195, 60);
             this.btnBanSach.TabIndex = 0;
@@ -247,6 +245,41 @@
             this.pnChinh.Size = new System.Drawing.Size(1000, 720);
             this.pnChinh.TabIndex = 3;
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.pictureBox2);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(200, 191);
+            this.panel1.TabIndex = 3;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.pnTrang);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel2.Location = new System.Drawing.Point(0, 191);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(5, 529);
+            this.panel2.TabIndex = 4;
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Controls.Add(this.btnBanSach);
+            this.flowLayoutPanel1.Controls.Add(this.btnTaiKhoan);
+            this.flowLayoutPanel1.Controls.Add(this.btnKeSach);
+            this.flowLayoutPanel1.Controls.Add(this.btnNhapSach);
+            this.flowLayoutPanel1.Controls.Add(this.btnThongKe);
+            this.flowLayoutPanel1.Controls.Add(this.btnThemDL);
+            this.flowLayoutPanel1.Controls.Add(this.btnCaiDat);
+            this.flowLayoutPanel1.Controls.Add(this.btnThoat);
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(5, 191);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(195, 529);
+            this.flowLayoutPanel1.TabIndex = 5;
+            // 
             // FChinh
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -260,8 +293,11 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Màn Hình Chính";
             this.pnThanh.ResumeLayout(false);
-            this.pnThanh.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.flowLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -270,15 +306,18 @@
         private System.Windows.Forms.Panel pnThanh;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Panel pnChinh;
+        private System.Windows.Forms.Panel pnTrang;
+        private System.Windows.Forms.Button btnTaiKhoan;
+        private System.Windows.Forms.Button btnThoat;
+        private System.Windows.Forms.Button btnCaiDat;
         private System.Windows.Forms.Button btnThemDL;
         private System.Windows.Forms.Button btnThongKe;
         private System.Windows.Forms.Button btnNhapSach;
         private System.Windows.Forms.Button btnKeSach;
         private System.Windows.Forms.Button btnBanSach;
-        private System.Windows.Forms.Button btnTaiKhoan;
-        private System.Windows.Forms.Button btnCaiDat;
-        private System.Windows.Forms.Panel pnTrang;
-        private System.Windows.Forms.Button btnThoat;
-        private System.Windows.Forms.Panel pnChinh;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel1;
     }
 }

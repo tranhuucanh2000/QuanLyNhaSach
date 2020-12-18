@@ -834,7 +834,9 @@ USE [master]
 GO
 ALTER DATABASE [QuanLyNhaSach] SET  READ_WRITE 
 GO
-
+ALTER TABLE TaiKhoan
+ADD CONSTRAINT df_TaiKhoan
+DEFAULT 0 FOR CaiDat
 
 
 

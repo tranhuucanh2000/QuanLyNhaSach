@@ -34,11 +34,13 @@ namespace QuanLyNhaSach
 
         void QuyenTruyCap()
         {
-            if (loginAccount.Type == 0) btnCaiDat.Hide();
-            if (loginAccount.ThongKe == 0) btnKeSach.Hide();
-            if (loginAccount.NhapSach == 0) btnNhapSach.Hide();
-            if (loginAccount.ThemDuLieu == 0) btnThemDL.Hide();
-            if (loginAccount.KeSach == 0) btnThongKe.Hide();
+            if (loginAccount.Type == 0) btnCaiDat.Visible = false;
+            if (loginAccount.ThongKe == 0) btnThongKe.Visible = false;
+            if (loginAccount.NhapSach == 0) btnNhapSach.Visible = false;
+            if (loginAccount.ThemDuLieu == 0) btnThemDL.Visible = false;
+            if (loginAccount.KeSach == 0) btnKeSach.Visible = false;
+            if (loginAccount.TtTaiKhoan == 0) btnTaiKhoan.Visible = false;
+            if (loginAccount.BanSach == 0) btnBanSach.Visible = false;
         }
         void TaiUCTrang()
         {
