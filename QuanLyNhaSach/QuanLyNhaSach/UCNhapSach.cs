@@ -110,7 +110,18 @@ namespace QuanLyNhaSach
 
         private void btnThemSach_Click(object sender, EventArgs e)
         {
-            
+            DataTable Sach = SachDAO.Instance.LayDSSach();
+            int soLuongSach = Sach.Rows.Count;
+            DataRow sachCuoi = Sach.Rows[soLuongSach - 1];
+            string maSachCuoi = sachCuoi["ID"].ToString();
+            int soMSC = int.Parse(maSachCuoi.Substring(1).ToString());
+            DataTable PN = DataProvider.Instance.ExecuteQuery("select * from PhieuNhap");
+            int soLuongPN = PN.Rows.Count;
+            DataRow pnCuoi = PN.Rows[soLuongPN - 1];
+            string maPN = pnCuoi["SoPN"].ToString();
+            int soPNC = int.Parse(maPN.Substring(3).ToString());
+
+
             if (txbTen.Text == "")
             {
                 DuaThongDiep("Bạn vui lòng nhập vào tên sách", 2);
@@ -125,16 +136,28 @@ namespace QuanLyNhaSach
                 string mannxb = strnxb[0].Trim();
                 int soluong;
                 int giatien;
+                string masach;
+                string mapn;
+                soMSC++;
+                soPNC++;
+                if (soLuongSach < 9) masach = string.Concat("S00", soMSC);
+                else if (soLuongSach < 100) masach = string.Concat("S0", soMSC);
+                else masach = string.Concat("S", soMSC);
+
+                if (soLuongPN < 9) mapn = string.Concat("PN00", soPNC);
+                else if (soLuongPN < 100) mapn = string.Concat("PN0", soPNC);
+                else mapn = string.Concat("PN", soPNC);
+
                 if (int.TryParse(txbSoLuongS.Text, out soluong))
                 {
                     if (int.TryParse(txbGiaTien.Text, out giatien))
                     {
-                        SachDAO.Instance.ThemSach(txbTen.Text, matl, matg, mannxb, soluong, giatien);
+                        SachDAO.Instance.ThemSach(mapn,masach,txbTen.Text, matl, matg, mannxb, soluong, giatien);
                         DuaThongDiep("Đã thêm sách thành công!", 1);
                     }
                     else
                     {
-                        DuaThongDiep("Bạn vui lòng nhập lại gia tien!", 2);
+                        DuaThongDiep("Bạn vui lòng nhập lại giá tiền!", 2);
                     }
                 }
                 else
