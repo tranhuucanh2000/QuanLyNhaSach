@@ -60,10 +60,8 @@ namespace QuanLyNhaSach
 
         private void cbTaiKhoan_SelectedIndexChanged(object sender, EventArgs e)
         {
+            pnMK.Visible = false;
             txbTenDN.ReadOnly = true;
-            lbMKM.Visible = true;
-            txbMatKhauMoi.Visible = true;
-            pnMKM.Visible = true;
             btnLuu.Text = "LƯU";
             Account account = AccountDAO.Instance.LayTaiKhoanTuTenDN(cbTaiKhoan.SelectedItem.ToString());
             txbTenDN.Text = account.TenDN;
@@ -81,16 +79,13 @@ namespace QuanLyNhaSach
         {
             if (btnLuu.Text == "LƯU")
             {
-                if (txbMatKhauMoi.Text == txbNhapLaiMKM.Text)
-                {
-                    if (txbMatKhauMoi.Text == "") txbMatKhauMoi.Text = txbMatKhau.Text;
                     int bansach = ckbBanSach.Checked == true ? 1 : 0;
                     int kesach = ckbKeSach.Checked == true ? 1 : 0;
                     int nhapsach = ckbNhapSach.Checked == true ? 1 : 0;
                     int tttaikhoan = ckbTaiKhoan.Checked == true ? 1 : 0;
                     int themdl = ckbThemDL.Checked == true ? 1 : 0;
                     int thongke = ckbThongKe.Checked == true ? 1 : 0;
-                    DataProvider.Instance.ExecuteNonQuery("EXEC USP_CapNhatTaiKhoan @tenDN , @tenHT , @nhapsach , @thongke , @kesach , @themdl , @bansach , @tttaikhoan , @mkmoi", new object[] { txbTenDN.Text, txbTenHT.Text, nhapsach, thongke, kesach, themdl, bansach, tttaikhoan, txbMatKhauMoi.Text });
+                    DataProvider.Instance.ExecuteNonQuery("EXEC USP_CapNhatTaiKhoan @tendn , @nhapsach , @thongke , @kesach , @themdl , @bansach , @tttaikhoan", new object[] { txbTenDN.Text , nhapsach, thongke, kesach, themdl, bansach, tttaikhoan});
                     DuaThongDiep(string.Concat("Đã lưu cài đặt cho tài khoản ", cbTaiKhoan.SelectedItem.ToString()), 1);
                     Account account = AccountDAO.Instance.LayTaiKhoanTuTenDN(cbTaiKhoan.SelectedItem.ToString());
                     txbTenDN.Text = account.TenDN;
@@ -102,12 +97,6 @@ namespace QuanLyNhaSach
                     ckbTaiKhoan.Checked = (account.TtTaiKhoan == 1);
                     ckbThemDL.Checked = (account.ThemDuLieu == 1);
                     ckbThongKe.Checked = (account.ThongKe == 1);
-                    txbMatKhauMoi.Text = txbNhapLaiMKM.Text = "";
-                }
-                else
-                {
-                    DuaThongDiep("Vui lòng nhập mật khẩu mới và xác nhận mật khẩu giống nhau!", 2);
-                }
             }
             else
             {
@@ -135,18 +124,16 @@ namespace QuanLyNhaSach
 
         void TrangThaiNhap()
         {
-            txbTenDN.Text = txbTenHT.Text = txbMatKhau.Text = txbMatKhauMoi.Text = txbNhapLaiMKM.Text = "";
+            txbTenDN.Text = txbTenHT.Text = txbMatKhau.Text = txbNhapLaiMKM.Text = "";
             ckbBanSach.Checked = ckbTaiKhoan.Checked = ckbKeSach.Checked = true;
             ckbThemDL.Checked = ckbThongKe.Checked = ckbNhapSach.Checked = false;
-            lbMKM.Visible = false;
-            txbMatKhauMoi.Visible = false;
-            pnMKM.Visible = false;
             txbTenDN.Focus();
         }
         private void btnThemTaiKhoan_Click(object sender, EventArgs e)
         {
             btnLuu.Text = "Thêm Tài Khoản";
             txbTenDN.ReadOnly = false;
+            pnMK.Visible = true;
             TrangThaiNhap();
         }
 
