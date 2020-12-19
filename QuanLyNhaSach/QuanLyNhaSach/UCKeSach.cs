@@ -195,6 +195,7 @@ namespace QuanLyNhaSach
                 {
                     SachDAO.Instance.SuaSach(txbTen.Text, txbSo.Text, txbGiaTien.Text, txbMa.Text);
                     DuaThongDiep("Đã sửa sách thành công ", 1);
+                    dtgSach.DataSource = SachDAO.Instance.LayDSSach();
                     LamMoiTxb();
                     txbTen.ReadOnly = true;
                     txbGiaTien.ReadOnly = true;
@@ -217,6 +218,31 @@ namespace QuanLyNhaSach
             txbTen.ReadOnly = false;
             txbGiaTien.ReadOnly = false;
             txbSo.ReadOnly = false;
+        }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Bạn chắc chắn xóa chứ ", "Cảnh Báo");
+            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT	* FROM ChiTietHoaDon");
+            bool flag = true;
+            foreach (DataRow item in data.Rows)
+            {
+                if (item["MaSach"].ToString().Equals(txbMa.Text))
+                {
+                    flag = false;
+                }
+            }
+            if (flag)
+            {
+                SachDAO.Instance.XoaSach(txbMa.Text);
+                DuaThongDiep("Bạn đã xóa sách thành công ", 1);
+                dtgSach.DataSource = SachDAO.Instance.LayDSSach();
+            }
+            else
+            {
+                DuaThongDiep("Không thể xóa sách này ", 2);
+            }
+
         }
     }
 }
