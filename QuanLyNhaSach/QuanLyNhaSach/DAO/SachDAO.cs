@@ -116,5 +116,9 @@ namespace QuanLyNhaSach.DAO
         {
             DataProvider.Instance.ExecuteNonQuery("USP_SuaNhaXuatBan @tennxb , @sdt , @diachi , @manxb ", new object[] { tennxb, sdt, diachi, manxb });
         }
+        public void SuaSach(string tensach, string soluong, string giatien, string masach)
+        {
+            DataProvider.Instance.ExecuteNonQuery("USP_SuaSach @tensach , @soluong , @giatien , @masach ", new object[] { tensach, soluong, giatien, masach });
+        }
     }
 }
