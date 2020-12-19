@@ -98,6 +98,7 @@ namespace QuanLyNhaSach
         private void btnLuu_Click(object sender, EventArgs e)
         {
             CapNhatTaiKhoan();
+            txbTenHT.Text = txbNhapLaiMKM.Text = txbMatKhauMoi.Text = txbMatKhau.Text = txbTenDN.Text = "";
         }
     }
     public class TaiKhoanSuKien : EventArgs
