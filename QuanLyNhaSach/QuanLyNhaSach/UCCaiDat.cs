@@ -62,6 +62,7 @@ namespace QuanLyNhaSach
         {
             pnMK.Visible = false;
             txbTenDN.ReadOnly = true;
+            txbTenHT.ReadOnly = true;
             btnLuu.Text = "LƯU";
             Account account = AccountDAO.Instance.LayTaiKhoanTuTenDN(cbTaiKhoan.SelectedItem.ToString());
             txbTenDN.Text = account.TenDN;
@@ -133,6 +134,7 @@ namespace QuanLyNhaSach
         {
             btnLuu.Text = "Thêm Tài Khoản";
             txbTenDN.ReadOnly = false;
+            txbTenHT.ReadOnly = false;
             pnMK.Visible = true;
             TrangThaiNhap();
         }
