@@ -105,6 +105,8 @@ namespace QuanLyNhaSach
         }
         private void cbThuocTinh_SelectedIndexChanged(object sender, EventArgs e)
         {
+            btnXoa.Visible = false;
+            btnLuu.Visible = false;
             LamMoiTxb();
             if (cbThuocTinh.SelectedItem.ToString()=="Sách")
             {
@@ -134,6 +136,8 @@ namespace QuanLyNhaSach
 
         private void dtgSach_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            btnLuu.Visible = true;
+            btnXoa.Visible = true;
             if (cbThuocTinh.SelectedItem.ToString() == "Sách")
             {
                 int vitri = dtgSach.CurrentRow.Index;
