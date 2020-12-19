@@ -133,6 +133,7 @@ namespace QuanLyNhaSach
         {
             btnLuu.Text = "Thêm Tài Khoản";
             txbTenDN.ReadOnly = false;
+            txbTenHT.ReadOnly = false;
             pnMK.Visible = true;
             TrangThaiNhap();
         }
