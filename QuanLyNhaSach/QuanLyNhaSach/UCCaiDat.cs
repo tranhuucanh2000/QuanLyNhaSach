@@ -62,6 +62,7 @@ namespace QuanLyNhaSach
         {
             pnMK.Visible = false;
             txbTenDN.ReadOnly = true;
+            txbTenHT.ReadOnly = true;
             btnLuu.Text = "LƯU";
             Account account = AccountDAO.Instance.LayTaiKhoanTuTenDN(cbTaiKhoan.SelectedItem.ToString());
             txbTenDN.Text = account.TenDN;
