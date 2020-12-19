@@ -106,6 +106,8 @@ namespace QuanLyNhaSach
             {
                 DuaThongDiep("Bạn vui lòng nhập lại số lượng!", 2);
             }
+            cbSach.ResetText();
+            txbSoLuong.Text = "";
         }
 
         private void btnThemSach_Click(object sender, EventArgs e)
@@ -184,7 +186,12 @@ namespace QuanLyNhaSach
                 {
                     DuaThongDiep("Bạn vui lòng nhập lại số lượng!", 2);
                 }
-            }          
+            }
+            cbNXB.ResetText();
+            cbSach.ResetText();
+            cbTheLoai.ResetText();
+            cbTacGia.ResetText();
+            txbTen.Text = txbGiaTien.Text = txbSoLuongS.Text = "";
         }
         List<string> dsMaSach = new List<string>();
         List<string> dsMaPN = new List<string>();
