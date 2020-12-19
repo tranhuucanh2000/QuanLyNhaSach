@@ -175,7 +175,6 @@ namespace QuanLyNhaSach
                 txbNXB.Text = row.Cells[2].Value.ToString();
             }
         }
-
    
     }
 }

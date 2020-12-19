@@ -104,5 +104,17 @@ namespace QuanLyNhaSach.DAO
           
             DataProvider.Instance.ExecuteNonQuery("USP_ThemNhaXuatBan @tennxb , @diachi , @sdt ", new object[] { tennxb, diachi, sdt });
         }
+        public void SuaTheLoai(String tentl, string matl)
+        {
+            DataProvider.Instance.ExecuteNonQuery("USP_SuaTheLoai @tentl , @matl ", new object[] { tentl, matl });
+        }
+        public void SuaTacGia(string tentg, string sdt, string matg)
+        {
+            DataProvider.Instance.ExecuteNonQuery("USP_SuaTacGia @tentg , @sdt , @matg ", new object[] { tentg, sdt, matg });
+        }
+        public void SuaNhaXuatBan(String tennxb, string sdt, string diachi, string manxb)
+        {
+            DataProvider.Instance.ExecuteNonQuery("USP_SuaNhaXuatBan @tennxb , @sdt , @diachi , @manxb ", new object[] { tennxb, sdt, diachi, manxb });
+        }
     }
 }
