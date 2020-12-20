@@ -838,6 +838,55 @@ ALTER TABLE TaiKhoan
 ADD CONSTRAINT df_TaiKhoan
 DEFAULT 0 FOR CaiDat
 
+--Thêm cột Mã Tài Khoản 
+ALTER TABLE TaiKhoan
+ADD MATK VARCHAR(5)
+--Cập nhập mật khẩu
+CREATE PROC USP_CapNhatMatKhau
+@mkmoi NVARCHAR(50), @matk VARCHAR(5)
+AS
+BEGIN
+	UPDATE TaiKhoan
+	SET
+	
+		MatKhau = @mkmoi
+		
+	WHERE
+		MaTK = @matk
+END
+------Random mã nhưng chưa chạy vì chưa biết cách lấy ra
 
-
+CREATE PROCEDURE [dbo].[sp_GeneratePassword]
+    @Length int
+AS
+BEGIN
+ DECLARE @RandomID varchar(32)
+ DECLARE @counter smallint
+ DECLARE @RandomNumber float
+ DECLARE @RandomNumberInt tinyint
+ DECLARE @CurrentCharacter varchar(1)
+ DECLARE @ValidCharacters varchar(255)
+ SET @ValidCharacters='ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890'
+ DECLARE @ValidCharactersLength int
+ SET @ValidCharactersLength = len(@ValidCharacters)
+ SET @CurrentCharacter = ''
+ SET @RandomNumber = 0
+ SET @RandomNumberInt = 0
+ SET @RandomID = ''
+ SET NOCOUNT ON
+ SET @counter = 1
+ WHILE @counter < (@Length + 1)
+ BEGIN
+  SET @RandomNumber = Rand()
+  SET @RandomNumberInt = Convert(tinyint,
+   ((@ValidCharactersLength - 1) * @RandomNumber + 1))
+  SELECT @CurrentCharacter =
+   SUBSTRING(@ValidCharacters, @RandomNumberInt, 1)
+  SET @counter = @counter + 1
+  SET @RandomID = @RandomID + @CurrentCharacter
+ End
+ Select @RandomID As Pass
+END
+--Dòng để chạy lệnh random mã
+Exec sp_GeneratePassword 5
 
