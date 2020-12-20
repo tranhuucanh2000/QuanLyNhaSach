@@ -83,7 +83,7 @@ namespace QuanLyNhaSach
             this.label1 = new System.Windows.Forms.Label();
             this.cbThuocTinh = new System.Windows.Forms.ComboBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.btnSua = new System.Windows.Forms.Button();
+            //this.btnSua = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbDangXuat)).BeginInit();
             this.panel2.SuspendLayout();
