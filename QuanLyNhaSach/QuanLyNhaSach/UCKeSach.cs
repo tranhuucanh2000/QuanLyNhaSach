@@ -140,9 +140,12 @@ namespace QuanLyNhaSach
 
         private void dtgSach_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            btnLuu.Visible = true;
-            btnXoa.Visible = true;
-            btnSua.Visible = true;
+            if(cbThuocTinh.Text == "Sách")
+            {
+                btnLuu.Visible = false;
+                btnXoa.Visible = true;
+                btnSua.Visible = true;
+            }
             if (cbThuocTinh.SelectedItem.ToString() == "Sách")
             {
                 int vitri = dtgSach.CurrentRow.Index;
@@ -218,6 +221,9 @@ namespace QuanLyNhaSach
             txbTen.ReadOnly = false;
             txbGiaTien.ReadOnly = false;
             txbSo.ReadOnly = false;
+            btnLuu.Visible = true;
+            btnXoa.Visible = false;
+            btnSua.Visible = false;
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
