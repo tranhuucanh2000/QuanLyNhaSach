@@ -107,6 +107,10 @@ namespace QuanLyNhaSach
         {
             btnXoa.Visible = false;
             btnLuu.Visible = false;
+            btnSua.Visible = false;
+            txbTen.ReadOnly = true;
+            txbGiaTien.ReadOnly = true;
+            txbSo.ReadOnly = true;
             LamMoiTxb();
             if (cbThuocTinh.SelectedItem.ToString()=="Sách")
             {
@@ -138,6 +142,7 @@ namespace QuanLyNhaSach
         {
             btnLuu.Visible = true;
             btnXoa.Visible = true;
+            btnSua.Visible = true;
             if (cbThuocTinh.SelectedItem.ToString() == "Sách")
             {
                 int vitri = dtgSach.CurrentRow.Index;
@@ -175,5 +180,72 @@ namespace QuanLyNhaSach
                 txbNXB.Text = row.Cells[2].Value.ToString();
             }
         }
+<<<<<<< HEAD
+=======
+
+        private void btnLuu_Click(object sender, EventArgs e)
+        {
+            int giatien;
+            int soluong;
+            if(txbTen.Text=="")
+            {
+                DuaThongDiep("Bạn vui lòng nhập tên sách ", 2);
+            }
+            else if (int.TryParse(txbSo.Text, out soluong))
+            {
+                if (int.TryParse(txbGiaTien.Text, out giatien))
+                {
+                    SachDAO.Instance.SuaSach(txbTen.Text, txbSo.Text, txbGiaTien.Text, txbMa.Text);
+                    DuaThongDiep("Đã sửa sách thành công ", 1);
+                    dtgSach.DataSource = SachDAO.Instance.LayDSSach();
+                    LamMoiTxb();
+                    txbTen.ReadOnly = true;
+                    txbGiaTien.ReadOnly = true;
+                    txbSo.ReadOnly = true;
+                }
+                else
+                {
+                    DuaThongDiep("Bạn vui lòng nhập lại giá tiền!", 2);
+                }
+            }
+            else
+            {
+                DuaThongDiep("Bạn vui lòng nhập lại số lượng!", 2);
+            }
+           
+        }
+
+        private void btnSua_Click(object sender, EventArgs e)
+        {
+            txbTen.ReadOnly = false;
+            txbGiaTien.ReadOnly = false;
+            txbSo.ReadOnly = false;
+        }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Bạn chắc chắn xóa chứ ", "Cảnh Báo");
+            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT	* FROM ChiTietHoaDon");
+            bool flag = true;
+            foreach (DataRow item in data.Rows)
+            {
+                if (item["MaSach"].ToString().Equals(txbMa.Text))
+                {
+                    flag = false;
+                }
+            }
+            if (flag)
+            {
+                SachDAO.Instance.XoaSach(txbMa.Text);
+                DuaThongDiep("Bạn đã xóa sách thành công ", 1);
+                dtgSach.DataSource = SachDAO.Instance.LayDSSach();
+            }
+            else
+            {
+                DuaThongDiep("Không thể xóa sách này ", 2);
+            }
+
+        }
+>>>>>>> c9beb7bae7f5473f60a7b39f59cf465d19a54b48
     }
 }

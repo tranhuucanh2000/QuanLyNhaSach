@@ -160,6 +160,7 @@ namespace QuanLyNhaSach
                     SachDAO.Instance.ThemTacGia(ten, sdt);
                     DuaThongDiep("Đã thêm tác giả thành công!", 1);
                     LamMoiDSMaTacGia();
+                    dtgSach.DataSource = SachDAO.Instance.LayDSTacGia();
                     LamMoiTxb();
                 }
                 else
@@ -172,6 +173,7 @@ namespace QuanLyNhaSach
                 SachDAO.Instance.ThemTheLoai(ten);
                 DuaThongDiep("Đã thêm thể loại thành công!", 1);
                 LamMoiDSMaTheLoai();
+                dtgSach.DataSource = SachDAO.Instance.LayDSTheLoai();
                 LamMoiTxb();
             }
             else
@@ -183,6 +185,7 @@ namespace QuanLyNhaSach
 
                     DuaThongDiep("Đã thêm nhà xuất bản thành công!", 1);
                     LamMoiDSMaNXB();
+                    dtgSach.DataSource = SachDAO.Instance.LayDSNXB();
                     LamMoiTxb();
                 }
                 else
@@ -238,7 +241,8 @@ namespace QuanLyNhaSach
                 string matacgia = row.Cells[0].Value.ToString();
                 SachDAO.Instance.SuaTacGia(txbTen.Text, txbSo.Text, matacgia);
                 DuaThongDiep("Đã sửa tác giả thành công!", 1);
-                LamMoiTxb();
+                    dtgSach.DataSource = SachDAO.Instance.LayDSTacGia();
+                    LamMoiTxb();
                 }
                 else
                 {
@@ -253,6 +257,7 @@ namespace QuanLyNhaSach
                 string matheloai = row.Cells[0].Value.ToString();
                 SachDAO.Instance.SuaTheLoai(txbTen.Text, matheloai);
                 DuaThongDiep("Đã sửa thể loại thành công!", 1);
+                dtgSach.DataSource = SachDAO.Instance.LayDSTheLoai();
                 LamMoiTxb();
             }
             else
@@ -266,6 +271,7 @@ namespace QuanLyNhaSach
                     string manxb = row.Cells[0].Value.ToString();
                     SachDAO.Instance.SuaNhaXuatBan(txbTen.Text, txbSo.Text, txbDC.Text, manxb);
                     DuaThongDiep("Đã sửa nhà xuất bản thành công!", 1);
+                    dtgSach.DataSource = SachDAO.Instance.LayDSNXB();
                     LamMoiTxb();
                 }
                 else
