@@ -124,5 +124,9 @@ namespace QuanLyNhaSach.DAO
         {
             DataProvider.Instance.ExecuteNonQuery("USP_XoaSach @masach ", new object[] { masach });
         }
+        public void QuenMatKhau(string mkmoi, string matk)
+        {
+            DataProvider.Instance.ExecuteNonQuery("USP_CapNhatMatKhau @mkmoi , @matk ", new object[] { mkmoi, matk });
+        }
     }
 }

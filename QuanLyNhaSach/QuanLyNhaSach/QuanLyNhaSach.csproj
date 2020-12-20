@@ -53,6 +53,12 @@
     <Compile Include="DAO\DataProvider.cs" />
     <Compile Include="DAO\SachDAO.cs" />
     <Compile Include="DTO\Account.cs" />
+    <Compile Include="FForgotPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FForgotPassword.Designer.cs">
+      <DependentUpon>FForgotPassword.cs</DependentUpon>
+    </Compile>
     <Compile Include="FChinh.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -111,6 +117,9 @@
     </Compile>
     <EmbeddedResource Include="FChinh.resx">
       <DependentUpon>FChinh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FForgotPassword.resx">
+      <DependentUpon>FForgotPassword.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FLogin.resx">
       <DependentUpon>FLogin.cs</DependentUpon>

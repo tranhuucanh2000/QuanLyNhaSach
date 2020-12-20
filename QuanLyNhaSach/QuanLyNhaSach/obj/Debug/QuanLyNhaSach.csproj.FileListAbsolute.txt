@@ -55,3 +55,4 @@ C:\Users\18521\Desktop\QL\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\Qu
 C:\Users\18521\Desktop\QL\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.csproj.CopyComplete
 C:\Users\18521\Desktop\QL\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.exe
 C:\Users\18521\Desktop\QL\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.pdb
+C:\Users\18521\Desktop\QL\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.FForgotPassword.resources

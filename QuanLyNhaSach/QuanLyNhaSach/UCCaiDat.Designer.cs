@@ -34,6 +34,13 @@ namespace QuanLyNhaSach
             this.panel4 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.grbThongTinTaiKhoan = new System.Windows.Forms.GroupBox();
+            this.pnMK = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.pnNL = new System.Windows.Forms.Panel();
+            this.txbNhapLaiMKM = new System.Windows.Forms.TextBox();
+            this.txbMatKhau = new System.Windows.Forms.TextBox();
+            this.lbNL = new System.Windows.Forms.Label();
             this.grbPhanQuyen = new System.Windows.Forms.GroupBox();
             this.ckbThemDL = new System.Windows.Forms.CheckBox();
             this.ckbKeSach = new System.Windows.Forms.CheckBox();
@@ -41,16 +48,10 @@ namespace QuanLyNhaSach
             this.ckbNhapSach = new System.Windows.Forms.CheckBox();
             this.ckbBanSach = new System.Windows.Forms.CheckBox();
             this.ckbThongKe = new System.Windows.Forms.CheckBox();
-            this.pnNL = new System.Windows.Forms.Panel();
-            this.txbNhapLaiMKM = new System.Windows.Forms.TextBox();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.txbMatKhau = new System.Windows.Forms.TextBox();
             this.txbTenHT = new System.Windows.Forms.TextBox();
             this.panel8 = new System.Windows.Forms.Panel();
             this.txbTenDN = new System.Windows.Forms.TextBox();
-            this.lbNL = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.lbTenSach = new System.Windows.Forms.Label();
             this.btnLuu = new System.Windows.Forms.Button();
@@ -60,14 +61,13 @@ namespace QuanLyNhaSach
             this.lbHoTro = new System.Windows.Forms.Label();
             this.pbDangXuat = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pnMK = new System.Windows.Forms.Panel();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
             this.grbThongTinTaiKhoan.SuspendLayout();
+            this.pnMK.SuspendLayout();
             this.grbPhanQuyen.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbDangXuat)).BeginInit();
             this.panel1.SuspendLayout();
-            this.pnMK.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
@@ -123,6 +123,87 @@ namespace QuanLyNhaSach
             this.grbThongTinTaiKhoan.TabIndex = 2;
             this.grbThongTinTaiKhoan.TabStop = false;
             this.grbThongTinTaiKhoan.Text = "THÔNG TIN TÀI KHOẢN";
+            // 
+            // pnMK
+            // 
+            this.pnMK.Controls.Add(this.panel3);
+            this.pnMK.Controls.Add(this.label2);
+            this.pnMK.Controls.Add(this.pnNL);
+            this.pnMK.Controls.Add(this.txbNhapLaiMKM);
+            this.pnMK.Controls.Add(this.txbMatKhau);
+            this.pnMK.Controls.Add(this.lbNL);
+            this.pnMK.Location = new System.Drawing.Point(45, 243);
+            this.pnMK.Name = "pnMK";
+            this.pnMK.Size = new System.Drawing.Size(676, 168);
+            this.pnMK.TabIndex = 44;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.Black;
+            this.panel3.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel3.Location = new System.Drawing.Point(226, 51);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(390, 1);
+            this.panel3.TabIndex = 40;
+            // 
+            // label2
+            // 
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            this.label2.Location = new System.Drawing.Point(-12, 10);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(234, 42);
+            this.label2.TabIndex = 33;
+            this.label2.Text = "Mật khẩu:";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // pnNL
+            // 
+            this.pnNL.BackColor = System.Drawing.Color.Black;
+            this.pnNL.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pnNL.Location = new System.Drawing.Point(226, 116);
+            this.pnNL.Margin = new System.Windows.Forms.Padding(2);
+            this.pnNL.Name = "pnNL";
+            this.pnNL.Size = new System.Drawing.Size(390, 1);
+            this.pnNL.TabIndex = 39;
+            // 
+            // txbNhapLaiMKM
+            // 
+            this.txbNhapLaiMKM.BackColor = System.Drawing.Color.White;
+            this.txbNhapLaiMKM.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txbNhapLaiMKM.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbNhapLaiMKM.Location = new System.Drawing.Point(228, 83);
+            this.txbNhapLaiMKM.Margin = new System.Windows.Forms.Padding(2);
+            this.txbNhapLaiMKM.Name = "txbNhapLaiMKM";
+            this.txbNhapLaiMKM.Size = new System.Drawing.Size(390, 32);
+            this.txbNhapLaiMKM.TabIndex = 5;
+            this.txbNhapLaiMKM.UseSystemPasswordChar = true;
+            // 
+            // txbMatKhau
+            // 
+            this.txbMatKhau.BackColor = System.Drawing.Color.White;
+            this.txbMatKhau.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txbMatKhau.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbMatKhau.Location = new System.Drawing.Point(228, 17);
+            this.txbMatKhau.Margin = new System.Windows.Forms.Padding(2);
+            this.txbMatKhau.Name = "txbMatKhau";
+            this.txbMatKhau.Size = new System.Drawing.Size(390, 32);
+            this.txbMatKhau.TabIndex = 3;
+            this.txbMatKhau.UseSystemPasswordChar = true;
+            // 
+            // lbNL
+            // 
+            this.lbNL.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbNL.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            this.lbNL.Location = new System.Drawing.Point(-12, 76);
+            this.lbNL.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbNL.Name = "lbNL";
+            this.lbNL.Size = new System.Drawing.Size(234, 42);
+            this.lbNL.TabIndex = 35;
+            this.lbNL.Text = "Nhập lại:";
+            this.lbNL.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // grbPhanQuyen
             // 
@@ -200,38 +281,6 @@ namespace QuanLyNhaSach
             this.ckbThongKe.Text = "Thống Kê";
             this.ckbThongKe.UseVisualStyleBackColor = true;
             // 
-            // pnNL
-            // 
-            this.pnNL.BackColor = System.Drawing.Color.Black;
-            this.pnNL.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pnNL.Location = new System.Drawing.Point(226, 116);
-            this.pnNL.Margin = new System.Windows.Forms.Padding(2);
-            this.pnNL.Name = "pnNL";
-            this.pnNL.Size = new System.Drawing.Size(390, 1);
-            this.pnNL.TabIndex = 39;
-            // 
-            // txbNhapLaiMKM
-            // 
-            this.txbNhapLaiMKM.BackColor = System.Drawing.Color.White;
-            this.txbNhapLaiMKM.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txbNhapLaiMKM.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbNhapLaiMKM.Location = new System.Drawing.Point(228, 83);
-            this.txbNhapLaiMKM.Margin = new System.Windows.Forms.Padding(2);
-            this.txbNhapLaiMKM.Name = "txbNhapLaiMKM";
-            this.txbNhapLaiMKM.Size = new System.Drawing.Size(390, 32);
-            this.txbNhapLaiMKM.TabIndex = 5;
-            this.txbNhapLaiMKM.UseSystemPasswordChar = true;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.Black;
-            this.panel3.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel3.Location = new System.Drawing.Point(226, 51);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(390, 1);
-            this.panel3.TabIndex = 40;
-            // 
             // panel7
             // 
             this.panel7.BackColor = System.Drawing.Color.Black;
@@ -241,18 +290,6 @@ namespace QuanLyNhaSach
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(390, 1);
             this.panel7.TabIndex = 41;
-            // 
-            // txbMatKhau
-            // 
-            this.txbMatKhau.BackColor = System.Drawing.Color.White;
-            this.txbMatKhau.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txbMatKhau.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbMatKhau.Location = new System.Drawing.Point(228, 17);
-            this.txbMatKhau.Margin = new System.Windows.Forms.Padding(2);
-            this.txbMatKhau.Name = "txbMatKhau";
-            this.txbMatKhau.Size = new System.Drawing.Size(390, 32);
-            this.txbMatKhau.TabIndex = 3;
-            this.txbMatKhau.UseSystemPasswordChar = true;
             // 
             // txbTenHT
             // 
@@ -287,30 +324,6 @@ namespace QuanLyNhaSach
             this.txbTenDN.ReadOnly = true;
             this.txbTenDN.Size = new System.Drawing.Size(390, 32);
             this.txbTenDN.TabIndex = 1;
-            // 
-            // lbNL
-            // 
-            this.lbNL.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbNL.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
-            this.lbNL.Location = new System.Drawing.Point(-12, 76);
-            this.lbNL.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lbNL.Name = "lbNL";
-            this.lbNL.Size = new System.Drawing.Size(234, 42);
-            this.lbNL.TabIndex = 35;
-            this.lbNL.Text = "Nhập lại:";
-            this.lbNL.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label2
-            // 
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
-            this.label2.Location = new System.Drawing.Point(-12, 10);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(234, 42);
-            this.label2.TabIndex = 33;
-            this.label2.Text = "Mật khẩu:";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label5
             // 
@@ -425,19 +438,6 @@ namespace QuanLyNhaSach
             this.panel1.Size = new System.Drawing.Size(1000, 50);
             this.panel1.TabIndex = 2;
             // 
-            // pnMK
-            // 
-            this.pnMK.Controls.Add(this.panel3);
-            this.pnMK.Controls.Add(this.label2);
-            this.pnMK.Controls.Add(this.pnNL);
-            this.pnMK.Controls.Add(this.txbNhapLaiMKM);
-            this.pnMK.Controls.Add(this.txbMatKhau);
-            this.pnMK.Controls.Add(this.lbNL);
-            this.pnMK.Location = new System.Drawing.Point(45, 243);
-            this.pnMK.Name = "pnMK";
-            this.pnMK.Size = new System.Drawing.Size(676, 168);
-            this.pnMK.TabIndex = 44;
-            // 
             // UCCaiDat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -452,13 +452,13 @@ namespace QuanLyNhaSach
             this.panel4.PerformLayout();
             this.grbThongTinTaiKhoan.ResumeLayout(false);
             this.grbThongTinTaiKhoan.PerformLayout();
+            this.pnMK.ResumeLayout(false);
+            this.pnMK.PerformLayout();
             this.grbPhanQuyen.ResumeLayout(false);
             this.grbPhanQuyen.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbDangXuat)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.pnMK.ResumeLayout(false);
-            this.pnMK.PerformLayout();
             this.ResumeLayout(false);
 
         }

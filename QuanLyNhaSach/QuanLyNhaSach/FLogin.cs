@@ -20,7 +20,8 @@ namespace QuanLyNhaSach
 
         private void lbQuenMatKhau_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("BẠN HÃY LIÊN HỆ VỚI QUẢN LÝ ĐỂ LẤY LẠI MẬT KHẨU", "QUÊN MẬT KHẨU", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            FForgotPassword fForgotPassword = new FForgotPassword();
+            fForgotPassword.ShowDialog();
         }
 
         private void btnDangNhap_Click(object sender, EventArgs e)
