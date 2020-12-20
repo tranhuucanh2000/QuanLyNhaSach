@@ -183,8 +183,6 @@ namespace QuanLyNhaSach
                 txbNXB.Text = row.Cells[2].Value.ToString();
             }
         }
-<<<<<<< HEAD
-=======
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
@@ -250,8 +248,6 @@ namespace QuanLyNhaSach
             {
                 DuaThongDiep("Không thể xóa sách này ", 2);
             }
-
         }
->>>>>>> c9beb7bae7f5473f60a7b39f59cf465d19a54b48
     }
 }
