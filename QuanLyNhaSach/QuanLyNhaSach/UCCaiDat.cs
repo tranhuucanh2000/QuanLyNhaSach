@@ -64,7 +64,7 @@ namespace QuanLyNhaSach
             txbTenDN.ReadOnly = true;
             txbTenHT.ReadOnly = true;
             btnLuu.Text = "LƯU";
-            Account account = AccountDAO.Instance.LayTaiKhoanTuTenDN(cbTaiKhoan.SelectedItem.ToString());
+            Account account = TaiKhoanDAO.Instance.LayTaiKhoanTuTenDN(cbTaiKhoan.SelectedItem.ToString());
             txbTenDN.Text = account.TenDN;
             txbTenHT.Text = account.Ten;
             txbMatKhau.Text = account.PassWord;
@@ -88,7 +88,7 @@ namespace QuanLyNhaSach
                     int thongke = ckbThongKe.Checked == true ? 1 : 0;
                     DataProvider.Instance.ExecuteNonQuery("EXEC USP_CapNhatTaiKhoan @tendn , @nhapsach , @thongke , @kesach , @themdl , @bansach , @tttaikhoan", new object[] { txbTenDN.Text , nhapsach, thongke, kesach, themdl, bansach, tttaikhoan});
                     DuaThongDiep(string.Concat("Đã lưu cài đặt cho tài khoản ", cbTaiKhoan.SelectedItem.ToString()), 1);
-                    Account account = AccountDAO.Instance.LayTaiKhoanTuTenDN(cbTaiKhoan.SelectedItem.ToString());
+                    Account account = TaiKhoanDAO.Instance.LayTaiKhoanTuTenDN(cbTaiKhoan.SelectedItem.ToString());
                     txbTenDN.Text = account.TenDN;
                     txbTenHT.Text = account.Ten;
                     txbMatKhau.Text = account.PassWord;

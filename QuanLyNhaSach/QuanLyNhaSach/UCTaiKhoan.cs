@@ -81,12 +81,12 @@ namespace QuanLyNhaSach
             }
             else
             {
-                if (AccountDAO.Instance.CapNhatTaiKhoan(tenDN, tenHT, matKhau, matKhauMoi))
+                if (TaiKhoanDAO.Instance.CapNhatTaiKhoan(tenDN, tenHT, matKhau, matKhauMoi))
                 {
                     DuaThongDiep("Cập nhật thành công!", 2);
                     if (capNhatTaiKhoanEvent != null)
                     {
-                        capNhatTaiKhoanEvent(this, new TaiKhoanSuKien(AccountDAO.Instance.LayTaiKhoanTuTenDN(tenDN)));
+                        capNhatTaiKhoanEvent(this, new TaiKhoanSuKien(TaiKhoanDAO.Instance.LayTaiKhoanTuTenDN(tenDN)));
                     }
                 }
                 else

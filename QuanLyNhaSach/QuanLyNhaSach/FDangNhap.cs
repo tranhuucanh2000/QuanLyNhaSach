@@ -6,9 +6,9 @@ using QuanLyNhaSach.DTO;
 
 namespace QuanLyNhaSach
 {
-    public partial class FLogin : Form
+    public partial class FDangNhap : Form
     {
-        public FLogin()
+        public FDangNhap()
         {
             InitializeComponent();
         }
@@ -28,9 +28,9 @@ namespace QuanLyNhaSach
         {
             string usn = txbTaiKhoan.Text;
             string psw = txbMatKhau.Text;
-            if (AccountDAO.Instance.isAccount(usn,psw))
+            if (TaiKhoanDAO.Instance.isAccount(usn,psw))
             {
-                Account account = AccountDAO.Instance.LayTaiKhoanTuTenDN(usn);
+                Account account = TaiKhoanDAO.Instance.LayTaiKhoanTuTenDN(usn);
                 //MainForm mainForm = new MainForm(account);
                 //mainForm.ShowDialog();
                 FChinh fChinh = new FChinh(account);

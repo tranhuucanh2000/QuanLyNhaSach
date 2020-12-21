@@ -21,22 +21,12 @@ namespace QuanLyNhaSach
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT	* FROM TaiKhoan");
-            foreach (DataRow item in data.Rows)
+            if (TaiKhoanDAO.Instance.XacNhanTaiKhoan(txbTenDN.Text, txbMa.Text) == true) pnMatKhauMoi.Visible = true;
+            else
             {
-                if (item["MaTK"].ToString() == txbMa.Text)
-                {
-                    pnNewPassword.Enabled = true;
-                    pnMa.Enabled = false;
-                    lbHoTro.Text = "Bạn đã nhập đúng mã!";
-                    lbHoTro.TextAlign = ContentAlignment.MiddleCenter;
-                    txbMatKhau.Focus();
-
-                }
-                lbHoTro.Text = "Bạn không có mã. Hãy liên hệ chúng tôi!";
-                lbHoTro.ForeColor = Color.Red;
+                lbHoTro.Text = "Mã bạn nhập không đúng!Vui lòng nhập lại!";
+                pnMatKhauMoi.Visible = false;
             }
-            
         }
 
 
@@ -44,8 +34,7 @@ namespace QuanLyNhaSach
         {
             if (txbXacNhanMK.Text == txbMatKhau.Text && txbXacNhanMK.Text.Length > 4)
             {
-                SachDAO.Instance.QuenMatKhau(txbMatKhau.Text, txbMa.Text);
-                this.Close();
+                
             }
             else
             {
@@ -55,6 +44,11 @@ namespace QuanLyNhaSach
             }
 
 
+        }
+
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

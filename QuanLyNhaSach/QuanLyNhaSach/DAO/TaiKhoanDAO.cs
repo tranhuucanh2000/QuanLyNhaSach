@@ -9,13 +9,13 @@ using System.Windows.Forms;
 
 namespace QuanLyNhaSach.DAO
 {
-    public class AccountDAO
+    public class TaiKhoanDAO
     {
-        private static AccountDAO instance;
+        private static TaiKhoanDAO instance;
 
-        internal static AccountDAO Instance 
+        internal static TaiKhoanDAO Instance 
         {
-            get { if (instance == null) instance = new AccountDAO();return instance; }
+            get { if (instance == null) instance = new TaiKhoanDAO();return instance; }
             private set => instance = value; 
         }
 
@@ -53,5 +53,13 @@ namespace QuanLyNhaSach.DAO
             DataTable data = DataProvider.Instance.ExecuteQuery("EXEC USP_CaiDatTaiKhoan");
             return data;
         }
+
+        public bool XacNhanTaiKhoan(string tendn, string ma)
+        {
+            DataTable data = DataProvider.Instance.ExecuteQuery("EXEC dbo.USP_XacNhanTaiKhoanQuaMa @tendn , @ma", new object[] { tendn, ma });
+            if (data.Rows.Count > 0) return true;
+            return false;
+        }
+
     }
 }
