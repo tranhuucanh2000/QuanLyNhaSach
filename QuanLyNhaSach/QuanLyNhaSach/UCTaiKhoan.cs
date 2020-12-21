@@ -144,7 +144,7 @@ namespace QuanLyNhaSach
         {
             if (btnSua.Text == "Sửa Mã")
             {
-                txbTenHT.ReadOnly = txbTenDN.ReadOnly =  true;
+                txbTenHT.ReadOnly= txbTenDN.ReadOnly =  true;
                 lbMK.Text = "Mã:";
                 lbMKM.Text = "Mã Mới:";
                 lbNL.Text = "Nhập Lại Mã:";
@@ -153,6 +153,7 @@ namespace QuanLyNhaSach
             }
             else
             {
+                txbTenHT.ReadOnly = false;
                 txbMatKhauMoi.Text = txbNhapLaiMKM.Text = "";
                 lbMKM.Text = "Mật Khẩu Mới:";
                 lbNL.Text = "Nhập Lại:";
