@@ -887,6 +887,21 @@ ALTER TABLE QuanLyNhaSach.dbo.TaiKhoan
 ADD CONSTRAINT df_CaiDat
 DEFAULT 0 FOR CaiDat
 
+CREATE PROC USP_CapNhatTaiKhoan
+@tendn NVARCHAR(50), @nhapsach INT, @thongke INT, @kesach INT, @themdl INT, @bansach INT, @tttaikhoan INT
+AS
+BEGIN
+	UPDATE TaiKhoan
+	SET
+		NhapSach = @nhapsach,
+		ThongKe = @thongke,
+		KeSach = @kesach,
+		ThemDuLieu = @themdl,
+		BanSach = @bansach,
+		TTTaiKhoan = @tttaikhoan
+	WHERE
+		TenDN = @tenDN
+END
 <<<<<<< HEAD
 =======
 CREATE PROC USP_SuaMaTaiKhoan

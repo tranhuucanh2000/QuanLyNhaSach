@@ -86,7 +86,7 @@ namespace QuanLyNhaSach
                     int tttaikhoan = ckbTaiKhoan.Checked == true ? 1 : 0;
                     int themdl = ckbThemDL.Checked == true ? 1 : 0;
                     int thongke = ckbThongKe.Checked == true ? 1 : 0;
-                    DataProvider.Instance.ExecuteNonQuery("EXEC USP_CapNhatTaiKhoan @tendn , @nhapsach , @thongke , @kesach , @themdl , @bansach , @tttaikhoan", new object[] { txbTenDN.Text , nhapsach, thongke, kesach, themdl, bansach, tttaikhoan});
+                    TaiKhoanDAO.Instance.UpdateTaiKhoan(txbTenDN.Text , nhapsach, thongke, kesach, themdl, bansach, tttaikhoan);
                     DuaThongDiep(string.Concat("Đã lưu cài đặt cho tài khoản ", cbTaiKhoan.SelectedItem.ToString()), 1);
                     Account account = TaiKhoanDAO.Instance.LayTaiKhoanTuTenDN(cbTaiKhoan.SelectedItem.ToString());
                     txbTenDN.Text = account.TenDN;
