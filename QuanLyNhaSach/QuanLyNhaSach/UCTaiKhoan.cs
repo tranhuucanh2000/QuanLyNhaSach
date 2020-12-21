@@ -148,7 +148,7 @@ namespace QuanLyNhaSach
                 lbMK.Text = "Mã:";
                 lbMKM.Text = "Mã Mới:";
                 lbNL.Text = "Nhập Lại Mã:";
-                btnSua.Text = "Thoát";
+                btnSua.Text = "Sửa Mật Khẩu";
                 txbMatKhau.Focus();
             }
             else
