@@ -109,7 +109,8 @@ namespace QuanLyNhaSach
                     int tttaikhoan = ckbTaiKhoan.Checked == true ? 1 : 0;
                     int themdl = ckbThemDL.Checked == true ? 1 : 0;
                     int thongke = ckbThongKe.Checked == true ? 1 : 0;
-                    DataProvider.Instance.ExecuteNonQuery("EXEC USP_ThemTaiKhoan @tendn , @matkhau , @tenht , @loai , @nhapsach , @thongke , @kesach , @themdl , @bansach , @tttaikhoan ", new object[] { txbTenDN.Text, txbMatKhau.Text, txbTenHT.Text, 0, nhapsach, thongke, kesach, themdl, bansach, tttaikhoan });
+                    string ma = txbMa.Text;
+                    TaiKhoanDAO.Instance.ThemTaiKhoan(txbTenDN.Text, txbMatKhau.Text, txbTenHT.Text, nhapsach, thongke, kesach, themdl, bansach, tttaikhoan, ma);
                     DuaThongDiep("Đã thêm tài khoản thành công!", 1);
                     cbTaiKhoan.Items.Clear();
                     LayDuLieuTaiKhoan();

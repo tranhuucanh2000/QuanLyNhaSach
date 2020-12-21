@@ -30,9 +30,13 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FQuenMatKhau));
             this.pnMa = new System.Windows.Forms.Panel();
+            this.btnThoat = new System.Windows.Forms.Button();
             this.btnLuu = new System.Windows.Forms.Button();
             this.lbHoTro = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.txbTenDN = new System.Windows.Forms.TextBox();
             this.panel8 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.txbMa = new System.Windows.Forms.TextBox();
             this.lbMa = new System.Windows.Forms.Label();
             this.pnMatKhauMoi = new System.Windows.Forms.Panel();
@@ -44,10 +48,6 @@
             this.txbMatKhau = new System.Windows.Forms.TextBox();
             this.lbNL = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txbTenDN = new System.Windows.Forms.TextBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btnThoat = new System.Windows.Forms.Button();
             this.pnMa.SuspendLayout();
             this.pnMatKhauMoi.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -65,10 +65,25 @@
             this.pnMa.Controls.Add(this.label1);
             this.pnMa.Controls.Add(this.txbMa);
             this.pnMa.Controls.Add(this.lbMa);
-            this.pnMa.Location = new System.Drawing.Point(0, 200);
+            this.pnMa.Location = new System.Drawing.Point(0, 193);
             this.pnMa.Name = "pnMa";
-            this.pnMa.Size = new System.Drawing.Size(715, 237);
+            this.pnMa.Size = new System.Drawing.Size(715, 244);
             this.pnMa.TabIndex = 14;
+            // 
+            // btnThoat
+            // 
+            this.btnThoat.BackColor = System.Drawing.Color.Red;
+            this.btnThoat.FlatAppearance.BorderSize = 0;
+            this.btnThoat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnThoat.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThoat.ForeColor = System.Drawing.Color.Black;
+            this.btnThoat.Location = new System.Drawing.Point(390, 172);
+            this.btnThoat.Name = "btnThoat";
+            this.btnThoat.Size = new System.Drawing.Size(195, 47);
+            this.btnThoat.TabIndex = 47;
+            this.btnThoat.Text = "Thoát";
+            this.btnThoat.UseVisualStyleBackColor = false;
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
             // btnLuu
             // 
@@ -87,24 +102,57 @@
             // 
             // lbHoTro
             // 
-            this.lbHoTro.AutoSize = true;
             this.lbHoTro.Font = new System.Drawing.Font("Segoe UI Black", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbHoTro.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
-            this.lbHoTro.Location = new System.Drawing.Point(196, 11);
+            this.lbHoTro.Location = new System.Drawing.Point(3, 11);
             this.lbHoTro.Name = "lbHoTro";
-            this.lbHoTro.Size = new System.Drawing.Size(352, 32);
+            this.lbHoTro.Size = new System.Drawing.Size(709, 53);
             this.lbHoTro.TabIndex = 46;
             this.lbHoTro.Text = "Đừng lo lắng nếu bạn có mã!";
+            this.lbHoTro.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Black;
+            this.panel1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel1.Location = new System.Drawing.Point(233, 99);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(390, 1);
+            this.panel1.TabIndex = 45;
+            // 
+            // txbTenDN
+            // 
+            this.txbTenDN.BackColor = System.Drawing.SystemColors.Control;
+            this.txbTenDN.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txbTenDN.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbTenDN.Location = new System.Drawing.Point(235, 66);
+            this.txbTenDN.Margin = new System.Windows.Forms.Padding(2);
+            this.txbTenDN.Name = "txbTenDN";
+            this.txbTenDN.Size = new System.Drawing.Size(390, 32);
+            this.txbTenDN.TabIndex = 43;
             // 
             // panel8
             // 
             this.panel8.BackColor = System.Drawing.Color.Black;
             this.panel8.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel8.Location = new System.Drawing.Point(233, 151);
-            this.panel8.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel8.Margin = new System.Windows.Forms.Padding(2);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(390, 1);
             this.panel8.TabIndex = 45;
+            // 
+            // label1
+            // 
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            this.label1.Location = new System.Drawing.Point(11, 61);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(204, 42);
+            this.label1.TabIndex = 44;
+            this.label1.Text = "Tên Đăng Nhập:";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // txbMa
             // 
@@ -112,7 +160,7 @@
             this.txbMa.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txbMa.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbMa.Location = new System.Drawing.Point(235, 118);
-            this.txbMa.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txbMa.Margin = new System.Windows.Forms.Padding(2);
             this.txbMa.Name = "txbMa";
             this.txbMa.Size = new System.Drawing.Size(390, 32);
             this.txbMa.TabIndex = 43;
@@ -165,7 +213,7 @@
             this.panel3.BackColor = System.Drawing.Color.Black;
             this.panel3.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel3.Location = new System.Drawing.Point(311, 78);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(312, 1);
             this.panel3.TabIndex = 46;
@@ -187,7 +235,7 @@
             this.pnNL.BackColor = System.Drawing.Color.Black;
             this.pnNL.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pnNL.Location = new System.Drawing.Point(309, 147);
-            this.pnNL.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnNL.Margin = new System.Windows.Forms.Padding(2);
             this.pnNL.Name = "pnNL";
             this.pnNL.Size = new System.Drawing.Size(312, 1);
             this.pnNL.TabIndex = 45;
@@ -198,7 +246,7 @@
             this.txbXacNhanMK.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txbXacNhanMK.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbXacNhanMK.Location = new System.Drawing.Point(311, 114);
-            this.txbXacNhanMK.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txbXacNhanMK.Margin = new System.Windows.Forms.Padding(2);
             this.txbXacNhanMK.Name = "txbXacNhanMK";
             this.txbXacNhanMK.Size = new System.Drawing.Size(312, 32);
             this.txbXacNhanMK.TabIndex = 42;
@@ -210,7 +258,7 @@
             this.txbMatKhau.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txbMatKhau.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbMatKhau.Location = new System.Drawing.Point(313, 44);
-            this.txbMatKhau.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txbMatKhau.Margin = new System.Windows.Forms.Padding(2);
             this.txbMatKhau.Name = "txbMatKhau";
             this.txbMatKhau.Size = new System.Drawing.Size(312, 32);
             this.txbMatKhau.TabIndex = 41;
@@ -231,60 +279,12 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(279, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(280, 5);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(174, 182);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 12;
             this.pictureBox1.TabStop = false;
-            // 
-            // label1
-            // 
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
-            this.label1.Location = new System.Drawing.Point(11, 61);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(204, 42);
-            this.label1.TabIndex = 44;
-            this.label1.Text = "Tên Đăng Nhập:";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // txbTenDN
-            // 
-            this.txbTenDN.BackColor = System.Drawing.SystemColors.Control;
-            this.txbTenDN.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txbTenDN.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbTenDN.Location = new System.Drawing.Point(235, 66);
-            this.txbTenDN.Margin = new System.Windows.Forms.Padding(2);
-            this.txbTenDN.Name = "txbTenDN";
-            this.txbTenDN.Size = new System.Drawing.Size(390, 32);
-            this.txbTenDN.TabIndex = 43;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.Black;
-            this.panel1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel1.Location = new System.Drawing.Point(233, 99);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(390, 1);
-            this.panel1.TabIndex = 45;
-            // 
-            // btnThoat
-            // 
-            this.btnThoat.BackColor = System.Drawing.Color.Red;
-            this.btnThoat.FlatAppearance.BorderSize = 0;
-            this.btnThoat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnThoat.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThoat.ForeColor = System.Drawing.Color.Black;
-            this.btnThoat.Location = new System.Drawing.Point(390, 172);
-            this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(195, 47);
-            this.btnThoat.TabIndex = 47;
-            this.btnThoat.Text = "Thoát";
-            this.btnThoat.UseVisualStyleBackColor = false;
-            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
             // FQuenMatKhau
             // 

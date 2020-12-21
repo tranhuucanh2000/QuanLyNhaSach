@@ -60,6 +60,14 @@ namespace QuanLyNhaSach.DAO
             if (data.Rows.Count > 0) return true;
             return false;
         }
+        public void QuenMatKhau(string tendn, string matkhaumoi)
+        {
+            DataProvider.Instance.ExecuteNonQuery("EXEC USP_QuenMatKhau @tendn , @matkhaumoi", new object[] { tendn, matkhaumoi });
+        }    
 
+        public void ThemTaiKhoan(string tendn, string matkhau, string tenht , int nhapsach, int thongke, int kesach, int themdl, int bansach, int tttaikhoan, string ma)
+        {
+            DataProvider.Instance.ExecuteNonQuery("EXEC USP_ThemTaiKhoan @tendn , @matkhau , @tenht , @loai , @nhapsach , @thongke , @kesach , @themdl , @bansach , @tttaikhoan , @ma", new object[] { tendn, matkhau, tenht, 0, nhapsach, thongke, kesach, themdl, bansach, tttaikhoan, ma });
+        }
     }
 }
