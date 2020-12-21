@@ -135,6 +135,18 @@
         rkJggg==
 </value>
   </data>
+  <data name="btnSua.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAABGdBTUEAALGPC/xhBQAAAWpJREFUWEft
+        lb9Lw0AUgPNf6az+LU7RIVTbSsRaxygB06US0BZdHKSOpv5CBxM3hy4q6ugsijg9+9pLe5YzXnq9RLj7
+        4BsyXN7Hu0AMzaRwlhrAY6Xow6LtwXzZHcuF1RpUS/6XU2hOkdF84PDHzhtTOtC0a9BqhxDePYzlUXAD
+        1nod3JX9j63l3Wky/m94A3ELrMFp7L3j/Bnc8sF7d5MzJCEZGYHxtY6ewWd8b3SRIjKPQLQfide9N0tS
+        2OQViHJF5hmI3l6+9CKdQmOOJP0k70A0MfI/BKLh2RNsFpufJGuIjMDfTApEcQ7JGpIU6FUOB4Fm9y9y
+        fBoxB/PYakdgbeww58SmDrw+uQdvrR+JvzrT3h5cXVqtah2CoMOcE5s6MGt1oKg6UFSuwJLjZyo9mzsw
+        K3SgKGoEXr1OVho1NigTNQJZ35GINGpsUCZqBLK+IxFp1NigTHSgKNyBtHgoS0fnkyyNIIbxDSslMpFs
+        MEA/AAAAAElFTkSuQmCC
+</value>
+  </data>
   <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAABGdBTUEAALGPC/xhBQAAclRJREFUeF7t

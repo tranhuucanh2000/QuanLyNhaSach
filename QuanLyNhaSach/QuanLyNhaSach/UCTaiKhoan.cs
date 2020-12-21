@@ -95,10 +95,70 @@ namespace QuanLyNhaSach
                 }
             }
         }
+        void CapNhatMaTaiKhoan()
+        {
+            string tenDN = txbTenDN.Text;
+            
+            string ma = txbMatKhau.Text;
+            string maMoi = txbMatKhauMoi.Text;
+            string laiMM = txbNhapLaiMKM.Text;
+            if (!maMoi.Equals(laiMM))
+            {
+                DuaThongDiep("Vui lòng nhập mã xác nhận trùng với mã mới!", 1);
+            }
+            else
+            {
+                if (TaiKhoanDAO.Instance.CapNhatMaTaiKhoan(tenDN, ma, maMoi))
+                {
+                    DuaThongDiep("Cập nhật thành công!", 2);
+                    if (capNhatTaiKhoanEvent != null)
+                    {
+                        capNhatTaiKhoanEvent(this, new TaiKhoanSuKien(TaiKhoanDAO.Instance.LayTaiKhoanTuTenDN(tenDN)));
+                        btnSua.Text = "Sửa Mã";
+                    }
+                }
+                else
+                {
+                    DuaThongDiep("Vui lòng nhập lại mã!", 1);
+                    txbMatKhau.Focus();
+                }
+            }
+        }
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            CapNhatTaiKhoan();
-            txbTenHT.Text = txbNhapLaiMKM.Text = txbMatKhauMoi.Text = txbMatKhau.Text = txbTenDN.Text = "";
+
+            if (btnSua.Text == "Thoát")
+            {
+                CapNhatMaTaiKhoan();
+                txbNhapLaiMKM.Text = txbMatKhauMoi.Text = txbMatKhau.Text = "";
+
+            }
+            else
+            {
+                CapNhatTaiKhoan();
+                txbTenHT.Text = txbNhapLaiMKM.Text = txbMatKhauMoi.Text = txbMatKhau.Text = txbTenDN.Text = "";
+            }
+        }
+
+        private void btnSua_Click(object sender, EventArgs e)
+        {
+            if (btnSua.Text == "Sửa Mã")
+            {
+                txbTenHT.ReadOnly = txbTenDN.ReadOnly =  true;
+                lbMK.Text = "Mã:";
+                lbMKM.Text = "Mã Mới:";
+                lbNL.Text = "Nhập Lại Mã:";
+                btnSua.Text = "Thoát";
+                txbMatKhau.Focus();
+            }
+            else
+            {
+                txbMatKhauMoi.Text = txbNhapLaiMKM.Text = "";
+                lbMKM.Text = "Mật Khẩu Mới:";
+                lbNL.Text = "Nhập Lại:";
+                lbMK.Text = "Mật Khẩu:";
+                btnSua.Text = "Sửa Mã";
+            }
         }
     }
     public class TaiKhoanSuKien : EventArgs
