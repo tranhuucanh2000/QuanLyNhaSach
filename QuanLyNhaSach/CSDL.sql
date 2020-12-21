@@ -230,6 +230,7 @@ CREATE TABLE [dbo].[TheLoai](
 GO
 ALTER TABLE [dbo].[NhaXuatBan] ADD  CONSTRAINT [df_ID_NXB]  DEFAULT ([DBO].[AUTO_MANXB]()) FOR [MaNXB]
 GO
+
 ALTER TABLE [dbo].[PhieuNhap] ADD  CONSTRAINT [df_ID_PN]  DEFAULT ([DBO].[AUTO_MAPN]()) FOR [SoPN]
 GO
 ALTER TABLE [dbo].[TacGia] ADD  CONSTRAINT [df_ID_TG]  DEFAULT ([DBO].[AUTO_MATG]()) FOR [MaTG]
@@ -285,7 +286,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE FUNCTION [dbo].[AUTO_MANXB]()
-RETURNS VARCHAR(5)
+RETURNS VARCHAR(6)
 AS
 BEGIN
 	DECLARE @ma VARCHAR(5)
@@ -300,6 +301,9 @@ BEGIN
 	RETURN @ma
 END
 GO
+
+drop function AUTO_MANXB
+
 /****** Object:  UserDefinedFunction [dbo].[AUTO_MAPN]    Script Date: 12/16/2020 9:18:14 PM ******/
 SET ANSI_NULLS ON
 GO
@@ -644,7 +648,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE PROC [dbo].[USP_ThemTaiKhoan]
-@tendn NVARCHAR(50),@matkhau NVARCHAR(50), @tenht NVARCHAR(50), @loai INT, @nhapsach INT, @thongke INT, @kesach INT, @themdl INT, @bansach INT, @tttaikhoan INT
+@tendn NVARCHAR(50),@matkhau NVARCHAR(50), @tenht NVARCHAR(50), @loai INT, @nhapsach INT, @thongke INT, @kesach INT, @themdl INT, @bansach INT, @tttaikhoan INT, @ma NVARCHAR(50)
 AS
 BEGIN
 	INSERT INTO TaiKhoan
@@ -658,7 +662,8 @@ BEGIN
 		KeSach,
 		ThemDuLieu,
 		BanSach,
-		TTTaiKhoan
+		TTTaiKhoan,
+		Ma
 	)
 	VALUES
 	(
@@ -671,10 +676,12 @@ BEGIN
 		@kesach,
 		@themdl,
 		@bansach,
-		@tttaikhoan
+		@tttaikhoan,
+		@ma
 	)
 END
 GO
+DROP PROC dbo.USP_ThemTaiKhoan
 /****** Object:  StoredProcedure [dbo].[USP_ThemTheLoai]    Script Date: 12/16/2020 9:18:14 PM ******/
 SET ANSI_NULLS ON
 GO
@@ -841,5 +848,37 @@ ADD CONSTRAINT df_TaiKhoan
 DEFAULT 0 FOR CaiDat
 
 
+ALTER TABLE QuanLyNhaSach.dbo.TaiKhoan ADD Ma NVARCHAR(50)
+GO
 
 
+CREATE PROC USP_XacNhanTaiKhoanQuaMa
+@tendn NVARCHAR(50), @ma NVARCHAR(50)
+AS
+BEGIN
+	SELECT * FROM QuanLyNhaSach.dbo.TaiKhoan WHERE TenDN = @tendn AND Ma = @ma
+END
+
+DROP PROC dbo.USP_XacNhanTaiKhoanQuaMa
+
+EXEC dbo.USP_XacNhanTaiKhoanQuaMa @tendn = N'huucanh', -- nvarchar(50)
+                                  @ma = N'thc0702'     -- nvarchar(50)
+
+CREATE PROC USP_QuenMatKhau
+@tendn NVARCHAR(50), @matkhaumoi NVARCHAR(50)
+AS
+BEGIN
+    UPDATE QuanLyNhaSach.dbo.TaiKhoan
+	SET
+	MatKhau = @matkhaumoi
+	WHERE
+	TenDN = @tendn
+END
+
+EXEC USP_QuenMatKhau @tendn = N'huucanh' , @matkhaumoi = N'Canh2000' 
+SELECT * FROM QuanLyNhaSach.dbo.TaiKhoan
+
+
+ALTER TABLE QuanLyNhaSach.dbo.TaiKhoan
+ADD CONSTRAINT df_CaiDat
+DEFAULT 0 FOR CaiDat

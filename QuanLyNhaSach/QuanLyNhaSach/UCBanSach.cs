@@ -22,6 +22,7 @@ namespace QuanLyNhaSach
             KetNoiKhoSach();
             HienTen();
             DuaVeTrangThaiTimKiem();
+            btnThem.Visible = btnSua.Visible = btnXoa.Visible = false;
         }
         private static UCBanSach instance;
         public static UCBanSach Instance { 
@@ -45,7 +46,7 @@ namespace QuanLyNhaSach
         {
             DataTable data = SachDAO.Instance.LayDSSach();
             dtgSach.DataSource = data;
-            dtgSach.Columns[0].FillWeight = 90;
+            //dtgSach.Columns[0].FillWeight = 90
         }
         void DuaVeTrangThaiTimKiem()
         {
@@ -107,7 +108,11 @@ namespace QuanLyNhaSach
                 txbGiaTien.Text = row.Cells[6].Value.ToString();
                 txbID.Text = row.Cells[0].Value.ToString();
                 txbSoLuong.Text = "";
+                lbHoTroSuaSach.Text = "";
                 txbSoLuong.Focus();
+                btnSua.Visible = false;
+                btnXoa.Visible = false;
+                btnThem.Visible = true;
             }
         }
         private void btnTimKiem_Click(object sender, EventArgs e)
@@ -147,6 +152,7 @@ namespace QuanLyNhaSach
             {
                 dtgSach.DataSource = SachDAO.Instance.TimSachQuaTenVaTheLoaiVaTacGia(tenSach, theLoai, tacGia);
             }
+            btnThem.Visible = btnXoa.Visible = btnSua.Visible = false;
         }
         private void btnLamMoi_Click(object sender, EventArgs e)
         {
@@ -167,22 +173,31 @@ namespace QuanLyNhaSach
                 txbSoLuong.Text = "";
                 LamMoiTxb();
                 DuaThongDiep("Bạn vừa thêm sách vào danh sách thanh toán!", 1);
+                btnThem.Visible = btnXoa.Visible = btnSua.Visible = false;
+                lbHoTroSuaSach.Text = "Bạn vừa thêm sách vào danh sách thanh toán!";
+                lbHoTroSuaSach.ForeColor = Color.FromArgb(102, 255, 102);
             }
             else
             {
                 if (txbSoLuong.Text == "")
                 {
                     DuaThongDiep("Bạn vui lòng nhập vào số lượng sách!", 2);
+                    lbHoTroSuaSach.Text = "Bạn vui lòng nhập vào số lượng sách!";
+                    lbHoTroSuaSach.ForeColor = Color.Red;
                     txbSoLuong.Focus();
                 }
                 if (int.TryParse(txbSoLuong.Text.ToString(), out soLuong) == false)
                 {
                     DuaThongDiep("Bạn vui lòng nhập lại số lượng sách!", 2);
+                    lbHoTroSuaSach.Text = "Bạn vui lòng nhập lại số lượng sách!";
+                    lbHoTroSuaSach.ForeColor = Color.Red;
                     txbSoLuong.Focus();
                 }
                 if (int.TryParse(txbGiaTien.Text.ToString(), out giaTien) == false)
                 {
                     DuaThongDiep("Bạn vui lòng nhập lại giá tiền!", 2);
+                    lbHoTroSuaSach.Text = "Bạn vui lòng nhập lại giá tiền!";
+                    lbHoTroSuaSach.ForeColor = Color.Red;
                     txbGiaTien.Focus();
                 }
             }
@@ -200,9 +215,11 @@ namespace QuanLyNhaSach
                     }
                 }
             }
+            btnThem.Visible = btnXoa.Visible = btnSua.Visible = false;
             LamMoiTxb();
             KetNoiKhoSach();
             dtgThanhToan.Rows.Clear();
+            lbHoTroSuaSach.Text = "";
             DuaThongDiep("Bạn đã thanh toán thành công!", 1);
         }
 
@@ -216,6 +233,9 @@ namespace QuanLyNhaSach
                 txbSoLuong.Text = row.Cells[2].Value.ToString();
                 txbSoLuong.Focus();
                 txbGiaTien.Text = row.Cells[3].Value.ToString();
+                lbHoTroSuaSach.Text = "";
+                btnThem.Visible = false;
+                btnSua.Visible = btnXoa.Visible = true;
             }
         }
 
@@ -229,12 +249,17 @@ namespace QuanLyNhaSach
                 tien = soLuong * giaTien;
                 dtgThanhToan.Rows[dtgThanhToan.CurrentCell.RowIndex].SetValues(new object[] { txbID.Text, txbTenSach.Text, txbSoLuong.Text, txbGiaTien.Text, tien });
                 DuaThongDiep("Bạn đã sửa thành công!", 1);
+                lbHoTroSuaSach.Text = "Bạn đã sửa thành công!";
+                lbHoTroSuaSach.ForeColor = Color.FromArgb(102, 255, 102);
                 LamMoiTxb();
+                btnThem.Visible = btnXoa.Visible = btnSua.Visible = false;
                 LamMoiTongTien();
             }
             else
             {
                 DuaThongDiep("Bạn vui lòng nhập lại số lượng!", 2);
+                lbHoTroSuaSach.Text = "Bạn vui lòng nhập lại số lượng!";
+                lbHoTroSuaSach.ForeColor = Color.Red;
             }
         }
 
@@ -245,8 +270,10 @@ namespace QuanLyNhaSach
             {
                 dtgThanhToan.Rows.RemoveAt(viTri);
                 DuaThongDiep("Bạn đã xóa thành công!", 1);
+                lbHoTroSuaSach.Text = "Bạn đã xóa thành công!";
                 LamMoiTxb();
                 LamMoiTongTien();
+                btnThem.Visible = btnXoa.Visible = btnSua.Visible = false;
             }
         }
 
