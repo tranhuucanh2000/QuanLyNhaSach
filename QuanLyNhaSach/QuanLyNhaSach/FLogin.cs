@@ -20,7 +20,7 @@ namespace QuanLyNhaSach
 
         private void lbQuenMatKhau_Click(object sender, EventArgs e)
         {
-            FForgotPassword fForgotPassword = new FForgotPassword();
+            FQuenMatKhau fForgotPassword = new FQuenMatKhau();
             fForgotPassword.ShowDialog();
         }
 
