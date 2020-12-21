@@ -136,7 +136,7 @@ namespace QuanLyNhaSach
             else
             {
                 CapNhatTaiKhoan();
-                txbTenHT.Text = txbNhapLaiMKM.Text = txbMatKhauMoi.Text = txbMatKhau.Text = txbTenDN.Text = "";
+                txbNhapLaiMKM.Text = txbMatKhauMoi.Text = txbMatKhau.Text = "";
             }
         }
 
