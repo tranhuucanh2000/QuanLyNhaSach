@@ -554,6 +554,7 @@ CREATE PROC [dbo].[USP_ThemSach]
 AS
 BEGIN
 	SET DATEFORMAT DMY
+
 	INSERT INTO Sach
 (
 	MaSach,
@@ -574,6 +575,7 @@ VALUES
 	@matg,
 	@manxb
 )
+END
 	INSERT INTO PhieuNhap
 	(
 		SoPN,
@@ -586,8 +588,6 @@ VALUES
 		@ngaynhap,
 		@manxb
 	)
-	
-	
 
 	INSERT INTO ChiTietPhieuNhap
 	(
@@ -603,8 +603,8 @@ VALUES
 		@soluong,
 		@giatien
 	)
-END
 GO
+DROP PROC USP_ThemSach
 /****** Object:  StoredProcedure [dbo].[USP_ThemSLChoSach]    Script Date: 12/16/2020 9:18:14 PM ******/
 SET ANSI_NULLS ON
 GO
@@ -755,6 +755,10 @@ inner join NhaXuatBan nxb on s.MaNXB=nxb.MaNXB
 WHERE s.TenSach LIKE CONCAT(@tenSach,'%')
 END
 GO
+
+drop proc USP_TimSach_TenSach
+
+exec USP_TimSach_TenSach @tenSach = N'Khéo Ăn Khéo Nói Sẽ Có Thiên Hạ'
 /****** Object:  StoredProcedure [dbo].[USP_TimSach_TenSach_TacGia]    Script Date: 12/16/2020 9:18:14 PM ******/
 SET ANSI_NULLS ON
 GO
@@ -882,3 +886,4 @@ SELECT * FROM QuanLyNhaSach.dbo.TaiKhoan
 ALTER TABLE QuanLyNhaSach.dbo.TaiKhoan
 ADD CONSTRAINT df_CaiDat
 DEFAULT 0 FOR CaiDat
+
