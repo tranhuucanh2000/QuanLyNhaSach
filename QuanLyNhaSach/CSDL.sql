@@ -887,3 +887,22 @@ ALTER TABLE QuanLyNhaSach.dbo.TaiKhoan
 ADD CONSTRAINT df_CaiDat
 DEFAULT 0 FOR CaiDat
 
+<<<<<<< HEAD
+=======
+CREATE PROC USP_SuaMaTaiKhoan
+@tenDN NVARCHAR(50), @ma NVARCHAR(50), @maMoi NVARCHAR(50)
+AS
+BEGIN
+	DECLARE @isMaDung INT = 0
+	
+	SELECT @isMaDung = COUNT(*) FROM TaiKhoan WHERE @tenDN = TenDN AND @ma = Ma
+	
+	IF (@isMaDung = 1)
+	BEGIN
+
+		UPDATE TaiKhoan 
+		SET
+		Ma = @maMoi WHERE TenDN = @tenDN
+	END
+END
+>>>>>>> 0b9f67670638ced8a5c2b36704abed75692f2e15

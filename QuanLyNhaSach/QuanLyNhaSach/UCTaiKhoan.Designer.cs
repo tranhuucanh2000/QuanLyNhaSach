@@ -34,6 +34,7 @@ namespace QuanLyNhaSach
             this.pbDangXuat = new System.Windows.Forms.PictureBox();
             this.lbHoTro = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnSua = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnLuu = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
@@ -47,11 +48,11 @@ namespace QuanLyNhaSach
             this.panel7 = new System.Windows.Forms.Panel();
             this.txbTenDN = new System.Windows.Forms.TextBox();
             this.lbChucVu = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.lbTenSach = new System.Windows.Forms.Label();
+            this.lbNL = new System.Windows.Forms.Label();
+            this.lbMKM = new System.Windows.Forms.Label();
+            this.lbMK = new System.Windows.Forms.Label();
+            this.lbTenHT = new System.Windows.Forms.Label();
+            this.lbTenDN = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbDangXuat)).BeginInit();
             this.panel2.SuspendLayout();
@@ -94,6 +95,7 @@ namespace QuanLyNhaSach
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.btnSua);
             this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Controls.Add(this.btnLuu);
             this.panel2.Controls.Add(this.panel6);
@@ -107,16 +109,35 @@ namespace QuanLyNhaSach
             this.panel2.Controls.Add(this.panel7);
             this.panel2.Controls.Add(this.txbTenDN);
             this.panel2.Controls.Add(this.lbChucVu);
-            this.panel2.Controls.Add(this.label4);
-            this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.label2);
-            this.panel2.Controls.Add(this.label1);
-            this.panel2.Controls.Add(this.lbTenSach);
+            this.panel2.Controls.Add(this.lbNL);
+            this.panel2.Controls.Add(this.lbMKM);
+            this.panel2.Controls.Add(this.lbMK);
+            this.panel2.Controls.Add(this.lbTenHT);
+            this.panel2.Controls.Add(this.lbTenDN);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 50);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1000, 670);
             this.panel2.TabIndex = 3;
+            // 
+            // btnSua
+            // 
+            this.btnSua.BackColor = System.Drawing.Color.Khaki;
+            this.btnSua.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnSua.FlatAppearance.BorderSize = 0;
+            this.btnSua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSua.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSua.Image = ((System.Drawing.Image)(resources.GetObject("btnSua.Image")));
+            this.btnSua.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSua.Location = new System.Drawing.Point(180, 507);
+            this.btnSua.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSua.Name = "btnSua";
+            this.btnSua.Size = new System.Drawing.Size(201, 66);
+            this.btnSua.TabIndex = 35;
+            this.btnSua.Text = "Sửa Mã";
+            this.btnSua.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSua.UseVisualStyleBackColor = false;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // pictureBox1
             // 
@@ -268,65 +289,65 @@ namespace QuanLyNhaSach
             this.lbChucVu.Text = "Quản Lý";
             this.lbChucVu.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label4
+            // lbNL
             // 
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
-            this.label4.Location = new System.Drawing.Point(2, 400);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(234, 42);
-            this.label4.TabIndex = 24;
-            this.label4.Text = "Nhập lại:";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lbNL.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbNL.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            this.lbNL.Location = new System.Drawing.Point(2, 400);
+            this.lbNL.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbNL.Name = "lbNL";
+            this.lbNL.Size = new System.Drawing.Size(234, 42);
+            this.lbNL.TabIndex = 24;
+            this.lbNL.Text = "Nhập lại:";
+            this.lbNL.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label3
+            // lbMKM
             // 
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
-            this.label3.Location = new System.Drawing.Point(0, 336);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(234, 42);
-            this.label3.TabIndex = 23;
-            this.label3.Text = "Mật khẩu mới:";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lbMKM.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbMKM.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            this.lbMKM.Location = new System.Drawing.Point(0, 336);
+            this.lbMKM.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbMKM.Name = "lbMKM";
+            this.lbMKM.Size = new System.Drawing.Size(234, 42);
+            this.lbMKM.TabIndex = 23;
+            this.lbMKM.Text = "Mật khẩu mới:";
+            this.lbMKM.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label2
+            // lbMK
             // 
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
-            this.label2.Location = new System.Drawing.Point(0, 263);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(234, 42);
-            this.label2.TabIndex = 22;
-            this.label2.Text = "Mật khẩu:";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lbMK.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbMK.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            this.lbMK.Location = new System.Drawing.Point(0, 263);
+            this.lbMK.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbMK.Name = "lbMK";
+            this.lbMK.Size = new System.Drawing.Size(234, 42);
+            this.lbMK.TabIndex = 22;
+            this.lbMK.Text = "Mật khẩu:";
+            this.lbMK.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label1
+            // lbTenHT
             // 
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
-            this.label1.Location = new System.Drawing.Point(-2, 196);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(234, 42);
-            this.label1.TabIndex = 26;
-            this.label1.Text = "Tên hiển thị:";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lbTenHT.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTenHT.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            this.lbTenHT.Location = new System.Drawing.Point(-2, 196);
+            this.lbTenHT.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbTenHT.Name = "lbTenHT";
+            this.lbTenHT.Size = new System.Drawing.Size(234, 42);
+            this.lbTenHT.TabIndex = 26;
+            this.lbTenHT.Text = "Tên hiển thị:";
+            this.lbTenHT.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // lbTenSach
+            // lbTenDN
             // 
-            this.lbTenSach.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTenSach.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
-            this.lbTenSach.Location = new System.Drawing.Point(2, 121);
-            this.lbTenSach.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lbTenSach.Name = "lbTenSach";
-            this.lbTenSach.Size = new System.Drawing.Size(234, 42);
-            this.lbTenSach.TabIndex = 25;
-            this.lbTenSach.Text = "Tên đăng nhập:";
-            this.lbTenSach.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lbTenDN.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTenDN.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            this.lbTenDN.Location = new System.Drawing.Point(2, 121);
+            this.lbTenDN.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbTenDN.Name = "lbTenDN";
+            this.lbTenDN.Size = new System.Drawing.Size(234, 42);
+            this.lbTenDN.TabIndex = 25;
+            this.lbTenDN.Text = "Tên đăng nhập:";
+            this.lbTenDN.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // UCTaiKhoan
             // 
@@ -355,11 +376,11 @@ namespace QuanLyNhaSach
         private System.Windows.Forms.Button btnLuu;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.TextBox txbTenDN;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label lbTenSach;
+        private System.Windows.Forms.Label lbNL;
+        private System.Windows.Forms.Label lbMKM;
+        private System.Windows.Forms.Label lbMK;
+        private System.Windows.Forms.Label lbTenHT;
+        private System.Windows.Forms.Label lbTenDN;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.TextBox txbNhapLaiMKM;
@@ -370,5 +391,6 @@ namespace QuanLyNhaSach
         private System.Windows.Forms.TextBox txbMatKhauMoi;
         private System.Windows.Forms.TextBox txbMatKhau;
         private System.Windows.Forms.Label lbChucVu;
+        private System.Windows.Forms.Button btnSua;
     }
 }
