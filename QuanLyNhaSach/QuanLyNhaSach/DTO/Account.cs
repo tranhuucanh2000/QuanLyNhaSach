@@ -62,7 +62,7 @@ namespace QuanLyNhaSach.DTO
             this.caiDat = int.Parse(row["CaiDat"].ToString());
             this.banSach = int.Parse(row["BanSach"].ToString());
             this.TtTaiKhoan = int.Parse(row["TTTaiKhoan"].ToString());
-            this.Ma = row["Ma"].ToString();
+            //this.Ma = row["Ma"].ToString();
         }
     }
 }

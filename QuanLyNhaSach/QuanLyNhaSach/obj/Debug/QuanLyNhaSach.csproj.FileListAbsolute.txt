@@ -41,7 +41,6 @@ C:\Users\18521\Desktop\QL\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\bin\Debug\Qu
 C:\Users\18521\Desktop\QL\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\bin\Debug\QuanLyNhaSach.pdb
 C:\Users\18521\Desktop\QL\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.csprojAssemblyReference.cache
 C:\Users\18521\Desktop\QL\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.FChinh.resources
-C:\Users\18521\Desktop\QL\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.FLogin.resources
 C:\Users\18521\Desktop\QL\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.Properties.Resources.resources
 C:\Users\18521\Desktop\QL\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.UCBanSach.resources
 C:\Users\18521\Desktop\QL\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.UCCaiDat.resources
@@ -55,7 +54,6 @@ C:\Users\18521\Desktop\QL\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\Qu
 C:\Users\18521\Desktop\QL\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.csproj.CopyComplete
 C:\Users\18521\Desktop\QL\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.exe
 C:\Users\18521\Desktop\QL\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.pdb
-C:\Users\18521\Desktop\QL\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.FForgotPassword.resources
 C:\Users\tranh\source\repos\tranhuucanh2000\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\bin\Debug\QuanLyNhaSach.exe.config
 C:\Users\tranh\source\repos\tranhuucanh2000\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\bin\Debug\QuanLyNhaSach.exe
 C:\Users\tranh\source\repos\tranhuucanh2000\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\bin\Debug\QuanLyNhaSach.pdb
@@ -76,3 +74,5 @@ C:\Users\tranh\source\repos\tranhuucanh2000\QuanLyNhaSach\QuanLyNhaSach\QuanLyNh
 C:\Users\tranh\source\repos\tranhuucanh2000\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.exe
 C:\Users\tranh\source\repos\tranhuucanh2000\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.pdb
 C:\Users\tranh\source\repos\tranhuucanh2000\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.FDangNhap.resources
+C:\Users\18521\Desktop\QL\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.FQuenMatKhau.resources
+C:\Users\18521\Desktop\QL\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.FDangNhap.resources
