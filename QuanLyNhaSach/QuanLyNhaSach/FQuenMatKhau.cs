@@ -29,6 +29,7 @@ namespace QuanLyNhaSach
                 txbMatKhau.Focus();
                 lbHoTro.Text = "Bạn đã nhập đúng mã! Hãy tạo mật khẩu mới!";
                 lbHoTro.ForeColor = Color.Violet;
+                btnLuu.Visible = btnThoat.Visible = false;
                 pnMa.Enabled = false;
             } 
             else

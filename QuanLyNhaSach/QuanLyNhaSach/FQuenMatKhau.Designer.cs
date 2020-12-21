@@ -40,6 +40,7 @@
             this.txbMa = new System.Windows.Forms.TextBox();
             this.lbMa = new System.Windows.Forms.Label();
             this.pnMatKhauMoi = new System.Windows.Forms.Panel();
+            this.btnThoat2 = new System.Windows.Forms.Button();
             this.btnXNMK = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
@@ -48,7 +49,6 @@
             this.txbMatKhau = new System.Windows.Forms.TextBox();
             this.lbNL = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.pnMa.SuspendLayout();
             this.pnMatKhauMoi.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -56,19 +56,18 @@
             // 
             // pnMa
             // 
-            this.pnMa.BackColor = System.Drawing.SystemColors.Control;
+            this.pnMa.BackColor = System.Drawing.Color.White;
             this.pnMa.Controls.Add(this.btnThoat);
             this.pnMa.Controls.Add(this.btnLuu);
-            this.pnMa.Controls.Add(this.lbHoTro);
             this.pnMa.Controls.Add(this.panel1);
             this.pnMa.Controls.Add(this.txbTenDN);
             this.pnMa.Controls.Add(this.panel8);
             this.pnMa.Controls.Add(this.label1);
             this.pnMa.Controls.Add(this.txbMa);
             this.pnMa.Controls.Add(this.lbMa);
-            this.pnMa.Location = new System.Drawing.Point(0, 193);
+            this.pnMa.Location = new System.Drawing.Point(0, 262);
             this.pnMa.Name = "pnMa";
-            this.pnMa.Size = new System.Drawing.Size(715, 244);
+            this.pnMa.Size = new System.Drawing.Size(715, 175);
             this.pnMa.TabIndex = 14;
             // 
             // btnThoat
@@ -78,7 +77,7 @@
             this.btnThoat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThoat.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThoat.ForeColor = System.Drawing.Color.Black;
-            this.btnThoat.Location = new System.Drawing.Point(384, 172);
+            this.btnThoat.Location = new System.Drawing.Point(384, 114);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(195, 47);
             this.btnThoat.TabIndex = 47;
@@ -93,7 +92,7 @@
             this.btnLuu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLuu.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLuu.ForeColor = System.Drawing.Color.Black;
-            this.btnLuu.Location = new System.Drawing.Point(129, 172);
+            this.btnLuu.Location = new System.Drawing.Point(129, 114);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(195, 47);
             this.btnLuu.TabIndex = 47;
@@ -105,9 +104,9 @@
             // 
             this.lbHoTro.Font = new System.Drawing.Font("Segoe UI Black", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbHoTro.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
-            this.lbHoTro.Location = new System.Drawing.Point(3, 11);
+            this.lbHoTro.Location = new System.Drawing.Point(0, 206);
             this.lbHoTro.Name = "lbHoTro";
-            this.lbHoTro.Size = new System.Drawing.Size(709, 53);
+            this.lbHoTro.Size = new System.Drawing.Size(715, 53);
             this.lbHoTro.TabIndex = 46;
             this.lbHoTro.Text = "Đừng lo lắng nếu bạn có mã!";
             this.lbHoTro.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -116,7 +115,7 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.Black;
             this.panel1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel1.Location = new System.Drawing.Point(233, 99);
+            this.panel1.Location = new System.Drawing.Point(233, 41);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(390, 1);
@@ -124,10 +123,10 @@
             // 
             // txbTenDN
             // 
-            this.txbTenDN.BackColor = System.Drawing.SystemColors.Control;
+            this.txbTenDN.BackColor = System.Drawing.Color.White;
             this.txbTenDN.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txbTenDN.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbTenDN.Location = new System.Drawing.Point(235, 66);
+            this.txbTenDN.Location = new System.Drawing.Point(235, 8);
             this.txbTenDN.Margin = new System.Windows.Forms.Padding(2);
             this.txbTenDN.Name = "txbTenDN";
             this.txbTenDN.Size = new System.Drawing.Size(390, 32);
@@ -137,7 +136,7 @@
             // 
             this.panel8.BackColor = System.Drawing.Color.Black;
             this.panel8.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel8.Location = new System.Drawing.Point(233, 151);
+            this.panel8.Location = new System.Drawing.Point(233, 93);
             this.panel8.Margin = new System.Windows.Forms.Padding(2);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(390, 1);
@@ -147,7 +146,7 @@
             // 
             this.label1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
-            this.label1.Location = new System.Drawing.Point(11, 61);
+            this.label1.Location = new System.Drawing.Point(11, 3);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(204, 42);
@@ -157,10 +156,10 @@
             // 
             // txbMa
             // 
-            this.txbMa.BackColor = System.Drawing.SystemColors.Control;
+            this.txbMa.BackColor = System.Drawing.Color.White;
             this.txbMa.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txbMa.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbMa.Location = new System.Drawing.Point(235, 118);
+            this.txbMa.Location = new System.Drawing.Point(235, 60);
             this.txbMa.Margin = new System.Windows.Forms.Padding(2);
             this.txbMa.Name = "txbMa";
             this.txbMa.Size = new System.Drawing.Size(390, 32);
@@ -170,7 +169,7 @@
             // 
             this.lbMa.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbMa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
-            this.lbMa.Location = new System.Drawing.Point(153, 113);
+            this.lbMa.Location = new System.Drawing.Point(153, 55);
             this.lbMa.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbMa.Name = "lbMa";
             this.lbMa.Size = new System.Drawing.Size(62, 42);
@@ -180,7 +179,7 @@
             // 
             // pnMatKhauMoi
             // 
-            this.pnMatKhauMoi.Controls.Add(this.button1);
+            this.pnMatKhauMoi.Controls.Add(this.btnThoat2);
             this.pnMatKhauMoi.Controls.Add(this.btnXNMK);
             this.pnMatKhauMoi.Controls.Add(this.panel3);
             this.pnMatKhauMoi.Controls.Add(this.label2);
@@ -194,6 +193,21 @@
             this.pnMatKhauMoi.Size = new System.Drawing.Size(715, 289);
             this.pnMatKhauMoi.TabIndex = 13;
             this.pnMatKhauMoi.Visible = false;
+            // 
+            // btnThoat2
+            // 
+            this.btnThoat2.BackColor = System.Drawing.Color.Red;
+            this.btnThoat2.FlatAppearance.BorderSize = 0;
+            this.btnThoat2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnThoat2.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThoat2.ForeColor = System.Drawing.Color.Black;
+            this.btnThoat2.Location = new System.Drawing.Point(397, 195);
+            this.btnThoat2.Name = "btnThoat2";
+            this.btnThoat2.Size = new System.Drawing.Size(195, 47);
+            this.btnThoat2.TabIndex = 47;
+            this.btnThoat2.Text = "Thoát";
+            this.btnThoat2.UseVisualStyleBackColor = false;
+            this.btnThoat2.Click += new System.EventHandler(this.btnThoat_Click);
             // 
             // btnXNMK
             // 
@@ -244,7 +258,7 @@
             // 
             // txbXacNhanMK
             // 
-            this.txbXacNhanMK.BackColor = System.Drawing.SystemColors.Control;
+            this.txbXacNhanMK.BackColor = System.Drawing.Color.White;
             this.txbXacNhanMK.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txbXacNhanMK.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbXacNhanMK.Location = new System.Drawing.Point(311, 114);
@@ -256,7 +270,7 @@
             // 
             // txbMatKhau
             // 
-            this.txbMatKhau.BackColor = System.Drawing.SystemColors.Control;
+            this.txbMatKhau.BackColor = System.Drawing.Color.White;
             this.txbMatKhau.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txbMatKhau.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbMatKhau.Location = new System.Drawing.Point(313, 44);
@@ -288,28 +302,15 @@
             this.pictureBox1.TabIndex = 12;
             this.pictureBox1.TabStop = false;
             // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.Red;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.Black;
-            this.button1.Location = new System.Drawing.Point(397, 195);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(195, 47);
-            this.button1.TabIndex = 47;
-            this.button1.Text = "Thoát";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.btnThoat_Click);
-            // 
             // FQuenMatKhau
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(715, 720);
             this.Controls.Add(this.pnMa);
             this.Controls.Add(this.pnMatKhauMoi);
+            this.Controls.Add(this.lbHoTro);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FQuenMatKhau";
@@ -345,6 +346,6 @@
         private System.Windows.Forms.TextBox txbTenDN;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnThoat;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnThoat2;
     }
 }
