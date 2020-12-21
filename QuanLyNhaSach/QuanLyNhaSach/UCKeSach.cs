@@ -32,9 +32,42 @@ namespace QuanLyNhaSach
         {
             InitializeComponent();
             loginAccount = acc;
+            TrangThaiBanDau();
             HienTen();
-        }
+            KetNoiKhoSach();
 
+        }
+        void TrangThaiBanDau()
+        {
+            btnLuu.Visible = false;
+            btnSua.Visible = false;
+            btnXoa.Visible = false;
+        }
+        void TrangThaiChonSach()
+        {
+            btnLuu.Visible = false;
+            btnSua.Visible = true;
+            btnXoa.Visible = true;
+        }
+        void KetNoiKhoSach()
+        {
+            DataTable data = SachDAO.Instance.LayDSSach();
+            dtgSach.DataSource = data;
+            dtgSach.Columns[0].HeaderText = "Mã";
+            dtgSach.Columns[1].HeaderText = "Tên Sách";
+            dtgSach.Columns[2].HeaderText = "Tác Giả";
+            dtgSach.Columns[3].HeaderText = "Thể Loại";
+            dtgSach.Columns[4].HeaderText = "Nhà Xuất Bản";
+            dtgSach.Columns[5].HeaderText = "Số Lượng Tồn";
+            dtgSach.Columns[6].HeaderText = "Giá Tiền";
+            dtgSach.Columns[0].Width = 50;
+            dtgSach.Columns[1].Width = 300;
+            dtgSach.Columns[2].Width = 150;
+            dtgSach.Columns[3].Width = 150;
+            dtgSach.Columns[4].Width = 150;
+            dtgSach.Columns[5].Width = 100;
+            dtgSach.Columns[6].Width = 100;
+        }
         void LamMoiTxb()
         {
             txbGiaTien.Text = txbMa.Text = txbNXB.Text = txbSo.Text = txbTacGia.Text = txbTen.Text = txbTheLoai.Text = "";
@@ -48,7 +81,7 @@ namespace QuanLyNhaSach
             lbNXB.Text = "Nhà Xuất Bản:";
             txbSo.Visible = lbSo.Visible = pnSo.Visible = true;
             txbNXB.Visible = lbNXB.Visible = pnNXB.Visible = true;
-            lbSoLuong.Text = (dtgSach.Rows.Count-1).ToString();
+  
         }
         public void HienTen()
         {
@@ -62,44 +95,16 @@ namespace QuanLyNhaSach
             if (mucDo == 3) lbHoTro.ForeColor = Color.White;
             lbHoTro.Text = ThongDiep;
         }
-        void KetNoiKhoSach()
-        {
-            DataTable data = SachDAO.Instance.LayDSSach();
-            dtgSach.DataSource = data;
-        }
+       
 
         private void pbDangXuat_Click(object sender, EventArgs e)
         {
             Application.Restart();
         }
-        private void cbThuocTinh_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            btnXoa.Visible = false;
-            btnLuu.Visible = false;
-            btnSua.Visible = false;
-            txbTen.ReadOnly = true;
-            txbGiaTien.ReadOnly = true;
-            txbSo.ReadOnly = true;
-            LamMoiTxb();
-            if (cbThuocTinh.SelectedItem.ToString()=="Sách")
-            {
-                dtgSach.DataSource = null;
-                dtgSach.DataSource = SachDAO.Instance.LayDSSach();
-                HienThiTTSach();
-            }
-          
-        }
-
+    
         private void dtgSach_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(cbThuocTinh.Text == "Sách")
-            {
-                btnLuu.Visible = false;
-                btnXoa.Visible = true;
-                btnSua.Visible = true;
-            }
-            if (cbThuocTinh.SelectedItem.ToString() == "Sách")
-            {
+                TrangThaiChonSach();
                 int vitri = dtgSach.CurrentRow.Index;
                 DataGridViewRow row = dtgSach.Rows[vitri];
                 txbMa.Text = row.Cells[0].Value.ToString();
@@ -108,9 +113,7 @@ namespace QuanLyNhaSach
                 txbTheLoai.Text = row.Cells[3].Value.ToString();
                 txbNXB.Text = row.Cells[4].Value.ToString();
                 txbSo.Text = row.Cells[5].Value.ToString();
-                txbGiaTien.Text = row.Cells[6].Value.ToString();
-            }
-           
+                txbGiaTien.Text = row.Cells[6].Value.ToString();     
         }
 
         private void btnLuu_Click(object sender, EventArgs e)
@@ -132,6 +135,7 @@ namespace QuanLyNhaSach
                     txbTen.ReadOnly = true;
                     txbGiaTien.ReadOnly = true;
                     txbSo.ReadOnly = true;
+                    btnLuu.Visible = false;
                 }
                 else
                 {
@@ -172,6 +176,7 @@ namespace QuanLyNhaSach
                 SachDAO.Instance.XoaSach(txbMa.Text);
                 DuaThongDiep("Bạn đã xóa sách thành công ", 1);
                 dtgSach.DataSource = SachDAO.Instance.LayDSSach();
+                TrangThaiBanDau();
             }
             else
             {

@@ -32,7 +32,7 @@ namespace QuanLyNhaSach.DTO
         public int CaiDat { get => caiDat; set => caiDat = value; }
         public int BanSach { get => banSach; set => banSach = value; }
         public int TtTaiKhoan { get => ttTaiKhoan; set => ttTaiKhoan = value; }
-        public string Ma { get => ma; set => ma = value; }
+        //public string Ma { get => ma; set => ma = value; }
 
         public Account () { }
         public Account(string tendn,string ten, int type , int thongke, int nhapsach,int kesach,int themdulieu, int caidat, int tttaikhoan, int bansach, string pass = null)
@@ -62,7 +62,7 @@ namespace QuanLyNhaSach.DTO
             this.caiDat = int.Parse(row["CaiDat"].ToString());
             this.banSach = int.Parse(row["BanSach"].ToString());
             this.TtTaiKhoan = int.Parse(row["TTTaiKhoan"].ToString());
-            //this.Ma = row["Ma"].ToString();
+            this.ma = row["Ma"].ToString();
         }
     }
 }

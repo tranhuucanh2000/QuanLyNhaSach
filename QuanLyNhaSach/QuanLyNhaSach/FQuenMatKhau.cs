@@ -27,11 +27,15 @@ namespace QuanLyNhaSach
                 txbTenDN.ReadOnly = true;
                 txbMa.ReadOnly = true;
                 txbMatKhau.Focus();
+                lbHoTro.Text = "Bạn đã nhập đúng mã! Hãy tạo mật khẩu mới!";
+                lbHoTro.ForeColor = Color.Violet;
+                pnMa.Enabled = false;
             } 
             else
             {
                 lbHoTro.Text = "Mã bạn nhập không đúng! Vui lòng nhập lại!";
                 pnMatKhauMoi.Visible = false;
+                lbHoTro.ForeColor = Color.Red;
             }
         }
 
@@ -42,18 +46,21 @@ namespace QuanLyNhaSach
             {
                 TaiKhoanDAO.Instance.QuenMatKhau(txbTenDN.Text, txbXacNhanMK.Text);
                 lbHoTro.Text = "Đã cập nhật mật khẩu thành công!";
+                lbHoTro.ForeColor = Color.Violet;
             }
             else
             {
                 if(txbXacNhanMK.Text.Length>4)
                 {
                     lbHoTro.Text = "Bạn nhập mật khẩu không giống nhau kìa! Nhập lại đi nào!";
+                    lbHoTro.ForeColor = Color.Red;
                     txbXacNhanMK.Text = txbMatKhau.Text = "";
                     txbMatKhau.Focus();
                 }    
                 else
                 {
                     lbHoTro.Text = "Bạn vui lòng nhập mật khẩu dài hơn 4 kí tự!";
+                    lbHoTro.ForeColor = Color.Red;
                     txbXacNhanMK.Text = txbMatKhau.Text = "";
                     txbMatKhau.Focus();
                 }    

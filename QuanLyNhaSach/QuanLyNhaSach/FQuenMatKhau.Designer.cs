@@ -48,6 +48,7 @@
             this.txbMatKhau = new System.Windows.Forms.TextBox();
             this.lbNL = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.pnMa.SuspendLayout();
             this.pnMatKhauMoi.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -77,7 +78,7 @@
             this.btnThoat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThoat.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThoat.ForeColor = System.Drawing.Color.Black;
-            this.btnThoat.Location = new System.Drawing.Point(390, 172);
+            this.btnThoat.Location = new System.Drawing.Point(384, 172);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(195, 47);
             this.btnThoat.TabIndex = 47;
@@ -179,6 +180,7 @@
             // 
             // pnMatKhauMoi
             // 
+            this.pnMatKhauMoi.Controls.Add(this.button1);
             this.pnMatKhauMoi.Controls.Add(this.btnXNMK);
             this.pnMatKhauMoi.Controls.Add(this.panel3);
             this.pnMatKhauMoi.Controls.Add(this.label2);
@@ -200,7 +202,7 @@
             this.btnXNMK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnXNMK.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXNMK.ForeColor = System.Drawing.Color.Black;
-            this.btnXNMK.Location = new System.Drawing.Point(270, 179);
+            this.btnXNMK.Location = new System.Drawing.Point(129, 195);
             this.btnXNMK.Name = "btnXNMK";
             this.btnXNMK.Size = new System.Drawing.Size(195, 47);
             this.btnXNMK.TabIndex = 47;
@@ -286,6 +288,21 @@
             this.pictureBox1.TabIndex = 12;
             this.pictureBox1.TabStop = false;
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Red;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.Black;
+            this.button1.Location = new System.Drawing.Point(397, 195);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(195, 47);
+            this.button1.TabIndex = 47;
+            this.button1.Text = "Thoát";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.btnThoat_Click);
+            // 
             // FQuenMatKhau
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -328,5 +345,6 @@
         private System.Windows.Forms.TextBox txbTenDN;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnThoat;
+        private System.Windows.Forms.Button button1;
     }
 }

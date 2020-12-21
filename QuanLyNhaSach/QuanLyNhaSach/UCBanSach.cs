@@ -46,7 +46,21 @@ namespace QuanLyNhaSach
         {
             DataTable data = SachDAO.Instance.LayDSSach();
             dtgSach.DataSource = data;
-            //dtgSach.Columns[0].FillWeight = 90
+            dtgSach.DataSource = data;
+            dtgSach.Columns[0].HeaderText = "Mã";
+            dtgSach.Columns[1].HeaderText = "Tên Sách";
+            dtgSach.Columns[2].HeaderText = "Tác Giả";
+            dtgSach.Columns[3].HeaderText = "Thể Loại";
+            dtgSach.Columns[4].HeaderText = "NXB";
+            dtgSach.Columns[5].HeaderText = "Số Lượng";
+            dtgSach.Columns[6].HeaderText = "Giá Tiền";
+            dtgSach.Columns[0].Width = 50;
+            dtgSach.Columns[1].Width = 200;
+            dtgSach.Columns[2].Width = 90;
+            dtgSach.Columns[3].Width = 90;
+            dtgSach.Columns[4].Width = 90;
+            dtgSach.Columns[5].Width = 59;
+            dtgSach.Columns[6].Width = 65;
         }
         void DuaVeTrangThaiTimKiem()
         {
