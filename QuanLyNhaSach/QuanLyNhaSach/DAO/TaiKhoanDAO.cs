@@ -74,5 +74,9 @@ namespace QuanLyNhaSach.DAO
         {
             DataProvider.Instance.ExecuteNonQuery("EXEC USP_ThemTaiKhoan @tendn , @matkhau , @tenht , @loai , @nhapsach , @thongke , @kesach , @themdl , @bansach , @tttaikhoan , @ma", new object[] { tendn, matkhau, tenht, 0, nhapsach, thongke, kesach, themdl, bansach, tttaikhoan, ma });
         }
+        public void UpdateTaiKhoan(string tendn, int nhapsach, int thongke, int kesach, int themdl, int bansach, int tttaikhoan)
+        {
+            DataProvider.Instance.ExecuteNonQuery("EXEC USP_CapNhatTaiKhoan @tendn , @nhapsach , @thongke , @kesach , @themdl , @bansach , @tttaikhoan ", new object[] { tendn, nhapsach, thongke, kesach, themdl, bansach, tttaikhoan }); 
+        }
     }
 }
