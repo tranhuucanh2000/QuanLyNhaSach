@@ -53,6 +53,12 @@
     <Compile Include="DAO\DataProvider.cs" />
     <Compile Include="DAO\SachDAO.cs" />
     <Compile Include="DTO\Account.cs" />
+    <Compile Include="FHoaDonTT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FHoaDonTT.Designer.cs">
+      <DependentUpon>FHoaDonTT.cs</DependentUpon>
+    </Compile>
     <Compile Include="FQuenMatKhau.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -118,6 +124,9 @@
     <EmbeddedResource Include="FChinh.resx">
       <DependentUpon>FChinh.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FHoaDonTT.resx">
+      <DependentUpon>FHoaDonTT.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FQuenMatKhau.resx">
       <DependentUpon>FQuenMatKhau.cs</DependentUpon>
     </EmbeddedResource>
@@ -132,6 +141,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="UCBanSach.resx">
       <DependentUpon>UCBanSach.cs</DependentUpon>
@@ -166,6 +176,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\logo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

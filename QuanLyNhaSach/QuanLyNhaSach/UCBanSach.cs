@@ -234,22 +234,35 @@ namespace QuanLyNhaSach
 
         private void btnThanhToan_Click(object sender, EventArgs e)
         {
-            if (dtgThanhToan.Rows.Count > 1)
+            DataTable data = new DataTable();
+            data.Columns.Add("Mã");
+            data.Columns.Add("Tên Sách"); 
+            data.Columns.Add("Số lượng");
+            data.Columns.Add("Đơn Giá");
+            data.Columns.Add("Tiền");
+            for (int i = 0; i < dtgThanhToan.Rows.Count - 1; i++)
             {
-                foreach (DataGridViewRow row in dtgThanhToan.Rows)
-                {
-                    if (row.Index < dtgThanhToan.Rows.Count - 1)
-                    {
-                        SachDAO.Instance.ThanhToanSach(row.Cells[0].Value.ToString(), row.Cells[2].Value.ToString());
-                    }
-                }
+                data.Rows.Add(new object[] { dtgThanhToan.Rows[i].Cells[0].Value, dtgThanhToan.Rows[i].Cells[1].Value, dtgThanhToan.Rows[i].Cells[2].Value, dtgThanhToan.Rows[i].Cells[3].Value, dtgThanhToan.Rows[i].Cells[4].Value });
             }
-            btnThem.Visible = btnXoa.Visible = btnSua.Visible = false;
-            LamMoiTxb();
-            KetNoiKhoSach();
-            dtgThanhToan.Rows.Clear();
-            lbHoTroSuaSach.Text = "";
-            DuaThongDiep("Bạn đã thanh toán thành công!", 1);
+            FHoaDonTT fHoaDonTT = new FHoaDonTT(data, loginAccount);
+            fHoaDonTT.ShowDialog();
+
+            //if (dtgThanhToan.Rows.Count > 1)
+            //{
+            //    foreach (DataGridViewRow row in dtgThanhToan.Rows)
+            //    {
+            //        if (row.Index < dtgThanhToan.Rows.Count - 1)
+            //        {
+            //            SachDAO.Instance.ThanhToanSach(row.Cells[0].Value.ToString(), row.Cells[2].Value.ToString());
+            //        }
+            //    }
+            //}
+            //btnThem.Visible = btnXoa.Visible = btnSua.Visible = false;
+            //LamMoiTxb();
+            //KetNoiKhoSach();
+            //dtgThanhToan.Rows.Clear();
+            //lbHoTroSuaSach.Text = "";
+            //DuaThongDiep("Bạn đã thanh toán thành công!", 1);
         }
 
         private void dtgThanhToan_CellContentClick(object sender, DataGridViewCellEventArgs e)

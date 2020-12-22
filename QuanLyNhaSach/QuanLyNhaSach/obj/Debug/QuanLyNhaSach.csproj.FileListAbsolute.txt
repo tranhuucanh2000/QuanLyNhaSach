@@ -76,3 +76,4 @@ C:\Users\tranh\source\repos\tranhuucanh2000\QuanLyNhaSach\QuanLyNhaSach\QuanLyNh
 C:\Users\tranh\source\repos\tranhuucanh2000\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.FDangNhap.resources
 C:\Users\18521\Desktop\QL\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.FQuenMatKhau.resources
 C:\Users\18521\Desktop\QL\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.FDangNhap.resources
+C:\Users\tranh\source\repos\tranhuucanh2000\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.FHoaDonTT.resources
