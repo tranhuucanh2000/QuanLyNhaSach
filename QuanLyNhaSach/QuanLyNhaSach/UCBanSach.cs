@@ -178,18 +178,40 @@ namespace QuanLyNhaSach
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            int soLuong, giaTien;
-            if (txbSoLuong.Text != "" && int.TryParse(txbSoLuong.Text.ToString(), out soLuong) == true && int.TryParse(txbGiaTien.Text.ToString(), out giaTien) == true)
+            int soLuong; 
+            int giaTien = int.Parse(txbGiaTien.Text);
+            if (txbSoLuong.Text != "" && int.TryParse(txbSoLuong.Text.ToString(), out soLuong) == true )
             {
-                int tien = soLuong * giaTien;
-                dtgThanhToan.Rows.Add(new object[] { txbID.Text, txbTenSach.Text, txbSoLuong.Text, txbGiaTien.Text, tien.ToString() });
-                LamMoiTongTien();
-                txbSoLuong.Text = "";
-                LamMoiTxb();
-                DuaThongDiep("Bạn vừa thêm sách vào danh sách thanh toán!", 1);
-                btnThem.Visible = btnXoa.Visible = btnSua.Visible = false;
-                lbHoTroSuaSach.Text = "Bạn vừa thêm sách vào danh sách thanh toán!";
-                lbHoTroSuaSach.ForeColor = Color.FromArgb(102, 255, 102);
+                DataTable sach = SachDAO.Instance.TimSachQuaTen(txbTenSach.Text);
+                DataRow row= sach.Rows[0];
+                int slSach = int.Parse(row["Số Lượng Tồn"].ToString());
+                if (soLuong > 0 && soLuong <= slSach) 
+                {
+                    int tien = soLuong * giaTien;
+                    dtgThanhToan.Rows.Add(new object[] { txbID.Text, txbTenSach.Text, txbSoLuong.Text, txbGiaTien.Text, tien.ToString() });
+                    LamMoiTongTien();
+                    txbSoLuong.Text = "";
+                    LamMoiTxb();
+                    DuaThongDiep("Bạn vừa thêm sách vào danh sách thanh toán!", 1);
+                    btnThem.Visible = btnXoa.Visible = btnSua.Visible = false;
+                    lbHoTroSuaSach.Text = "Bạn vừa thêm sách vào danh sách thanh toán!";
+                    lbHoTroSuaSach.ForeColor = Color.FromArgb(102, 255, 102);
+                }
+                else
+                {
+                    if(soLuong<=0)
+                    {
+                        DuaThongDiep("Bạn vui lòng nhập số lượng lớn hơn 0", 2);
+                        lbHoTroSuaSach.Text = "Bạn vui lòng nhập số lượng lớn hơn 0";
+                        lbHoTroSuaSach.ForeColor = Color.Red;
+                    }
+                    else
+                    {
+                        DuaThongDiep("Không đủ số lượng sách bán", 2);
+                        lbHoTroSuaSach.Text = "Không đủ số lượng sách bán";
+                        lbHoTroSuaSach.ForeColor = Color.Red;
+                    }
+                }                    
             }
             else
             {
@@ -200,19 +222,12 @@ namespace QuanLyNhaSach
                     lbHoTroSuaSach.ForeColor = Color.Red;
                     txbSoLuong.Focus();
                 }
-                if (int.TryParse(txbSoLuong.Text.ToString(), out soLuong) == false)
+                else if(int.TryParse(txbSoLuong.Text.ToString(), out soLuong) == false)
                 {
                     DuaThongDiep("Bạn vui lòng nhập lại số lượng sách!", 2);
                     lbHoTroSuaSach.Text = "Bạn vui lòng nhập lại số lượng sách!";
                     lbHoTroSuaSach.ForeColor = Color.Red;
                     txbSoLuong.Focus();
-                }
-                if (int.TryParse(txbGiaTien.Text.ToString(), out giaTien) == false)
-                {
-                    DuaThongDiep("Bạn vui lòng nhập lại giá tiền!", 2);
-                    lbHoTroSuaSach.Text = "Bạn vui lòng nhập lại giá tiền!";
-                    lbHoTroSuaSach.ForeColor = Color.Red;
-                    txbGiaTien.Focus();
                 }
             }
         }
@@ -255,26 +270,81 @@ namespace QuanLyNhaSach
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-            int soLuong, giaTien;
-            int tien = 0;
-            if (int.TryParse(txbSoLuong.Text.ToString(), out soLuong) == true)
+            int soLuong;
+            int giaTien = int.Parse(txbGiaTien.Text);
+            if (txbSoLuong.Text != "" && int.TryParse(txbSoLuong.Text.ToString(), out soLuong) == true)
             {
-                int.TryParse(txbGiaTien.Text.ToString(), out giaTien);
-                tien = soLuong * giaTien;
-                dtgThanhToan.Rows[dtgThanhToan.CurrentCell.RowIndex].SetValues(new object[] { txbID.Text, txbTenSach.Text, txbSoLuong.Text, txbGiaTien.Text, tien });
-                DuaThongDiep("Bạn đã sửa thành công!", 1);
-                lbHoTroSuaSach.Text = "Bạn đã sửa thành công!";
-                lbHoTroSuaSach.ForeColor = Color.FromArgb(102, 255, 102);
-                LamMoiTxb();
-                btnThem.Visible = btnXoa.Visible = btnSua.Visible = false;
-                LamMoiTongTien();
+                DataTable sach = SachDAO.Instance.TimSachQuaTen(txbTenSach.Text);
+                DataRow row = sach.Rows[0];
+                int slSach = int.Parse(row["Số Lượng Tồn"].ToString());
+                if (soLuong > 0 && soLuong <= slSach)
+                {
+                    int tien = soLuong * giaTien;
+                    dtgThanhToan.Rows[dtgThanhToan.CurrentCell.RowIndex].SetValues(new object[] { txbID.Text, txbTenSach.Text, txbSoLuong.Text, txbGiaTien.Text, tien });
+                    LamMoiTongTien();
+                    txbSoLuong.Text = "";
+                    LamMoiTxb();
+                    DuaThongDiep("Bạn đã sửa thành công!", 1);
+                    btnThem.Visible = btnXoa.Visible = btnSua.Visible = false;
+                    lbHoTroSuaSach.Text = "Bạn đã sửa thành công!";
+                    lbHoTroSuaSach.ForeColor = Color.FromArgb(102, 255, 102);
+                }
+                else
+                {
+                    if (soLuong <= 0)
+                    {
+                        DuaThongDiep("Bạn vui lòng nhập số lượng lớn hơn 0", 2);
+                        lbHoTroSuaSach.Text = "Bạn vui lòng nhập số lượng lớn hơn 0";
+                        lbHoTroSuaSach.ForeColor = Color.Red;
+                    }
+                    else
+                    {
+                        DuaThongDiep("Không đủ số lượng sách bán", 2);
+                        lbHoTroSuaSach.Text = "Không đủ số lượng sách bán";
+                        lbHoTroSuaSach.ForeColor = Color.Red;
+                    }
+                }
             }
             else
             {
-                DuaThongDiep("Bạn vui lòng nhập lại số lượng!", 2);
-                lbHoTroSuaSach.Text = "Bạn vui lòng nhập lại số lượng!";
-                lbHoTroSuaSach.ForeColor = Color.Red;
+                if (txbSoLuong.Text == "")
+                {
+                    DuaThongDiep("Bạn vui lòng nhập vào số lượng sách!", 2);
+                    lbHoTroSuaSach.Text = "Bạn vui lòng nhập vào số lượng sách!";
+                    lbHoTroSuaSach.ForeColor = Color.Red;
+                    txbSoLuong.Focus();
+                }
+                else if (int.TryParse(txbSoLuong.Text.ToString(), out soLuong) == false)
+                {
+                    DuaThongDiep("Bạn vui lòng nhập lại số lượng sách!", 2);
+                    lbHoTroSuaSach.Text = "Bạn vui lòng nhập lại số lượng sách!";
+                    lbHoTroSuaSach.ForeColor = Color.Red;
+                    txbSoLuong.Focus();
+                }
             }
+            //int soLuong;
+            //int giaTien = int.Parse(txbGiaTien.Text);
+            //int tien = 0;
+            //if (int.TryParse(txbSoLuong.Text.ToString(), out soLuong) == true)
+            //{
+            //    DataTable sach = SachDAO.Instance.TimSachQuaTen(txbTenSach.Text);
+            //    DataRow row = sach.Rows[0];
+            //    int slSach = int.Parse(row["Số Lượng Tồn"].ToString());
+            //    tien = soLuong * giaTien;
+            //    dtgThanhToan.Rows[dtgThanhToan.CurrentCell.RowIndex].SetValues(new object[] { txbID.Text, txbTenSach.Text, txbSoLuong.Text, txbGiaTien.Text, tien });
+            //    DuaThongDiep("Bạn đã sửa thành công!", 1);
+            //    lbHoTroSuaSach.Text = "Bạn đã sửa thành công!";
+            //    lbHoTroSuaSach.ForeColor = Color.FromArgb(102, 255, 102);
+            //    LamMoiTxb();
+            //    btnThem.Visible = btnXoa.Visible = btnSua.Visible = false;
+            //    LamMoiTongTien();
+            //}
+            //else
+            //{
+            //    DuaThongDiep("Bạn vui lòng nhập lại số lượng!", 2);
+            //    lbHoTroSuaSach.Text = "Bạn vui lòng nhập lại số lượng!";
+            //    lbHoTroSuaSach.ForeColor = Color.Red;
+            //}
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
