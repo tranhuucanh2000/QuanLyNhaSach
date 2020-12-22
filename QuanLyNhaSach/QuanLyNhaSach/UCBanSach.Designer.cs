@@ -53,6 +53,11 @@ namespace QuanLyNhaSach
             this.panel9 = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dtgThanhToan = new System.Windows.Forms.DataGridView();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tensach = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.soluong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dongia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel7 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.flpnBtn = new System.Windows.Forms.FlowLayoutPanel();
@@ -90,11 +95,6 @@ namespace QuanLyNhaSach
             this.ckbTacGia = new System.Windows.Forms.CheckBox();
             this.ckbTheLoai = new System.Windows.Forms.CheckBox();
             this.ckbTenSach = new System.Windows.Forms.CheckBox();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tensach = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.soluong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dongia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbDangXuat)).BeginInit();
             this.panel2.SuspendLayout();
@@ -334,6 +334,47 @@ namespace QuanLyNhaSach
             this.dtgThanhToan.TabIndex = 4;
             this.dtgThanhToan.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgThanhToan_CellContentClick);
             // 
+            // ID
+            // 
+            this.ID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ID.FillWeight = 37F;
+            this.ID.HeaderText = "Mã";
+            this.ID.MinimumWidth = 4;
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            // 
+            // tensach
+            // 
+            this.tensach.FillWeight = 120F;
+            this.tensach.HeaderText = "Tên Sách";
+            this.tensach.MinimumWidth = 6;
+            this.tensach.Name = "tensach";
+            this.tensach.ReadOnly = true;
+            // 
+            // soluong
+            // 
+            this.soluong.FillWeight = 50F;
+            this.soluong.HeaderText = "Số Lượng";
+            this.soluong.MinimumWidth = 6;
+            this.soluong.Name = "soluong";
+            this.soluong.ReadOnly = true;
+            // 
+            // dongia
+            // 
+            this.dongia.FillWeight = 40F;
+            this.dongia.HeaderText = "Đơn Giá";
+            this.dongia.MinimumWidth = 6;
+            this.dongia.Name = "dongia";
+            this.dongia.ReadOnly = true;
+            // 
+            // tien
+            // 
+            this.tien.FillWeight = 40F;
+            this.tien.HeaderText = "Tiền";
+            this.tien.MinimumWidth = 6;
+            this.tien.Name = "tien";
+            this.tien.ReadOnly = true;
+            // 
             // panel7
             // 
             this.panel7.Controls.Add(this.panel5);
@@ -513,6 +554,7 @@ namespace QuanLyNhaSach
             this.txbSoLuong.Size = new System.Drawing.Size(91, 26);
             this.txbSoLuong.TabIndex = 18;
             this.txbSoLuong.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txbSoLuong.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txbSoLuong_KeyDown);
             // 
             // txbGiaTien
             // 
@@ -838,47 +880,6 @@ namespace QuanLyNhaSach
             this.ckbTenSach.TabIndex = 15;
             this.ckbTenSach.Text = "Tên sách:";
             this.ckbTenSach.UseVisualStyleBackColor = true;
-            // 
-            // ID
-            // 
-            this.ID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ID.FillWeight = 37F;
-            this.ID.HeaderText = "Mã";
-            this.ID.MinimumWidth = 4;
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            // 
-            // tensach
-            // 
-            this.tensach.FillWeight = 120F;
-            this.tensach.HeaderText = "Tên Sách";
-            this.tensach.MinimumWidth = 6;
-            this.tensach.Name = "tensach";
-            this.tensach.ReadOnly = true;
-            // 
-            // soluong
-            // 
-            this.soluong.FillWeight = 50F;
-            this.soluong.HeaderText = "Số Lượng";
-            this.soluong.MinimumWidth = 6;
-            this.soluong.Name = "soluong";
-            this.soluong.ReadOnly = true;
-            // 
-            // dongia
-            // 
-            this.dongia.FillWeight = 40F;
-            this.dongia.HeaderText = "Đơn Giá";
-            this.dongia.MinimumWidth = 6;
-            this.dongia.Name = "dongia";
-            this.dongia.ReadOnly = true;
-            // 
-            // tien
-            // 
-            this.tien.FillWeight = 40F;
-            this.tien.HeaderText = "Tiền";
-            this.tien.MinimumWidth = 6;
-            this.tien.Name = "tien";
-            this.tien.ReadOnly = true;
             // 
             // UCBanSach
             // 

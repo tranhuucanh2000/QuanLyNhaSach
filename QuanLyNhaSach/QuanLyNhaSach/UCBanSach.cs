@@ -245,24 +245,20 @@ namespace QuanLyNhaSach
                 data.Rows.Add(new object[] { dtgThanhToan.Rows[i].Cells[0].Value, dtgThanhToan.Rows[i].Cells[1].Value, dtgThanhToan.Rows[i].Cells[2].Value, dtgThanhToan.Rows[i].Cells[3].Value, dtgThanhToan.Rows[i].Cells[4].Value });
             }
             FHoaDonTT fHoaDonTT = new FHoaDonTT(data, loginAccount);
+            fHoaDonTT.ThanhToan += FHoaDonTT_ThanhToan;
             fHoaDonTT.ShowDialog();
+        }
 
-            //if (dtgThanhToan.Rows.Count > 1)
-            //{
-            //    foreach (DataGridViewRow row in dtgThanhToan.Rows)
-            //    {
-            //        if (row.Index < dtgThanhToan.Rows.Count - 1)
-            //        {
-            //            SachDAO.Instance.ThanhToanSach(row.Cells[0].Value.ToString(), row.Cells[2].Value.ToString());
-            //        }
-            //    }
-            //}
-            //btnThem.Visible = btnXoa.Visible = btnSua.Visible = false;
-            //LamMoiTxb();
-            //KetNoiKhoSach();
-            //dtgThanhToan.Rows.Clear();
-            //lbHoTroSuaSach.Text = "";
-            //DuaThongDiep("Bạn đã thanh toán thành công!", 1);
+        private void FHoaDonTT_ThanhToan(object sender, EventArgs e)
+        {
+            DuaThongDiep("Bạn đã thanh toán thành công!", 1);
+            dtgThanhToan.DataSource = null;
+            dtgThanhToan.Refresh();
+            LamMoiTxb();
+            LamMoiTongTien();
+            lbHoTroSuaSach.Text = "";
+            DuaVeTrangThaiTimKiem();
+            KetNoiKhoSach();
         }
 
         private void dtgThanhToan_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -435,6 +431,21 @@ namespace QuanLyNhaSach
             {
                 ckbTheLoai.Checked = true;
                 btnTimKiem_Click(sender, e);
+            }
+        }
+
+        private void txbSoLuong_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                if(btnThem.Visible == true)
+                {
+                    btnThem_Click(sender, e);
+                }
+                else
+                {
+                    btnSua_Click(sender, e);
+                }    
             }
         }
     }
