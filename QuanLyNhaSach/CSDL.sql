@@ -921,3 +921,42 @@ BEGIN
 	END
 END
 >>>>>>> 0b9f67670638ced8a5c2b36704abed75692f2e15
+
+
+CREATE PROC USP_ThemHoaDon
+@soHD CHAR(5), @ngay SMALLDATETIME
+AS
+BEGIN
+    INSERT INTO HoaDon
+	(
+		SoHD,
+		NgayBan
+	)
+	VALUES
+	(
+		@soHD,
+		@ngay
+	)
+END
+GO
+
+CREATE PROC USP_USP_ThemChiTietHoaDon 
+@maSach CHAR(4), @soHD CHAR(5), @soLuongBan INT, @giaBan INT
+AS
+BEGIN
+    INSERT INTO ChiTietHoaDon
+	(
+		MaSach,
+		SoHD,
+		SoLuongBan,
+		GiaBan
+	)
+	VALUES
+	(
+		@maSach,
+		@soHD,
+		@soLuongBan,
+		@giaBan
+	)
+END
+GO
