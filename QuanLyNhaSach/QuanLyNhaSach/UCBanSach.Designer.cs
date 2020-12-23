@@ -548,7 +548,7 @@ namespace QuanLyNhaSach
             this.txbSoLuong.BackColor = System.Drawing.Color.White;
             this.txbSoLuong.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txbSoLuong.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbSoLuong.ForeColor = System.Drawing.Color.Black;
+            this.txbSoLuong.ForeColor = System.Drawing.Color.DarkViolet;
             this.txbSoLuong.Location = new System.Drawing.Point(135, 228);
             this.txbSoLuong.Name = "txbSoLuong";
             this.txbSoLuong.Size = new System.Drawing.Size(91, 26);

@@ -196,6 +196,7 @@ namespace QuanLyNhaSach
                     btnThem.Visible = btnXoa.Visible = btnSua.Visible = false;
                     lbHoTroSuaSach.Text = "Bạn vừa thêm sách vào danh sách thanh toán!";
                     lbHoTroSuaSach.ForeColor = Color.FromArgb(102, 255, 102);
+                    DuaVeTrangThaiTimKiem();
                 }
                 else
                 {
@@ -297,6 +298,7 @@ namespace QuanLyNhaSach
                     btnThem.Visible = btnXoa.Visible = btnSua.Visible = false;
                     lbHoTroSuaSach.Text = "Bạn đã sửa thành công!";
                     lbHoTroSuaSach.ForeColor = Color.FromArgb(102, 255, 102);
+                    DuaVeTrangThaiTimKiem();
                 }
                 else
                 {

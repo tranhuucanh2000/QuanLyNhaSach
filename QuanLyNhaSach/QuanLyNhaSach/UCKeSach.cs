@@ -42,10 +42,22 @@ namespace QuanLyNhaSach
             btnLuu.Visible = false;
             btnSua.Visible = false;
             btnXoa.Visible = false;
+            btnHuy.Visible = false;
+        }
+
+        void TrangThaiSua()
+        {
+            txbGiaTien.ForeColor = Color.DarkViolet;
+            txbTen.ForeColor = Color.DarkViolet;
+            txbSo.ForeColor = Color.DarkViolet;
         }
         void TrangThaiChonSach()
         {
+            txbGiaTien.ForeColor = Color.Black;
+            txbTen.ForeColor = Color.Black;
+            txbSo.ForeColor = Color.Black;
             btnLuu.Visible = false;
+            btnHuy.Visible = false;
             btnSua.Visible = true;
             btnXoa.Visible = true;
         }
@@ -74,7 +86,6 @@ namespace QuanLyNhaSach
         }
         void HienThiTTSach()
         {
-            pnAn.Visible = true;
             lbTen.Text = "Tên Sách:";
             lbMa.Text = "Mã Sách:";
             lbSo.Text = "Số Lượng:";
@@ -136,6 +147,7 @@ namespace QuanLyNhaSach
                     txbGiaTien.ReadOnly = true;
                     txbSo.ReadOnly = true;
                     btnLuu.Visible = false;
+                    TrangThaiChonSach();
                 }
                 else
                 {
@@ -155,8 +167,10 @@ namespace QuanLyNhaSach
             txbGiaTien.ReadOnly = false;
             txbSo.ReadOnly = false;
             btnLuu.Visible = true;
+            btnHuy.Visible = true;
             btnXoa.Visible = false;
             btnSua.Visible = false;
+            TrangThaiSua();
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
@@ -182,6 +196,20 @@ namespace QuanLyNhaSach
             {
                 DuaThongDiep("Không thể xóa sách này ", 2);
             }
+        }
+
+        private void btnHuy_Click(object sender, EventArgs e)
+        {
+            TrangThaiChonSach();
+            int vitri = dtgSach.CurrentRow.Index;
+            DataGridViewRow row = dtgSach.Rows[vitri];
+            txbMa.Text = row.Cells[0].Value.ToString();
+            txbTen.Text = row.Cells[1].Value.ToString();
+            txbTacGia.Text = row.Cells[2].Value.ToString();
+            txbTheLoai.Text = row.Cells[3].Value.ToString();
+            txbNXB.Text = row.Cells[4].Value.ToString();
+            txbSo.Text = row.Cells[5].Value.ToString();
+            txbGiaTien.Text = row.Cells[6].Value.ToString();
         }
     }
 }

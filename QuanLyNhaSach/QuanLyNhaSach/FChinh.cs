@@ -27,6 +27,7 @@ namespace QuanLyNhaSach
         {
             InitializeComponent();
             loginAccount = acc;
+            this.ShowInTaskbar = false;
             QuyenTruyCap();
             TaiUCTrang();
             TrangThaiBanDau();
@@ -44,7 +45,6 @@ namespace QuanLyNhaSach
         }
         void TaiUCTrang()
         {
-            
             UCBanSach.Instance = new UCBanSach(LoginAccount);
             UCTaiKhoan.Instance = new UCTaiKhoan(LoginAccount);
             UCCaiDat.Instance = new UCCaiDat(LoginAccount);
