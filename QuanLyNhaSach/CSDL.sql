@@ -435,8 +435,10 @@ inner join ChiTietPhieuNhap ct on s.MaSach=ct.MaSach
 inner join TacGia tg on s.MaTG=tg.MaTG
 inner join TheLoai tl on s.MaTL=tl.MaTL
 inner join NhaXuatBan nxb on s.MaNXB=nxb.MaNXB
+WHERE s.KinhDoanh = N'Còn'
 END
 GO
+
 /****** Object:  StoredProcedure [dbo].[USP_HienThiSachTimKiem]    Script Date: 12/16/2020 9:18:14 PM ******/
 SET ANSI_NULLS ON
 GO
@@ -451,9 +453,11 @@ BEGIN
 	s.SoLuongTon AS [Số Lượng],
 	s.GiaTien AS [Giá Tiền]
 	FROM Sach s , ChiTietPhieuNhap ct, TacGia tg, TheLoai tl, NhaXuatBan nxb
-	WHERE s.MaSach=ct.MaSach AND s.MaTG=tg.MaTG AND s.MaTL=tl.MaTL AND s.MaNXB=nxb.MaNXB
+	WHERE s.MaSach=ct.MaSach AND s.MaTG=tg.MaTG AND s.MaTL=tl.MaTL AND s.MaNXB=nxb.MaNXB AND s.KinhDoanh = N'Còn'
 END
 GO
+
+DROP PROC [dbo].[USP_HienThiSachTimKiem]
 /****** Object:  StoredProcedure [dbo].[USP_HienThiTacGia]    Script Date: 12/16/2020 9:18:14 PM ******/
 SET ANSI_NULLS ON
 GO
@@ -717,9 +721,10 @@ inner join ChiTietPhieuNhap ct on s.MaSach=ct.MaSach
 inner join TacGia tg on s.MaTG=tg.MaTG
 inner join TheLoai tl on s.MaTL=tl.MaTL
 inner join NhaXuatBan nxb on s.MaNXB=nxb.MaNXB
-WHERE tg.TenTG LIKE CONCAT(@tacGia,'%')
+WHERE tg.TenTG LIKE CONCAT(@tacGia,'%') AND s.KinhDoanh = N'Còn'
 END
 GO
+DROP PROC [dbo].[USP_TimSach_TacGia]
 /****** Object:  StoredProcedure [dbo].[USP_TimSach_TacGia_TheLoai]    Script Date: 12/16/2020 9:18:14 PM ******/
 SET ANSI_NULLS ON
 GO
@@ -735,9 +740,10 @@ inner join ChiTietPhieuNhap ct on s.MaSach=ct.MaSach
 inner join TacGia tg on s.MaTG=tg.MaTG
 inner join TheLoai tl on s.MaTL=tl.MaTL
 inner join NhaXuatBan nxb on s.MaNXB=nxb.MaNXB
-WHERE tg.TenTG LIKE CONCAT(@tacGia,'%') AND tl.TenTL LIKE CONCAT(@theLoai,'%')
+WHERE tg.TenTG LIKE CONCAT(@tacGia,'%') AND tl.TenTL LIKE CONCAT(@theLoai,'%') AND s.KinhDoanh = N'Còn'
 END
 GO
+DROP PROC [dbo].[USP_TimSach_TacGia_TheLoai]
 /****** Object:  StoredProcedure [dbo].[USP_TimSach_TenSach]    Script Date: 12/16/2020 9:18:14 PM ******/
 SET ANSI_NULLS ON
 GO
@@ -753,7 +759,7 @@ inner join ChiTietPhieuNhap ct on s.MaSach=ct.MaSach
 inner join TacGia tg on s.MaTG=tg.MaTG
 inner join TheLoai tl on s.MaTL=tl.MaTL
 inner join NhaXuatBan nxb on s.MaNXB=nxb.MaNXB
-WHERE s.TenSach LIKE CONCAT(@tenSach,'%')
+WHERE s.TenSach LIKE CONCAT(@tenSach,'%') AND s.KinhDoanh = N'Còn'
 END
 GO
 
@@ -775,9 +781,10 @@ inner join ChiTietPhieuNhap ct on s.MaSach=ct.MaSach
 inner join TacGia tg on s.MaTG=tg.MaTG
 inner join TheLoai tl on s.MaTL=tl.MaTL
 inner join NhaXuatBan nxb on s.MaNXB=nxb.MaNXB
-WHERE s.TenSach LIKE CONCAT(@tenSach,'%') AND tg.TenTG LIKE CONCAT(@tacGia,'%')
+WHERE s.TenSach LIKE CONCAT(@tenSach,'%') AND tg.TenTG LIKE CONCAT(@tacGia,'%') AND s.KinhDoanh = N'Còn'
 END
 GO
+DROP PROC [dbo].[USP_TimSach_TenSach_TacGia]
 /****** Object:  StoredProcedure [dbo].[USP_TimSach_TenSach_TacGia_TheLoai]    Script Date: 12/16/2020 9:18:14 PM ******/
 SET ANSI_NULLS ON
 GO
@@ -793,9 +800,10 @@ inner join ChiTietPhieuNhap ct on s.MaSach=ct.MaSach
 inner join TacGia tg on s.MaTG=tg.MaTG
 inner join TheLoai tl on s.MaTL=tl.MaTL
 inner join NhaXuatBan nxb on s.MaNXB=nxb.MaNXB
-WHERE s.TenSach LIKE CONCAT(@tenSach,'%') AND tg.TenTG LIKE CONCAT(@tacGia,'%') AND tl.TenTL LIKE CONCAT(@theLoai,'%')
+WHERE s.TenSach LIKE CONCAT(@tenSach,'%') AND tg.TenTG LIKE CONCAT(@tacGia,'%') AND tl.TenTL LIKE CONCAT(@theLoai,'%') AND s.KinhDoanh = N'Còn'
 END
 GO
+DROP PROC [dbo].[USP_TimSach_TenSach_TacGia_TheLoai]
 /****** Object:  StoredProcedure [dbo].[USP_TimSach_TenSach_TheLoai]    Script Date: 12/16/2020 9:18:14 PM ******/
 SET ANSI_NULLS ON
 GO
@@ -811,9 +819,10 @@ inner join ChiTietPhieuNhap ct on s.MaSach=ct.MaSach
 inner join TacGia tg on s.MaTG=tg.MaTG
 inner join TheLoai tl on s.MaTL=tl.MaTL
 inner join NhaXuatBan nxb on s.MaNXB=nxb.MaNXB
-WHERE tl.TenTL LIKE CONCAT(@theLoai,'%') AND s.TenSach LIKE CONCAT(@tenSach,'%')
+WHERE tl.TenTL LIKE CONCAT(@theLoai,'%') AND s.TenSach LIKE CONCAT(@tenSach,'%') AND s.KinhDoanh = N'Còn'
 END
 GO
+DROP PROC [dbo].[USP_TimSach_TenSach_TheLoai]
 /****** Object:  StoredProcedure [dbo].[USP_TimSach_TheLoai]    Script Date: 12/16/2020 9:18:14 PM ******/
 SET ANSI_NULLS ON
 GO
@@ -829,9 +838,10 @@ inner join ChiTietPhieuNhap ct on s.MaSach=ct.MaSach
 inner join TacGia tg on s.MaTG=tg.MaTG
 inner join TheLoai tl on s.MaTL=tl.MaTL
 inner join NhaXuatBan nxb on s.MaNXB=nxb.MaNXB
-WHERE tl.TenTL LIKE CONCAT(@theLoai,'%')
+WHERE tl.TenTL LIKE CONCAT(@theLoai,'%') AND s.KinhDoanh = N'Còn'
 END
 GO
+DROP PROC [dbo].[USP_TimSach_TheLoai]
 /****** Object:  StoredProcedure [dbo].[USP_XoaTaiKhoan]    Script Date: 12/16/2020 9:18:14 PM ******/
 SET ANSI_NULLS ON
 GO
@@ -961,3 +971,41 @@ BEGIN
 	)
 END
 GO
+
+ALTER TABLE Sach
+ADD KinhDoanh NVARCHAR(15)
+GO
+
+CREATE PROC USP_LayTatCaSach
+AS
+BEGIN
+	Select s.MaSach AS [ID], s.TenSach AS [Tên Sách], tg.TenTG AS [Tác Giả],tl.TenTL AS [Thể Loại], nxb.TenNXB AS [Nhà Sản Xuất] ,s.SoLuongTon AS [Số Lượng Tồn],s.GiaTien AS [Giá Tiền], s.KinhDoanh AS [Kinh Doanh]
+from Sach s 
+inner join ChiTietPhieuNhap ct on s.MaSach=ct.MaSach
+inner join TacGia tg on s.MaTG=tg.MaTG
+inner join TheLoai tl on s.MaTL=tl.MaTL
+inner join NhaXuatBan nxb on s.MaNXB=nxb.MaNXB
+END
+GO
+
+EXEC USP_LayTatCaSach
+
+CREATE PROC USP_TTKinhDoanhSach
+@maSach CHAR(4)
+AS
+BEGIN
+    UPDATE Sach
+	SET KinhDoanh = N'Còn'
+	WHERE MaSach = @maSach
+END
+GO
+
+
+CREATE PROC USP_NgungKinhDoanhSach
+@maSach CHAR(4)
+AS
+BEGIN
+    UPDATE Sach
+	SET KinhDoanh = N'Ngừng'
+	WHERE MaSach = @maSach
+END
