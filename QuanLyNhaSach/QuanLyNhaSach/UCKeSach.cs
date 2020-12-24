@@ -60,6 +60,9 @@ namespace QuanLyNhaSach
             btnHuy.Visible = false;
             btnSua.Visible = true;
             btnXoa.Visible = true;
+            txbGiaTien.ReadOnly = true;
+            txbTen.ReadOnly = true;
+            txbSo.ReadOnly = true;
         }
         void KetNoiKhoSach()
         {
