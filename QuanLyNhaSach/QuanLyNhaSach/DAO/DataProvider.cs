@@ -49,7 +49,7 @@ namespace QuanLyNhaSach.DAO
                 SqlDataAdapter adapter = new SqlDataAdapter(command);
 
                 adapter.Fill(data);
-
+                
                 connection.Close();
             }
 
@@ -81,7 +81,7 @@ namespace QuanLyNhaSach.DAO
                 }
 
                 data = command.ExecuteNonQuery();
-
+            
                 connection.Close();
             }
 

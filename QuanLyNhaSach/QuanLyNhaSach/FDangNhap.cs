@@ -43,7 +43,7 @@ namespace QuanLyNhaSach
                 groupBox1.ForeColor = Color.Red;
             } 
         }
-
+      
         private void txbTaiKhoan_KeyDown(object sender, KeyEventArgs e)
         {
             if(e.KeyCode==Keys.Enter)
