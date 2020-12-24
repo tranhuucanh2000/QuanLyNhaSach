@@ -116,12 +116,17 @@ namespace QuanLyNhaSach
             lbTen1.Text = "Tên Tác Giả:";
             lbSo1.Text = "Số Điện Thoại:";
             lbDiaChi1.Visible = txbDC1.Visible = panel6.Visible = false;
+            dtgSach.Columns[0].Width = 90;
+            dtgSach.Columns[1].Width = 220;
+            dtgSach.Columns[2].Width = 220;
         }
         void HienThiTTTheLoai1()
         {
             LamMoiTxb();
             lbTen1.Text = "Tên Thể Loại:";
             txbSo1.Visible = txbDC1.Visible = lbDiaChi1.Visible = lbSo1.Visible = panel6.Visible = panel7.Visible = false;
+            dtgSach.Columns[0].Width = 90;
+            dtgSach.Columns[1].Width = 440;
         }
         void HienThiNXB1()
         {
@@ -130,6 +135,11 @@ namespace QuanLyNhaSach
             lbTen1.Text = "Tên NXB:";
             lbSo1.Text = "Số Điện Thoại:";
             lbDiaChi1.Text = "Địa Chỉ:";
+            dtgSach.Columns[0].Width = 100;
+            dtgSach.Columns[1].Width = 120;
+            dtgSach.Columns[2].Width = 190;
+            dtgSach.Columns[3].Width = 120;
+
 
         }
         public void HienTen()
