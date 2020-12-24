@@ -476,7 +476,6 @@ namespace QuanLyNhaSach
             this.btnLuu.Text = "Lưu";
             this.btnLuu.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnLuu.UseVisualStyleBackColor = false;
-            this.btnLuu.Visible = false;
             // 
             // btnHuy
             // 
@@ -494,7 +493,6 @@ namespace QuanLyNhaSach
             this.btnHuy.Text = "Hủy";
             this.btnHuy.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnHuy.UseVisualStyleBackColor = false;
-            this.btnHuy.Visible = false;
             // 
             // UCThemDuLieu
             // 
