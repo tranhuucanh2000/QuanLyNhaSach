@@ -973,3 +973,38 @@ GO
 
 ALTER TABLE Sach
 ADD KinhDoanh NVARCHAR(15)
+GO
+
+CREATE PROC USP_LayTatCaSach
+AS
+BEGIN
+	Select s.MaSach AS [ID], s.TenSach AS [Tên Sách], tg.TenTG AS [Tác Giả],tl.TenTL AS [Thể Loại], nxb.TenNXB AS [Nhà Sản Xuất] ,s.SoLuongTon AS [Số Lượng Tồn],s.GiaTien AS [Giá Tiền], s.KinhDoanh AS [Kinh Doanh]
+from Sach s 
+inner join ChiTietPhieuNhap ct on s.MaSach=ct.MaSach
+inner join TacGia tg on s.MaTG=tg.MaTG
+inner join TheLoai tl on s.MaTL=tl.MaTL
+inner join NhaXuatBan nxb on s.MaNXB=nxb.MaNXB
+END
+GO
+
+EXEC USP_LayTatCaSach
+
+CREATE PROC USP_TTKinhDoanhSach
+@maSach CHAR(4)
+AS
+BEGIN
+    UPDATE Sach
+	SET KinhDoanh = N'Còn'
+	WHERE MaSach = @maSach
+END
+GO
+
+
+CREATE PROC USP_NgungKinhDoanhSach
+@maSach CHAR(4)
+AS
+BEGIN
+    UPDATE Sach
+	SET KinhDoanh = N'Ngừng'
+	WHERE MaSach = @maSach
+END
