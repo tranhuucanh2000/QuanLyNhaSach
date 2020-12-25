@@ -218,8 +218,6 @@ namespace QuanLyNhaSach
             string ten = txbTen.Text;
             string diachi = txbDC.Text;
             string sdt = txbSo.Text;
-
-<<<<<<< HEAD
             if (cbThuocTinh.SelectedItem.ToString() == "Tác Giả")
             {
                 int sodt;
@@ -241,99 +239,95 @@ namespace QuanLyNhaSach
                 DuaThongDiep("Đã thêm thể loại thành công!", 1);
                 LamMoiDSMaTheLoai();
                 LamMoiTxb();
-=======
-            if (ten == "")
-            {
-                DuaThongDiep("Vui lòng nhập đủ dữ liệu", 2);
->>>>>>> c353c80083a492e857ffdb0859b6fcc4e604187b
-            }
-            else
-            {
-                if (cbThuocTinh.SelectedItem.ToString() == "Tác Giả")
-                {
-<<<<<<< HEAD
-                    NhaXuatBanDAO.Instance.ThemNhaXuatBan(ten, diachi, sdt);
 
-                    DuaThongDiep("Đã thêm nhà xuất bản thành công!", 1);
-                    LamMoiDSMaNXB();
-                    LamMoiTxb();
-=======
-                    int sodt;
-                    if (int.TryParse(txbSo.Text, out sodt))
-                    {
-                        SachDAO.Instance.ThemTacGia(ten, sdt);
-                        DuaThongDiep("Đã thêm tác giả thành công!", 1);
-                        LamMoiDSMaTacGia();
-                        LamMoiTxb();
-                    }
-                    else
-                    {
-                        DuaThongDiep("Bạn vui lòng nhập lại số điện thoại!", 2);
-                    }
-                }
-                else if (cbThuocTinh.SelectedItem.ToString() == "Thể Loại")
+                if (ten == "")
                 {
-                    if (SachDAO.Instance.XacNhanTenTL(txbTen.Text) == true)
-                    {
-                        DuaThongDiep("Đã có thể loại này trong danh sách ", 2);
-                        LamMoiTxb();
-                    }
-                    else
-                    {
-                        SachDAO.Instance.ThemTheLoai(ten);
-                        DuaThongDiep("Đã thêm thể loại thành công!", 1);
-                        LamMoiDSMaTheLoai();
-                        LamMoiTxb();
-                    }
->>>>>>> c353c80083a492e857ffdb0859b6fcc4e604187b
+                    DuaThongDiep("Vui lòng nhập đủ dữ liệu", 2);
                 }
                 else
                 {
-                    int sodt;
-                    if (int.TryParse(txbSo.Text, out sodt))
+                    if (cbThuocTinh.SelectedItem.ToString() == "Tác Giả")
                     {
-                        SachDAO.Instance.ThemNhaXuatBan(ten, diachi, sdt);
+                        NhaXuatBanDAO.Instance.ThemNhaXuatBan(ten, diachi, sdt);
 
                         DuaThongDiep("Đã thêm nhà xuất bản thành công!", 1);
                         LamMoiDSMaNXB();
                         LamMoiTxb();
+                        int sodt;
+                        if (int.TryParse(txbSo.Text, out sodt))
+                        {
+                            SachDAO.Instance.ThemTacGia(ten, sdt);
+                            DuaThongDiep("Đã thêm tác giả thành công!", 1);
+                            LamMoiDSMaTacGia();
+                            LamMoiTxb();
+                        }
+                        else
+                        {
+                            DuaThongDiep("Bạn vui lòng nhập lại số điện thoại!", 2);
+                        }
+                    }
+                    else if (cbThuocTinh.SelectedItem.ToString() == "Thể Loại")
+                    {
+                        if (SachDAO.Instance.XacNhanTenTL(txbTen.Text) == true)
+                        {
+                            DuaThongDiep("Đã có thể loại này trong danh sách ", 2);
+                            LamMoiTxb();
+                        }
+                        else
+                        {
+                            SachDAO.Instance.ThemTheLoai(ten);
+                            DuaThongDiep("Đã thêm thể loại thành công!", 1);
+                            LamMoiDSMaTheLoai();
+                            LamMoiTxb();
+                        }
                     }
                     else
                     {
-                        DuaThongDiep("Bạn vui lòng nhập lại số điện thoại!", 2);
+                        int sodt;
+                        if (int.TryParse(txbSo.Text, out sodt))
+                        {
+                            SachDAO.Instance.ThemNhaXuatBan(ten, diachi, sdt);
+
+                            DuaThongDiep("Đã thêm nhà xuất bản thành công!", 1);
+                            LamMoiDSMaNXB();
+                            LamMoiTxb();
+                        }
+                        else
+                        {
+                            DuaThongDiep("Bạn vui lòng nhập lại số điện thoại!", 2);
+                        }
                     }
                 }
             }
         }
-
-        private void dtgSach_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            TrangThaiChonSach();
-            if (cbThuocTinh1.SelectedItem.ToString() == "Tác Giả")
+            private void dtgSach_CellContentClick(object sender, DataGridViewCellEventArgs e)
             {
-                int vitri = dtgSach.CurrentRow.Index;
-                DataGridViewRow row = dtgSach.Rows[vitri];
-                txbTen1.Text = row.Cells[1].Value.ToString();
-                txbSo1.Text = row.Cells[2].Value.ToString();
-                btnSua.Visible = true;
-            }
-            else if (cbThuocTinh1.SelectedItem.ToString() == "Thể Loại")
-            {
-                int vitri = dtgSach.CurrentRow.Index;
-                DataGridViewRow row = dtgSach.Rows[vitri];
-                txbTen1.Text = row.Cells[1].Value.ToString();
-                btnSua.Visible = true;
-            }
-            else
-            {
-                int vitri = dtgSach.CurrentRow.Index;
-                DataGridViewRow row = dtgSach.Rows[vitri];
-                txbTen1.Text = row.Cells[1].Value.ToString();
-                txbSo1.Text = row.Cells[3].Value.ToString();
-                txbDC1.Text = row.Cells[2].Value.ToString();
-                btnSua.Visible = true;
-            }
-        }
+                TrangThaiChonSach();
+                if (cbThuocTinh1.SelectedItem.ToString() == "Tác Giả")
+                {
+                    int vitri = dtgSach.CurrentRow.Index;
+                    DataGridViewRow row = dtgSach.Rows[vitri];
+                    txbTen1.Text = row.Cells[1].Value.ToString();
+                    txbSo1.Text = row.Cells[2].Value.ToString();
+                    btnSua.Visible = true;
+                }
+                else if (cbThuocTinh1.SelectedItem.ToString() == "Thể Loại")
+                {
+                    int vitri = dtgSach.CurrentRow.Index;
+                    DataGridViewRow row = dtgSach.Rows[vitri];
+                    txbTen1.Text = row.Cells[1].Value.ToString();
+                    btnSua.Visible = true;
+                }
+                else
+                {
+                    int vitri = dtgSach.CurrentRow.Index;
+                    DataGridViewRow row = dtgSach.Rows[vitri];
+                    txbTen1.Text = row.Cells[1].Value.ToString();
+                    txbSo1.Text = row.Cells[3].Value.ToString();
+                    txbDC1.Text = row.Cells[2].Value.ToString();
+                    btnSua.Visible = true;
+                }
+            } 
 
         private void cbThuocTinh1_SelectedIndexChanged(object sender, EventArgs e)
         {

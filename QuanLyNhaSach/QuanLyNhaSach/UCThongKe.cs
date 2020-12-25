@@ -36,8 +36,8 @@ namespace QuanLyNhaSach
 
         void LayDSHoaDon()
         {
-            DataTable data = HoaDonDAO.Instance.LayDSHoaDon();
-            dataGridView1.DataSource = data;
+            //DataTable data = HoaDonDAO.Instance.LayDSHoaDon();
+            //dataGridView1.DataSource = data;
         }
         private void cbThuocTinh_SelectedIndexChanged(object sender, EventArgs e)
         {
