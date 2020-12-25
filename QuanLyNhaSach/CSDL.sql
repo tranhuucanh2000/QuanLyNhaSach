@@ -2,6 +2,7 @@
 GO
 /****** Object:  Database [QuanLyNhaSach]    Script Date: 12/16/2020 9:18:14 PM ******/
 CREATE DATABASE [QuanLyNhaSach]
+DROP DATABASE QuanLyNhaSach
  CONTAINMENT = NONE
  ON  PRIMARY 
 ( NAME = N'QuanLyNhaSach', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL15.SQLEXPRESS\MSSQL\DATA\QuanLyNhaSach.mdf' , SIZE = 8192KB , MAXSIZE = UNLIMITED, FILEGROWTH = 65536KB )

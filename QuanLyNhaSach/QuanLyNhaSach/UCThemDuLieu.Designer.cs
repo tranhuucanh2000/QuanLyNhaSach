@@ -227,6 +227,10 @@ namespace QuanLyNhaSach
             this.btnSua.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSua.UseVisualStyleBackColor = false;
             this.btnSua.Visible = false;
+<<<<<<< HEAD
+=======
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
+>>>>>>> c353c80083a492e857ffdb0859b6fcc4e604187b
             // 
             // btnLuu
             // 
@@ -244,6 +248,10 @@ namespace QuanLyNhaSach
             this.btnLuu.Text = "Lưu";
             this.btnLuu.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnLuu.UseVisualStyleBackColor = false;
+<<<<<<< HEAD
+=======
+            this.btnLuu.Visible = false;
+>>>>>>> c353c80083a492e857ffdb0859b6fcc4e604187b
             this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click_1);
             // 
             // btnHuy
@@ -262,6 +270,11 @@ namespace QuanLyNhaSach
             this.btnHuy.Text = "Hủy";
             this.btnHuy.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnHuy.UseVisualStyleBackColor = false;
+<<<<<<< HEAD
+=======
+            this.btnHuy.Visible = false;
+            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
+>>>>>>> c353c80083a492e857ffdb0859b6fcc4e604187b
             // 
             // panel8
             // 
@@ -508,6 +521,7 @@ namespace QuanLyNhaSach
             this.btnThem.TabIndex = 57;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = false;
+            this.btnThem.Visible = false;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click_1);
             // 
             // pnSo

@@ -32,7 +32,7 @@ namespace QuanLyNhaSach.DTO
         public int CaiDat { get => caiDat; set => caiDat = value; }
         public int BanSach { get => banSach; set => banSach = value; }
         public int TtTaiKhoan { get => ttTaiKhoan; set => ttTaiKhoan = value; }
-        //public string Ma { get => ma; set => ma = value; }
+        //public string Ma { get => ma; set => ma = value;
 
         public TaiKhoan () { }
         public TaiKhoan(string tendn,string ten, int type , int thongke, int nhapsach,int kesach,int themdulieu, int caidat, int tttaikhoan, int bansach, string pass = null)
