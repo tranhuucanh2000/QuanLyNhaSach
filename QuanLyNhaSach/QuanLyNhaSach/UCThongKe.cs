@@ -20,13 +20,13 @@ namespace QuanLyNhaSach
             set => instance = value;
         }
 
-        private Account loginAccount;
-        public Account LoginAccount
+        private TaiKhoan loginAccount;
+        public TaiKhoan LoginAccount
         {
             get => loginAccount;
             set => loginAccount = value;
         }
-        public UCThongKe(Account acc)
+        public UCThongKe(TaiKhoan acc)
         {
             InitializeComponent();
             loginAccount = acc;

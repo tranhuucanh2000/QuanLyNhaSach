@@ -13,8 +13,8 @@ namespace QuanLyNhaSach
 {
     public partial class FChinh : Form
     {
-        private Account loginAccount;
-        public Account LoginAccount
+        private TaiKhoan loginAccount;
+        public TaiKhoan LoginAccount
         {
             get => loginAccount;
             set
@@ -23,7 +23,7 @@ namespace QuanLyNhaSach
             }
         }
 
-        public FChinh(Account acc)
+        public FChinh(TaiKhoan acc)
         {
             InitializeComponent();
             loginAccount = acc;

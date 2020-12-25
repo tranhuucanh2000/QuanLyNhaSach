@@ -615,16 +615,55 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE PROC [dbo].[USP_ThemSLChoSach]
-@soluong INT, @maSach NVARCHAR(50)
+@soluong INT, @tenSach NVARCHAR(50)
 AS
 BEGIN
 	UPDATE Sach
 	SET
 		SoLuongTon = SoLuongTon + @soluong
 	WHERE
-		MaSach = @maSach
+		TenSach = @tenSach
 END
 GO
+CREATE PROC [dbo].[USP_ThemSLChoSach]
+@soPn CHAR(5),@maSach CHAR(4), @soluong INT, @giatien INT, @ngaynhap SMALLDATETIME, @manxb CHAR(6)
+AS
+BEGIN
+	INSERT INTO PhieuNhap
+	(
+		SoPN,
+		NgayNhap,
+		MaNXB
+	)
+	VALUES
+	(
+		@soPn,
+		@ngaynhap,
+		@manxb
+	)
+	INSERT INTO ChiTietPhieuNhap
+	(
+		MaSach,
+		SoPN,
+		SoLuongNhap,
+		GiaNhap
+	)
+	VALUES
+	(
+		@maSach,
+		@soPn,
+		@soluong,
+		@giatien
+	)
+	UPDATE Sach
+	SET
+		SoLuongTon = SoLuongTon + @soluong
+	WHERE
+		MaSach = @maSach
+END
+
+
+DROP PROC [dbo].[USP_ThemSLChoSach]
 /****** Object:  StoredProcedure [dbo].[USP_ThemTacGia]    Script Date: 12/16/2020 9:18:14 PM ******/
 SET ANSI_NULLS ON
 GO
@@ -1008,3 +1047,8 @@ BEGIN
 	SET KinhDoanh = N'Ngừng'
 	WHERE MaSach = @maSach
 END
+
+SELECT * FROM Sach WHERE MaSach = N'S001'
+
+SELECT * FROM Sach
+EXEC USP_HienThiSach

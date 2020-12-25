@@ -34,12 +34,12 @@ namespace QuanLyNhaSach.DAO
             }
             return false;
         }
-        public Account LayTaiKhoanTuTenDN(string userName)
+        public TaiKhoan LayTaiKhoanTuTenDN(string userName)
         {
             DataTable data = DataProvider.Instance.ExecuteQuery("Select * from TaiKhoan where TenDN = '" + userName + "'");
             foreach (DataRow item in data.Rows)
             {
-                return new Account(item);
+                return new TaiKhoan(item);
             }
             return null;
         }

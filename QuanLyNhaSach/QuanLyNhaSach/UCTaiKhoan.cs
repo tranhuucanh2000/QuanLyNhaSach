@@ -21,13 +21,13 @@ namespace QuanLyNhaSach
             get => instance; 
             set => instance = value; 
         }
-        public Account LoginAccount 
+        public TaiKhoan LoginAccount 
         { 
             get => loginAccount; 
             set { loginAccount = value; HienTen(); }
         }
 
-        private Account loginAccount;
+        private TaiKhoan loginAccount;
 
         private event EventHandler<TaiKhoanSuKien> capNhatTaiKhoanEvent;
         public event EventHandler<TaiKhoanSuKien> CapNhatTaiKhoanEvent
@@ -35,7 +35,7 @@ namespace QuanLyNhaSach
             add { capNhatTaiKhoanEvent += value; }
             remove { capNhatTaiKhoanEvent -= value; }
         }
-        public UCTaiKhoan(Account acc)
+        public UCTaiKhoan(TaiKhoan acc)
         {
             InitializeComponent();
             loginAccount = acc;
@@ -60,7 +60,7 @@ namespace QuanLyNhaSach
             Application.Restart();
         }
 
-        void LayThongTinTaiKhoan(Account acc)
+        void LayThongTinTaiKhoan(TaiKhoan acc)
         {
             txbTenDN.Text = acc.TenDN;
             txbTenHT.Text = acc.Ten;
@@ -164,14 +164,14 @@ namespace QuanLyNhaSach
     }
     public class TaiKhoanSuKien : EventArgs
     {
-        private Account acc;
+        private TaiKhoan acc;
 
-        public Account Acc
+        public TaiKhoan Acc
         {
             get => acc;
             set => acc = value;
         }
-        public TaiKhoanSuKien(Account account)
+        public TaiKhoanSuKien(TaiKhoan account)
         {
             this.Acc = account;
         }

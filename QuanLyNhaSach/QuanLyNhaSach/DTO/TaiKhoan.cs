@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace QuanLyNhaSach.DTO
 {
-    public class Account
+    public class TaiKhoan
     {
         private int nhapSach;
         private int thongKe;
@@ -34,8 +34,8 @@ namespace QuanLyNhaSach.DTO
         public int TtTaiKhoan { get => ttTaiKhoan; set => ttTaiKhoan = value; }
         //public string Ma { get => ma; set => ma = value; }
 
-        public Account () { }
-        public Account(string tendn,string ten, int type , int thongke, int nhapsach,int kesach,int themdulieu, int caidat, int tttaikhoan, int bansach, string pass = null)
+        public TaiKhoan () { }
+        public TaiKhoan(string tendn,string ten, int type , int thongke, int nhapsach,int kesach,int themdulieu, int caidat, int tttaikhoan, int bansach, string pass = null)
         {
             this.TenDN = tendn;
             this.Ten = ten;
@@ -49,7 +49,7 @@ namespace QuanLyNhaSach.DTO
             this.banSach = bansach;
             this.caiDat = caidat;
         }
-        public Account(DataRow row)
+        public TaiKhoan(DataRow row)
         {
             this.TenDN = row["TenDN"].ToString();
             this.Ten = row["HoTen"].ToString();

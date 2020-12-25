@@ -21,13 +21,13 @@ namespace QuanLyNhaSach
             set => instance = value;
         }
 
-        private Account loginAccount;
-        public Account LoginAccount
+        private TaiKhoan loginAccount;
+        public TaiKhoan LoginAccount
         {
             get => loginAccount;
             set => loginAccount = value;
         }
-        public UCThemDuLieu(Account acc)
+        public UCThemDuLieu(TaiKhoan acc)
         {
             InitializeComponent();
             loginAccount = acc;
@@ -225,7 +225,7 @@ namespace QuanLyNhaSach
                 int sodt;
                 if (int.TryParse(txbSo.Text, out sodt))
                 {
-                    SachDAO.Instance.ThemTacGia(ten, sdt);
+                    TacGiaDAO.Instance.ThemTacGia(ten, sdt);
                     DuaThongDiep("Đã thêm tác giả thành công!", 1);
                     LamMoiDSMaTacGia();
                     LamMoiTxb();
@@ -237,7 +237,7 @@ namespace QuanLyNhaSach
             }
             else if (cbThuocTinh.SelectedItem.ToString() == "Thể Loại")
             {
-                SachDAO.Instance.ThemTheLoai(ten);
+                TheLoaiDAO.Instance.ThemTheLoai(ten);
                 DuaThongDiep("Đã thêm thể loại thành công!", 1);
                 LamMoiDSMaTheLoai();
                 LamMoiTxb();
@@ -247,7 +247,7 @@ namespace QuanLyNhaSach
                 int sodt;
                 if (int.TryParse(txbSo.Text, out sodt))
                 {
-                    SachDAO.Instance.ThemNhaXuatBan(ten, diachi, sdt);
+                    NhaXuatBanDAO.Instance.ThemNhaXuatBan(ten, diachi, sdt);
 
                     DuaThongDiep("Đã thêm nhà xuất bản thành công!", 1);
                     LamMoiDSMaNXB();
@@ -329,7 +329,7 @@ namespace QuanLyNhaSach
                     int vitri = dtgSach.CurrentRow.Index;
                     DataGridViewRow row = dtgSach.Rows[vitri];
                     string matacgia = row.Cells[0].Value.ToString();
-                    SachDAO.Instance.SuaTacGia(txbTen1.Text, txbSo1.Text, matacgia);
+                    TacGiaDAO.Instance.SuaTacGia(txbTen1.Text, txbSo1.Text, matacgia);
                     DuaThongDiep("Đã sửa tác giả thành công!", 1);
                     TrangThaiChonSach();
                     dtgSach.DataSource = SachDAO.Instance.LayDSTacGia();
@@ -347,7 +347,8 @@ namespace QuanLyNhaSach
                 int vitri = dtgSach.CurrentRow.Index;
                 DataGridViewRow row = dtgSach.Rows[vitri];
                 string matheloai = row.Cells[0].Value.ToString();
-                SachDAO.Instance.SuaTheLoai(txbTen1.Text, matheloai);
+                //SachDAO.Instance.SuaTheLoai(txbTen1.Text, matheloai);
+                TheLoaiDAO.Instance.SuaTheLoai(txbTen1.Text, matheloai);
                 DuaThongDiep("Đã sửa thể loại thành công!", 1);
                 TrangThaiChonSach();
                 dtgSach.DataSource = SachDAO.Instance.LayDSTheLoai();
@@ -363,7 +364,7 @@ namespace QuanLyNhaSach
                     int vitri = dtgSach.CurrentRow.Index;
                     DataGridViewRow row = dtgSach.Rows[vitri];
                     string manxb = row.Cells[0].Value.ToString();
-                    SachDAO.Instance.SuaNhaXuatBan(txbTen1.Text, txbSo1.Text, txbDC1.Text, manxb);
+                    NhaXuatBanDAO.Instance.SuaNhaXuatBan(txbTen1.Text, txbSo1.Text, txbDC1.Text, manxb);
                     DuaThongDiep("Đã sửa nhà xuất bản thành công!", 1);
                     TrangThaiChonSach();
                     dtgSach.DataSource = SachDAO.Instance.LayDSNXB();

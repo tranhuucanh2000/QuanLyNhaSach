@@ -15,8 +15,8 @@ namespace QuanLyNhaSach
 {
     public partial class FHoaDonTT : Form
     {
-        private Account loginAcc;
-        public FHoaDonTT(DataTable data, Account acc)
+        private TaiKhoan loginAcc;
+        public FHoaDonTT(DataTable data, TaiKhoan acc)
         {
             InitializeComponent();
             dtgHoaDon.DataSource = data;

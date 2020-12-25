@@ -14,8 +14,8 @@ namespace QuanLyNhaSach
 {
     public partial class UCBanSach : UserControl
     {
-        private Account loginAccount;
-        public UCBanSach(Account acc)
+        private TaiKhoan loginAccount;
+        public UCBanSach(TaiKhoan acc)
         {
             InitializeComponent();
             LoginAccount = acc;
@@ -30,7 +30,7 @@ namespace QuanLyNhaSach
             set => instance = value; 
         }
 
-        public Account LoginAccount 
+        public TaiKhoan LoginAccount 
         { 
             get => loginAccount; 
             set => loginAccount = value; 
