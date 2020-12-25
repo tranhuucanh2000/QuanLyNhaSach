@@ -55,7 +55,7 @@ namespace QuanLyNhaSach
             txbSo1.ForeColor = Color.Black;
             btnLuu.Visible = false;
             btnHuy.Visible = false;
-            btnSua.Visible = true;
+            btnSua.Visible = false;
             txbDC1.ReadOnly = true;
             txbSo1.ReadOnly = true;
             txbTen1.ReadOnly = true;
@@ -283,12 +283,14 @@ namespace QuanLyNhaSach
                 DataGridViewRow row = dtgSach.Rows[vitri];
                 txbTen1.Text = row.Cells[1].Value.ToString();
                 txbSo1.Text = row.Cells[2].Value.ToString();
+                btnSua.Visible = true;
             }
             else if (cbThuocTinh1.SelectedItem.ToString() == "Thể Loại")
             {
                 int vitri = dtgSach.CurrentRow.Index;
                 DataGridViewRow row = dtgSach.Rows[vitri];
                 txbTen1.Text = row.Cells[1].Value.ToString();
+                btnSua.Visible = true;
             }
             else
             {
@@ -297,6 +299,7 @@ namespace QuanLyNhaSach
                 txbTen1.Text = row.Cells[1].Value.ToString();
                 txbSo1.Text = row.Cells[3].Value.ToString();
                 txbDC1.Text = row.Cells[2].Value.ToString();
+                btnSua.Visible = true;
             }
         }
 
