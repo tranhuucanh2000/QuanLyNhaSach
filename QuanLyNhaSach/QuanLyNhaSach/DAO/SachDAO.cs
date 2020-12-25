@@ -141,5 +141,11 @@ namespace QuanLyNhaSach.DAO
         {
             DataProvider.Instance.ExecuteNonQuery("USP_CapNhatMatKhau @mkmoi , @matk ", new object[] { mkmoi, matk });
         }
+        public bool XacNhanTenTL(string tentl)
+        {
+            DataTable data = DataProvider.Instance.ExecuteQuery("EXEC dbo. USP_XacNhanTenTheLoai @tentl ", new object[] { tentl });
+            if (data.Rows.Count > 0) return true;
+            return false;
+        }
     }
 }
