@@ -40,6 +40,8 @@ namespace QuanLyNhaSach
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.dtgvThongKe = new System.Windows.Forms.DataGridView();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btnThemDC = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbDangXuat)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvThongKe)).BeginInit();
@@ -81,7 +83,7 @@ namespace QuanLyNhaSach
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(19, 196);
+            this.label4.Location = new System.Drawing.Point(20, 85);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(37, 19);
             this.label4.TabIndex = 48;
@@ -91,7 +93,7 @@ namespace QuanLyNhaSach
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(608, 196);
+            this.label3.Location = new System.Drawing.Point(11, 214);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(46, 19);
             this.label3.TabIndex = 47;
@@ -101,16 +103,16 @@ namespace QuanLyNhaSach
             // 
             this.dateNgayBan.CalendarFont = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateNgayBan.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateNgayBan.Location = new System.Drawing.Point(672, 190);
+            this.dateNgayBan.Location = new System.Drawing.Point(63, 208);
             this.dateNgayBan.Name = "dateNgayBan";
-            this.dateNgayBan.Size = new System.Drawing.Size(297, 26);
+            this.dateNgayBan.Size = new System.Drawing.Size(288, 26);
             this.dateNgayBan.TabIndex = 46;
             // 
             // dateNgayLap
             // 
             this.dateNgayLap.CalendarFont = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateNgayLap.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateNgayLap.Location = new System.Drawing.Point(62, 190);
+            this.dateNgayLap.Location = new System.Drawing.Point(63, 79);
             this.dateNgayLap.Name = "dateNgayLap";
             this.dateNgayLap.Size = new System.Drawing.Size(288, 26);
             this.dateNgayLap.TabIndex = 45;
@@ -124,7 +126,7 @@ namespace QuanLyNhaSach
             this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
             this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(417, 176);
+            this.button2.Location = new System.Drawing.Point(120, 131);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(139, 56);
             this.button2.TabIndex = 44;
@@ -137,7 +139,7 @@ namespace QuanLyNhaSach
             // 
             this.button3.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.button3.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(381, 68);
+            this.button3.Location = new System.Drawing.Point(407, 73);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(205, 66);
             this.button3.TabIndex = 50;
@@ -146,6 +148,7 @@ namespace QuanLyNhaSach
             // 
             // dtgvThongKe
             // 
+            this.dtgvThongKe.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgvThongKe.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dtgvThongKe.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgvThongKe.Location = new System.Drawing.Point(0, 282);
@@ -154,11 +157,38 @@ namespace QuanLyNhaSach
             this.dtgvThongKe.TabIndex = 51;
             this.dtgvThongKe.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.button1.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(672, 73);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(205, 66);
+            this.button1.TabIndex = 52;
+            this.button1.Text = "Phiếu Nhập";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // btnThemDC
+            // 
+            this.btnThemDC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            this.btnThemDC.FlatAppearance.BorderSize = 0;
+            this.btnThemDC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnThemDC.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThemDC.ForeColor = System.Drawing.Color.White;
+            this.btnThemDC.Location = new System.Drawing.Point(545, 196);
+            this.btnThemDC.Name = "btnThemDC";
+            this.btnThemDC.Size = new System.Drawing.Size(192, 37);
+            this.btnThemDC.TabIndex = 54;
+            this.btnThemDC.Text = "Xem Chi Tiết";
+            this.btnThemDC.UseVisualStyleBackColor = false;
+            // 
             // UCThongKe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.btnThemDC);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.dtgvThongKe);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
@@ -189,5 +219,7 @@ namespace QuanLyNhaSach
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.DataGridView dtgvThongKe;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnThemDC;
     }
 }

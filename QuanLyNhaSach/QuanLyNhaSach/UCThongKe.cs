@@ -81,21 +81,14 @@ namespace QuanLyNhaSach
         #region events
         private void button2_Click(object sender, EventArgs e)
         {
-            DateTime NgayLap;
-            DateTime NgayBan;
-            NgayLap = dateNgayLap.Value;
-            NgayBan = dateNgayBan.Value;
-            dtgvThongKe.DataSource = HoaDonDAO.Instance.LayDSHoaDon(NgayLap, NgayBan);
+            DateTime NgayBan1;
+            DateTime NgayBan2;
+            NgayBan1 = dateNgayLap.Value;
+            NgayBan2 = dateNgayBan.Value;
+            dtgvThongKe.DataSource = HoaDonDAO.Instance.LayDSHoaDon(NgayBan1, NgayBan2);
         }
         #endregion
 
-
-
-        public void CheckOut(int id, int discount, float totalPrice)
-        {
-            //string query = "UPDATE dbo.ChiTietHoaDon SET NgayBan = GETDATE(), totalPrice = " + totalPrice + " WHERE id = " + id;
-            //DataProvider.Instance.ExecuteNonQuery(query);
-        }
 
         private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {

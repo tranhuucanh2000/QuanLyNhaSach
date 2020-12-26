@@ -25,10 +25,15 @@ namespace QuanLyNhaSach.DAO
         {
             DataProvider.Instance.ExecuteQuery("EXEC USP_ThemChiTietHoaDon @maSach , @soHD , @soLuongBan , @giaBan", new object[] { masach, sohd, soluong, gia });
         }
-       public DataTable LayDSHoaDon(DateTime NgayLap, DateTime NgayBan)
+       public DataTable LayDSHoaDon(DateTime NgayBan1, DateTime NgayBan2)
         {
-            DataTable data = DataProvider.Instance.ExecuteQuery("EXEC USP_HienThiHoaDon @NgayLap , @NgayBan", new object[] { NgayLap , NgayBan });
+            DataTable data = DataProvider.Instance.ExecuteQuery("EXEC USP_HienThiHoaDon @NgayBan1 , @NgayBan2", new object[] { NgayBan1 , NgayBan2 });
             return data;
+        }
+        public void CheckOut(int SoHD, float TongTriGia)
+        {
+            string query = "UPDATE dbo.HoaDon SET NgayBan = GETDATE(), TongTriGia = " + TongTriGia + " WHERE SoHD = " + SoHD;
+            DataProvider.Instance.ExecuteNonQuery(query);
         }
 
     }
