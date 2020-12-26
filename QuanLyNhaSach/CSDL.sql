@@ -161,7 +161,7 @@ END
 GO
 --Tìm kiếm sách qua tên sách
 
-CREATE PROC USP_TimSach_TenSach
+CREATE PROC USP_TimKiemSach_TenSach
 @tenSach NVARCHAR(50)
 AS
 BEGIN
@@ -175,6 +175,21 @@ BEGIN
 END
 GO
 
+--Lọc sách qua tên
+
+CREATE PROC USP_TimSach_TenSach
+@tenSach NVARCHAR(50)
+AS
+BEGIN
+	SELECT DISTINCT s.MaSach, s.TenSach, tg.TenTG,tl.TenTL, nxb.TenNXB,s.SoLuongTon,s.GiaTien,s.KinhDoanh
+	FROM Sach s 
+	INNER JOIN ChiTietPhieuNhap ct on s.MaSach=ct.MaSach
+	INNER JOIN TacGia tg on s.MaTG=tg.MaTG
+	INNER JOIN TheLoai tl on s.MaTL=tl.MaTL
+	INNER JOIN NhaXuatBan nxb on s.MaNXB=nxb.MaNXB
+	WHERE s.TenSach LIKE CONCAT(@tenSach,'%') AND s.KinhDoanh = N'Còn'
+END
+GO
 --Tìm kiếm sách qua thể loại
 CREATE PROC USP_TimSach_TheLoai
 @theLoai NVARCHAR(50)
