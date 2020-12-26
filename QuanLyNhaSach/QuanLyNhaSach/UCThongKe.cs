@@ -41,19 +41,16 @@ namespace QuanLyNhaSach
             loginAccount = acc;
         }
 
-<<<<<<< HEAD
         //void LayDSHoaDon()
         //{
         //    DataTable data = HoaDonDAO.Instance.LayDSHoaDon();
         //    dtgvThongKe.DataSource = data;
         //}
-=======
         void LayDSHoaDon()
         {
             //DataTable data = HoaDonDAO.Instance.LayDSHoaDon();
             //dataGridView1.DataSource = data;
         }
->>>>>>> 48886241084679781aa366cc341f608219e37209
         private void cbThuocTinh_SelectedIndexChanged(object sender, EventArgs e)
         {
 
