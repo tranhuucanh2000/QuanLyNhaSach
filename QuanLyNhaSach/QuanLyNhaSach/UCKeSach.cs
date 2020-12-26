@@ -276,5 +276,17 @@ namespace QuanLyNhaSach
             dtgSach.Columns[6].Width = 100;
             dtgSach.Columns[7].Width = 100;
         }
+
+        private void ptbLamMoi_Click(object sender, EventArgs e)
+        {
+            KetNoiKhoSach();
+            TrangThaiBanDau();
+            LamMoiTxb();
+        }
+
+        private void txbTimKiem_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter) ptbTimKiem_Click(sender, e);
+        }
     }
 }

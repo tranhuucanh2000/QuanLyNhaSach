@@ -181,7 +181,7 @@ END
 GO
 --Tìm kiếm sách qua tên sách
 
-CREATE PROC USP_TimSach_TenSach
+CREATE PROC USP_TimKiemSach_TenSach
 @tenSach NVARCHAR(50)
 AS
 BEGIN
@@ -195,6 +195,21 @@ BEGIN
 END
 GO
 
+--Lọc sách qua tên
+
+CREATE PROC USP_TimSach_TenSach
+@tenSach NVARCHAR(50)
+AS
+BEGIN
+	SELECT DISTINCT s.MaSach, s.TenSach, tg.TenTG,tl.TenTL, nxb.TenNXB,s.SoLuongTon,s.GiaTien,s.KinhDoanh
+	FROM Sach s 
+	INNER JOIN ChiTietPhieuNhap ct on s.MaSach=ct.MaSach
+	INNER JOIN TacGia tg on s.MaTG=tg.MaTG
+	INNER JOIN TheLoai tl on s.MaTL=tl.MaTL
+	INNER JOIN NhaXuatBan nxb on s.MaNXB=nxb.MaNXB
+	WHERE s.TenSach LIKE CONCAT(@tenSach,'%') AND s.KinhDoanh = N'Còn'
+END
+GO
 --Tìm kiếm sách qua thể loại
 CREATE PROC USP_TimSach_TheLoai
 @theLoai NVARCHAR(50)
@@ -647,6 +662,58 @@ ALTER TABLE ChiTietPhieuNhap
 ADD CONSTRAINT df_ID_SACH_CTPN DEFAULT DBO.AUTO_MASACH_CTPN() FOR MaSach
 GO
 
+<<<<<<< HEAD
+=======
+	INSERT INTO Sach
+	(
+		MaSach,
+		TenSach,
+		SoLuongTon,
+		GiaTien,
+		MaTL,
+		MaTG,
+		MaNXB
+	)
+	VALUES
+	(
+		@maSach,
+		@tenSach,
+		@soluong,
+		@giatien,
+		@matl,
+		@matg,
+		@manxb
+	)
+	INSERT INTO PhieuNhap
+	(
+		SoPN,
+		NgayNhap,
+		MaNXB
+	)
+	VALUES
+	(
+		@soPn,
+		@ngaynhap,
+		@manxb
+	)
+
+	INSERT INTO ChiTietPhieuNhap
+	(
+		MaSach,
+		SoPN,
+		SoLuongNhap,
+		GiaNhap
+	)
+	VALUES
+	(
+		@maSach,
+		@soPn,
+		@soluong,
+		@giatien
+	)
+END
+GO
+>>>>>>> f1d56e3e130623944c27cc160fba7e46dc09ec7e
 --Xóa Sách
 CREATE PROC USP_XoaSach
 @masach CHAR(5)
