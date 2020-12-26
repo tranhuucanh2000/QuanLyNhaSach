@@ -283,5 +283,10 @@ namespace QuanLyNhaSach
             TrangThaiBanDau();
             LamMoiTxb();
         }
+
+        private void txbTimKiem_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter) ptbTimKiem_Click(sender, e);
+        }
     }
 }
