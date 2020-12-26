@@ -114,7 +114,7 @@ namespace QuanLyNhaSach
                     DuaThongDiep("Đã thêm tài khoản thành công!", 1);
                     cbTaiKhoan.Items.Clear();
                     LayDuLieuTaiKhoan();
-                    txbMatKhau.Text = txbNhapLaiMKM.Text = txbTenDN.Text = txbTenHT.Text = "";
+                    txbMatKhau.Text = txbNhapLaiMKM.Text = txbTenDN.Text = txbTenHT.Text = txbMa.Text = "";
                 }
                 else
                 {

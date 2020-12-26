@@ -55,7 +55,7 @@ namespace QuanLyNhaSach
             dtgSach.Columns[5].HeaderText = "Số Lượng";
             dtgSach.Columns[6].HeaderText = "Giá Tiền";
             dtgSach.Columns[0].Width = 50;
-            dtgSach.Columns[1].Width = 200;
+            dtgSach.Columns[1].Width = 197;
             dtgSach.Columns[2].Width = 90;
             dtgSach.Columns[3].Width = 90;
             dtgSach.Columns[4].Width = 90;

@@ -40,9 +40,17 @@ namespace QuanLyNhaSach
             InitializeComponent();
             loginAccount = acc;
             HienTen();
+            HienThiSuaTenDN();
             LayThongTinTaiKhoan(loginAccount);
-        }
 
+        }
+        void HienThiSuaTenDN()
+        {
+            if (loginAccount.Type == 1)
+            {
+                btnSuaTenDN.Visible = true;
+            }
+        }
         public void HienTen()
         {
             DuaThongDiep(string.Concat("Xin chào ", LoginAccount.Ten), 3);
@@ -127,7 +135,7 @@ namespace QuanLyNhaSach
         private void btnLuu_Click(object sender, EventArgs e)
         {
 
-            if (btnSua.Text == "Thoát")
+            if (btnSua.Text == "Sửa Mật Khẩu")
             {
                 CapNhatMaTaiKhoan();
                 txbNhapLaiMKM.Text = txbMatKhauMoi.Text = txbMatKhau.Text = "";
@@ -160,6 +168,18 @@ namespace QuanLyNhaSach
                 lbMK.Text = "Mật Khẩu:";
                 btnSua.Text = "Sửa Mã";
             }
+        }
+
+        private void btnSuaTenDN_Click(object sender, EventArgs e)
+        {
+            FSuaTenDangNhap fSuaTenDangNhap = new FSuaTenDangNhap(loginAccount);
+            fSuaTenDangNhap.SuaTenDN += FSuaTenDangNhap_SuaTenDN;
+            fSuaTenDangNhap.ShowDialog();
+        }
+
+        private void FSuaTenDangNhap_SuaTenDN(object sender, SuaTenDN e)
+        {
+            LayThongTinTaiKhoan(e.Taikhoan);
         }
     }
     public class TaiKhoanSuKien : EventArgs

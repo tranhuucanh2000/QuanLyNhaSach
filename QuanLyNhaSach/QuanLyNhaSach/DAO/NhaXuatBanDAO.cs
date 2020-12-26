@@ -10,7 +10,11 @@ namespace QuanLyNhaSach.DAO
     {
         private static NhaXuatBanDAO instance;
 
-        public static NhaXuatBanDAO Instance { get => instance; set => instance = value; }
+        public static NhaXuatBanDAO Instance 
+        { 
+            get { if (instance == null) instance = new NhaXuatBanDAO();return instance; }
+            set => instance = value; 
+        }
 
         public void ThemNhaXuatBan(string tennxb,string diachi,string sdt)
         {

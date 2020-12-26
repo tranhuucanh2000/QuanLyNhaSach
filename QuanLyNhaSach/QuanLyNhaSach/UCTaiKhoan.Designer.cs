@@ -34,6 +34,8 @@ namespace QuanLyNhaSach
             this.pbDangXuat = new System.Windows.Forms.PictureBox();
             this.lbHoTro = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label8 = new System.Windows.Forms.Label();
+            this.btnSuaTenDN = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnLuu = new System.Windows.Forms.Button();
@@ -53,7 +55,6 @@ namespace QuanLyNhaSach
             this.lbMK = new System.Windows.Forms.Label();
             this.lbTenHT = new System.Windows.Forms.Label();
             this.lbTenDN = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbDangXuat)).BeginInit();
             this.panel2.SuspendLayout();
@@ -97,6 +98,7 @@ namespace QuanLyNhaSach
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.Controls.Add(this.label8);
+            this.panel2.Controls.Add(this.btnSuaTenDN);
             this.panel2.Controls.Add(this.btnSua);
             this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Controls.Add(this.btnLuu);
@@ -121,6 +123,37 @@ namespace QuanLyNhaSach
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1000, 670);
             this.panel2.TabIndex = 3;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Segoe UI Black", 27.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            this.label8.Location = new System.Drawing.Point(302, 16);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(398, 50);
+            this.label8.TabIndex = 36;
+            this.label8.Text = "Thông Tin Tài Khoản";
+            // 
+            // btnSuaTenDN
+            // 
+            this.btnSuaTenDN.AutoSize = true;
+            this.btnSuaTenDN.BackColor = System.Drawing.Color.Khaki;
+            this.btnSuaTenDN.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnSuaTenDN.FlatAppearance.BorderSize = 0;
+            this.btnSuaTenDN.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSuaTenDN.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSuaTenDN.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSuaTenDN.Location = new System.Drawing.Point(711, 412);
+            this.btnSuaTenDN.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSuaTenDN.Name = "btnSuaTenDN";
+            this.btnSuaTenDN.Size = new System.Drawing.Size(250, 42);
+            this.btnSuaTenDN.TabIndex = 35;
+            this.btnSuaTenDN.Text = "Sửa Tên Đăng Nhập";
+            this.btnSuaTenDN.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSuaTenDN.UseVisualStyleBackColor = false;
+            this.btnSuaTenDN.Visible = false;
+            this.btnSuaTenDN.Click += new System.EventHandler(this.btnSuaTenDN_Click);
             // 
             // btnSua
             // 
@@ -352,17 +385,6 @@ namespace QuanLyNhaSach
             this.lbTenDN.Text = "Tên đăng nhập:";
             this.lbTenDN.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Segoe UI Black", 27.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
-            this.label8.Location = new System.Drawing.Point(302, 16);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(398, 50);
-            this.label8.TabIndex = 36;
-            this.label8.Text = "Thông Tin Tài Khoản";
-            // 
             // UCTaiKhoan
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -407,5 +429,6 @@ namespace QuanLyNhaSach
         private System.Windows.Forms.Label lbChucVu;
         private System.Windows.Forms.Button btnSua;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Button btnSuaTenDN;
     }
 }

@@ -140,3 +140,4 @@ C:\Users\18521\Desktop\Đồ Án\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\D
 C:\Users\18521\Desktop\Đồ Án\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.csproj.CopyComplete
 C:\Users\18521\Desktop\Đồ Án\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.exe
 C:\Users\18521\Desktop\Đồ Án\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.pdb
+C:\Users\tranh\source\repos\tranhuucanh2000\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.FSuaTenDangNhap.resources
