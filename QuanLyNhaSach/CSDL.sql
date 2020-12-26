@@ -649,26 +649,25 @@ BEGIN
 	SET DATEFORMAT DMY
 
 	INSERT INTO Sach
-(
-	MaSach,
-	TenSach,
-	SoLuongTon,
-	GiaTien,
-	MaTL,
-	MaTG,
-	MaNXB
-)
-VALUES
-(
-	@maSach,
-	@tenSach,
-	@soluong,
-	@giatien,
-	@matl,
-	@matg,
-	@manxb
-)
-END
+	(
+		MaSach,
+		TenSach,
+		SoLuongTon,
+		GiaTien,
+		MaTL,
+		MaTG,
+		MaNXB
+	)
+	VALUES
+	(
+		@maSach,
+		@tenSach,
+		@soluong,
+		@giatien,
+		@matl,
+		@matg,
+		@manxb
+	)
 	INSERT INTO PhieuNhap
 	(
 		SoPN,
@@ -696,6 +695,7 @@ END
 		@soluong,
 		@giatien
 	)
+END
 GO
 --Xóa Sách
 CREATE PROC USP_XoaSach
