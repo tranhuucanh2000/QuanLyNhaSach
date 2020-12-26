@@ -25,9 +25,14 @@ namespace QuanLyNhaSach.DAO
         {
             DataProvider.Instance.ExecuteQuery("EXEC USP_ThemChiTietHoaDon @maSach , @soHD , @soLuongBan , @giaBan", new object[] { masach, sohd, soluong, gia });
         }
+<<<<<<< HEAD
+       
+       public DataTable LayDSHoaDon(DateTime NgayLap, DateTime NgayBan)
+=======
        public DataTable LayDSHoaDon()
+>>>>>>> 48886241084679781aa366cc341f608219e37209
         {
-            DataTable data = DataProvider.Instance.ExecuteQuery("EXEC USP_HienThiHoaDon");
+            DataTable data = DataProvider.Instance.ExecuteQuery("EXEC USP_HienThiHoaDon @NgayLap , @NgayBan", new object[] { NgayLap , NgayBan });
             return data;
         }
 

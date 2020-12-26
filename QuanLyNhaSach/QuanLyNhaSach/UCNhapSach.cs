@@ -246,12 +246,18 @@ namespace QuanLyNhaSach
             }
         }
 
+<<<<<<< HEAD
         private void btnLamMoi_Click(object sender, EventArgs e)
         {
             TaiDanhSachSach();
             TaiDanhSachTacGia();
             TaiDanhSachTheLoai();
             TaiDanhSachNXB();
+=======
+        private void txbGiaTien_TextChanged(object sender, EventArgs e)
+        {
+
+>>>>>>> 5ffa91807875a6af7418536001a897b582cddb7d
         }
     }
 }

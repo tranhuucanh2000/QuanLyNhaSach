@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Data;
 using System.Threading.Tasks;
 
 namespace QuanLyNhaSach.DAO
@@ -23,6 +24,12 @@ namespace QuanLyNhaSach.DAO
         public void SuaTheLoai(string tentl, string matl)
         {
             SachDAO.Instance.SuaTheLoai(tentl, matl);
+        }
+        public bool XacNhanTenTL(string tentl)
+        {
+            DataTable data = DataProvider.Instance.ExecuteQuery("EXEC dbo. USP_XacNhanTenTheLoai @tentl ", new object[] { tentl });
+            if (data.Rows.Count > 0) return true;
+            return false;
         }
     }
 }

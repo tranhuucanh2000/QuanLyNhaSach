@@ -35,14 +35,14 @@ namespace QuanLyNhaSach
             this.lbHoTro = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dateNgayBan = new System.Windows.Forms.DateTimePicker();
+            this.dateNgayLap = new System.Windows.Forms.DateTimePicker();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dtgvThongKe = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbDangXuat)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvThongKe)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -97,23 +97,23 @@ namespace QuanLyNhaSach
             this.label3.TabIndex = 47;
             this.label3.Text = "Đến:";
             // 
-            // dateTimePicker2
+            // dateNgayBan
             // 
-            this.dateTimePicker2.CalendarFont = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker2.Location = new System.Drawing.Point(672, 190);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(297, 26);
-            this.dateTimePicker2.TabIndex = 46;
+            this.dateNgayBan.CalendarFont = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateNgayBan.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateNgayBan.Location = new System.Drawing.Point(672, 190);
+            this.dateNgayBan.Name = "dateNgayBan";
+            this.dateNgayBan.Size = new System.Drawing.Size(297, 26);
+            this.dateNgayBan.TabIndex = 46;
             // 
-            // dateTimePicker1
+            // dateNgayLap
             // 
-            this.dateTimePicker1.CalendarFont = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Location = new System.Drawing.Point(62, 190);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(288, 26);
-            this.dateTimePicker1.TabIndex = 45;
+            this.dateNgayLap.CalendarFont = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateNgayLap.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateNgayLap.Location = new System.Drawing.Point(62, 190);
+            this.dateNgayLap.Name = "dateNgayLap";
+            this.dateNgayLap.Size = new System.Drawing.Size(288, 26);
+            this.dateNgayLap.TabIndex = 45;
             // 
             // button2
             // 
@@ -144,35 +144,35 @@ namespace QuanLyNhaSach
             this.button3.Text = "Doanh Thu";
             this.button3.UseVisualStyleBackColor = false;
             // 
-            // dataGridView1
+            // dtgvThongKe
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 282);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(1000, 438);
-            this.dataGridView1.TabIndex = 51;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
+            this.dtgvThongKe.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dtgvThongKe.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgvThongKe.Location = new System.Drawing.Point(0, 282);
+            this.dtgvThongKe.Name = "dtgvThongKe";
+            this.dtgvThongKe.Size = new System.Drawing.Size(1000, 438);
+            this.dtgvThongKe.TabIndex = 51;
+            this.dtgvThongKe.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
             // 
             // UCThongKe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dtgvThongKe);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.dateTimePicker2);
+            this.Controls.Add(this.dateNgayBan);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.dateNgayLap);
             this.Name = "UCThongKe";
             this.Size = new System.Drawing.Size(1000, 720);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbDangXuat)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvThongKe)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -182,12 +182,12 @@ namespace QuanLyNhaSach
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pbDangXuat;
         private System.Windows.Forms.Label lbHoTro;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dateNgayBan;
+        private System.Windows.Forms.DateTimePicker dateNgayLap;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dtgvThongKe;
     }
 }

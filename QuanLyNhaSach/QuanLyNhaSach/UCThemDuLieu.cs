@@ -238,11 +238,19 @@ namespace QuanLyNhaSach
                 {
                     DuaThongDiep("Vui lòng nhập đủ dữ liệu", 2);
                 }
+<<<<<<< HEAD
                 //else if (SachDAO.Instance.XacNhanTenTL(txbTen.Text) == true)
                 //{
                 //    DuaThongDiep("Đã có thể loại này trong danh sách ", 2);
                 //    LamMoiTxb();
                 //}
+=======
+                else if (TheLoaiDAO.Instance.XacNhanTenTL(txbTen.Text) == true)
+                {
+                    DuaThongDiep("Đã có thể loại này trong danh sách ", 2);
+                    LamMoiTxb();
+                }
+>>>>>>> 5ffa91807875a6af7418536001a897b582cddb7d
                 else
                 {
                     SachDAO.Instance.ThemTheLoai(ten);
