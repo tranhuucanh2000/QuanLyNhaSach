@@ -875,3 +875,10 @@ GO
 
 INSERT INTO TaiKhoan VALUES (N'admin', N'Quản lý', 1,N'admin',1,1,1,1,1,1,1,N'KVC2020')
 
+--Xác nhận tên thể loại
+CREATE PROC USP_XacNhanTenTheLoai
+@tentl NVARCHAR(50)
+AS
+BEGIN
+	SELECT * FROM QuanLyNhaSach.dbo.TheLoai WHERE TenTL=@tentl
+END

@@ -238,7 +238,7 @@ namespace QuanLyNhaSach
                 {
                     DuaThongDiep("Vui lòng nhập đủ dữ liệu", 2);
                 }
-                else if (SachDAO.Instance.XacNhanTenTL(txbTen.Text) == true)
+                else if (TheLoaiDAO.Instance.XacNhanTenTL(txbTen.Text) == true)
                 {
                     DuaThongDiep("Đã có thể loại này trong danh sách ", 2);
                     LamMoiTxb();
