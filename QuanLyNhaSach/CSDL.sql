@@ -1,4 +1,5 @@
-﻿CREATE DATABASE QuanLyNhaSach
+﻿--Tạo csdl QuanLyNhaSach và sử dụng nó
+CREATE DATABASE QuanLyNhaSach
 GO
 USE QuanLyNhaSach
 GO
@@ -58,7 +59,7 @@ CREATE TABLE Sach
 	MaTG CHAR(5) NOT NULL,
 	MaNXB CHAR(6) NOT NULL,
 	GiaTien INT NOT NULL,
-	KinhDoanh NVARCHAR(15) NOT NULL,
+	KinhDoanh NVARCHAR(15) NOT NULL DEFAULT N'Còn',
 	CONSTRAINT pk_S PRIMARY KEY (MaSach),
 	CONSTRAINT fk_S_MaTL FOREIGN KEY (MaTL) REFERENCES dbo.TheLoai(MaTL),
 	CONSTRAINT fk_S_MaTG FOREIGN KEY (MaTG) REFERENCES dbo.TacGia(MaTG),
@@ -127,6 +128,7 @@ BEGIN
 	INNER JOIN TacGia tg on s.MaTG=tg.MaTG
 	INNER JOIN TheLoai tl on s.MaTL=tl.MaTL
 	INNER JOIN NhaXuatBan nxb on s.MaNXB=nxb.MaNXB
+	WHERE s.KinhDoanh = N'Còn'
 END
 GO
 	
@@ -140,7 +142,7 @@ BEGIN
 	s.SoLuongTon AS [Số Lượng],
 	s.GiaTien AS [Giá Tiền]
 	FROM Sach s , ChiTietPhieuNhap ct, TacGia tg, TheLoai tl, NhaXuatBan nxb
-	WHERE s.MaSach=ct.MaSach AND s.MaTG=tg.MaTG AND s.MaTL=tl.MaTL AND s.MaNXB=nxb.MaNXB
+	WHERE s.MaSach=ct.MaSach AND s.MaTG=tg.MaTG AND s.MaTL=tl.MaTL AND s.MaNXB=nxb.MaNXB AND s.KinhDoanh = N'Còn'
 END
 GO
 -- Tìm kiếm sách qua tên tác giả
@@ -154,7 +156,7 @@ BEGIN
 	INNER JOIN TacGia tg on s.MaTG=tg.MaTG
 	INNER JOIN TheLoai tl on s.MaTL=tl.MaTL
 	INNER JOIN NhaXuatBan nxb on s.MaNXB=nxb.MaNXB
-	WHERE tg.TenTG LIKE CONCAT(@tacGia,'%')
+	WHERE tg.TenTG LIKE CONCAT(@tacGia,'%') AND s.KinhDoanh = N'Còn'
 END
 GO
 --Tìm kiếm sách qua tên sách
@@ -169,7 +171,7 @@ BEGIN
 	INNER JOIN TacGia tg on s.MaTG=tg.MaTG
 	INNER JOIN TheLoai tl on s.MaTL=tl.MaTL
 	INNER JOIN NhaXuatBan nxb on s.MaNXB=nxb.MaNXB
-	WHERE s.TenSach LIKE CONCAT(@tenSach,'%')
+	WHERE s.TenSach LIKE CONCAT(@tenSach,'%') AND s.KinhDoanh = N'Còn'
 END
 GO
 
@@ -184,7 +186,7 @@ BEGIN
 	INNER JOIN TacGia tg on s.MaTG=tg.MaTG
 	INNER JOIN TheLoai tl on s.MaTL=tl.MaTL
 	INNER JOIN NhaXuatBan nxb on s.MaNXB=nxb.MaNXB
-	WHERE tl.TenTL LIKE CONCAT(@theLoai,'%')
+	WHERE tl.TenTL LIKE CONCAT(@theLoai,'%') AND s.KinhDoanh = N'Còn'
 END
 GO
 
@@ -200,7 +202,7 @@ BEGIN
 	INNER JOIN TacGia tg on s.MaTG=tg.MaTG
 	INNER JOIN TheLoai tl on s.MaTL=tl.MaTL
 	INNER JOIN NhaXuatBan nxb on s.MaNXB=nxb.MaNXB
-	WHERE tl.TenTL LIKE CONCAT(@theLoai,'%') AND s.TenSach LIKE CONCAT(@tenSach,'%')
+	WHERE tl.TenTL LIKE CONCAT(@theLoai,'%') AND s.TenSach LIKE CONCAT(@tenSach,'%') AND s.KinhDoanh = N'Còn'
 END
 GO
 
@@ -215,7 +217,7 @@ BEGIN
 	INNER JOIN TacGia tg on s.MaTG=tg.MaTG
 	INNER JOIN TheLoai tl on s.MaTL=tl.MaTL
 	INNER JOIN NhaXuatBan nxb on s.MaNXB=nxb.MaNXB
-	WHERE s.TenSach LIKE CONCAT(@tenSach,'%') AND tg.TenTG LIKE CONCAT(@tacGia,'%')
+	WHERE s.TenSach LIKE CONCAT(@tenSach,'%') AND tg.TenTG LIKE CONCAT(@tacGia,'%') AND s.KinhDoanh = N'Còn'
 END
 GO
 
@@ -230,7 +232,7 @@ BEGIN
 	INNER JOIN TacGia tg on s.MaTG=tg.MaTG
 	INNER JOIN TheLoai tl on s.MaTL=tl.MaTL
 	INNER JOIN NhaXuatBan nxb on s.MaNXB=nxb.MaNXB
-	WHERE tg.TenTG LIKE CONCAT(@tacGia,'%') AND tl.TenTL LIKE CONCAT(@theLoai,'%')
+	WHERE tg.TenTG LIKE CONCAT(@tacGia,'%') AND tl.TenTL LIKE CONCAT(@theLoai,'%') AND s.KinhDoanh = N'Còn'
 END
 GO
 
@@ -245,7 +247,7 @@ BEGIN
 	INNER JOIN TacGia tg on s.MaTG=tg.MaTG
 	INNER JOIN TheLoai tl on s.MaTL=tl.MaTL
 	INNER JOIN NhaXuatBan nxb on s.MaNXB=nxb.MaNXB
-	WHERE s.TenSach LIKE CONCAT(@tenSach,'%') AND tg.TenTG LIKE CONCAT(@tacGia,'%') AND tl.TenTL LIKE CONCAT(@theLoai,'%')
+	WHERE s.TenSach LIKE CONCAT(@tenSach,'%') AND tg.TenTG LIKE CONCAT(@tacGia,'%') AND tl.TenTL LIKE CONCAT(@theLoai,'%') AND s.KinhDoanh = N'Còn'
 END
 GO
 
@@ -542,6 +544,8 @@ BEGIN
 	WHERE
 		MaSach = @maSach
 END
+GO
+
 --Thêm Mã PN-Trong Bảng PhieuNhap
 CREATE FUNCTION AUTO_MAPN()
 RETURNS VARCHAR(5)
@@ -772,11 +776,11 @@ CREATE PROC USP_LayTatCaSach
 AS
 BEGIN
 	SELECT DISTINCT s.MaSach AS [ID], s.TenSach AS [Tên Sách], tg.TenTG AS [Tác Giả],tl.TenTL AS [Thể Loại], nxb.TenNXB AS [Nhà Sản Xuất] ,s.SoLuongTon AS [Số Lượng Tồn],s.GiaTien AS [Giá Tiền], s.KinhDoanh AS [Kinh Doanh]
-FROM Sach s 
-INNER JOIN ChiTietPhieuNhap ct on s.MaSach=ct.MaSach
-INNER JOIN TacGia tg on s.MaTG=tg.MaTG
-INNER JOIN TheLoai tl on s.MaTL=tl.MaTL
-INNER JOIN NhaXuatBan nxb on s.MaNXB=nxb.MaNXB
+	FROM Sach s 
+	INNER JOIN ChiTietPhieuNhap ct on s.MaSach=ct.MaSach
+	INNER JOIN TacGia tg on s.MaTG=tg.MaTG
+	INNER JOIN TheLoai tl on s.MaTL=tl.MaTL
+	INNER JOIN NhaXuatBan nxb on s.MaNXB=nxb.MaNXB
 END
 GO
 --Trạng thái sách còn kinh doanh
@@ -865,6 +869,7 @@ BEGIN
 	WHERE 
 	MaSach = @masach
 END
+GO
 
 --Thêm tài khoản mặc định
 
