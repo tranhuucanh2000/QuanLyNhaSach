@@ -67,6 +67,12 @@ namespace QuanLyNhaSach
         private void Instance_CapNhatTaiKhoanEvent(object sender, TaiKhoanSuKien e)
         {
             UCBanSach.Instance.DuaThongDiep(string.Concat("Xin chào ", e.Acc.Ten), 3);
+            UCTaiKhoan.Instance.DuaThongDiep(string.Concat("Xin chào ", e.Acc.Ten), 3);
+            UCCaiDat.Instance.DuaThongDiep(string.Concat("Xin chào ", e.Acc.Ten), 3);
+            UCKeSach.Instance.DuaThongDiep(string.Concat("Xin chào ", e.Acc.Ten), 3);
+            UCNhapSach.Instance.DuaThongDiep(string.Concat("Xin chào ", e.Acc.Ten), 3);
+            UCThemDuLieu.Instance.DuaThongDiep(string.Concat("Xin chào ", e.Acc.Ten), 3);
+            UCThongKe.Instance.DuaThongDiep(string.Concat("Xin chào ", e.Acc.Ten), 3);
         }
 
         void ChuyenTrang(Button btn)

@@ -59,6 +59,7 @@ namespace QuanLyNhaSach
             this.lbSo = new System.Windows.Forms.Label();
             this.lbTen = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.btnLamMoi = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbDangXuat)).BeginInit();
             this.panel2.SuspendLayout();
@@ -185,6 +186,7 @@ namespace QuanLyNhaSach
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.btnLamMoi);
             this.panel3.Controls.Add(this.btnThemSach);
             this.panel3.Controls.Add(this.label5);
             this.panel3.Controls.Add(this.panel15);
@@ -407,6 +409,23 @@ namespace QuanLyNhaSach
             this.label2.TabIndex = 0;
             this.label2.Text = "NHẬP SÁCH MỚI";
             // 
+            // btnLamMoi
+            // 
+            this.btnLamMoi.BackColor = System.Drawing.Color.White;
+            this.btnLamMoi.FlatAppearance.BorderSize = 0;
+            this.btnLamMoi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLamMoi.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLamMoi.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            this.btnLamMoi.Image = ((System.Drawing.Image)(resources.GetObject("btnLamMoi.Image")));
+            this.btnLamMoi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLamMoi.Location = new System.Drawing.Point(934, 405);
+            this.btnLamMoi.Name = "btnLamMoi";
+            this.btnLamMoi.Size = new System.Drawing.Size(63, 55);
+            this.btnLamMoi.TabIndex = 66;
+            this.btnLamMoi.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnLamMoi.UseVisualStyleBackColor = false;
+            this.btnLamMoi.Click += new System.EventHandler(this.btnLamMoi_Click);
+            // 
             // UCNhapSach
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -459,5 +478,6 @@ namespace QuanLyNhaSach
         private System.Windows.Forms.ComboBox cbNXB;
         private System.Windows.Forms.ComboBox cbTheLoai;
         private System.Windows.Forms.ComboBox cbTacGia;
+        private System.Windows.Forms.Button btnLamMoi;
     }
 }

@@ -129,15 +129,15 @@ namespace QuanLyNhaSach
         }
         void HienThiNXB1()
         {
+            dtgSach.Columns[0].Width = 92;
+            dtgSach.Columns[1].Width = 120;
+            dtgSach.Columns[2].Width = 185;
+            dtgSach.Columns[3].Width = 122;
             LamMoiTxb();
             txbSo1.Visible = lbSo1.Visible = lbDiaChi1.Visible = txbDC1.Visible = panel7.Visible = panel6.Visible = true;
             lbTen1.Text = "Tên NXB:";
             lbSo1.Text = "Số Điện Thoại:";
             lbDiaChi1.Text = "Địa Chỉ:";
-            dtgSach.Columns[0].Width = 92;
-            dtgSach.Columns[1].Width = 120;
-            dtgSach.Columns[2].Width = 185;
-            dtgSach.Columns[3].Width = 117;
 
         }
         public void HienTen()
@@ -238,11 +238,11 @@ namespace QuanLyNhaSach
                 {
                     DuaThongDiep("Vui lòng nhập đủ dữ liệu", 2);
                 }
-                else if (SachDAO.Instance.XacNhanTenTL(txbTen.Text) == true)
-                {
-                    DuaThongDiep("Đã có thể loại này trong danh sách ", 2);
-                    LamMoiTxb();
-                }
+                //else if (SachDAO.Instance.XacNhanTenTL(txbTen.Text) == true)
+                //{
+                //    DuaThongDiep("Đã có thể loại này trong danh sách ", 2);
+                //    LamMoiTxb();
+                //}
                 else
                 {
                     SachDAO.Instance.ThemTheLoai(ten);

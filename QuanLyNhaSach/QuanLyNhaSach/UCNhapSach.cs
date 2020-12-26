@@ -54,7 +54,7 @@ namespace QuanLyNhaSach
             DataTable data = SachDAO.Instance.LayDSSach();
             foreach(DataRow row in data.Rows)
             {
-                string iteam = string.Concat( row["Tên Sách"].ToString().Trim(), " - ", row["ID"].ToString().Trim());
+                string iteam = string.Concat( row["TenSach"].ToString().Trim(), " - ", row["MaSach"].ToString().Trim());
                 cbSach.Items.Add(iteam);
                 cbSach.AutoCompleteCustomSource.Add(iteam);
             }    
@@ -244,6 +244,14 @@ namespace QuanLyNhaSach
                 string iteam = row["SoPN"].ToString().Trim();
                 dsMaPN.Add(iteam);
             }
+        }
+
+        private void btnLamMoi_Click(object sender, EventArgs e)
+        {
+            TaiDanhSachSach();
+            TaiDanhSachTacGia();
+            TaiDanhSachTheLoai();
+            TaiDanhSachNXB();
         }
     }
 }

@@ -127,7 +127,7 @@ namespace QuanLyNhaSach
             this.lbHoTro.AutoSize = true;
             this.lbHoTro.Font = new System.Drawing.Font("Segoe UI", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbHoTro.ForeColor = System.Drawing.Color.White;
-            this.lbHoTro.Location = new System.Drawing.Point(2, 10);
+            this.lbHoTro.Location = new System.Drawing.Point(3, 12);
             this.lbHoTro.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbHoTro.Name = "lbHoTro";
             this.lbHoTro.Size = new System.Drawing.Size(325, 25);

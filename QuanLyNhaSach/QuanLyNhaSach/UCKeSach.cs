@@ -255,5 +255,26 @@ namespace QuanLyNhaSach
             TrangThaiBanDau();
             LamMoiTxb();
         }
+
+        private void ptbTimKiem_Click(object sender, EventArgs e)
+        {
+            dtgSach.DataSource = SachDAO.Instance.TimKiemSach(txbTimKiem.Text);
+            dtgSach.Columns[0].HeaderText = "Mã";
+            dtgSach.Columns[1].HeaderText = "Tên Sách";
+            dtgSach.Columns[2].HeaderText = "Tác Giả";
+            dtgSach.Columns[3].HeaderText = "Thể Loại";
+            dtgSach.Columns[4].HeaderText = "Nhà Xuất Bản";
+            dtgSach.Columns[5].HeaderText = "Số Lượng Tồn";
+            dtgSach.Columns[6].HeaderText = "Giá Tiền";
+            dtgSach.Columns[7].HeaderText = "Kinh Doanh";
+            dtgSach.Columns[0].Width = 50;
+            dtgSach.Columns[1].Width = 287;
+            dtgSach.Columns[2].Width = 120;
+            dtgSach.Columns[3].Width = 120;
+            dtgSach.Columns[4].Width = 120;
+            dtgSach.Columns[5].Width = 100;
+            dtgSach.Columns[6].Width = 100;
+            dtgSach.Columns[7].Width = 100;
+        }
     }
 }

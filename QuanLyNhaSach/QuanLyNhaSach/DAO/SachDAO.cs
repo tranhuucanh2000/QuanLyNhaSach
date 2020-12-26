@@ -49,7 +49,11 @@ namespace QuanLyNhaSach.DAO
             DataTable data = DataProvider.Instance.ExecuteQuery("EXEC USP_TimSach_TacGia @tacGia", new object[] { tacGia });
             return data;
         }
-
+        public DataTable TimKiemSach(string tenSach)
+        {
+            DataTable data = DataProvider.Instance.ExecuteQuery("EXEC USP_TimKiemSach_TenSach @tenSach", new object[] { tenSach });
+            return data;
+        }
         public DataTable TimSachQuaTenVaTacGia(string ten, string tacGia)
         {
             DataTable data = DataProvider.Instance.ExecuteQuery("EXEC USP_TimSach_TenSach_TacGia @tenSach , @tacGia", new object[] { ten , tacGia});

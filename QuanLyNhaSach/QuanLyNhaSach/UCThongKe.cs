@@ -27,6 +27,14 @@ namespace QuanLyNhaSach
             get => loginAccount;
             set => loginAccount = value;
         }
+        public void DuaThongDiep(string str, int mucDo)
+        {
+            string ThongDiep = String.Concat("BỒ CÂU: \"", str, "\"");
+            if (mucDo == 1) lbHoTro.ForeColor = Color.FromArgb(102, 255, 102);
+            if (mucDo == 2) lbHoTro.ForeColor = Color.FromArgb(255, 255, 102);
+            if (mucDo == 3) lbHoTro.ForeColor = Color.White;
+            lbHoTro.Text = ThongDiep;
+        }
         public UCThongKe(TaiKhoan acc)
         {
             InitializeComponent();

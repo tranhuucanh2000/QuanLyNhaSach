@@ -32,10 +32,10 @@ namespace QuanLyNhaSach
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCKeSach));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pbDangXuat = new System.Windows.Forms.PictureBox();
             this.lbHoTro = new System.Windows.Forms.Label();
@@ -52,6 +52,8 @@ namespace QuanLyNhaSach
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnLuu = new System.Windows.Forms.Button();
             this.btnHuy = new System.Windows.Forms.Button();
+            this.btnNgung = new System.Windows.Forms.Button();
+            this.btnKinhDoanh = new System.Windows.Forms.Button();
             this.txbGiaTien = new System.Windows.Forms.TextBox();
             this.lbGiaTien = new System.Windows.Forms.Label();
             this.pnSo = new System.Windows.Forms.Panel();
@@ -72,8 +74,8 @@ namespace QuanLyNhaSach
             this.lbSo = new System.Windows.Forms.Label();
             this.lbMa = new System.Windows.Forms.Label();
             this.lbTen = new System.Windows.Forms.Label();
-            this.btnNgung = new System.Windows.Forms.Button();
-            this.btnKinhDoanh = new System.Windows.Forms.Button();
+            this.txbTimKiem = new System.Windows.Forms.TextBox();
+            this.ptbTimKiem = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbDangXuat)).BeginInit();
             this.panel2.SuspendLayout();
@@ -82,6 +84,7 @@ namespace QuanLyNhaSach
             ((System.ComponentModel.ISupportInitialize)(this.dtgSach)).BeginInit();
             this.pnTT.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbTimKiem)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -140,9 +143,9 @@ namespace QuanLyNhaSach
             // 
             this.panel6.Controls.Add(this.dtgSach);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel6.Location = new System.Drawing.Point(0, 307);
+            this.panel6.Location = new System.Drawing.Point(0, 335);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(1000, 363);
+            this.panel6.Size = new System.Drawing.Size(1000, 335);
             this.panel6.TabIndex = 1;
             // 
             // dtgSach
@@ -150,23 +153,23 @@ namespace QuanLyNhaSach
             this.dtgSach.BackgroundColor = System.Drawing.Color.White;
             this.dtgSach.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dtgSach.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtgSach.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle13.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgSach.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
             this.dtgSach.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.PowderBlue;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dtgSach.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle14.BackColor = System.Drawing.Color.PowderBlue;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtgSach.DefaultCellStyle = dataGridViewCellStyle14;
             this.dtgSach.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtgSach.GridColor = System.Drawing.Color.White;
             this.dtgSach.Location = new System.Drawing.Point(0, 0);
@@ -174,35 +177,37 @@ namespace QuanLyNhaSach
             this.dtgSach.Name = "dtgSach";
             this.dtgSach.ReadOnly = true;
             this.dtgSach.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtgSach.RowHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle15.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgSach.RowHeadersDefaultCellStyle = dataGridViewCellStyle15;
             this.dtgSach.RowHeadersVisible = false;
             this.dtgSach.RowHeadersWidth = 51;
             this.dtgSach.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.DeepSkyBlue;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.Black;
-            this.dtgSach.RowsDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle16.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle16.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle16.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.DeepSkyBlue;
+            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.Color.Black;
+            this.dtgSach.RowsDefaultCellStyle = dataGridViewCellStyle16;
             this.dtgSach.RowTemplate.Height = 24;
             this.dtgSach.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgSach.Size = new System.Drawing.Size(1000, 363);
+            this.dtgSach.Size = new System.Drawing.Size(1000, 335);
             this.dtgSach.TabIndex = 5;
             this.dtgSach.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgSach_CellContentClick);
             // 
             // pnTT
             // 
+            this.pnTT.Controls.Add(this.txbTimKiem);
             this.pnTT.Controls.Add(this.label5);
             this.pnTT.Controls.Add(this.label8);
             this.pnTT.Controls.Add(this.panel15);
             this.pnTT.Controls.Add(this.flowLayoutPanel1);
+            this.pnTT.Controls.Add(this.ptbTimKiem);
             this.pnTT.Controls.Add(this.txbGiaTien);
             this.pnTT.Controls.Add(this.lbGiaTien);
             this.pnTT.Controls.Add(this.pnSo);
@@ -226,7 +231,7 @@ namespace QuanLyNhaSach
             this.pnTT.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnTT.Location = new System.Drawing.Point(0, 0);
             this.pnTT.Name = "pnTT";
-            this.pnTT.Size = new System.Drawing.Size(1000, 307);
+            this.pnTT.Size = new System.Drawing.Size(1000, 335);
             this.pnTT.TabIndex = 0;
             // 
             // label5
@@ -234,7 +239,7 @@ namespace QuanLyNhaSach
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label5.Location = new System.Drawing.Point(766, 71);
+            this.label5.Location = new System.Drawing.Point(766, 78);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(53, 25);
             this.label5.TabIndex = 55;
@@ -245,7 +250,7 @@ namespace QuanLyNhaSach
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI Black", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
-            this.label8.Location = new System.Drawing.Point(334, 17);
+            this.label8.Location = new System.Drawing.Point(338, 24);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(300, 32);
             this.label8.TabIndex = 51;
@@ -255,7 +260,7 @@ namespace QuanLyNhaSach
             // 
             this.panel15.BackColor = System.Drawing.Color.Black;
             this.panel15.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel15.Location = new System.Drawing.Point(641, 91);
+            this.panel15.Location = new System.Drawing.Point(641, 98);
             this.panel15.Name = "panel15";
             this.panel15.Size = new System.Drawing.Size(119, 1);
             this.panel15.TabIndex = 54;
@@ -269,9 +274,9 @@ namespace QuanLyNhaSach
             this.flowLayoutPanel1.Controls.Add(this.btnNgung);
             this.flowLayoutPanel1.Controls.Add(this.btnKinhDoanh);
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(185, 239);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(575, 280);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(787, 62);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(425, 55);
             this.flowLayoutPanel1.TabIndex = 50;
             // 
             // btnSua
@@ -283,7 +288,7 @@ namespace QuanLyNhaSach
             this.btnSua.ForeColor = System.Drawing.Color.DarkGoldenrod;
             this.btnSua.Image = ((System.Drawing.Image)(resources.GetObject("btnSua.Image")));
             this.btnSua.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSua.Location = new System.Drawing.Point(676, 3);
+            this.btnSua.Location = new System.Drawing.Point(314, 3);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(108, 50);
             this.btnSua.TabIndex = 33;
@@ -302,7 +307,7 @@ namespace QuanLyNhaSach
             this.btnXoa.ForeColor = System.Drawing.Color.Red;
             this.btnXoa.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa.Image")));
             this.btnXoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXoa.Location = new System.Drawing.Point(562, 3);
+            this.btnXoa.Location = new System.Drawing.Point(200, 3);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(108, 50);
             this.btnXoa.TabIndex = 49;
@@ -321,7 +326,7 @@ namespace QuanLyNhaSach
             this.btnLuu.ForeColor = System.Drawing.Color.DarkGoldenrod;
             this.btnLuu.Image = ((System.Drawing.Image)(resources.GetObject("btnLuu.Image")));
             this.btnLuu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLuu.Location = new System.Drawing.Point(448, 3);
+            this.btnLuu.Location = new System.Drawing.Point(86, 3);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(108, 50);
             this.btnLuu.TabIndex = 48;
@@ -340,7 +345,7 @@ namespace QuanLyNhaSach
             this.btnHuy.ForeColor = System.Drawing.Color.DarkGoldenrod;
             this.btnHuy.Image = ((System.Drawing.Image)(resources.GetObject("btnHuy.Image")));
             this.btnHuy.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHuy.Location = new System.Drawing.Point(334, 3);
+            this.btnHuy.Location = new System.Drawing.Point(314, 59);
             this.btnHuy.Name = "btnHuy";
             this.btnHuy.Size = new System.Drawing.Size(108, 50);
             this.btnHuy.TabIndex = 48;
@@ -349,223 +354,6 @@ namespace QuanLyNhaSach
             this.btnHuy.UseVisualStyleBackColor = false;
             this.btnHuy.Visible = false;
             this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
-            // 
-            // txbGiaTien
-            // 
-            this.txbGiaTien.BackColor = System.Drawing.Color.White;
-            this.txbGiaTien.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txbGiaTien.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbGiaTien.ForeColor = System.Drawing.Color.Black;
-            this.txbGiaTien.Location = new System.Drawing.Point(642, 67);
-            this.txbGiaTien.Name = "txbGiaTien";
-            this.txbGiaTien.ReadOnly = true;
-            this.txbGiaTien.Size = new System.Drawing.Size(119, 26);
-            this.txbGiaTien.TabIndex = 7;
-            this.txbGiaTien.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // lbGiaTien
-            // 
-            this.lbGiaTien.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbGiaTien.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
-            this.lbGiaTien.Location = new System.Drawing.Point(534, 67);
-            this.lbGiaTien.Name = "lbGiaTien";
-            this.lbGiaTien.Size = new System.Drawing.Size(104, 30);
-            this.lbGiaTien.TabIndex = 53;
-            this.lbGiaTien.Text = "Giá Tiền:";
-            this.lbGiaTien.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // pnSo
-            // 
-            this.pnSo.BackColor = System.Drawing.Color.Black;
-            this.pnSo.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pnSo.Location = new System.Drawing.Point(640, 135);
-            this.pnSo.Name = "pnSo";
-            this.pnSo.Size = new System.Drawing.Size(120, 1);
-            this.pnSo.TabIndex = 39;
-            // 
-            // panel7
-            // 
-            this.panel7.BackColor = System.Drawing.Color.Black;
-            this.panel7.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel7.Location = new System.Drawing.Point(171, 136);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(288, 1);
-            this.panel7.TabIndex = 50;
-            // 
-            // txbTheLoai
-            // 
-            this.txbTheLoai.BackColor = System.Drawing.Color.White;
-            this.txbTheLoai.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txbTheLoai.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbTheLoai.ForeColor = System.Drawing.Color.Black;
-            this.txbTheLoai.Location = new System.Drawing.Point(172, 112);
-            this.txbTheLoai.Name = "txbTheLoai";
-            this.txbTheLoai.ReadOnly = true;
-            this.txbTheLoai.Size = new System.Drawing.Size(288, 26);
-            this.txbTheLoai.TabIndex = 6;
-            // 
-            // panel16
-            // 
-            this.panel16.BackColor = System.Drawing.Color.Black;
-            this.panel16.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel16.Location = new System.Drawing.Point(641, 176);
-            this.panel16.Name = "panel16";
-            this.panel16.Size = new System.Drawing.Size(120, 1);
-            this.panel16.TabIndex = 40;
-            // 
-            // label6
-            // 
-            this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
-            this.label6.Location = new System.Drawing.Point(64, 112);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(104, 30);
-            this.label6.TabIndex = 48;
-            this.label6.Text = "Thể Loại:";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.Black;
-            this.panel3.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel3.Location = new System.Drawing.Point(171, 176);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(288, 1);
-            this.panel3.TabIndex = 51;
-            // 
-            // pnNXB
-            // 
-            this.pnNXB.BackColor = System.Drawing.Color.Black;
-            this.pnNXB.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pnNXB.Location = new System.Drawing.Point(171, 221);
-            this.pnNXB.Name = "pnNXB";
-            this.pnNXB.Size = new System.Drawing.Size(288, 1);
-            this.pnNXB.TabIndex = 41;
-            // 
-            // panel17
-            // 
-            this.panel17.BackColor = System.Drawing.Color.Black;
-            this.panel17.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel17.Location = new System.Drawing.Point(174, 91);
-            this.panel17.Name = "panel17";
-            this.panel17.Size = new System.Drawing.Size(288, 1);
-            this.panel17.TabIndex = 41;
-            // 
-            // txbTacGia
-            // 
-            this.txbTacGia.BackColor = System.Drawing.Color.White;
-            this.txbTacGia.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txbTacGia.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbTacGia.ForeColor = System.Drawing.Color.Black;
-            this.txbTacGia.Location = new System.Drawing.Point(172, 152);
-            this.txbTacGia.Name = "txbTacGia";
-            this.txbTacGia.ReadOnly = true;
-            this.txbTacGia.Size = new System.Drawing.Size(288, 26);
-            this.txbTacGia.TabIndex = 5;
-            // 
-            // txbNXB
-            // 
-            this.txbNXB.BackColor = System.Drawing.Color.White;
-            this.txbNXB.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txbNXB.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbNXB.ForeColor = System.Drawing.Color.Black;
-            this.txbNXB.Location = new System.Drawing.Point(172, 197);
-            this.txbNXB.Name = "txbNXB";
-            this.txbNXB.ReadOnly = true;
-            this.txbNXB.Size = new System.Drawing.Size(288, 26);
-            this.txbNXB.TabIndex = 3;
-            // 
-            // txbSo
-            // 
-            this.txbSo.BackColor = System.Drawing.Color.White;
-            this.txbSo.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txbSo.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbSo.ForeColor = System.Drawing.Color.Black;
-            this.txbSo.Location = new System.Drawing.Point(641, 111);
-            this.txbSo.Name = "txbSo";
-            this.txbSo.Size = new System.Drawing.Size(120, 26);
-            this.txbSo.TabIndex = 2;
-            this.txbSo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label4
-            // 
-            this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
-            this.label4.Location = new System.Drawing.Point(64, 152);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(104, 30);
-            this.label4.TabIndex = 49;
-            this.label4.Text = "Tác Giả:";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // txbMa
-            // 
-            this.txbMa.BackColor = System.Drawing.Color.White;
-            this.txbMa.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txbMa.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbMa.ForeColor = System.Drawing.Color.Black;
-            this.txbMa.Location = new System.Drawing.Point(642, 152);
-            this.txbMa.Name = "txbMa";
-            this.txbMa.ReadOnly = true;
-            this.txbMa.Size = new System.Drawing.Size(120, 26);
-            this.txbMa.TabIndex = 1;
-            this.txbMa.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // lbNXB
-            // 
-            this.lbNXB.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbNXB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
-            this.lbNXB.Location = new System.Drawing.Point(7, 194);
-            this.lbNXB.Name = "lbNXB";
-            this.lbNXB.Size = new System.Drawing.Size(161, 30);
-            this.lbNXB.TabIndex = 38;
-            this.lbNXB.Text = "Nhà Xuất Bản:";
-            this.lbNXB.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // txbTen
-            // 
-            this.txbTen.BackColor = System.Drawing.Color.White;
-            this.txbTen.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txbTen.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbTen.ForeColor = System.Drawing.Color.Black;
-            this.txbTen.Location = new System.Drawing.Point(175, 67);
-            this.txbTen.Name = "txbTen";
-            this.txbTen.ReadOnly = true;
-            this.txbTen.Size = new System.Drawing.Size(288, 26);
-            this.txbTen.TabIndex = 0;
-            // 
-            // lbSo
-            // 
-            this.lbSo.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbSo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
-            this.lbSo.Location = new System.Drawing.Point(477, 112);
-            this.lbSo.Name = "lbSo";
-            this.lbSo.Size = new System.Drawing.Size(161, 30);
-            this.lbSo.TabIndex = 36;
-            this.lbSo.Text = "Số Lượng:";
-            this.lbSo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // lbMa
-            // 
-            this.lbMa.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbMa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
-            this.lbMa.Location = new System.Drawing.Point(477, 152);
-            this.lbMa.Name = "lbMa";
-            this.lbMa.Size = new System.Drawing.Size(161, 30);
-            this.lbMa.TabIndex = 37;
-            this.lbMa.Text = "Mã Sách:";
-            this.lbMa.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // lbTen
-            // 
-            this.lbTen.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTen.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
-            this.lbTen.Location = new System.Drawing.Point(7, 67);
-            this.lbTen.Name = "lbTen";
-            this.lbTen.Size = new System.Drawing.Size(161, 30);
-            this.lbTen.TabIndex = 38;
-            this.lbTen.Text = "Tên Sách:";
-            this.lbTen.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // btnNgung
             // 
@@ -576,7 +364,7 @@ namespace QuanLyNhaSach
             this.btnNgung.ForeColor = System.Drawing.Color.Red;
             this.btnNgung.Image = ((System.Drawing.Image)(resources.GetObject("btnNgung.Image")));
             this.btnNgung.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNgung.Location = new System.Drawing.Point(193, 3);
+            this.btnNgung.Location = new System.Drawing.Point(173, 59);
             this.btnNgung.Name = "btnNgung";
             this.btnNgung.Size = new System.Drawing.Size(135, 50);
             this.btnNgung.TabIndex = 49;
@@ -595,7 +383,7 @@ namespace QuanLyNhaSach
             this.btnKinhDoanh.ForeColor = System.Drawing.Color.Teal;
             this.btnKinhDoanh.Image = ((System.Drawing.Image)(resources.GetObject("btnKinhDoanh.Image")));
             this.btnKinhDoanh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnKinhDoanh.Location = new System.Drawing.Point(9, 3);
+            this.btnKinhDoanh.Location = new System.Drawing.Point(244, 115);
             this.btnKinhDoanh.Name = "btnKinhDoanh";
             this.btnKinhDoanh.Size = new System.Drawing.Size(178, 50);
             this.btnKinhDoanh.TabIndex = 49;
@@ -604,6 +392,242 @@ namespace QuanLyNhaSach
             this.btnKinhDoanh.UseVisualStyleBackColor = false;
             this.btnKinhDoanh.Visible = false;
             this.btnKinhDoanh.Click += new System.EventHandler(this.btnKinhDoanh_Click);
+            // 
+            // txbGiaTien
+            // 
+            this.txbGiaTien.BackColor = System.Drawing.Color.White;
+            this.txbGiaTien.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txbGiaTien.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbGiaTien.ForeColor = System.Drawing.Color.Black;
+            this.txbGiaTien.Location = new System.Drawing.Point(642, 74);
+            this.txbGiaTien.Name = "txbGiaTien";
+            this.txbGiaTien.ReadOnly = true;
+            this.txbGiaTien.Size = new System.Drawing.Size(119, 26);
+            this.txbGiaTien.TabIndex = 7;
+            this.txbGiaTien.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // lbGiaTien
+            // 
+            this.lbGiaTien.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbGiaTien.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            this.lbGiaTien.Location = new System.Drawing.Point(534, 74);
+            this.lbGiaTien.Name = "lbGiaTien";
+            this.lbGiaTien.Size = new System.Drawing.Size(104, 30);
+            this.lbGiaTien.TabIndex = 53;
+            this.lbGiaTien.Text = "Giá Tiền:";
+            this.lbGiaTien.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // pnSo
+            // 
+            this.pnSo.BackColor = System.Drawing.Color.Black;
+            this.pnSo.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pnSo.Location = new System.Drawing.Point(640, 142);
+            this.pnSo.Name = "pnSo";
+            this.pnSo.Size = new System.Drawing.Size(120, 1);
+            this.pnSo.TabIndex = 39;
+            // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.Color.Black;
+            this.panel7.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel7.Location = new System.Drawing.Point(171, 143);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(288, 1);
+            this.panel7.TabIndex = 50;
+            // 
+            // txbTheLoai
+            // 
+            this.txbTheLoai.BackColor = System.Drawing.Color.White;
+            this.txbTheLoai.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txbTheLoai.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbTheLoai.ForeColor = System.Drawing.Color.Black;
+            this.txbTheLoai.Location = new System.Drawing.Point(172, 119);
+            this.txbTheLoai.Name = "txbTheLoai";
+            this.txbTheLoai.ReadOnly = true;
+            this.txbTheLoai.Size = new System.Drawing.Size(288, 26);
+            this.txbTheLoai.TabIndex = 6;
+            // 
+            // panel16
+            // 
+            this.panel16.BackColor = System.Drawing.Color.Black;
+            this.panel16.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel16.Location = new System.Drawing.Point(641, 183);
+            this.panel16.Name = "panel16";
+            this.panel16.Size = new System.Drawing.Size(120, 1);
+            this.panel16.TabIndex = 40;
+            // 
+            // label6
+            // 
+            this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            this.label6.Location = new System.Drawing.Point(64, 119);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(104, 30);
+            this.label6.TabIndex = 48;
+            this.label6.Text = "Thể Loại:";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.Black;
+            this.panel3.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel3.Location = new System.Drawing.Point(171, 183);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(288, 1);
+            this.panel3.TabIndex = 51;
+            // 
+            // pnNXB
+            // 
+            this.pnNXB.BackColor = System.Drawing.Color.Black;
+            this.pnNXB.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pnNXB.Location = new System.Drawing.Point(171, 228);
+            this.pnNXB.Name = "pnNXB";
+            this.pnNXB.Size = new System.Drawing.Size(288, 1);
+            this.pnNXB.TabIndex = 41;
+            // 
+            // panel17
+            // 
+            this.panel17.BackColor = System.Drawing.Color.Black;
+            this.panel17.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel17.Location = new System.Drawing.Point(174, 98);
+            this.panel17.Name = "panel17";
+            this.panel17.Size = new System.Drawing.Size(288, 1);
+            this.panel17.TabIndex = 41;
+            // 
+            // txbTacGia
+            // 
+            this.txbTacGia.BackColor = System.Drawing.Color.White;
+            this.txbTacGia.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txbTacGia.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbTacGia.ForeColor = System.Drawing.Color.Black;
+            this.txbTacGia.Location = new System.Drawing.Point(172, 159);
+            this.txbTacGia.Name = "txbTacGia";
+            this.txbTacGia.ReadOnly = true;
+            this.txbTacGia.Size = new System.Drawing.Size(288, 26);
+            this.txbTacGia.TabIndex = 5;
+            // 
+            // txbNXB
+            // 
+            this.txbNXB.BackColor = System.Drawing.Color.White;
+            this.txbNXB.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txbNXB.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbNXB.ForeColor = System.Drawing.Color.Black;
+            this.txbNXB.Location = new System.Drawing.Point(172, 204);
+            this.txbNXB.Name = "txbNXB";
+            this.txbNXB.ReadOnly = true;
+            this.txbNXB.Size = new System.Drawing.Size(288, 26);
+            this.txbNXB.TabIndex = 3;
+            // 
+            // txbSo
+            // 
+            this.txbSo.BackColor = System.Drawing.Color.White;
+            this.txbSo.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txbSo.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbSo.ForeColor = System.Drawing.Color.Black;
+            this.txbSo.Location = new System.Drawing.Point(641, 118);
+            this.txbSo.Name = "txbSo";
+            this.txbSo.Size = new System.Drawing.Size(120, 26);
+            this.txbSo.TabIndex = 2;
+            this.txbSo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label4
+            // 
+            this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            this.label4.Location = new System.Drawing.Point(64, 159);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(104, 30);
+            this.label4.TabIndex = 49;
+            this.label4.Text = "Tác Giả:";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // txbMa
+            // 
+            this.txbMa.BackColor = System.Drawing.Color.White;
+            this.txbMa.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txbMa.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbMa.ForeColor = System.Drawing.Color.Black;
+            this.txbMa.Location = new System.Drawing.Point(642, 159);
+            this.txbMa.Name = "txbMa";
+            this.txbMa.ReadOnly = true;
+            this.txbMa.Size = new System.Drawing.Size(120, 26);
+            this.txbMa.TabIndex = 1;
+            this.txbMa.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // lbNXB
+            // 
+            this.lbNXB.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbNXB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            this.lbNXB.Location = new System.Drawing.Point(7, 201);
+            this.lbNXB.Name = "lbNXB";
+            this.lbNXB.Size = new System.Drawing.Size(161, 30);
+            this.lbNXB.TabIndex = 38;
+            this.lbNXB.Text = "Nhà Xuất Bản:";
+            this.lbNXB.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // txbTen
+            // 
+            this.txbTen.BackColor = System.Drawing.Color.White;
+            this.txbTen.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txbTen.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbTen.ForeColor = System.Drawing.Color.Black;
+            this.txbTen.Location = new System.Drawing.Point(175, 74);
+            this.txbTen.Name = "txbTen";
+            this.txbTen.ReadOnly = true;
+            this.txbTen.Size = new System.Drawing.Size(288, 26);
+            this.txbTen.TabIndex = 0;
+            // 
+            // lbSo
+            // 
+            this.lbSo.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbSo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            this.lbSo.Location = new System.Drawing.Point(477, 119);
+            this.lbSo.Name = "lbSo";
+            this.lbSo.Size = new System.Drawing.Size(161, 30);
+            this.lbSo.TabIndex = 36;
+            this.lbSo.Text = "Số Lượng:";
+            this.lbSo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lbMa
+            // 
+            this.lbMa.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbMa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            this.lbMa.Location = new System.Drawing.Point(477, 159);
+            this.lbMa.Name = "lbMa";
+            this.lbMa.Size = new System.Drawing.Size(161, 30);
+            this.lbMa.TabIndex = 37;
+            this.lbMa.Text = "Mã Sách:";
+            this.lbMa.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lbTen
+            // 
+            this.lbTen.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTen.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            this.lbTen.Location = new System.Drawing.Point(7, 74);
+            this.lbTen.Name = "lbTen";
+            this.lbTen.Size = new System.Drawing.Size(161, 30);
+            this.lbTen.TabIndex = 38;
+            this.lbTen.Text = "Tên Sách:";
+            this.lbTen.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // txbTimKiem
+            // 
+            this.txbTimKiem.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbTimKiem.Location = new System.Drawing.Point(12, 286);
+            this.txbTimKiem.Name = "txbTimKiem";
+            this.txbTimKiem.Size = new System.Drawing.Size(153, 35);
+            this.txbTimKiem.TabIndex = 56;
+            // 
+            // ptbTimKiem
+            // 
+            this.ptbTimKiem.Image = ((System.Drawing.Image)(resources.GetObject("ptbTimKiem.Image")));
+            this.ptbTimKiem.Location = new System.Drawing.Point(172, 286);
+            this.ptbTimKiem.Name = "ptbTimKiem";
+            this.ptbTimKiem.Size = new System.Drawing.Size(44, 35);
+            this.ptbTimKiem.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.ptbTimKiem.TabIndex = 57;
+            this.ptbTimKiem.TabStop = false;
+            this.ptbTimKiem.Click += new System.EventHandler(this.ptbTimKiem_Click);
             // 
             // UCKeSach
             // 
@@ -624,6 +648,7 @@ namespace QuanLyNhaSach
             this.pnTT.ResumeLayout(false);
             this.pnTT.PerformLayout();
             this.flowLayoutPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.ptbTimKiem)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -668,5 +693,7 @@ namespace QuanLyNhaSach
         private System.Windows.Forms.Button btnHuy;
         private System.Windows.Forms.Button btnNgung;
         private System.Windows.Forms.Button btnKinhDoanh;
+        private System.Windows.Forms.TextBox txbTimKiem;
+        private System.Windows.Forms.PictureBox ptbTimKiem;
     }
 }

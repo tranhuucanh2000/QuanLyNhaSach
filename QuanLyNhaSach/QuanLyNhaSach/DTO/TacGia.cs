@@ -9,24 +9,25 @@ namespace QuanLyNhaSach.DTO
 {
     public class TacGia
     {
-        private string ma;
+        private string maTG;
         private string tenTG;
         private string lienLac;
 
-        public string Ma { get => ma; set => ma = value; }
+
         public string TenTG { get => tenTG; set => tenTG = value; }
         public string LienLac { get => lienLac; set => lienLac = value; }
+        public string MaTG { get => maTG; set => maTG = value; }
 
         public TacGia() { }
         public TacGia(string matg, string tentg, string lienlac)
         {
-            this.ma = matg;
+            this.maTG = matg;
             this.tenTG = tentg;
             this.lienLac = lienlac;
         }
         public TacGia(DataRow row)
         {
-            this.ma = row["MaTG"].ToString();
+            this.maTG = row["MaTG"].ToString();
             this.tenTG = row["TenTG"].ToString();
             this.lienLac = row["LienLac"].ToString();
         }

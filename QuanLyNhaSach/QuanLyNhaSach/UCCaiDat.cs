@@ -141,6 +141,10 @@ namespace QuanLyNhaSach
             TrangThaiNhap();
         }
 
+        private void FInfomation_CapNhatTaiKhoanEvent(object sender, TaiKhoanSuKien e)
+        {
+            DuaThongDiep(string.Concat("Xin chào ", e.Acc.Ten), 3);
+        }
         private void btnXoa_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show("Bạn có thực sự muốn xóa tài khoản này!", "CẢNH BÁO", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
