@@ -50,10 +50,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DAO\HoaDonDAO.cs" />
+    <Compile Include="DAO\NhaXuatBanDAO.cs" />
+    <Compile Include="DAO\TacGiaDAO.cs" />
     <Compile Include="DAO\TaiKhoanDAO.cs" />
     <Compile Include="DAO\DataProvider.cs" />
     <Compile Include="DAO\SachDAO.cs" />
-    <Compile Include="DTO\Account.cs" />
+    <Compile Include="DAO\TheLoaiDAO.cs" />
+    <Compile Include="DTO\Sach.cs" />
+    <Compile Include="DTO\TaiKhoan.cs" />
+    <Compile Include="DTO\NhaXuatBan.cs" />
+    <Compile Include="DTO\TacGia.cs" />
+    <Compile Include="DTO\TheLoai.cs" />
     <Compile Include="FHoaDonTT.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -77,6 +84,12 @@
     </Compile>
     <Compile Include="FDangNhap.Designer.cs">
       <DependentUpon>FDangNhap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FSuaTenDangNhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FSuaTenDangNhap.Designer.cs">
+      <DependentUpon>FSuaTenDangNhap.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -133,6 +146,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FDangNhap.resx">
       <DependentUpon>FDangNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FSuaTenDangNhap.resx">
+      <DependentUpon>FSuaTenDangNhap.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

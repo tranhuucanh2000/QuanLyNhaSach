@@ -161,6 +161,8 @@ namespace QuanLyNhaSach
             // 
             // cbSach
             // 
+            this.cbSach.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cbSach.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.cbSach.BackColor = System.Drawing.SystemColors.Control;
             this.cbSach.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbSach.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

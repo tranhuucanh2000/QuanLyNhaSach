@@ -55,6 +55,7 @@ namespace QuanLyNhaSach
             this.txbTienNhan = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
+            this.printDialog1 = new System.Windows.Forms.PrintDialog();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgHoaDon)).BeginInit();
@@ -321,6 +322,10 @@ namespace QuanLyNhaSach
             this.label7.TabIndex = 24;
             this.label7.Text = "VND";
             // 
+            // printDialog1
+            // 
+            this.printDialog1.UseEXDialog = true;
+            // 
             // FHoaDonTT
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -379,5 +384,6 @@ namespace QuanLyNhaSach
         private System.Windows.Forms.TextBox txbTienNhan;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.PrintDialog printDialog1;
     }
 }

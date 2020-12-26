@@ -21,14 +21,14 @@ namespace QuanLyNhaSach
             set => instance = value; 
         }
 
-        private Account loginAccount;
-        public Account LoginAccount 
+        private TaiKhoan loginAccount;
+        public TaiKhoan LoginAccount 
         { 
             get => loginAccount; 
             set => loginAccount = value; 
         }
 
-        public UCCaiDat(Account acc)
+        public UCCaiDat(TaiKhoan acc)
         {
             InitializeComponent();
             loginAccount = acc;
@@ -64,7 +64,7 @@ namespace QuanLyNhaSach
             txbTenDN.ReadOnly = true;
             txbTenHT.ReadOnly = true;
             btnLuu.Text = "LƯU";
-            Account account = TaiKhoanDAO.Instance.LayTaiKhoanTuTenDN(cbTaiKhoan.SelectedItem.ToString());
+            TaiKhoan account = TaiKhoanDAO.Instance.LayTaiKhoanTuTenDN(cbTaiKhoan.SelectedItem.ToString());
             txbTenDN.Text = account.TenDN;
             txbTenHT.Text = account.Ten;
             txbMatKhau.Text = account.PassWord;
@@ -88,7 +88,7 @@ namespace QuanLyNhaSach
                     int thongke = ckbThongKe.Checked == true ? 1 : 0;
                     TaiKhoanDAO.Instance.UpdateTaiKhoan(txbTenDN.Text , nhapsach, thongke, kesach, themdl, bansach, tttaikhoan);
                     DuaThongDiep(string.Concat("Đã lưu cài đặt cho tài khoản ", cbTaiKhoan.SelectedItem.ToString()), 1);
-                    Account account = TaiKhoanDAO.Instance.LayTaiKhoanTuTenDN(cbTaiKhoan.SelectedItem.ToString());
+                    TaiKhoan account = TaiKhoanDAO.Instance.LayTaiKhoanTuTenDN(cbTaiKhoan.SelectedItem.ToString());
                     txbTenDN.Text = account.TenDN;
                     txbTenHT.Text = account.Ten;
                     txbMatKhau.Text = account.PassWord;
@@ -114,7 +114,7 @@ namespace QuanLyNhaSach
                     DuaThongDiep("Đã thêm tài khoản thành công!", 1);
                     cbTaiKhoan.Items.Clear();
                     LayDuLieuTaiKhoan();
-                    txbMatKhau.Text = txbNhapLaiMKM.Text = txbTenDN.Text = txbTenHT.Text = "";
+                    txbMatKhau.Text = txbNhapLaiMKM.Text = txbTenDN.Text = txbTenHT.Text = txbMa.Text = "";
                 }
                 else
                 {

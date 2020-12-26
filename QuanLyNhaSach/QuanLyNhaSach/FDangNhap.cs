@@ -30,7 +30,7 @@ namespace QuanLyNhaSach
             string psw = txbMatKhau.Text;
             if (TaiKhoanDAO.Instance.isAccount(usn,psw))
             {
-                Account account = TaiKhoanDAO.Instance.LayTaiKhoanTuTenDN(usn);
+                TaiKhoan account = TaiKhoanDAO.Instance.LayTaiKhoanTuTenDN(usn);
                 //MainForm mainForm = new MainForm(account);
                 //mainForm.ShowDialog();
                 FChinh fChinh = new FChinh(account);

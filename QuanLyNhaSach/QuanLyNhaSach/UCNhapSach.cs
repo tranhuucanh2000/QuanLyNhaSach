@@ -21,13 +21,13 @@ namespace QuanLyNhaSach
             set => instance = value;
         }
 
-        private Account loginAccount;
-        public Account LoginAccount
+        private TaiKhoan loginAccount;
+        public TaiKhoan LoginAccount
         {
             get => loginAccount;
             set => loginAccount = value;
         }
-        public UCNhapSach(Account acc)
+        public UCNhapSach(TaiKhoan acc)
         {
             InitializeComponent();
             loginAccount = acc;
@@ -54,8 +54,9 @@ namespace QuanLyNhaSach
             DataTable data = SachDAO.Instance.LayDSSach();
             foreach(DataRow row in data.Rows)
             {
-                string iteam = string.Concat(row["ID"].ToString().Trim(), " - ", row["Tên Sách"].ToString().Trim());
+                string iteam = string.Concat( row["Tên Sách"].ToString().Trim(), " - ", row["ID"].ToString().Trim());
                 cbSach.Items.Add(iteam);
+                cbSach.AutoCompleteCustomSource.Add(iteam);
             }    
         }
         void TaiDanhSachTacGia()
@@ -63,7 +64,7 @@ namespace QuanLyNhaSach
             DataTable data = SachDAO.Instance.LayDSTacGia();
             foreach (DataRow row in data.Rows)
             {
-                string iteam = string.Concat(row["Mã Tác Giả"].ToString().Trim(), " - ", row["Tên Tác Giả"].ToString().Trim());
+                string iteam = string.Concat( row["Tên Tác Giả"].ToString().Trim(), " - ", row["Mã Tác Giả"].ToString().Trim());
                 cbTacGia.Items.Add(iteam);
             }
         }
@@ -72,7 +73,7 @@ namespace QuanLyNhaSach
             DataTable data = SachDAO.Instance.LayDSTheLoai();
             foreach (DataRow row in data.Rows)
             {
-                string iteam = string.Concat(row["Mã Thể Loại"].ToString().Trim(), " - ", row["Tên Thể Loại"].ToString().Trim());
+                string iteam = string.Concat(row["Tên Thể Loại"].ToString().Trim(), " - ", row["Mã Thể Loại"].ToString().Trim());
                 cbTheLoai.Items.Add(iteam);
             }
         }
@@ -82,7 +83,7 @@ namespace QuanLyNhaSach
             DataTable data = SachDAO.Instance.LayDSNXB();
             foreach (DataRow row in data.Rows)
             {
-                string iteam = string.Concat(row["Mã NXB"].ToString().Trim(), " - ", row["Tên NXB"].ToString().Trim());
+                string iteam = string.Concat(row["Tên NXB"].ToString().Trim(), " - ", row["Mã NXB"].ToString().Trim() );
                 cbNXB.Items.Add(iteam);
             }
         }
@@ -95,11 +96,40 @@ namespace QuanLyNhaSach
         private void btnThemDC_Click(object sender, EventArgs e)
         {
             string[] str = cbSach.SelectedItem.ToString().Split('-');
-            string masach = str[0].Trim();
+            string masach = str[1].Trim();
+            string tensach = str[0].Trim();
+            string command = string.Concat("SELECT * FROM Sach WHERE MaSach = N'", masach, "'");
+            DataTable data = DataProvider.Instance.ExecuteQuery(command);
+            DataRow sach = data.Rows[0];
+            string manxb = sach["MaNXB"].ToString();
+            int giatien = int.Parse(sach["GiaTien"].ToString());
             int soluong;
-            if(int.TryParse(txbSoLuong.Text,out soluong))
+
+            DataTable PN = DataProvider.Instance.ExecuteQuery("select * from PhieuNhap");
+            int soLuongPN = PN.Rows.Count;
+            DataRow pnCuoi;
+            string maPN;
+            int soPNC;
+            if (soLuongPN > 0)
             {
-                SachDAO.Instance.ThemSLChoSach(masach,soluong);
+                pnCuoi = PN.Rows[soLuongPN - 1];
+                maPN = pnCuoi["SoPN"].ToString();
+                soPNC = int.Parse(maPN.Substring(3).ToString());
+            }
+            else
+            {
+                soPNC = 0;
+            }
+
+            soPNC++;
+            string mapn;
+            if (soPNC < 9) mapn = string.Concat("PN00", soPNC);
+            else if (soPNC < 100) mapn = string.Concat("PN0", soPNC);
+            else mapn = string.Concat("PN", soPNC);
+
+            if (int.TryParse(txbSoLuong.Text,out soluong))
+            {
+                SachDAO.Instance.ThemSLChoSach(mapn, soluong, masach, giatien, manxb);
                 DuaThongDiep("Đã nhập thêm số lượng thành công cho sách đã chọn", 1);
             }
             else
@@ -133,7 +163,7 @@ namespace QuanLyNhaSach
             int soLuongPN = PN.Rows.Count;
             DataRow pnCuoi;
             string maPN;
-            if (soLuongSach > 0)
+            if (soLuongPN > 0)
             {
                 pnCuoi = PN.Rows[soLuongPN - 1];
                 maPN = pnCuoi["SoPN"].ToString();
@@ -151,11 +181,11 @@ namespace QuanLyNhaSach
             else
             {
                 string[] strtg = cbTacGia.SelectedItem.ToString().Split('-');
-                string matg = strtg[0].Trim();
+                string matg = strtg[1].Trim();
                 string[] strtl = cbTheLoai.SelectedItem.ToString().Split('-');
-                string matl = strtl[0].Trim();
+                string matl = strtl[1].Trim();
                 string[] strnxb = cbNXB.SelectedItem.ToString().Split('-');
-                string mannxb = strnxb[0].Trim();
+                string mannxb = strnxb[1].Trim();
                 int soluong;
                 int giatien;
                 string masach;

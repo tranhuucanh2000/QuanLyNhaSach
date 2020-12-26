@@ -94,9 +94,9 @@ namespace QuanLyNhaSach.DAO
             DataTable data = DataProvider.Instance.ExecuteQuery("EXEC USP_HienThiNhaXuatBan");
             return data;
         }
-        public void ThemSLChoSach(string masach, int soluong)
+        public void ThemSLChoSach(string sopn, int soluong, string masach, int giatien, string manxb)
         {
-            DataProvider.Instance.ExecuteQuery("EXEC USP_ThemSLChoSach @maSach , @soluong", new object[] { soluong, masach });
+            DataProvider.Instance.ExecuteQuery("EXEC USP_ThemSLChoSach @soPn , @maSach , @soluong , @giatien , @ngaynhap , @manxb ", new object[] {  sopn, masach,soluong,giatien,DateTime.Now.Date,manxb});
         }
         public void ThemSach(string sopn, string masach, string tensach, string matl, string matg, string manxb, int soluong, int giatien)
         {
@@ -141,5 +141,6 @@ namespace QuanLyNhaSach.DAO
         {
             DataProvider.Instance.ExecuteNonQuery("USP_CapNhatMatKhau @mkmoi , @matk ", new object[] { mkmoi, matk });
         }
+       
     }
 }
