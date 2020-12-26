@@ -215,5 +215,10 @@ namespace QuanLyNhaSach
                 dsMaPN.Add(iteam);
             }
         }
+
+        private void txbGiaTien_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

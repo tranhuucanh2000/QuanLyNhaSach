@@ -253,6 +253,7 @@ namespace QuanLyNhaSach
             this.txbGiaTien.Size = new System.Drawing.Size(119, 28);
             this.txbGiaTien.TabIndex = 9;
             this.txbGiaTien.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txbGiaTien.TextChanged += new System.EventHandler(this.txbGiaTien_TextChanged);
             // 
             // cbNXB
             // 

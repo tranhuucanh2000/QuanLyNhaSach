@@ -31,14 +31,13 @@ namespace QuanLyNhaSach
         {
             InitializeComponent();
             loginAccount = acc;
-            LayDSHoaDon();
         }
 
-        void LayDSHoaDon()
-        {
-            DataTable data = HoaDonDAO.Instance.LayDSHoaDon();
-            dataGridView1.DataSource = data;
-        }
+        //void LayDSHoaDon()
+        //{
+        //    DataTable data = HoaDonDAO.Instance.LayDSHoaDon();
+        //    dtgvThongKe.DataSource = data;
+        //}
         private void cbThuocTinh_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -59,10 +58,25 @@ namespace QuanLyNhaSach
 
         }
 
+        #region methods
+        //void LayDSHoaDon(DateTime NgayLap, DateTime NgayBan)
+        //{
+        //    DataTable data = HoaDonDAO.Instance.LayDSHoaDon(NgayLap,NgayBan);
+        //    dtgvThongKe.DataSource = data;
+        //}
+        #endregion
+        #region events
         private void button2_Click(object sender, EventArgs e)
         {
-
+            DateTime NgayLap;
+            DateTime NgayBan;
+            NgayLap = dateNgayLap.Value;
+            NgayBan = dateNgayBan.Value;
+            dtgvThongKe.DataSource = HoaDonDAO.Instance.LayDSHoaDon(NgayLap, NgayBan);
         }
+        #endregion
+
+
 
         public void CheckOut(int id, int discount, float totalPrice)
         {
@@ -72,8 +86,7 @@ namespace QuanLyNhaSach
 
         private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
-            LayDSHoaDon();
-            // nãy nó hiện cc gì z ? tác giả
+          
         }
     }
 }
