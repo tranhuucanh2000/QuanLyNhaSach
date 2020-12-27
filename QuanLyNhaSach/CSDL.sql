@@ -145,6 +145,26 @@ BEGIN
 	WHERE s.MaSach=ct.MaSach AND s.MaTG=tg.MaTG AND s.MaTL=tl.MaTL AND s.MaNXB=nxb.MaNXB AND s.KinhDoanh = N'Còn'
 END
 GO
+
+--Hiển thị hóa đơn 
+CREATE PROC USP_HienThiHoaDon
+  @NgayBan1 DATETIME, @NgayBan2 DATETIME
+AS
+BEGIN
+SELECT
+	hd.SoHD AS [Số Hóa Đơn],
+	hd.NgayBan AS [Ngày Bán],
+	--cthd.MaSach AS [Mã Sách],
+	--cthd.GiaBan AS [Giá Bán],
+	--cthd.SoLuongBan AS [Số Lượng],
+	hd.TongTriGia AS [Tổng trị giá]
+FROM dbo.HoaDon hd , dbo.ChiTietHoaDon cthd
+WHERE hd.SoHD = cthd.SoHD AND hd.NgayBan >= @NgayBan1 AND hd.NgayBan <= @NgayBan2
+END
+GO
+EXEC dbo.USP_HienThiHoaDon @NgayLap = '2020-12-26 20:47:07', -- datetime
+    @NgayBan = '2020-12-26 20:47:07' -- datetime
+
 -- Tìm kiếm sách qua tên tác giả
 CREATE PROC USP_TimSach_TacGia
 @tacGia NVARCHAR(50)
@@ -641,13 +661,9 @@ GO
 ALTER TABLE ChiTietPhieuNhap
 ADD CONSTRAINT df_ID_SACH_CTPN DEFAULT DBO.AUTO_MASACH_CTPN() FOR MaSach
 GO
---Thêm sách
-CREATE PROC USP_ThemSach
-@soPn CHAR(5),@maSach CHAR(4),@tenSach NVARCHAR(100), @soluong INT, @giatien INT, @matl CHAR(5), @matg CHAR(5), @manxb CHAR(6), @ngaynhap smalldatetime
-AS
-BEGIN
-	SET DATEFORMAT DMY
 
+<<<<<<< HEAD
+=======
 	INSERT INTO Sach
 	(
 		MaSach,
@@ -697,6 +713,7 @@ BEGIN
 	)
 END
 GO
+>>>>>>> f1d56e3e130623944c27cc160fba7e46dc09ec7e
 --Xóa Sách
 CREATE PROC USP_XoaSach
 @masach CHAR(5)
@@ -897,3 +914,373 @@ AS
 BEGIN
 	SELECT * FROM QuanLyNhaSach.dbo.TheLoai WHERE TenTL=@tentl
 END
+--Thêm sách
+CREATE PROC USP_ThemSach
+@soPn CHAR(5),@maSach CHAR(4),@tenSach NVARCHAR(100), @soluong INT, @giatien INT, @matl CHAR(5), @matg CHAR(5), @manxb CHAR(6), @ngaynhap smalldatetime
+AS
+BEGIN
+	SET DATEFORMAT DMY
+
+	INSERT INTO Sach
+	(
+		MaSach,
+		TenSach,
+		SoLuongTon,
+		GiaTien,
+		MaTL,
+		MaTG,
+		MaNXB
+	)
+	VALUES
+	(
+		@maSach,
+		@tenSach,
+		@soluong,
+		@giatien,
+		@matl,
+		@matg,
+		@manxb
+	)
+	INSERT INTO PhieuNhap
+	(
+		SoPN,
+		NgayNhap,
+		MaNXB
+	)
+	VALUES
+	(
+		@soPn,
+		@ngaynhap,
+		@manxb
+	)
+
+	INSERT INTO ChiTietPhieuNhap
+	(
+		MaSach,
+		SoPN,
+		SoLuongNhap,
+		GiaNhap
+	)
+	VALUES
+	(
+		@maSach,
+		@soPn,
+		@soluong,
+		@giatien
+	)
+END
+GO
+
+-- Thêm dữ liệu
+	
+INSERT INTO dbo.NhaXuatBan VALUES  ( 'NXB001', N'Bách khoa Hà Nội', N'Số 1 Đường Đại Cồ Việt, Hai Bà Trưng , Hà Nội.', '8823451' )
+INSERT INTO dbo.NhaXuatBan VALUES  ( 'NXB002', N'Chính trị Quốc gia Sự thật', N'6/86 Duy Tân, Cầu Giấy, Hà Nội', '908256478'  )
+INSERT INTO dbo.NhaXuatBan VALUES  ( 'NXB003', N'Công Thương', N'Tầng 4, Tòa nhà Bộ Công Thương, số 655 Phạm Văn Đồng, quận Bắc Từ Liêm, Hà Nội', '938776266'  )
+INSERT INTO dbo.NhaXuatBan VALUES  ( 'NXB004', N'Công an nhân dân', N'92 Nguyễn Du, quận Hai Bà Trưng, TP. Hà Nội', '917325476'  )
+INSERT INTO dbo.NhaXuatBan VALUES  ( 'NXB005', N'Dân trí', N'Số 9, ngõ 26, phố Hoàng Cầu, quận Đống Đa, thành phố Hà Nội', '8246108'  )
+INSERT INTO dbo.NhaXuatBan VALUES  ( 'NXB006', N'Giao thông vận tải', N'80B Trần Hưng Đạo, Quận Hoàn Kiếm, Thành phố Hà Nội', '8631738'  )
+INSERT INTO dbo.NhaXuatBan VALUES  ( 'NXB007', N'Giáo dục Việt Nam', N'81 Trần Hưng Đạo - Q. Hoàn KIếm - Hà Nội', '916783565'  )
+INSERT INTO dbo.NhaXuatBan VALUES  ( 'NXB008', N'Hàng hải', N'484 Lạch Tray, Ngô Quyền, Hải Phòng', '938435756'  )
+INSERT INTO dbo.NhaXuatBan VALUES  ( 'NXB009', N'Học viện Nông nghiệp', N'Trường Đại học Nông nghiệp Hà Nội - Thị trấn Trâu Quỳ, huyện Gia Lâm, Hà Nội', '8654763'  )
+INSERT INTO dbo.NhaXuatBan VALUES  ( 'NXB010', N'Hồng Đức', N'65 Tràng Thi, Hà Nội', '8768904'  )
+
+SET DATEFORMAT DMY
+SELECT * FROM dbo.PhieuNhap
+INSERT INTO dbo.PhieuNhap VALUES  ( 'PN001','12/7/2020','NXB002' )
+INSERT INTO dbo.PhieuNhap VALUES  ( 'PN002','1/8/2020','NXB007' )
+INSERT INTO dbo.PhieuNhap VALUES  ( 'PN003','3/12/2019','NXB008' )
+INSERT INTO dbo.PhieuNhap VALUES  ( 'PN004','24/12/2019','NXB004' )
+INSERT INTO dbo.PhieuNhap VALUES  ( 'PN005','12/8/2020','NXB006' )
+INSERT INTO dbo.PhieuNhap VALUES  ( 'PN006','3/3/2020','NXB009' )
+INSERT INTO dbo.PhieuNhap VALUES  ( 'PN007','2/5/2020','NXB003' )
+INSERT INTO dbo.PhieuNhap VALUES  ( 'PN008','15/8/2020','NXB001' )
+INSERT INTO dbo.PhieuNhap VALUES  ( 'PN009','16/12/2019','NXB010' )
+INSERT INTO dbo.PhieuNhap VALUES  ( 'PN010','31/7/2020','NXB007' )
+
+
+INSERT INTO dbo.HoaDon(SoHD,NgayBan) VALUES  ( 'HD001', '21/2/2020')
+INSERT INTO dbo.HoaDon(SoHD,NgayBan) VALUES  ( 'HD002', '13/8/2020')
+INSERT INTO dbo.HoaDon(SoHD,NgayBan) VALUES  ( 'HD003', '27/7/2020')
+INSERT INTO dbo.HoaDon(SoHD,NgayBan) VALUES  ( 'HD004', '12/4/2020')
+INSERT INTO dbo.HoaDon(SoHD,NgayBan) VALUES  ( 'HD005', '31/1/2020')
+INSERT INTO dbo.HoaDon(SoHD,NgayBan) VALUES  ( 'HD006', '26/2/2020')
+INSERT INTO dbo.HoaDon(SoHD,NgayBan) VALUES  ( 'HD007', '21/9/2020')
+INSERT INTO dbo.HoaDon(SoHD,NgayBan) VALUES  ( 'HD008', '19/1/2020')
+INSERT INTO dbo.HoaDon(SoHD,NgayBan) VALUES  ( 'HD009', '25/12/2020')
+
+
+INSERT INTO dbo.TacGia VALUES  ('TG001',N'Nguyễn Như Nhựt',N'927345678')
+INSERT INTO dbo.TacGia VALUES  ('TG002',N'Lê Thị Phi Yến',N'987567390')
+INSERT INTO dbo.TacGia VALUES  ('TG003',N'Nguyễn Văn B',N'997047382')
+INSERT INTO dbo.TacGia VALUES  ('TG004',N'Ngô Thành Tuân',N'913758498')
+INSERT INTO dbo.TacGia VALUES  ('TG005',N'Nguyễn Thị Trúc Thành',N'918590387')
+INSERT INTO dbo.TacGia VALUES  ('TG006',N'Hà Duy Lập',N'87689042')
+INSERT INTO dbo.TacGia VALUES  ('TG007',N'Lê Hà Vinh',N'865476323')
+INSERT INTO dbo.TacGia VALUES  ('TG008',N'Nguyễn Văn Bình',N'824610823')
+INSERT INTO dbo.TacGia VALUES  ('TG009',N'Lâm Thái Sơn',N'956412135')
+
+
+
+INSERT INTO dbo.TheLoai VALUES  ( 'TL001',N'Chính trị' )
+INSERT INTO dbo.TheLoai VALUES  ( 'TL002',N'Pháp luật' )
+INSERT INTO dbo.TheLoai VALUES  ( 'TL003',N'Khoa học công nghệ' )
+INSERT INTO dbo.TheLoai VALUES  ( 'TL004',N'Kinh tế' )
+INSERT INTO dbo.TheLoai VALUES  ( 'TL005',N'Văn hóa xã hội' )
+INSERT INTO dbo.TheLoai VALUES  ( 'TL006',N'Lịch sử' )
+INSERT INTO dbo.TheLoai VALUES  ( 'TL007',N'Văn học nghệ thuật' )
+INSERT INTO dbo.TheLoai VALUES  ( 'TL008',N'Tiểu thuyết' )
+INSERT INTO dbo.TheLoai VALUES  ( 'TL009',N'Tâm lý' )
+INSERT INTO dbo.TheLoai VALUES  ( 'TL010',N'Tôn giáo' )
+
+SELECT * FROM dbo.SACH
+INSERT INTO dbo.Sach  
+(
+	s.MaSach,
+	s.TenSach,
+	s.SoLuongTon,
+	s.GiaTien,
+	s.MaTL,
+	s.MaTG,
+	s.MaNXB
+)
+VALUES  ( 'S001' ,N'Tôi tài giỏi, bạn cũng thế' , 100 , 80000 ,'TL002','TG003','NXB009')
+INSERT INTO Sach 
+(
+	s.MaSach,
+	s.TenSach,
+	s.SoLuongTon,
+	s.GiaTien,
+	s.MaTL,
+	s.MaTG,
+	s.MaNXB
+)
+VALUES  ( 'S002' ,N'Đắc nhân tâm' ,120,72000,'TL003','TG002','NXB008')
+INSERT INTO Sach 
+(
+	s.MaSach,
+	s.TenSach,
+	s.SoLuongTon,
+	s.GiaTien,
+	s.MaTL,
+	s.MaTG,
+	s.MaNXB
+)
+VALUES  ( 'S003' ,N'Tội ác và trừng phạt' ,90,59000,'TL004','TG004','NXB007')
+INSERT INTO Sach 
+(
+	s.MaSach,
+	s.TenSach,
+	s.SoLuongTon,
+	s.GiaTien,
+	s.MaTL,
+	s.MaTG,
+	s.MaNXB
+)
+VALUES  ( 'S004' ,N'Nhà giả kim' ,60,70000,'TL002','TG005','NXB006')
+INSERT INTO Sach 
+(
+	s.MaSach,
+	s.TenSach,
+	s.SoLuongTon,
+	s.GiaTien,
+	s.MaTL,
+	s.MaTG,
+	s.MaNXB
+)
+VALUES  ( 'S005' ,N'Bắt trẻ đồng xanh' ,200,95000,'TL001','TG006','NXB005')
+INSERT INTO Sach 
+(
+	s.MaSach,
+	s.TenSach,
+	s.SoLuongTon,
+	s.GiaTien,
+	s.MaTL,
+	s.MaTG,
+	s.MaNXB
+)
+VALUES  ( 'S006' ,N'Xách ba lô lên và đi' ,150,56000,'TL006','TG007','NXB004')
+INSERT INTO Sach 
+(
+	s.MaSach,
+	s.TenSach,
+	s.SoLuongTon,
+	s.GiaTien,
+	s.MaTL,
+	s.MaTG,
+	s.MaNXB
+)
+VALUES  ( 'S007' ,N'Cứ đi rồi sẽ đến' ,50,63000,'TL005','TG009','NXB003')
+INSERT INTO Sach 
+(
+	s.MaSach,
+	s.TenSach,
+	s.SoLuongTon,
+	s.GiaTien,
+	s.MaTL,
+	s.MaTG,
+	s.MaNXB
+)
+VALUES  ( 'S008' ,N'7 thói quen để thành đạt' ,100,190000,'TL008','TG008','NXB002')
+INSERT INTO Sach
+(
+	s.MaSach,
+	s.TenSach,
+	s.SoLuongTon,
+	s.GiaTien,
+	s.MaTL,
+	s.MaTG,
+	s.MaNXB
+)
+VALUES  ( 'S009' ,N'Thép đã tôi thế đấy' ,200,160000,'TL009','TG001','NXB001')
+INSERT INTO Sach 
+(
+	s.MaSach,
+	s.TenSach,
+	s.SoLuongTon,
+	s.GiaTien,
+	s.MaTL,
+	s.MaTG,
+	s.MaNXB
+)
+VALUES  ( 'S010' ,N'Đọc vị bất kì ai' ,100,34000,'TL010','TG002','NXB010')
+INSERT INTO Sach 
+(
+	s.MaSach,
+	s.TenSach,
+	s.SoLuongTon,
+	s.GiaTien,
+	s.MaTL,
+	s.MaTG,
+	s.MaNXB
+)
+VALUES  ( 'S011' ,N'Cuộc đời của Pi' ,100,34000,'TL010','TG003','NXB009')
+INSERT INTO Sach 
+(
+	s.MaSach,
+	s.TenSach,
+	s.SoLuongTon,
+	s.GiaTien,
+	s.MaTL,
+	s.MaTG,
+	s.MaNXB
+)
+VALUES  ( 'S012' ,N'Những Người Đàn Ông Không Có Đàn Bà' ,100,90000,'TL002','TG004','NXB008')
+INSERT INTO Sach 
+(
+	s.MaSach,
+	s.TenSach,
+	s.SoLuongTon,
+	s.GiaTien,
+	s.MaTL,
+	s.MaTG,
+	s.MaNXB
+)
+VALUES  ( 'S013' ,N'Trà hoa nữ' ,200,67000,'TL001','TG005','NXB007')
+INSERT INTO Sach
+(
+	s.MaSach,
+	s.TenSach,
+	s.SoLuongTon,
+	s.GiaTien,
+	s.MaTL,
+	s.MaTG,
+	s.MaNXB
+)
+VALUES  ( 'S014' ,N'Đàn ông đến từ sao Hỏa – Đàn bà đến từ sao Kim' ,100,50000,'TL003','TG006','NXB006')
+INSERT INTO Sach 
+(
+	s.MaSach,
+	s.TenSach,
+	s.SoLuongTon,
+	s.GiaTien,
+	s.MaTL,
+	s.MaTG,
+	s.MaNXB
+)
+VALUES  ( 'S015' ,N'Thần chú mê đắm' ,300,95000,'TL004','TG007','NXB005')
+INSERT INTO Sach 
+(
+	s.MaSach,
+	s.TenSach,
+	s.SoLuongTon,
+	s.GiaTien,
+	s.MaTL,
+	s.MaTG,
+	s.MaNXB
+)
+VALUES  ( 'S016' ,N'Bạn Đắt Giá Bao Nhiêu?' ,150,66000,'TL005','TG009','NXB004')
+INSERT INTO Sach
+(
+	s.MaSach,
+	s.TenSach,
+	s.SoLuongTon,
+	s.GiaTien,
+	s.MaTL,
+	s.MaTG,
+	s.MaNXB
+)
+VALUES  ( 'S017' ,N'Đời ngắn đừng ngủ dài' ,200,36000,'TL006','TG008','NXB003')
+INSERT INTO Sach 
+(
+	s.MaSach,
+	s.TenSach,
+	s.SoLuongTon,
+	s.GiaTien,
+	s.MaTL,
+	s.MaTG,
+	s.MaNXB
+)
+VALUES  ( 'S018' ,N'Tuổi trẻ đáng giá bao nhiêu' ,150,94000,'TL007','TG003','NXB002')
+INSERT INTO Sach
+(
+	s.MaSach,
+	s.TenSach,
+	s.SoLuongTon,
+	s.GiaTien,
+	s.MaTL,
+	s.MaTG,
+	s.MaNXB
+)
+VALUES  ( 'S019' ,N'Khéo ăn nói sẽ có được thiên hạ' ,200,39000,'TL009','TG001','NXB001')
+INSERT INTO Sach 
+(
+	s.MaSach,
+	s.TenSach,
+	s.SoLuongTon,
+	s.GiaTien,
+	s.MaTL,
+	s.MaTG,
+	s.MaNXB
+)
+VALUES  ( 'S020' ,N'Cafe cùng Tony' ,400,64000,'TL008','TG002','NXB010')
+
+ALTER TABLE Sach
+ALTER COLUMN TenSach NVARCHAR(100)
+
+
+INSERT INTO dbo.ChiTietPhieuNhap VALUES  ( 'S001','PN010', 20, 60000)
+INSERT INTO dbo.ChiTietPhieuNhap VALUES  ( 'S002','PN009', 20, 50000)
+INSERT INTO dbo.ChiTietPhieuNhap VALUES  ( 'S003','PN008', 20, 30000)
+INSERT INTO dbo.ChiTietPhieuNhap VALUES  ( 'S004','PN007', 20, 60000)
+INSERT INTO dbo.ChiTietPhieuNhap VALUES  ( 'S005','PN006', 20, 60000)
+INSERT INTO dbo.ChiTietPhieuNhap VALUES  ( 'S006','PN005', 20, 40000)
+INSERT INTO dbo.ChiTietPhieuNhap VALUES  ( 'S007','PN004', 20, 60000)
+INSERT INTO dbo.ChiTietPhieuNhap VALUES  ( 'S008','PN003', 20, 60000)
+INSERT INTO dbo.ChiTietPhieuNhap VALUES  ( 'S009','PN002', 20, 60000)
+INSERT INTO dbo.ChiTietPhieuNhap VALUES  ( 'S010','PN001', 20, 20000)
+
+
+
+INSERT INTO dbo.ChiTietHoaDon VALUES  ( 'S001', 'HD009',  1, 80000)
+INSERT INTO dbo.ChiTietHoaDon VALUES  ( 'S002', 'HD008',  1, 72000)
+INSERT INTO dbo.ChiTietHoaDon VALUES  ( 'S003', 'HD007',  1, 59000)
+INSERT INTO dbo.ChiTietHoaDon VALUES  ( 'S004', 'HD006',  1, 70000)
+INSERT INTO dbo.ChiTietHoaDon VALUES  ( 'S005', 'HD005',  1, 95000)
+INSERT INTO dbo.ChiTietHoaDon VALUES  ( 'S006', 'HD004',  1, 56000)
+INSERT INTO dbo.ChiTietHoaDon VALUES  ( 'S007', 'HD003',  1, 63000)
+INSERT INTO dbo.ChiTietHoaDon VALUES  ( 'S008', 'HD002',  1, 190000)
+INSERT INTO dbo.ChiTietHoaDon VALUES  ( 'S009', 'HD001',  1, 160000)
+INSERT INTO dbo.ChiTietHoaDon VALUES  ( 'S010', 'HD009',  1, 34000)
+
+
+ALTER TABLE dbo.HoaDon ADD TongTriGia MONEY
