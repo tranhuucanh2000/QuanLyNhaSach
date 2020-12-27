@@ -113,9 +113,10 @@ namespace QuanLyNhaSach
                     int thongke = ckbThongKe.Checked == true ? 1 : 0;
                     string ma = txbMa.Text;
                     bool trungtendn=false;
-                    foreach(string tam in cbTaiKhoan.Items)
+                    DataTable data = DataProvider.Instance.ExecuteQuery("select * from TaiKhoan");
+                    foreach(DataRow row in data.Rows)
                     {
-                        if (txbTenDN.Text == tam) trungtendn = true;
+                        if (txbTenDN.Text == row["TenDN"].ToString()) trungtendn = true;
                     }
                     if (trungtendn == true)
                     {
