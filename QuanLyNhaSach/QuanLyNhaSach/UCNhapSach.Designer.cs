@@ -41,6 +41,7 @@ namespace QuanLyNhaSach
             this.cbSach = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.btnLamMoi = new System.Windows.Forms.Button();
             this.btnThemSach = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.panel15 = new System.Windows.Forms.Panel();
@@ -59,16 +60,18 @@ namespace QuanLyNhaSach
             this.lbSo = new System.Windows.Forms.Label();
             this.lbTen = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnLamMoi = new System.Windows.Forms.Button();
+            this.ptbHoTro = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbDangXuat)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbHoTro)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            this.panel1.Controls.Add(this.ptbHoTro);
             this.panel1.Controls.Add(this.pbDangXuat);
             this.panel1.Controls.Add(this.lbHoTro);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -210,6 +213,23 @@ namespace QuanLyNhaSach
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1000, 463);
             this.panel3.TabIndex = 6;
+            // 
+            // btnLamMoi
+            // 
+            this.btnLamMoi.BackColor = System.Drawing.Color.White;
+            this.btnLamMoi.FlatAppearance.BorderSize = 0;
+            this.btnLamMoi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLamMoi.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLamMoi.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            this.btnLamMoi.Image = ((System.Drawing.Image)(resources.GetObject("btnLamMoi.Image")));
+            this.btnLamMoi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLamMoi.Location = new System.Drawing.Point(934, 405);
+            this.btnLamMoi.Name = "btnLamMoi";
+            this.btnLamMoi.Size = new System.Drawing.Size(63, 55);
+            this.btnLamMoi.TabIndex = 66;
+            this.btnLamMoi.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnLamMoi.UseVisualStyleBackColor = false;
+            this.btnLamMoi.Click += new System.EventHandler(this.btnLamMoi_Click);
             // 
             // btnThemSach
             // 
@@ -410,22 +430,16 @@ namespace QuanLyNhaSach
             this.label2.TabIndex = 0;
             this.label2.Text = "NHẬP SÁCH MỚI";
             // 
-            // btnLamMoi
+            // ptbHoTro
             // 
-            this.btnLamMoi.BackColor = System.Drawing.Color.White;
-            this.btnLamMoi.FlatAppearance.BorderSize = 0;
-            this.btnLamMoi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLamMoi.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLamMoi.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
-            this.btnLamMoi.Image = ((System.Drawing.Image)(resources.GetObject("btnLamMoi.Image")));
-            this.btnLamMoi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLamMoi.Location = new System.Drawing.Point(934, 405);
-            this.btnLamMoi.Name = "btnLamMoi";
-            this.btnLamMoi.Size = new System.Drawing.Size(63, 55);
-            this.btnLamMoi.TabIndex = 66;
-            this.btnLamMoi.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnLamMoi.UseVisualStyleBackColor = false;
-            this.btnLamMoi.Click += new System.EventHandler(this.btnLamMoi_Click);
+            this.ptbHoTro.Image = ((System.Drawing.Image)(resources.GetObject("ptbHoTro.Image")));
+            this.ptbHoTro.Location = new System.Drawing.Point(900, 0);
+            this.ptbHoTro.Name = "ptbHoTro";
+            this.ptbHoTro.Size = new System.Drawing.Size(50, 50);
+            this.ptbHoTro.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.ptbHoTro.TabIndex = 4;
+            this.ptbHoTro.TabStop = false;
+            this.ptbHoTro.Click += new System.EventHandler(this.ptbHoTro_Click);
             // 
             // UCNhapSach
             // 
@@ -444,6 +458,7 @@ namespace QuanLyNhaSach
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbHoTro)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -480,5 +495,6 @@ namespace QuanLyNhaSach
         private System.Windows.Forms.ComboBox cbTheLoai;
         private System.Windows.Forms.ComboBox cbTacGia;
         private System.Windows.Forms.Button btnLamMoi;
+        private System.Windows.Forms.PictureBox ptbHoTro;
     }
 }

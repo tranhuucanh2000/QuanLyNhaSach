@@ -188,15 +188,32 @@ namespace QuanLyNhaSach
                 if (soLuong > 0 && soLuong <= slSach) 
                 {
                     int tien = soLuong * giaTien;
-                    dtgThanhToan.Rows.Add(new object[] { txbID.Text, txbTenSach.Text, txbSoLuong.Text, txbGiaTien.Text, tien.ToString() });
-                    LamMoiTongTien();
-                    txbSoLuong.Text = "";
-                    LamMoiTxb();
-                    DuaThongDiep("Bạn vừa thêm sách vào danh sách thanh toán!", 1);
-                    btnThem.Visible = btnXoa.Visible = btnSua.Visible = false;
-                    lbHoTroSuaSach.Text = "Bạn vừa thêm sách vào danh sách thanh toán!";
-                    lbHoTroSuaSach.ForeColor = Color.FromArgb(102, 255, 102);
-                    DuaVeTrangThaiTimKiem();
+                    bool trangthai = true;
+                    int i= 0;
+                    foreach(DataGridViewRow row1 in dtgThanhToan.Rows)
+                    {
+                        if (i < dtgThanhToan.Rows.Count - 1)
+                        {
+                            if (txbID.Text == row1.Cells[0].Value.ToString()) trangthai = false;
+                        }
+                        i++;
+                    }
+                    if (trangthai == true)
+                    {
+                        dtgThanhToan.Rows.Add(new object[] { txbID.Text, txbTenSach.Text, txbSoLuong.Text, txbGiaTien.Text, tien.ToString() });
+                        LamMoiTongTien();
+                        txbSoLuong.Text = "";
+                        LamMoiTxb();
+                        DuaThongDiep("Bạn vừa thêm sách vào danh sách thanh toán!", 1);
+                        btnThem.Visible = btnXoa.Visible = btnSua.Visible = false;
+                        lbHoTroSuaSach.Text = "Bạn vừa thêm sách vào danh sách thanh toán!";
+                        lbHoTroSuaSach.ForeColor = Color.FromArgb(102, 255, 102);
+                        DuaVeTrangThaiTimKiem();
+                    }
+                    else
+                    {
+                        DuaThongDiep("Sách này đã có trong danh sách thanh toán!", 2);
+                    }
                 }
                 else
                 {
@@ -254,7 +271,6 @@ namespace QuanLyNhaSach
         {
             DuaThongDiep("Bạn đã thanh toán thành công!", 1);
             dtgThanhToan.DataSource = null;
-            dtgThanhToan.Refresh();
             LamMoiTxb();
             LamMoiTongTien();
             lbHoTroSuaSach.Text = "";
@@ -286,7 +302,7 @@ namespace QuanLyNhaSach
             {
                 DataTable sach = SachDAO.Instance.TimSachQuaTen(txbTenSach.Text);
                 DataRow row = sach.Rows[0];
-                int slSach = int.Parse(row["Số Lượng Tồn"].ToString());
+                int slSach = int.Parse(row["SoLuongTon"].ToString());
                 if (soLuong > 0 && soLuong <= slSach)
                 {
                     int tien = soLuong * giaTien;
@@ -449,6 +465,12 @@ namespace QuanLyNhaSach
                     btnSua_Click(sender, e);
                 }    
             }
+        }
+
+        private void ptbHoTro_Click(object sender, EventArgs e)
+        {
+            FThongTinPhanMem fThongTinPhanMem = new FThongTinPhanMem();
+            fThongTinPhanMem.ShowDialog();
         }
     }
 }

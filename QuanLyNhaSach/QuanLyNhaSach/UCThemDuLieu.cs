@@ -475,6 +475,12 @@ namespace QuanLyNhaSach
                 txbDC1.Text = row.Cells[2].Value.ToString();
             }
         }
+
+        private void ptbHoTro_Click(object sender, EventArgs e)
+        {
+            FThongTinPhanMem fThongTinPhanMem = new FThongTinPhanMem();
+            fThongTinPhanMem.ShowDialog();
+        }
     }
 
 

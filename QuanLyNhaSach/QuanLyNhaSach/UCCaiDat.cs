@@ -194,5 +194,11 @@ namespace QuanLyNhaSach
         {
             Application.Restart();
         }
+
+        private void ptbHoTro_Click(object sender, EventArgs e)
+        {
+            FThongTinPhanMem fThongTinPhanMem = new FThongTinPhanMem();
+            fThongTinPhanMem.ShowDialog();
+        }
     }
 }

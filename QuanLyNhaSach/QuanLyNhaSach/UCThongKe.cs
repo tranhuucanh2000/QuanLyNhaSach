@@ -21,6 +21,7 @@ namespace QuanLyNhaSach
             set => instance = value;
         }
 
+        bool trangthai = true;
         private TaiKhoan loginAccount;
         public TaiKhoan LoginAccount
         {
@@ -41,58 +42,122 @@ namespace QuanLyNhaSach
             loginAccount = acc;
         }
 
-        //void LayDSHoaDon()
-        //{
-        //    DataTable data = HoaDonDAO.Instance.LayDSHoaDon();
-        //    dtgvThongKe.DataSource = data;
-        //}
-        void LayDSHoaDon()
+        private void btnTimKiem_Click(object sender, EventArgs e)
         {
-            //DataTable data = HoaDonDAO.Instance.LayDSHoaDon();
-            //dataGridView1.DataSource = data;
-        }
-        private void cbThuocTinh_SelectedIndexChanged(object sender, EventArgs e)
-        {
+            if (trangthai == true)
+            {
+                dtgThongKe.DataSource = HoaDonDAO.Instance.LayDSHoaDon(dtpNgayDau.Value.Date, dtpNgayCuoi.Value.Date);
+                ChinhDTGV();
+                TinhDoanhThu();
+            }
+            else
+            {
+                dtgThongKe.DataSource = PhieuNhapDAO.Instance.XemPhieuNhap(dtpNgayDau.Value.Date, dtpNgayCuoi.Value.Date);
+                ChinhDTGV();
+               
 
-        }
-
-        private void btnThem_Click(object sender, EventArgs e)
-        {
-
+            }
         }
 
-        private void btnSua_Click(object sender, EventArgs e)
+        void TinhDoanhThu()
         {
+            int doanhthu = 0;
+            int buoc = dtgThongKe.Rows.Count;
+            int i = 0;
+            foreach(DataGridViewRow row in dtgThongKe.Rows)
+            {
+                if (i<buoc - 1)
+                {
+                    doanhthu += int.Parse(row.Cells[2].Value.ToString());
+                }
+                i++;
+            }
+            txbDoanhThu.Text = doanhthu.ToString();
+        }    
+        void ChinhDTGV()
+        {
+            if(trangthai == true )
+            {
+                dtgThongKe.Columns[0].Width = 100;
+                dtgThongKe.Columns[1].Width = 250;
+                dtgThongKe.Columns[2].Width = 248;
+                dtgThongKe.Columns[3].Width = 200;
+                dtgThongKe.Columns[4].Width = 200;
+            }
+            else
+            {
+                dtgThongKe.Columns[0].HeaderText = "Tên Sách";
+                dtgThongKe.Columns[1].HeaderText = "Số Lượng Nhập";
+                dtgThongKe.Columns[2].HeaderText = "Giá Tiền";
+                dtgThongKe.Columns[3].HeaderText = "Thành Tiền";
+                dtgThongKe.Columns[4].HeaderText = "Ngày Nhập";
+                dtgThongKe.Columns[5].HeaderText = "Tên Nhà Xuất Bản";
 
+                dtgThongKe.Columns[0].Width = 250;
+                dtgThongKe.Columns[1].Width = 100;
+                dtgThongKe.Columns[2].Width = 100;
+                dtgThongKe.Columns[3].Width = 100;
+                dtgThongKe.Columns[4].Width = 200;
+                dtgThongKe.Columns[5].Width = 248;
+
+            }
+        }
+        private void btnDoanhThu_Click(object sender, EventArgs e)
+        {
+            trangthai = true;
+            lbHienThi.Text = "Danh sách hóa đơn";
+            btnDoanhThu.Size = new System.Drawing.Size(205, 65);
+            btnPhieuNhap.Size = new System.Drawing.Size(160, 45);
+            pnThongTin.Visible = true;
+            pnDoanhThu.Visible = true;
+            dtgThongKe.DataSource = null;
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void btnPhieuNhap_Click(object sender, EventArgs e)
         {
-
+            trangthai = false;
+            lbHienThi.Text = "Danh sách phiếu nhập";
+            btnDoanhThu.Size = new System.Drawing.Size(160, 45);
+            btnPhieuNhap.Size = new System.Drawing.Size(205, 65);
+            pnThongTin.Visible = false;
+            pnDoanhThu.Visible = false;
+            dtgThongKe.DataSource = null;
         }
 
-        #region methods
-        //void LayDSHoaDon(DateTime NgayLap, DateTime NgayBan)
-        //{
-        //    DataTable data = HoaDonDAO.Instance.LayDSHoaDon(NgayLap,NgayBan);
-        //    dtgvThongKe.DataSource = data;
-        //}
-        #endregion
-        #region events
-        private void button2_Click(object sender, EventArgs e)
+        private void btnChiTiet_Click(object sender, EventArgs e)
         {
-            DateTime NgayBan1;
-            DateTime NgayBan2;
-            NgayBan1 = dateNgayLap.Value;
-            NgayBan2 = dateNgayBan.Value;
-            dtgvThongKe.DataSource = HoaDonDAO.Instance.LayDSHoaDon(NgayBan1, NgayBan2);
+            if (trangthai == true)
+            {
+                DataTable data = HoaDonDAO.Instance.XemThongTinHoaDon(txbMaHD.Text);
+                DataTable table = DataProvider.Instance.ExecuteQuery(string.Concat("SELECT * FROM dbo.HoaDon WHERE SoHD = N'", txbMaHD.Text, "'"));
+                DataRow row = table.Rows[0];
+                string[] ngay = row[1].ToString().Split(' ');
+                DateTime ngayhd = DateTime.Parse(ngay[0]);
+                FHoaDonTT fHoaDon = new FHoaDonTT(data, txbNhanVien.Text, txbKhachHang.Text, ngayhd);
+                fHoaDon.ShowDialog();
+            }
         }
-        #endregion
 
-
-        private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        private void dtgThongKe_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-          
+            if (trangthai == true)
+            {
+                DataGridViewRow row = dtgThongKe.Rows[dtgThongKe.CurrentCell.RowIndex];
+                txbMaHD.Text = row.Cells[0].Value.ToString();
+                txbNhanVien.Text = row.Cells[4].Value.ToString();
+                txbKhachHang.Text = row.Cells[3].Value.ToString();
+            }
+            else
+            {
+
+            }    
         }
+
+        private void ptbHoTro_Click(object sender, EventArgs e)
+        {
+            FThongTinPhanMem fThongTinPhanMem = new FThongTinPhanMem();
+            fThongTinPhanMem.ShowDialog();
+        }
+
     }
 }

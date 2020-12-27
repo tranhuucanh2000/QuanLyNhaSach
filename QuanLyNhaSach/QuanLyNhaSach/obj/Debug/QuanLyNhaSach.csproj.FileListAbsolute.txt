@@ -143,3 +143,4 @@ C:\Users\18521\Desktop\Đồ Án\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\D
 C:\Users\tranh\source\repos\tranhuucanh2000\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.FSuaTenDangNhap.resources
 C:\Users\18521\Desktop\Đồ án\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.FSuaTenDangNhap.resources
 C:\Users\ADMIN\Desktop\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.FSuaTenDangNhap.resources
+C:\Users\tranh\source\repos\tranhuucanh2000\QuanLyNhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.FThongTinPhanMem.resources

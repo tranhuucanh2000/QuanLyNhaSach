@@ -129,10 +129,19 @@ namespace QuanLyNhaSach
 
             if (int.TryParse(txbSoLuong.Text,out soluong))
             {
-                SachDAO.Instance.ThemSLChoSach(mapn, soluong, masach, giatien, manxb);
-                DuaThongDiep("Đã nhập thêm số lượng thành công cho sách đã chọn", 1);
-                cbSach.ResetText();
-                txbSoLuong.Text = "";
+                if (soluong > 0)
+                {
+                    SachDAO.Instance.ThemSLChoSach(mapn, soluong, masach, giatien, manxb);
+                    DuaThongDiep("Đã nhập thêm số lượng thành công cho sách đã chọn", 1);
+                    cbSach.ResetText();
+                    txbSoLuong.Text = "";
+                }
+                else
+                {
+                    DuaThongDiep("Bạn vui lòng nhập số lượng lớn hơn 0!", 2);
+                    txbSoLuong.Focus();
+                    txbSoLuong.SelectAll();
+                }
             }
             else
             {
@@ -204,19 +213,37 @@ namespace QuanLyNhaSach
 
                 if (int.TryParse(txbSoLuongS.Text, out soluong))
                 {
-                    if (int.TryParse(txbGiaTien.Text, out giatien))
+                    if (soluong > 0)
                     {
-                        SachDAO.Instance.ThemSach(mapn,masach,txbTen.Text, matl, matg, mannxb, soluong, giatien);
-                        DuaThongDiep("Đã thêm sách thành công!", 1);
-                        cbNXB.ResetText();
-                        cbSach.ResetText();
-                        cbTheLoai.ResetText();
-                        cbTacGia.ResetText();
-                        txbTen.Text = txbGiaTien.Text = txbSoLuongS.Text = "";
+                        if (int.TryParse(txbGiaTien.Text, out giatien))
+                        {
+                            if (giatien > 0)
+                            {
+                                SachDAO.Instance.ThemSach(mapn, masach, txbTen.Text, matl, matg, mannxb, soluong, giatien);
+                                DuaThongDiep("Đã thêm sách thành công!", 1);
+                                cbNXB.ResetText();
+                                cbSach.ResetText();
+                                cbTheLoai.ResetText();
+                                cbTacGia.ResetText();
+                                txbTen.Text = txbGiaTien.Text = txbSoLuongS.Text = "";
+                            }
+                            else
+                            {
+                                DuaThongDiep("Bạn vui lòng nhập giá tiền lớn hơn 0!", 2);
+                                txbGiaTien.Focus();
+                                txbGiaTien.SelectAll();
+                            }
+                        }
+                        else
+                        {
+                            DuaThongDiep("Bạn vui lòng nhập lại giá tiền!", 2);
+                            txbGiaTien.Focus();
+                            txbGiaTien.SelectAll();
+                        }
                     }
                     else
                     {
-                        DuaThongDiep("Bạn vui lòng nhập lại giá tiền!", 2);
+                        DuaThongDiep("Bạn vui lòng nhập số lượng lớn hơn 0!", 2);
                         txbGiaTien.Focus();
                         txbGiaTien.SelectAll();
                     }
@@ -261,6 +288,12 @@ namespace QuanLyNhaSach
         }
         private void txbGiaTien_TextChanged(object sender, EventArgs e)
         {
+        }
+
+        private void ptbHoTro_Click(object sender, EventArgs e)
+        {
+            FThongTinPhanMem fThongTinPhanMem = new FThongTinPhanMem();
+            fThongTinPhanMem.ShowDialog();
         }
     }
 }

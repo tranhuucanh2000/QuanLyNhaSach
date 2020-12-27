@@ -124,7 +124,7 @@ namespace QuanLyNhaSach
                     if (capNhatTaiKhoanEvent != null)
                     {
                         capNhatTaiKhoanEvent(this, new TaiKhoanSuKien(TaiKhoanDAO.Instance.LayTaiKhoanTuTenDN(tenDN)));
-                        btnSua.Text = "Sửa Mã";
+                        btnSua.Text = "Sửa Mật Khẩu";
                     }
                 }
                 else
@@ -182,6 +182,12 @@ namespace QuanLyNhaSach
         private void FSuaTenDangNhap_SuaTenDN(object sender, SuaTenDN e)
         {
             LayThongTinTaiKhoan(e.Taikhoan);
+        }
+
+        private void ptbHoTro_Click(object sender, EventArgs e)
+        {
+            FThongTinPhanMem fThongTinPhanMem = new FThongTinPhanMem();
+            fThongTinPhanMem.ShowDialog();
         }
     }
     public class TaiKhoanSuKien : EventArgs

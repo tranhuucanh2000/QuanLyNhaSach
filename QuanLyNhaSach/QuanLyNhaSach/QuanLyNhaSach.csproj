@@ -51,6 +51,7 @@
   <ItemGroup>
     <Compile Include="DAO\HoaDonDAO.cs" />
     <Compile Include="DAO\NhaXuatBanDAO.cs" />
+    <Compile Include="DAO\PhieuNhapDAO.cs" />
     <Compile Include="DAO\TacGiaDAO.cs" />
     <Compile Include="DAO\TaiKhoanDAO.cs" />
     <Compile Include="DAO\DataProvider.cs" />
@@ -90,6 +91,12 @@
     </Compile>
     <Compile Include="FSuaTenDangNhap.Designer.cs">
       <DependentUpon>FSuaTenDangNhap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FThongTinPhanMem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FThongTinPhanMem.Designer.cs">
+      <DependentUpon>FThongTinPhanMem.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -149,6 +156,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FSuaTenDangNhap.resx">
       <DependentUpon>FSuaTenDangNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FThongTinPhanMem.resx">
+      <DependentUpon>FThongTinPhanMem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

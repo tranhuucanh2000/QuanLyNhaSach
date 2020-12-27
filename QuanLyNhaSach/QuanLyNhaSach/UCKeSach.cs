@@ -120,9 +120,15 @@ namespace QuanLyNhaSach
     
         private void dtgSach_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            TrangThaiChonSach();
             int vitri = dtgSach.CurrentRow.Index;
             DataGridViewRow row = dtgSach.Rows[vitri];
+            bool ttsach = true;
+            DataTable data = DataProvider.Instance.ExecuteQuery("select * from ChiTietHoaDon");
+            foreach(DataRow row1 in data.Rows)
+            {
+                if (row.Cells[0].Value.ToString() == row1["MaSach"].ToString()) ttsach = false;
+            }
+            TrangThaiChonSach();
             if (row.Cells[7].Value.ToString() == "Còn")
             {
                 btnKinhDoanh.Visible = false;
@@ -139,7 +145,18 @@ namespace QuanLyNhaSach
             txbTheLoai.Text = row.Cells[3].Value.ToString();
             txbNXB.Text = row.Cells[4].Value.ToString();
             txbSo.Text = row.Cells[5].Value.ToString();
-            txbGiaTien.Text = row.Cells[6].Value.ToString();             
+            txbGiaTien.Text = row.Cells[6].Value.ToString();
+            if (ttsach)
+            {
+                btnSua.Visible = true;
+                btnXoa.Visible = true;
+            }
+            else
+            {
+                btnSua.Visible = false;
+                btnXoa.Visible = false;
+            }
+
         }
 
         private void btnLuu_Click(object sender, EventArgs e)
@@ -152,23 +169,42 @@ namespace QuanLyNhaSach
             }
             else if (int.TryParse(txbSo.Text, out soluong))
             {
-                if (int.TryParse(txbGiaTien.Text, out giatien))
+                if (soluong > 0)
                 {
-                    SachDAO.Instance.SuaSach(txbTen.Text, txbSo.Text, txbGiaTien.Text, txbMa.Text);
-                    DuaThongDiep("Đã sửa sách thành công ", 1);
-                    dtgSach.DataSource = SachDAO.Instance.LayDSSach();
-                    LamMoiTxb();
-                    txbTen.ReadOnly = true;
-                    txbGiaTien.ReadOnly = true;
-                    txbSo.ReadOnly = true;
-                    btnLuu.Visible = false;
-                    TrangThaiChonSach();
+                    if (int.TryParse(txbGiaTien.Text, out giatien))
+                    {
+                        if (giatien > 0)
+                        {
+                            SachDAO.Instance.SuaSach(txbTen.Text, txbSo.Text, txbGiaTien.Text, txbMa.Text);
+                            DuaThongDiep("Đã sửa sách thành công ", 1);
+                            dtgSach.DataSource = SachDAO.Instance.LayTatCaSach();
+                            ChinhDTGV();
+                            LamMoiTxb();
+                            txbTen.ReadOnly = true;
+                            txbGiaTien.ReadOnly = true;
+                            txbSo.ReadOnly = true;
+                            btnLuu.Visible = false;
+                            TrangThaiChonSach();
+                        }
+                        else
+                        {
+                            DuaThongDiep("Bạn vui lòng nhập vào giá tiền lớn hơn 0!", 2);
+                            txbGiaTien.Focus();
+                            txbGiaTien.SelectAll();
+                        }    
+                    }
+                    else
+                    {
+                        DuaThongDiep("Bạn vui lòng nhập lại giá tiền!", 2);
+                        txbGiaTien.Focus();
+                        txbGiaTien.SelectAll();
+                    }
                 }
                 else
                 {
-                    DuaThongDiep("Bạn vui lòng nhập lại giá tiền!", 2);
-                    txbGiaTien.Focus();
-                    txbGiaTien.SelectAll();
+                    DuaThongDiep("Bạn vui lòng nhập số lượng lớn hơn 0!", 2);
+                    txbSo.Focus();
+                    txbSo.SelectAll();
                 }
             }
             else
@@ -206,8 +242,10 @@ namespace QuanLyNhaSach
                 {
                     SachDAO.Instance.XoaSach(txbMa.Text);
                     DuaThongDiep("Bạn đã xóa sách thành công!", 1);
-                    dtgSach.DataSource = SachDAO.Instance.LayDSSach();
+                    dtgSach.DataSource = SachDAO.Instance.LayTatCaSach();
                     TrangThaiBanDau();
+                    ChinhDTGV();
+                    LamMoiTxb();
                 }
                 else
                 {
@@ -260,21 +298,8 @@ namespace QuanLyNhaSach
             LamMoiTxb();
         }
 
-        private void ptbTimKiem_Click(object sender, EventArgs e)
+        void ChinhDTGV()
         {
-            if(cbThuocTinh.SelectedItem.ToString()=="Tên Sách")
-            {
-                dtgSach.DataSource = SachDAO.Instance.TimKiemSach_QuaTen(txbTimKiem.Text);
-            }
-            else if(cbThuocTinh.SelectedItem.ToString()=="Tác Giả")
-            {
-                dtgSach.DataSource = SachDAO.Instance.TimKiemSach_QuaTacGia(txbTimKiem.Text);
-            }
-            else
-            {
-                dtgSach.DataSource = SachDAO.Instance.TimKiemSach_QuaTheLoai(txbTimKiem.Text);
-            }
-            DuaThongDiep("Tìm kiếm thành công!", 1);
             dtgSach.Columns[0].HeaderText = "Mã";
             dtgSach.Columns[1].HeaderText = "Tên Sách";
             dtgSach.Columns[2].HeaderText = "Tác Giả";
@@ -292,6 +317,23 @@ namespace QuanLyNhaSach
             dtgSach.Columns[6].Width = 100;
             dtgSach.Columns[7].Width = 100;
         }
+        private void ptbTimKiem_Click(object sender, EventArgs e)
+        {
+            if(cbThuocTinh.SelectedItem.ToString()=="Tên Sách")
+            {
+                dtgSach.DataSource = SachDAO.Instance.TimKiemSach_QuaTen(txbTimKiem.Text);
+            }
+            else if(cbThuocTinh.SelectedItem.ToString()=="Tác Giả")
+            {
+                dtgSach.DataSource = SachDAO.Instance.TimKiemSach_QuaTacGia(txbTimKiem.Text);
+            }
+            else
+            {
+                dtgSach.DataSource = SachDAO.Instance.TimKiemSach_QuaTheLoai(txbTimKiem.Text);
+            }
+            DuaThongDiep("Tìm kiếm thành công!", 1);
+            ChinhDTGV();
+        }
 
         private void ptbLamMoi_Click(object sender, EventArgs e)
         {
@@ -303,6 +345,12 @@ namespace QuanLyNhaSach
         private void txbTimKiem_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter) ptbTimKiem_Click(sender, e);
+        }
+
+        private void ptbHoTro_Click(object sender, EventArgs e)
+        {
+            FThongTinPhanMem fThongTinPhanMem = new FThongTinPhanMem();
+            fThongTinPhanMem.ShowDialog();
         }
     }
 }

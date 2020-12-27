@@ -55,15 +55,18 @@ namespace QuanLyNhaSach
             this.lbMK = new System.Windows.Forms.Label();
             this.lbTenHT = new System.Windows.Forms.Label();
             this.lbTenDN = new System.Windows.Forms.Label();
+            this.ptbHoTro = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbDangXuat)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbHoTro)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            this.panel1.Controls.Add(this.ptbHoTro);
             this.panel1.Controls.Add(this.pbDangXuat);
             this.panel1.Controls.Add(this.lbHoTro);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -385,6 +388,17 @@ namespace QuanLyNhaSach
             this.lbTenDN.Text = "Tên đăng nhập:";
             this.lbTenDN.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // ptbHoTro
+            // 
+            this.ptbHoTro.Image = ((System.Drawing.Image)(resources.GetObject("ptbHoTro.Image")));
+            this.ptbHoTro.Location = new System.Drawing.Point(900, 0);
+            this.ptbHoTro.Name = "ptbHoTro";
+            this.ptbHoTro.Size = new System.Drawing.Size(50, 50);
+            this.ptbHoTro.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.ptbHoTro.TabIndex = 4;
+            this.ptbHoTro.TabStop = false;
+            this.ptbHoTro.Click += new System.EventHandler(this.ptbHoTro_Click);
+            // 
             // UCTaiKhoan
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -399,6 +413,7 @@ namespace QuanLyNhaSach
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbHoTro)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -430,5 +445,6 @@ namespace QuanLyNhaSach
         private System.Windows.Forms.Button btnSua;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button btnSuaTenDN;
+        private System.Windows.Forms.PictureBox ptbHoTro;
     }
 }

@@ -62,15 +62,17 @@ namespace QuanLyNhaSach
             this.cbTaiKhoan = new System.Windows.Forms.ComboBox();
             this.btnXoa = new System.Windows.Forms.Button();
             this.lbHoTro = new System.Windows.Forms.Label();
-            this.pbDangXuat = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.ptbHoTro = new System.Windows.Forms.PictureBox();
+            this.pbDangXuat = new System.Windows.Forms.PictureBox();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
             this.grbThongTinTaiKhoan.SuspendLayout();
             this.pnMK.SuspendLayout();
             this.grbPhanQuyen.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbDangXuat)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbHoTro)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbDangXuat)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -229,7 +231,7 @@ namespace QuanLyNhaSach
             this.txbMatKhau.Margin = new System.Windows.Forms.Padding(2);
             this.txbMatKhau.Name = "txbMatKhau";
             this.txbMatKhau.Size = new System.Drawing.Size(390, 32);
-            this.txbMatKhau.TabIndex = 3;
+            this.txbMatKhau.TabIndex = 4;
             // 
             // lbNL
             // 
@@ -456,6 +458,30 @@ namespace QuanLyNhaSach
             this.lbHoTro.TabIndex = 1;
             this.lbHoTro.Text = "BỒ CÂU: \"Xin chào Trần Hữu Cảnh\"";
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            this.panel1.Controls.Add(this.ptbHoTro);
+            this.panel1.Controls.Add(this.pbDangXuat);
+            this.panel1.Controls.Add(this.lbHoTro);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1000, 50);
+            this.panel1.TabIndex = 2;
+            // 
+            // ptbHoTro
+            // 
+            this.ptbHoTro.Image = ((System.Drawing.Image)(resources.GetObject("ptbHoTro.Image")));
+            this.ptbHoTro.Location = new System.Drawing.Point(900, 0);
+            this.ptbHoTro.Name = "ptbHoTro";
+            this.ptbHoTro.Size = new System.Drawing.Size(50, 50);
+            this.ptbHoTro.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.ptbHoTro.TabIndex = 4;
+            this.ptbHoTro.TabStop = false;
+            this.ptbHoTro.Click += new System.EventHandler(this.ptbHoTro_Click);
+            // 
             // pbDangXuat
             // 
             this.pbDangXuat.Image = ((System.Drawing.Image)(resources.GetObject("pbDangXuat.Image")));
@@ -465,18 +491,6 @@ namespace QuanLyNhaSach
             this.pbDangXuat.TabIndex = 2;
             this.pbDangXuat.TabStop = false;
             this.pbDangXuat.Click += new System.EventHandler(this.pbDangXuat_Click);
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
-            this.panel1.Controls.Add(this.pbDangXuat);
-            this.panel1.Controls.Add(this.lbHoTro);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1000, 50);
-            this.panel1.TabIndex = 2;
             // 
             // UCCaiDat
             // 
@@ -496,9 +510,10 @@ namespace QuanLyNhaSach
             this.pnMK.PerformLayout();
             this.grbPhanQuyen.ResumeLayout(false);
             this.grbPhanQuyen.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbDangXuat)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbHoTro)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbDangXuat)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -538,5 +553,6 @@ namespace QuanLyNhaSach
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txbMa;
+        private System.Windows.Forms.PictureBox ptbHoTro;
     }
 }

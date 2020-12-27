@@ -29,6 +29,9 @@ CREATE TABLE HoaDon
 (
 	SoHD CHAR(5) NOT NULL,
 	NgayBan SMALLDATETIME NOT NULL,
+	TongTriGia INT NOT NULL,
+	TenNhanVien NVARCHAR(30) NOT NULL,
+	TenKhachHang NVARCHAR(30),
 	CONSTRAINT pk_HD PRIMARY KEY (SoHD)
 )
 GO
@@ -53,7 +56,7 @@ GO
 CREATE TABLE Sach
 (
 	MaSach CHAR(4) NOT NULL,
-	TenSach NVARCHAR(40) NOT NULL,
+	TenSach NVARCHAR(60) NOT NULL,
 	SoLuongTon INT NOT NULL,
 	MaTL CHAR(5) NOT NULL,
 	MaTG CHAR(5) NOT NULL,
@@ -72,7 +75,7 @@ CREATE TABLE ChiTietPhieuNhap
 	MaSach CHAR(4) NOT NULL,
 	SoPN CHAR(5) NOT NULL,
 	SoLuongNhap INT NOT NULL,
-	GiaNhap MONEY NOT NULL,
+	GiaNhap INT NOT NULL,
 	CONSTRAINT pk_CTPN PRIMARY KEY(MaSach,SoPN),
 	CONSTRAINT fk_CTPN_MaSach FOREIGN KEY (MaSach) REFERENCES dbo.Sach(MaSach),
 	CONSTRAINT fk_CTPN_SoPN FOREIGN KEY (SoPN) REFERENCES dbo.PhieuNhap(SoPN),
@@ -84,7 +87,8 @@ CREATE TABLE ChiTietHoaDon
 	MaSach CHAR(4) NOT NULL,
 	SoHD CHAR(5) NOT NULL,
 	SoLuongBan INT NOT NULL,
-	GiaBan MONEY NOT NULL,
+	GiaBan INT NOT NULL,
+	ThanhTien INT NOT NULL,
 	CONSTRAINT pk_CTHD PRIMARY KEY(MaSach,SoHD),
 	CONSTRAINT fk_CTHD_MaSach FOREIGN KEY (MaSach) REFERENCES dbo.Sach(MaSach),
 	CONSTRAINT fk_CTHD_SoHD FOREIGN KEY (SoHD) REFERENCES dbo.HoaDon(SoHD),
@@ -145,26 +149,6 @@ BEGIN
 	WHERE s.MaSach=ct.MaSach AND s.MaTG=tg.MaTG AND s.MaTL=tl.MaTL AND s.MaNXB=nxb.MaNXB AND s.KinhDoanh = N'Còn'
 END
 GO
-
---Hiển thị hóa đơn 
-CREATE PROC USP_HienThiHoaDon
-  @NgayBan1 DATETIME, @NgayBan2 DATETIME
-AS
-BEGIN
-SELECT
-	hd.SoHD AS [Số Hóa Đơn],
-	hd.NgayBan AS [Ngày Bán],
-	--cthd.MaSach AS [Mã Sách],
-	--cthd.GiaBan AS [Giá Bán],
-	--cthd.SoLuongBan AS [Số Lượng],
-	hd.TongTriGia AS [Tổng trị giá]
-FROM dbo.HoaDon hd , dbo.ChiTietHoaDon cthd
-WHERE hd.SoHD = cthd.SoHD AND hd.NgayBan >= @NgayBan1 AND hd.NgayBan <= @NgayBan2
-END
-GO
-EXEC dbo.USP_HienThiHoaDon @NgayLap = '2020-12-26 20:47:07', -- datetime
-    @NgayBan = '2020-12-26 20:47:07' -- datetime
-
 -- Tìm kiếm sách qua tên tác giả
 CREATE PROC USP_TimSach_TacGia
 @tacGia NVARCHAR(50)
@@ -185,7 +169,7 @@ CREATE PROC USP_TimKiemSach_TenSach
 @tenSach NVARCHAR(50)
 AS
 BEGIN
-	SELECT DISTINCT s.MaSach, s.TenSach, tg.TenTG,tl.TenTL, nxb.TenNXB,s.SoLuongTon,s.GiaTien
+	SELECT DISTINCT s.MaSach, s.TenSach, tg.TenTG,tl.TenTL, nxb.TenNXB,s.SoLuongTon,s.GiaTien,s.KinhDoanh
 	FROM Sach s 
 	INNER JOIN ChiTietPhieuNhap ct on s.MaSach=ct.MaSach
 	INNER JOIN TacGia tg on s.MaTG=tg.MaTG
@@ -195,6 +179,38 @@ BEGIN
 END
 GO
 
+
+--Tìm kiếm sách qua tác giả
+CREATE PROC USP_TimKiemSach_TacGia
+@tacGia NVARCHAR(50)
+AS
+BEGIN
+	SELECT DISTINCT s.MaSach, s.TenSach, tg.TenTG,tl.TenTL, nxb.TenNXB,s.SoLuongTon,s.GiaTien,s.KinhDoanh
+	FROM Sach s 
+	INNER JOIN ChiTietPhieuNhap ct on s.MaSach=ct.MaSach
+	INNER JOIN TacGia tg on s.MaTG=tg.MaTG
+	INNER JOIN TheLoai tl on s.MaTL=tl.MaTL
+	INNER JOIN NhaXuatBan nxb on s.MaNXB=nxb.MaNXB
+	WHERE tg.TenTG LIKE CONCAT(@tacGia,'%') AND s.KinhDoanh = N'Còn'
+END
+GO
+
+
+--Tìm kiếm sách qua thể loại
+
+CREATE PROC USP_TimKiemSach_TheLoai
+@theLoai NVARCHAR(50)
+AS
+BEGIN
+	SELECT DISTINCT s.MaSach, s.TenSach, tg.TenTG,tl.TenTL, nxb.TenNXB,s.SoLuongTon,s.GiaTien,s.KinhDoanh
+	FROM Sach s 
+	INNER JOIN ChiTietPhieuNhap ct on s.MaSach=ct.MaSach
+	INNER JOIN TacGia tg on s.MaTG=tg.MaTG
+	INNER JOIN TheLoai tl on s.MaTL=tl.MaTL
+	INNER JOIN NhaXuatBan nxb on s.MaNXB=nxb.MaNXB
+	WHERE tl.TenTL LIKE CONCAT(@theLoai,'%') AND s.KinhDoanh = N'Còn'
+END
+GO
 --Lọc sách qua tên
 
 CREATE PROC USP_TimSach_TenSach
@@ -661,9 +677,13 @@ GO
 ALTER TABLE ChiTietPhieuNhap
 ADD CONSTRAINT df_ID_SACH_CTPN DEFAULT DBO.AUTO_MASACH_CTPN() FOR MaSach
 GO
+--Thêm sách
+CREATE PROC USP_ThemSach
+@soPn CHAR(5),@maSach CHAR(4),@tenSach NVARCHAR(100), @soluong INT, @giatien INT, @matl CHAR(5), @matg CHAR(5), @manxb CHAR(6), @ngaynhap smalldatetime
+AS
+BEGIN
+	SET DATEFORMAT DMY
 
-<<<<<<< HEAD
-=======
 	INSERT INTO Sach
 	(
 		MaSach,
@@ -713,7 +733,6 @@ GO
 	)
 END
 GO
->>>>>>> f1d56e3e130623944c27cc160fba7e46dc09ec7e
 --Xóa Sách
 CREATE PROC USP_XoaSach
 @masach CHAR(5)
@@ -767,23 +786,29 @@ END
 GO
 --Thêm hóa đơn
 CREATE PROC USP_ThemHoaDon
-@soHD CHAR(5), @ngay SMALLDATETIME
+@soHD CHAR(5), @ngay SMALLDATETIME, @tongTien INT, @tenkh NVARCHAR(30), @tennv NVARCHAR(30)
 AS
 BEGIN
     INSERT INTO HoaDon
 	(
 		SoHD,
-		NgayBan
+		NgayBan,
+		TongTriGia,
+		TenKhachHang,
+		TenNhanVien
 	)
 	VALUES
 	(
 		@soHD,
-		@ngay
+		@ngay,
+		@tongTien,
+		@tenkh,
+		@tennv
 	)
 END
 GO
 --Thêm chi tiết hóa đơn 
-CREATE PROC USP_USP_ThemChiTietHoaDon 
+CREATE PROC USP_ThemChiTietHoaDon 
 @maSach CHAR(4), @soHD CHAR(5), @soLuongBan INT, @giaBan INT
 AS
 BEGIN
@@ -792,17 +817,20 @@ BEGIN
 		MaSach,
 		SoHD,
 		SoLuongBan,
-		GiaBan
+		GiaBan,
+		ThanhTien
 	)
 	VALUES
 	(
 		@maSach,
 		@soHD,
 		@soLuongBan,
-		@giaBan
+		@giaBan,
+		@giaBan * @soLuongBan
 	)
 END
 GO
+
 --Lấy tất cả sách
 CREATE PROC USP_LayTatCaSach
 AS
@@ -906,6 +934,7 @@ GO
 --Thêm tài khoản mặc định
 
 INSERT INTO TaiKhoan VALUES (N'admin', N'Quản lý', 1,N'admin',1,1,1,1,1,1,1,N'KVC2020')
+GO
 
 --Xác nhận tên thể loại
 CREATE PROC USP_XacNhanTenTheLoai
@@ -914,65 +943,68 @@ AS
 BEGIN
 	SELECT * FROM QuanLyNhaSach.dbo.TheLoai WHERE TenTL=@tentl
 END
---Thêm sách
-CREATE PROC USP_ThemSach
-@soPn CHAR(5),@maSach CHAR(4),@tenSach NVARCHAR(100), @soluong INT, @giatien INT, @matl CHAR(5), @matg CHAR(5), @manxb CHAR(6), @ngaynhap smalldatetime
+GO
+
+--Hiển thị hóa đơn 
+CREATE PROC USP_HienThiHoaDon
+  @NgayBan1 DATETIME, @NgayBan2 DATETIME
 AS
 BEGIN
-	SET DATEFORMAT DMY
-
-	INSERT INTO Sach
-	(
-		MaSach,
-		TenSach,
-		SoLuongTon,
-		GiaTien,
-		MaTL,
-		MaTG,
-		MaNXB
-	)
-	VALUES
-	(
-		@maSach,
-		@tenSach,
-		@soluong,
-		@giatien,
-		@matl,
-		@matg,
-		@manxb
-	)
-	INSERT INTO PhieuNhap
-	(
-		SoPN,
-		NgayNhap,
-		MaNXB
-	)
-	VALUES
-	(
-		@soPn,
-		@ngaynhap,
-		@manxb
-	)
-
-	INSERT INTO ChiTietPhieuNhap
-	(
-		MaSach,
-		SoPN,
-		SoLuongNhap,
-		GiaNhap
-	)
-	VALUES
-	(
-		@maSach,
-		@soPn,
-		@soluong,
-		@giatien
-	)
+SELECT
+	hd.SoHD AS [Số Hóa Đơn],
+	hd.NgayBan AS [Ngày Bán],
+	hd.TongTriGia AS [Tổng trị giá],
+	hd.TenKhachHang AS [Tên Khách Hàng],
+	hd.TenNhanVien AS [Tên Nhân Viên]
+FROM dbo.HoaDon hd
+WHERE hd.NgayBan >= @NgayBan1 AND hd.NgayBan <= @NgayBan2
 END
 GO
 
--- Thêm dữ liệu
-	
+
+--Xem chi tiết hóa đơn
+
+CREATE PROC USP_XemThongTinHD
+@mahd NVARCHAR(5)
+AS
+BEGIN
+    SELECT s.TenSach, cthd.SoLuongBan, cthd.GiaBan, cthd.ThanhTien
+	FROM dbo.ChiTietHoaDon cthd, dbo.Sach s
+	WHERE cthd.SoHD = @mahd AND cthd.MaSach = s.MaSach 
+END
+GO
+
+--Hiển thị phiếu nhập
+CREATE PROC USP_HienThiPhieuNhap
+  @NgayDau DATETIME, @NgayCuoi DATETIME
+AS
+BEGIN
+SELECT
+	s.TenSach,
+	ctpn.SoLuongNhap,
+	s.GiaTien,
+	s.GiaTien * ctpn.SoLuongNhap AS [ThanhTien],
+	pn.NgayNhap,
+	nxb.TenNXB
+FROM dbo.PhieuNhap pn, dbo.Sach s, dbo.NhaXuatBan nxb, dbo.ChiTietPhieuNhap ctpn
+WHERE pn.NgayNhap >= @NgayDau AND pn.NgayNhap <= @NgayCuoi AND ctpn.SoPN = pn.SoPN AND s.MaSach = ctpn.MaSach AND nxb.MaNXB = pn.MaNXB
+END
+GO
+
+
+-- Xem thông tin phiếu nhập
+CREATE PROC USP_XemTTPhieuNhap
+@soPN CHAR(5)
+AS
+BEGIN
+    SELECT  s.TenSach , ctpn.SoLuongNhap, ctpn.GiaNhap, pn.NgayNhap
+	FROM dbo.ChiTietPhieuNhap ctpn, dbo.PhieuNhap pn, Sach s
+	WHERE pn.SoPN = @soPN AND ctpn.SoPN = pn.SoPN AND ctpn.MaSach = s.MaSach
+END
+
+--Thêm dữ liệu
+
+SET DATEFORMAT DMY
 INSERT INTO dbo.NhaXuatBan VALUES  ( 'NXB001', N'Bách khoa Hà Nội', N'Số 1 Đường Đại Cồ Việt, Hai Bà Trưng , Hà Nội.', '8823451' )
 INSERT INTO dbo.NhaXuatBan VALUES  ( 'NXB002', N'Chính trị Quốc gia Sự thật', N'6/86 Duy Tân, Cầu Giấy, Hà Nội', '908256478'  )
 INSERT INTO dbo.NhaXuatBan VALUES  ( 'NXB003', N'Công Thương', N'Tầng 4, Tòa nhà Bộ Công Thương, số 655 Phạm Văn Đồng, quận Bắc Từ Liêm, Hà Nội', '938776266'  )
@@ -984,8 +1016,6 @@ INSERT INTO dbo.NhaXuatBan VALUES  ( 'NXB008', N'Hàng hải', N'484 Lạch Tray
 INSERT INTO dbo.NhaXuatBan VALUES  ( 'NXB009', N'Học viện Nông nghiệp', N'Trường Đại học Nông nghiệp Hà Nội - Thị trấn Trâu Quỳ, huyện Gia Lâm, Hà Nội', '8654763'  )
 INSERT INTO dbo.NhaXuatBan VALUES  ( 'NXB010', N'Hồng Đức', N'65 Tràng Thi, Hà Nội', '8768904'  )
 
-SET DATEFORMAT DMY
-SELECT * FROM dbo.PhieuNhap
 INSERT INTO dbo.PhieuNhap VALUES  ( 'PN001','12/7/2020','NXB002' )
 INSERT INTO dbo.PhieuNhap VALUES  ( 'PN002','1/8/2020','NXB007' )
 INSERT INTO dbo.PhieuNhap VALUES  ( 'PN003','3/12/2019','NXB008' )
@@ -996,17 +1026,6 @@ INSERT INTO dbo.PhieuNhap VALUES  ( 'PN007','2/5/2020','NXB003' )
 INSERT INTO dbo.PhieuNhap VALUES  ( 'PN008','15/8/2020','NXB001' )
 INSERT INTO dbo.PhieuNhap VALUES  ( 'PN009','16/12/2019','NXB010' )
 INSERT INTO dbo.PhieuNhap VALUES  ( 'PN010','31/7/2020','NXB007' )
-
-
-INSERT INTO dbo.HoaDon(SoHD,NgayBan) VALUES  ( 'HD001', '21/2/2020')
-INSERT INTO dbo.HoaDon(SoHD,NgayBan) VALUES  ( 'HD002', '13/8/2020')
-INSERT INTO dbo.HoaDon(SoHD,NgayBan) VALUES  ( 'HD003', '27/7/2020')
-INSERT INTO dbo.HoaDon(SoHD,NgayBan) VALUES  ( 'HD004', '12/4/2020')
-INSERT INTO dbo.HoaDon(SoHD,NgayBan) VALUES  ( 'HD005', '31/1/2020')
-INSERT INTO dbo.HoaDon(SoHD,NgayBan) VALUES  ( 'HD006', '26/2/2020')
-INSERT INTO dbo.HoaDon(SoHD,NgayBan) VALUES  ( 'HD007', '21/9/2020')
-INSERT INTO dbo.HoaDon(SoHD,NgayBan) VALUES  ( 'HD008', '19/1/2020')
-INSERT INTO dbo.HoaDon(SoHD,NgayBan) VALUES  ( 'HD009', '25/12/2020')
 
 
 INSERT INTO dbo.TacGia VALUES  ('TG001',N'Nguyễn Như Nhựt',N'927345678')
@@ -1032,7 +1051,6 @@ INSERT INTO dbo.TheLoai VALUES  ( 'TL008',N'Tiểu thuyết' )
 INSERT INTO dbo.TheLoai VALUES  ( 'TL009',N'Tâm lý' )
 INSERT INTO dbo.TheLoai VALUES  ( 'TL010',N'Tôn giáo' )
 
-SELECT * FROM dbo.SACH
 INSERT INTO dbo.Sach  
 (
 	s.MaSach,
@@ -1143,119 +1161,6 @@ INSERT INTO Sach
 	s.MaNXB
 )
 VALUES  ( 'S010' ,N'Đọc vị bất kì ai' ,100,34000,'TL010','TG002','NXB010')
-INSERT INTO Sach 
-(
-	s.MaSach,
-	s.TenSach,
-	s.SoLuongTon,
-	s.GiaTien,
-	s.MaTL,
-	s.MaTG,
-	s.MaNXB
-)
-VALUES  ( 'S011' ,N'Cuộc đời của Pi' ,100,34000,'TL010','TG003','NXB009')
-INSERT INTO Sach 
-(
-	s.MaSach,
-	s.TenSach,
-	s.SoLuongTon,
-	s.GiaTien,
-	s.MaTL,
-	s.MaTG,
-	s.MaNXB
-)
-VALUES  ( 'S012' ,N'Những Người Đàn Ông Không Có Đàn Bà' ,100,90000,'TL002','TG004','NXB008')
-INSERT INTO Sach 
-(
-	s.MaSach,
-	s.TenSach,
-	s.SoLuongTon,
-	s.GiaTien,
-	s.MaTL,
-	s.MaTG,
-	s.MaNXB
-)
-VALUES  ( 'S013' ,N'Trà hoa nữ' ,200,67000,'TL001','TG005','NXB007')
-INSERT INTO Sach
-(
-	s.MaSach,
-	s.TenSach,
-	s.SoLuongTon,
-	s.GiaTien,
-	s.MaTL,
-	s.MaTG,
-	s.MaNXB
-)
-VALUES  ( 'S014' ,N'Đàn ông đến từ sao Hỏa – Đàn bà đến từ sao Kim' ,100,50000,'TL003','TG006','NXB006')
-INSERT INTO Sach 
-(
-	s.MaSach,
-	s.TenSach,
-	s.SoLuongTon,
-	s.GiaTien,
-	s.MaTL,
-	s.MaTG,
-	s.MaNXB
-)
-VALUES  ( 'S015' ,N'Thần chú mê đắm' ,300,95000,'TL004','TG007','NXB005')
-INSERT INTO Sach 
-(
-	s.MaSach,
-	s.TenSach,
-	s.SoLuongTon,
-	s.GiaTien,
-	s.MaTL,
-	s.MaTG,
-	s.MaNXB
-)
-VALUES  ( 'S016' ,N'Bạn Đắt Giá Bao Nhiêu?' ,150,66000,'TL005','TG009','NXB004')
-INSERT INTO Sach
-(
-	s.MaSach,
-	s.TenSach,
-	s.SoLuongTon,
-	s.GiaTien,
-	s.MaTL,
-	s.MaTG,
-	s.MaNXB
-)
-VALUES  ( 'S017' ,N'Đời ngắn đừng ngủ dài' ,200,36000,'TL006','TG008','NXB003')
-INSERT INTO Sach 
-(
-	s.MaSach,
-	s.TenSach,
-	s.SoLuongTon,
-	s.GiaTien,
-	s.MaTL,
-	s.MaTG,
-	s.MaNXB
-)
-VALUES  ( 'S018' ,N'Tuổi trẻ đáng giá bao nhiêu' ,150,94000,'TL007','TG003','NXB002')
-INSERT INTO Sach
-(
-	s.MaSach,
-	s.TenSach,
-	s.SoLuongTon,
-	s.GiaTien,
-	s.MaTL,
-	s.MaTG,
-	s.MaNXB
-)
-VALUES  ( 'S019' ,N'Khéo ăn nói sẽ có được thiên hạ' ,200,39000,'TL009','TG001','NXB001')
-INSERT INTO Sach 
-(
-	s.MaSach,
-	s.TenSach,
-	s.SoLuongTon,
-	s.GiaTien,
-	s.MaTL,
-	s.MaTG,
-	s.MaNXB
-)
-VALUES  ( 'S020' ,N'Cafe cùng Tony' ,400,64000,'TL008','TG002','NXB010')
-
-ALTER TABLE Sach
-ALTER COLUMN TenSach NVARCHAR(100)
 
 
 INSERT INTO dbo.ChiTietPhieuNhap VALUES  ( 'S001','PN010', 20, 60000)
@@ -1271,16 +1176,6 @@ INSERT INTO dbo.ChiTietPhieuNhap VALUES  ( 'S010','PN001', 20, 20000)
 
 
 
-INSERT INTO dbo.ChiTietHoaDon VALUES  ( 'S001', 'HD009',  1, 80000)
-INSERT INTO dbo.ChiTietHoaDon VALUES  ( 'S002', 'HD008',  1, 72000)
-INSERT INTO dbo.ChiTietHoaDon VALUES  ( 'S003', 'HD007',  1, 59000)
-INSERT INTO dbo.ChiTietHoaDon VALUES  ( 'S004', 'HD006',  1, 70000)
-INSERT INTO dbo.ChiTietHoaDon VALUES  ( 'S005', 'HD005',  1, 95000)
-INSERT INTO dbo.ChiTietHoaDon VALUES  ( 'S006', 'HD004',  1, 56000)
-INSERT INTO dbo.ChiTietHoaDon VALUES  ( 'S007', 'HD003',  1, 63000)
-INSERT INTO dbo.ChiTietHoaDon VALUES  ( 'S008', 'HD002',  1, 190000)
-INSERT INTO dbo.ChiTietHoaDon VALUES  ( 'S009', 'HD001',  1, 160000)
-INSERT INTO dbo.ChiTietHoaDon VALUES  ( 'S010', 'HD009',  1, 34000)
+GO
 
 
-ALTER TABLE dbo.HoaDon ADD TongTriGia MONEY
