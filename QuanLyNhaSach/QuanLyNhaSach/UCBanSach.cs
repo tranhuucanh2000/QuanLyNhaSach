@@ -270,7 +270,13 @@ namespace QuanLyNhaSach
         private void FHoaDonTT_ThanhToan(object sender, EventArgs e)
         {
             DuaThongDiep("Bạn đã thanh toán thành công!", 1);
-            dtgThanhToan.DataSource = null;
+            DataTable data = new DataTable();
+            //data.Columns.Add("Mã");
+            //data.Columns.Add("Tên Sách");
+            //data.Columns.Add("Số lượng");
+            //data.Columns.Add("Đơn Giá");
+            //data.Columns.Add("Tiền");
+            dtgThanhToan.DataSource = data;
             LamMoiTxb();
             LamMoiTongTien();
             lbHoTroSuaSach.Text = "";
@@ -280,17 +286,23 @@ namespace QuanLyNhaSach
 
         private void dtgThanhToan_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (dtgThanhToan.SelectedCells.Count > 0)
+            if (dtgThanhToan.Rows.Count > 1)
             {
-                DataGridViewRow row = dtgThanhToan.Rows[dtgThanhToan.CurrentCell.RowIndex];
-                txbID.Text = row.Cells[0].Value.ToString();
-                txbTenSach.Text = row.Cells[1].Value.ToString();
-                txbSoLuong.Text = row.Cells[2].Value.ToString();
-                txbSoLuong.Focus();
-                txbGiaTien.Text = row.Cells[3].Value.ToString();
-                lbHoTroSuaSach.Text = "";
-                btnThem.Visible = false;
-                btnSua.Visible = btnXoa.Visible = true;
+                if (dtgThanhToan.SelectedCells.Count > 0)
+                {
+                    DataGridViewRow row = dtgThanhToan.Rows[dtgThanhToan.CurrentCell.RowIndex];
+                    if (row != null)
+                    {
+                        txbID.Text = row.Cells[0].Value.ToString();
+                        txbTenSach.Text = row.Cells[1].Value.ToString();
+                        txbSoLuong.Text = row.Cells[2].Value.ToString();
+                        txbSoLuong.Focus();
+                        txbGiaTien.Text = row.Cells[3].Value.ToString();
+                        lbHoTroSuaSach.Text = "";
+                        btnThem.Visible = false;
+                        btnSua.Visible = btnXoa.Visible = true;
+                    }
+                }
             }
         }
 

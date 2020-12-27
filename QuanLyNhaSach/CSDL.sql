@@ -1001,6 +1001,7 @@ BEGIN
 	FROM dbo.ChiTietPhieuNhap ctpn, dbo.PhieuNhap pn, Sach s
 	WHERE pn.SoPN = @soPN AND ctpn.SoPN = pn.SoPN AND ctpn.MaSach = s.MaSach
 END
+GO
 
 --Thêm dữ liệu
 
@@ -1173,9 +1174,5 @@ INSERT INTO dbo.ChiTietPhieuNhap VALUES  ( 'S007','PN004', 20, 60000)
 INSERT INTO dbo.ChiTietPhieuNhap VALUES  ( 'S008','PN003', 20, 60000)
 INSERT INTO dbo.ChiTietPhieuNhap VALUES  ( 'S009','PN002', 20, 60000)
 INSERT INTO dbo.ChiTietPhieuNhap VALUES  ( 'S010','PN001', 20, 20000)
-
-
-
-GO
 
 
