@@ -131,13 +131,15 @@ namespace QuanLyNhaSach
             {
                 SachDAO.Instance.ThemSLChoSach(mapn, soluong, masach, giatien, manxb);
                 DuaThongDiep("Đã nhập thêm số lượng thành công cho sách đã chọn", 1);
+                cbSach.ResetText();
+                txbSoLuong.Text = "";
             }
             else
             {
                 DuaThongDiep("Bạn vui lòng nhập lại số lượng!", 2);
+                txbSoLuong.Focus();
+                txbSoLuong.SelectAll();
             }
-            cbSach.ResetText();
-            txbSoLuong.Text = "";
         }
 
         private void btnThemSach_Click(object sender, EventArgs e)
@@ -151,7 +153,7 @@ namespace QuanLyNhaSach
             if (soLuongSach > 0)
             {
                 sachCuoi = Sach.Rows[soLuongSach - 1];
-                maSachCuoi = sachCuoi["ID"].ToString();
+                maSachCuoi = sachCuoi["MaSach"].ToString();
                 soMSC = int.Parse(maSachCuoi.Substring(1).ToString());
             }
             else
@@ -206,22 +208,27 @@ namespace QuanLyNhaSach
                     {
                         SachDAO.Instance.ThemSach(mapn,masach,txbTen.Text, matl, matg, mannxb, soluong, giatien);
                         DuaThongDiep("Đã thêm sách thành công!", 1);
+                        cbNXB.ResetText();
+                        cbSach.ResetText();
+                        cbTheLoai.ResetText();
+                        cbTacGia.ResetText();
+                        txbTen.Text = txbGiaTien.Text = txbSoLuongS.Text = "";
                     }
                     else
                     {
                         DuaThongDiep("Bạn vui lòng nhập lại giá tiền!", 2);
+                        txbGiaTien.Focus();
+                        txbGiaTien.SelectAll();
                     }
                 }
                 else
                 {
                     DuaThongDiep("Bạn vui lòng nhập lại số lượng!", 2);
+                    txbSoLuongS.Focus();
+                    txbSoLuong.SelectAll();
                 }
             }
-            cbNXB.ResetText();
-            cbSach.ResetText();
-            cbTheLoai.ResetText();
-            cbTacGia.ResetText();
-            txbTen.Text = txbGiaTien.Text = txbSoLuongS.Text = "";
+            
         }
         List<string> dsMaSach = new List<string>();
         List<string> dsMaPN = new List<string>();

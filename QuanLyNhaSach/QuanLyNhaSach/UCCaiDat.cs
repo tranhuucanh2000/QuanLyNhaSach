@@ -60,9 +60,11 @@ namespace QuanLyNhaSach
 
         private void cbTaiKhoan_SelectedIndexChanged(object sender, EventArgs e)
         {
+            btnXoa.Visible = true;
             pnMK.Visible = false;
             txbTenDN.ReadOnly = true;
             txbTenHT.ReadOnly = true;
+            btnLuu.Visible = true;
             btnLuu.Text = "LƯU";
             TaiKhoan account = TaiKhoanDAO.Instance.LayTaiKhoanTuTenDN(cbTaiKhoan.SelectedItem.ToString());
             txbTenDN.Text = account.TenDN;
@@ -101,7 +103,7 @@ namespace QuanLyNhaSach
             }
             else
             {
-                if (txbMatKhau.Text == txbNhapLaiMKM.Text)
+                if (txbMa.Text != "" && txbMatKhau.Text != "" && txbNhapLaiMKM.Text != "" && txbTenHT.Text!="" && txbTenDN.Text!="")
                 {
                     int bansach = ckbBanSach.Checked == true ? 1 : 0;
                     int kesach = ckbKeSach.Checked == true ? 1 : 0;
@@ -110,15 +112,32 @@ namespace QuanLyNhaSach
                     int themdl = ckbThemDL.Checked == true ? 1 : 0;
                     int thongke = ckbThongKe.Checked == true ? 1 : 0;
                     string ma = txbMa.Text;
-                    TaiKhoanDAO.Instance.ThemTaiKhoan(txbTenDN.Text, txbMatKhau.Text, txbTenHT.Text, nhapsach, thongke, kesach, themdl, bansach, tttaikhoan, ma);
-                    DuaThongDiep("Đã thêm tài khoản thành công!", 1);
-                    cbTaiKhoan.Items.Clear();
-                    LayDuLieuTaiKhoan();
-                    txbMatKhau.Text = txbNhapLaiMKM.Text = txbTenDN.Text = txbTenHT.Text = txbMa.Text = "";
+                    bool trungtendn=false;
+                    foreach(string tam in cbTaiKhoan.Items)
+                    {
+                        if (txbTenDN.Text == tam) trungtendn = true;
+                    }
+                    if (trungtendn == true)
+                    {
+                        DuaThongDiep("Trùng tên đăng nhập!",2);
+                        txbTenDN.Focus();
+                        txbTenDN.SelectAll();
+                    }
+                    else if (txbMatKhau.Text != txbNhapLaiMKM.Text) DuaThongDiep("Bạn vui lòng nhập đúng xác nhận mật khẩu!", 2);
+                    else
+                    {
+                        TaiKhoanDAO.Instance.ThemTaiKhoan(txbTenDN.Text, txbMatKhau.Text, txbTenHT.Text, nhapsach, thongke, kesach, themdl, bansach, tttaikhoan, ma);
+                        DuaThongDiep("Đã thêm tài khoản thành công!", 1);
+                        pnMK.Visible = false;
+                        btnLuu.Visible = false;
+                        cbTaiKhoan.Items.Clear();
+                        LayDuLieuTaiKhoan();
+                        txbMatKhau.Text = txbNhapLaiMKM.Text = txbTenDN.Text = txbTenHT.Text = txbMa.Text = "";
+                    }                     
                 }
                 else
                 {
-                    DuaThongDiep("Vui lòng nhập mật khẩu và xác nhận mật khẩu giống nhau!", 2);
+                    DuaThongDiep("Bạn vui lòng nhập đủ thông tin!", 2);
                 }
 
             }    
@@ -135,10 +154,14 @@ namespace QuanLyNhaSach
         private void btnThemTaiKhoan_Click(object sender, EventArgs e)
         {
             btnLuu.Text = "Thêm Tài Khoản";
+            cbTaiKhoan.Text = "";
             txbTenDN.ReadOnly = false;
             txbTenHT.ReadOnly = false;
+            btnXoa.Visible = false;
             pnMK.Visible = true;
+            btnLuu.Visible = true;
             TrangThaiNhap();
+
         }
 
         private void FInfomation_CapNhatTaiKhoanEvent(object sender, TaiKhoanSuKien e)
@@ -147,15 +170,22 @@ namespace QuanLyNhaSach
         }
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Bạn có thực sự muốn xóa tài khoản này!", "CẢNH BÁO", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-            if(result == DialogResult.Yes)
+            if (cbTaiKhoan.Text != "")
             {
-                DataProvider.Instance.ExecuteQuery("USP_XoaTaiKhoan @tenDN", new object[] { cbTaiKhoan.SelectedItem.ToString() });
-                DuaThongDiep("Bạn đã xóa thành công tài khoản", 1);
-                cbTaiKhoan.Items.Clear();
-                LayDuLieuTaiKhoan();
-                TrangThaiNhap();
-                cbTaiKhoan.Focus();
+                DialogResult result = MessageBox.Show("Bạn có thực sự muốn xóa tài khoản này!", "CẢNH BÁO", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (result == DialogResult.Yes)
+                {
+                    DataProvider.Instance.ExecuteQuery("USP_XoaTaiKhoan @tenDN", new object[] { cbTaiKhoan.SelectedItem.ToString() });
+                    DuaThongDiep("Bạn đã xóa thành công tài khoản", 1);
+                    cbTaiKhoan.Items.Clear();
+                    cbTaiKhoan.Text = "";
+                    LayDuLieuTaiKhoan();
+                    TrangThaiNhap();
+                    cbTaiKhoan.Focus();
+                    pnMK.Visible = false;
+                    btnLuu.Visible = false;
+                    btnXoa.Visible = false;
+                }
             }
         }
 

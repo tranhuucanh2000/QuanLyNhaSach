@@ -167,11 +167,15 @@ namespace QuanLyNhaSach
                 else
                 {
                     DuaThongDiep("Bạn vui lòng nhập lại giá tiền!", 2);
+                    txbGiaTien.Focus();
+                    txbGiaTien.SelectAll();
                 }
             }
             else
             {
                 DuaThongDiep("Bạn vui lòng nhập lại số lượng!", 2);
+                txbSo.Focus();
+                txbSo.SelectAll();
             }
            
         }
@@ -258,7 +262,19 @@ namespace QuanLyNhaSach
 
         private void ptbTimKiem_Click(object sender, EventArgs e)
         {
-            dtgSach.DataSource = SachDAO.Instance.TimKiemSach(txbTimKiem.Text);
+            if(cbThuocTinh.SelectedItem.ToString()=="Tên Sách")
+            {
+                dtgSach.DataSource = SachDAO.Instance.TimKiemSach_QuaTen(txbTimKiem.Text);
+            }
+            else if(cbThuocTinh.SelectedItem.ToString()=="Tác Giả")
+            {
+                dtgSach.DataSource = SachDAO.Instance.TimKiemSach_QuaTacGia(txbTimKiem.Text);
+            }
+            else
+            {
+                dtgSach.DataSource = SachDAO.Instance.TimKiemSach_QuaTheLoai(txbTimKiem.Text);
+            }
+            DuaThongDiep("Tìm kiếm thành công!", 1);
             dtgSach.Columns[0].HeaderText = "Mã";
             dtgSach.Columns[1].HeaderText = "Tên Sách";
             dtgSach.Columns[2].HeaderText = "Tác Giả";

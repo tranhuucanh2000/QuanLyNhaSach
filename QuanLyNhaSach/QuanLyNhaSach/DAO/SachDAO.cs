@@ -49,9 +49,21 @@ namespace QuanLyNhaSach.DAO
             DataTable data = DataProvider.Instance.ExecuteQuery("EXEC USP_TimSach_TacGia @tacGia", new object[] { tacGia });
             return data;
         }
-        public DataTable TimKiemSach(string tenSach)
+        public DataTable TimKiemSach_QuaTen(string tenSach)
         {
             DataTable data = DataProvider.Instance.ExecuteQuery("EXEC USP_TimKiemSach_TenSach @tenSach", new object[] { tenSach });
+            return data;
+        }
+
+        public DataTable TimKiemSach_QuaTacGia(string tacGia)
+        {
+            DataTable data = DataProvider.Instance.ExecuteQuery("EXEC USP_TimKiemSach_TacGia @tacGia", new object[] { tacGia });
+            return data;
+        }
+
+        public DataTable TimKiemSach_QuaTheLoai(string theLoai)
+        {
+            DataTable data = DataProvider.Instance.ExecuteQuery("EXEC USP_TimKiemSach_TheLoai @theLoai", new object[] { theLoai });
             return data;
         }
         public DataTable TimSachQuaTenVaTacGia(string ten, string tacGia)

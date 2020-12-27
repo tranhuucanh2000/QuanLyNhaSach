@@ -142,6 +142,7 @@ namespace QuanLyNhaSach
             this.pnMK.Name = "pnMK";
             this.pnMK.Size = new System.Drawing.Size(676, 237);
             this.pnMK.TabIndex = 44;
+            this.pnMK.Visible = false;
             // 
             // panel5
             // 
@@ -399,6 +400,7 @@ namespace QuanLyNhaSach
             this.btnLuu.TabIndex = 6;
             this.btnLuu.Text = "LƯU";
             this.btnLuu.UseVisualStyleBackColor = false;
+            this.btnLuu.Visible = false;
             this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // btnThemTaiKhoan
@@ -440,6 +442,7 @@ namespace QuanLyNhaSach
             this.btnXoa.TabIndex = 1;
             this.btnXoa.Text = "Xóa Tài Khoản";
             this.btnXoa.UseVisualStyleBackColor = false;
+            this.btnXoa.Visible = false;
             this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // lbHoTro

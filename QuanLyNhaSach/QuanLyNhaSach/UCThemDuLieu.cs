@@ -214,35 +214,39 @@ namespace QuanLyNhaSach
 
         private void btnThem_Click_1(object sender, EventArgs e)
         {
-            string ten = txbTen.Text;
-            string diachi = txbDC.Text;
             string sdt = txbSo.Text;
             if (cbThuocTinh.SelectedItem.ToString() == "Tác Giả")
             {
                 int sodt;
-                if (int.TryParse(txbSo.Text, out sodt)||txbSo.Text=="")
+                if ((int.TryParse(txbSo.Text, out sodt)||txbSo.Text=="")&&txbTen.Text!="")
                 {
-                    TacGiaDAO.Instance.ThemTacGia(ten, sdt);
+                    TacGiaDAO.Instance.ThemTacGia(txbTen.Text, txbSo.Text);
                     DuaThongDiep("Đã thêm tác giả thành công!", 1);
                     LamMoiDSMaTacGia();
                     LamMoiTxb();
                 }
                 else
                 {
-                    DuaThongDiep("Bạn vui lòng nhập lại số điện thoại!", 2);
+                    if(txbTen.Text == "")
+                    {
+                        DuaThongDiep("Bạn vui lòng nhập vào tên!", 2);
+                        txbTen.Focus();
+                    }
+                    else
+                    {
+                        DuaThongDiep("Bạn vui lòng nhập lại số điện thoại!", 2);
+                        txbSo.Focus();
+                        txbSo.SelectAll();
+                    }
                 }
             }
             else if (cbThuocTinh.SelectedItem.ToString() == "Thể Loại")
             {
-                if (ten == "")
+                if (txbTen.Text == "")
                 {
                     DuaThongDiep("Vui lòng nhập đủ dữ liệu", 2);
+                    txbTen.Focus();
                 }
-                //else if (SachDAO.Instance.XacNhanTenTL(txbTen.Text) == true)
-                //{
-                //    DuaThongDiep("Đã có thể loại này trong danh sách ", 2);
-                //    LamMoiTxb();
-                //}
                 else if (TheLoaiDAO.Instance.XacNhanTenTL(txbTen.Text) == true)
                 {
                     DuaThongDiep("Đã có thể loại này trong danh sách ", 2);
@@ -250,75 +254,32 @@ namespace QuanLyNhaSach
                 }
                 else
                 {
-                    SachDAO.Instance.ThemTheLoai(ten);
+                    SachDAO.Instance.ThemTheLoai(txbTen.Text);
                     DuaThongDiep("Đã thêm thể loại thành công!", 1);
                     LamMoiDSMaTheLoai();
                     LamMoiTxb();
                 }
-                    //if (cbThuocTinh.SelectedItem.ToString() == "Tác Giả")
-                    //{
-                    //    NhaXuatBanDAO.Instance.ThemNhaXuatBan(ten, diachi, sdt);
-                    //    DuaThongDiep("Đã thêm nhà xuất bản thành công!", 1);
-                    //    LamMoiDSMaNXB();
-                    //    LamMoiTxb();
-                    //    int sodt;
-                    //    if (int.TryParse(txbSo.Text, out sodt))
-                    //    {
-                    //        SachDAO.Instance.ThemTacGia(ten, sdt);
-                    //        DuaThongDiep("Đã thêm tác giả thành công!", 1);
-                    //        LamMoiDSMaTacGia();
-                    //        LamMoiTxb();
-                    //    }
-                    //    else
-                    //    {
-                    //        DuaThongDiep("Bạn vui lòng nhập lại số điện thoại!", 2);
-                    //    }
-                    //}
-                    //else if (cbThuocTinh.SelectedItem.ToString() == "Thể Loại")
-                    //{
-                    //    if (SachDAO.Instance.XacNhanTenTL(txbTen.Text) == true)
-                    //    {
-                    //        DuaThongDiep("Đã có thể loại này trong danh sách ", 2);
-                    //        LamMoiTxb();
-                    //    }
-                    //    else
-                    //    {
-                    //        SachDAO.Instance.ThemTheLoai(ten);
-                    //        DuaThongDiep("Đã thêm thể loại thành công!", 1);
-                    //        LamMoiDSMaTheLoai();
-                    //        LamMoiTxb();
-                    //    }
-                    //}
-                    //else
-                    //{
-                    //    int sodt;
-                    //    if (int.TryParse(txbSo.Text, out sodt))
-                    //    {
-                    //        SachDAO.Instance.ThemNhaXuatBan(ten, diachi, sdt);
-
-                    //        DuaThongDiep("Đã thêm nhà xuất bản thành công!", 1);
-                    //        LamMoiDSMaNXB();
-                    //        LamMoiTxb();
-                    //    }
-                    //    else
-                    //    {
-                    //        DuaThongDiep("Bạn vui lòng nhập lại số điện thoại!", 2);
-                    //    }
-                    //}
             }
             else
             {
                 int sodt;
-                if(int.TryParse(sdt, out sodt)&&diachi!=""&&ten!="")
+                if((int.TryParse(sdt, out sodt)&&txbDC.Text!="")&&txbTen.Text!="")
                 {
-                    NhaXuatBanDAO.Instance.ThemNhaXuatBan(ten, diachi, sdt);
+                    NhaXuatBanDAO.Instance.ThemNhaXuatBan(txbTen.Text, txbDC.Text, sdt);
                     DuaThongDiep("Đã thêm nhà xuất bản thành công!",1);
                 }
                 else
                 {
-                    if (!int.TryParse(sdt, out sodt)) DuaThongDiep("Bạn vui lòng nhập số điện thoại hợp lệ!", 2);
-                    else if (diachi == "") DuaThongDiep("Bạn vui lòng nhập địa chỉ nhà xuất bản!", 2);
-                    else if (ten == "") DuaThongDiep("Bạn vui lòng nhập tên nhà xuất bản!",2);
+                    if (txbTen.Text == "" || txbSo.Text == "" || txbDC.Text == "")
+                    {
+                        DuaThongDiep("Bạn vui lòng nhập đủ thông tin!", 2);
+                    }
+                    else if(!int.TryParse(sdt, out sodt))
+                    {
+                        DuaThongDiep("Bạn vui lòng nhập số điện thoại hợp lệ!", 2);
+                        txbSo.Focus();
+                        txbSo.SelectAll();
+                    }
                 }
             }
         }
@@ -388,7 +349,7 @@ namespace QuanLyNhaSach
             if (cbThuocTinh1.SelectedItem.ToString() == "Tác Giả")
             {
                 int sodt;
-                if (int.TryParse(txbSo1.Text, out sodt))
+                if ((int.TryParse(txbSo1.Text, out sodt)||txbSo1.Text=="")&&txbTen1.Text!="")
                 {
                     DataTable TacGia = SachDAO.Instance.LayDSTacGia();
                     int vitri = dtgSach.CurrentRow.Index;
@@ -403,7 +364,13 @@ namespace QuanLyNhaSach
                 }
                 else
                 {
-                    DuaThongDiep("Bạn vui lòng nhập lại số điện thoại!", 2);
+                    if (txbTen1.Text == "") DuaThongDiep("Bạn vui lòng nhập tên tác giả!",2);
+                    else
+                    {
+                        DuaThongDiep("Bạn vui lòng nhập lại số điện thoại!", 2);
+                        txbSo1.Focus();
+                        txbSo1.SelectAll();
+                    }              
                 }
             }
             else if (cbThuocTinh1.SelectedItem.ToString() == "Thể Loại")
@@ -412,18 +379,34 @@ namespace QuanLyNhaSach
                 int vitri = dtgSach.CurrentRow.Index;
                 DataGridViewRow row = dtgSach.Rows[vitri];
                 string matheloai = row.Cells[0].Value.ToString();
-                //SachDAO.Instance.SuaTheLoai(txbTen1.Text, matheloai);
-                TheLoaiDAO.Instance.SuaTheLoai(txbTen1.Text, matheloai);
-                DuaThongDiep("Đã sửa thể loại thành công!", 1);
-                TrangThaiChonSach();
-                dtgSach.DataSource = SachDAO.Instance.LayDSTheLoai();
-                LamMoiTxb1();
-                btnSua.Visible = false;
+                if(TheLoaiDAO.Instance.XacNhanTenTL(txbTen1.Text) == false &&txbTen1.Text!="")
+                {
+                    TheLoaiDAO.Instance.SuaTheLoai(txbTen1.Text, matheloai);
+                    DuaThongDiep("Đã sửa thể loại thành công!", 1);
+                    TrangThaiChonSach();
+                    dtgSach.DataSource = SachDAO.Instance.LayDSTheLoai();
+                    LamMoiTxb1();
+                    btnSua.Visible = false;
+                }
+                else
+                {
+                    if(txbTen1.Text == "")
+                    {
+                        DuaThongDiep("Bạn vui lòng nhập vào tên thể loại!", 2);
+                        txbTen1.Focus();
+                    }
+                    else
+                    {
+                        DuaThongDiep("Thể loại này đã có!",2);
+                        txbTen1.Focus();
+                        txbTen1.SelectAll();
+                    }    
+                }
             }
             else
             {
                 int sodt;
-                if (int.TryParse(txbSo1.Text, out sodt))
+                if ((int.TryParse(txbSo1.Text, out sodt) && txbDC1.Text != "") && txbTen1.Text != "")
                 {
                     DataTable TheLoai = SachDAO.Instance.LayDSNXB();
                     int vitri = dtgSach.CurrentRow.Index;
@@ -438,8 +421,35 @@ namespace QuanLyNhaSach
                 }
                 else
                 {
-                    DuaThongDiep("Bạn vui lòng nhập lại số điện thoại!", 2);
+                    if (txbTen1.Text == "" || txbSo1.Text == "" || txbDC1.Text == "")
+                    {
+                        DuaThongDiep("Bạn vui lòng nhập đủ thông tin!", 2);
+                    }
+                    else if (!int.TryParse(txbSo1.Text, out sodt))
+                    {
+                        DuaThongDiep("Bạn vui lòng nhập số điện thoại hợp lệ!", 2);
+                        txbSo.Focus();
+                        txbSo.SelectAll();
+                    }
                 }
+                //int sodt;
+                //if (int.TryParse(txbSo1.Text, out sodt))
+                //{
+                //    DataTable TheLoai = SachDAO.Instance.LayDSNXB();
+                //    int vitri = dtgSach.CurrentRow.Index;
+                //    DataGridViewRow row = dtgSach.Rows[vitri];
+                //    string manxb = row.Cells[0].Value.ToString();
+                //    NhaXuatBanDAO.Instance.SuaNhaXuatBan(txbTen1.Text, txbSo1.Text, txbDC1.Text, manxb);
+                //    DuaThongDiep("Đã sửa nhà xuất bản thành công!", 1);
+                //    TrangThaiChonSach();
+                //    dtgSach.DataSource = SachDAO.Instance.LayDSNXB();
+                //    LamMoiTxb1();
+                //    btnSua.Visible = false;
+                //}
+                //else
+                //{
+                //    DuaThongDiep("Bạn vui lòng nhập lại số điện thoại!", 2);
+                //}
             }
         }
 
@@ -448,6 +458,7 @@ namespace QuanLyNhaSach
             TrangThaiChonSach();
             int vitri = dtgSach.CurrentRow.Index;
             DataGridViewRow row = dtgSach.Rows[vitri];
+            btnSua.Visible = true;
             if (cbThuocTinh1.SelectedItem.ToString() == "Tác Giả")
             {
                 txbTen1.Text = row.Cells[1].Value.ToString();

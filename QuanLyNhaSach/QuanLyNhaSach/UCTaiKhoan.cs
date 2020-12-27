@@ -92,6 +92,7 @@ namespace QuanLyNhaSach
                 if (TaiKhoanDAO.Instance.CapNhatTaiKhoan(tenDN, tenHT, matKhau, matKhauMoi))
                 {
                     DuaThongDiep("Cập nhật thành công!", 2);
+                    MessageBox.Show("Cập nhật thành công");
                     if (capNhatTaiKhoanEvent != null)
                     {
                         capNhatTaiKhoanEvent(this, new TaiKhoanSuKien(TaiKhoanDAO.Instance.LayTaiKhoanTuTenDN(tenDN)));
@@ -119,6 +120,7 @@ namespace QuanLyNhaSach
                 if (TaiKhoanDAO.Instance.CapNhatMaTaiKhoan(tenDN, ma, maMoi))
                 {
                     DuaThongDiep("Cập nhật thành công!", 2);
+                    MessageBox.Show("Cập nhật thành công");
                     if (capNhatTaiKhoanEvent != null)
                     {
                         capNhatTaiKhoanEvent(this, new TaiKhoanSuKien(TaiKhoanDAO.Instance.LayTaiKhoanTuTenDN(tenDN)));

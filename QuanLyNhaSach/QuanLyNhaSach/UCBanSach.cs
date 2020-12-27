@@ -184,7 +184,7 @@ namespace QuanLyNhaSach
             {
                 DataTable sach = SachDAO.Instance.TimSachQuaTen(txbTenSach.Text);
                 DataRow row= sach.Rows[0];
-                int slSach = int.Parse(row["Số Lượng Tồn"].ToString());
+                int slSach = int.Parse(row["SoLuongTon"].ToString());
                 if (soLuong > 0 && soLuong <= slSach) 
                 {
                     int tien = soLuong * giaTien;
