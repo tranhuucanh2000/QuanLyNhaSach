@@ -32,13 +32,13 @@
             this.pnMa = new System.Windows.Forms.Panel();
             this.btnThoat = new System.Windows.Forms.Button();
             this.btnLuu = new System.Windows.Forms.Button();
-            this.lbHoTro = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.txbTenDN = new System.Windows.Forms.TextBox();
             this.panel8 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.txbMa = new System.Windows.Forms.TextBox();
             this.lbMa = new System.Windows.Forms.Label();
+            this.lbHoTro = new System.Windows.Forms.Label();
             this.pnMatKhauMoi = new System.Windows.Forms.Panel();
             this.btnThoat2 = new System.Windows.Forms.Button();
             this.btnXNMK = new System.Windows.Forms.Button();
@@ -99,17 +99,6 @@
             this.btnLuu.Text = "Xác Nhận";
             this.btnLuu.UseVisualStyleBackColor = false;
             this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
-            // 
-            // lbHoTro
-            // 
-            this.lbHoTro.Font = new System.Drawing.Font("Segoe UI Black", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbHoTro.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
-            this.lbHoTro.Location = new System.Drawing.Point(0, 206);
-            this.lbHoTro.Name = "lbHoTro";
-            this.lbHoTro.Size = new System.Drawing.Size(715, 53);
-            this.lbHoTro.TabIndex = 46;
-            this.lbHoTro.Text = "Đừng lo lắng nếu bạn có mã!";
-            this.lbHoTro.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel1
             // 
@@ -176,6 +165,17 @@
             this.lbMa.TabIndex = 44;
             this.lbMa.Text = "Mã:";
             this.lbMa.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lbHoTro
+            // 
+            this.lbHoTro.Font = new System.Drawing.Font("Segoe UI Black", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbHoTro.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            this.lbHoTro.Location = new System.Drawing.Point(0, 206);
+            this.lbHoTro.Name = "lbHoTro";
+            this.lbHoTro.Size = new System.Drawing.Size(715, 53);
+            this.lbHoTro.TabIndex = 46;
+            this.lbHoTro.Text = "Đừng lo lắng nếu bạn có mã!";
+            this.lbHoTro.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pnMatKhauMoi
             // 
@@ -313,6 +313,7 @@
             this.Controls.Add(this.lbHoTro);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FQuenMatKhau";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

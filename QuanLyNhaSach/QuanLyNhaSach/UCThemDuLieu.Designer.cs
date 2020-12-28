@@ -29,12 +29,13 @@ namespace QuanLyNhaSach
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCThemDuLieu));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.ptbHoTro = new System.Windows.Forms.PictureBox();
             this.ptbDangXuat = new System.Windows.Forms.PictureBox();
             this.pbDangXuat = new System.Windows.Forms.PictureBox();
             this.lbHoTro = new System.Windows.Forms.Label();
@@ -74,8 +75,8 @@ namespace QuanLyNhaSach
             this.txbTen = new System.Windows.Forms.TextBox();
             this.lbTen = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.ptbHoTro = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbHoTro)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbDangXuat)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbDangXuat)).BeginInit();
             this.pnTrang.SuspendLayout();
@@ -86,7 +87,6 @@ namespace QuanLyNhaSach
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgSach)).BeginInit();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbHoTro)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -103,6 +103,17 @@ namespace QuanLyNhaSach
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1000, 50);
             this.panel1.TabIndex = 4;
+            // 
+            // ptbHoTro
+            // 
+            this.ptbHoTro.Image = ((System.Drawing.Image)(resources.GetObject("ptbHoTro.Image")));
+            this.ptbHoTro.Location = new System.Drawing.Point(900, 0);
+            this.ptbHoTro.Name = "ptbHoTro";
+            this.ptbHoTro.Size = new System.Drawing.Size(50, 50);
+            this.ptbHoTro.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.ptbHoTro.TabIndex = 4;
+            this.ptbHoTro.TabStop = false;
+            this.ptbHoTro.Click += new System.EventHandler(this.ptbHoTro_Click);
             // 
             // ptbDangXuat
             // 
@@ -274,7 +285,7 @@ namespace QuanLyNhaSach
             // 
             this.panel8.BackColor = System.Drawing.Color.Black;
             this.panel8.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel8.Location = new System.Drawing.Point(153, 77);
+            this.panel8.Location = new System.Drawing.Point(159, 79);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(282, 1);
             this.panel8.TabIndex = 67;
@@ -283,7 +294,7 @@ namespace QuanLyNhaSach
             // 
             this.panel6.BackColor = System.Drawing.Color.Black;
             this.panel6.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel6.Location = new System.Drawing.Point(129, 211);
+            this.panel6.Location = new System.Drawing.Point(127, 210);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(311, 1);
             this.panel6.TabIndex = 68;
@@ -294,10 +305,10 @@ namespace QuanLyNhaSach
             this.txbDC1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txbDC1.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbDC1.ForeColor = System.Drawing.Color.Black;
-            this.txbDC1.Location = new System.Drawing.Point(129, 185);
+            this.txbDC1.Location = new System.Drawing.Point(127, 184);
             this.txbDC1.Name = "txbDC1";
             this.txbDC1.Size = new System.Drawing.Size(311, 28);
-            this.txbDC1.TabIndex = 61;
+            this.txbDC1.TabIndex = 7;
             // 
             // lbTen1
             // 
@@ -327,16 +338,16 @@ namespace QuanLyNhaSach
             this.txbTen1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txbTen1.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbTen1.ForeColor = System.Drawing.Color.Black;
-            this.txbTen1.Location = new System.Drawing.Point(153, 51);
+            this.txbTen1.Location = new System.Drawing.Point(156, 51);
             this.txbTen1.Name = "txbTen1";
             this.txbTen1.Size = new System.Drawing.Size(282, 28);
-            this.txbTen1.TabIndex = 62;
+            this.txbTen1.TabIndex = 5;
             // 
             // panel7
             // 
             this.panel7.BackColor = System.Drawing.Color.Black;
             this.panel7.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel7.Location = new System.Drawing.Point(187, 146);
+            this.panel7.Location = new System.Drawing.Point(187, 145);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(248, 1);
             this.panel7.TabIndex = 69;
@@ -358,10 +369,10 @@ namespace QuanLyNhaSach
             this.txbSo1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txbSo1.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbSo1.ForeColor = System.Drawing.Color.Black;
-            this.txbSo1.Location = new System.Drawing.Point(187, 120);
+            this.txbSo1.Location = new System.Drawing.Point(187, 118);
             this.txbSo1.Name = "txbSo1";
             this.txbSo1.Size = new System.Drawing.Size(245, 28);
-            this.txbSo1.TabIndex = 63;
+            this.txbSo1.TabIndex = 6;
             // 
             // panel5
             // 
@@ -377,23 +388,23 @@ namespace QuanLyNhaSach
             this.dtgSach.BackgroundColor = System.Drawing.Color.White;
             this.dtgSach.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dtgSach.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtgSach.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle13.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgSach.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
             this.dtgSach.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.PowderBlue;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dtgSach.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle14.BackColor = System.Drawing.Color.PowderBlue;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtgSach.DefaultCellStyle = dataGridViewCellStyle14;
             this.dtgSach.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtgSach.GridColor = System.Drawing.Color.White;
             this.dtgSach.Location = new System.Drawing.Point(0, 0);
@@ -401,23 +412,23 @@ namespace QuanLyNhaSach
             this.dtgSach.Name = "dtgSach";
             this.dtgSach.ReadOnly = true;
             this.dtgSach.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtgSach.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle15.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgSach.RowHeadersDefaultCellStyle = dataGridViewCellStyle15;
             this.dtgSach.RowHeadersVisible = false;
             this.dtgSach.RowHeadersWidth = 51;
             this.dtgSach.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.DeepSkyBlue;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
-            this.dtgSach.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle16.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle16.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle16.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.DeepSkyBlue;
+            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.Color.Black;
+            this.dtgSach.RowsDefaultCellStyle = dataGridViewCellStyle16;
             this.dtgSach.RowTemplate.Height = 24;
             this.dtgSach.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgSach.Size = new System.Drawing.Size(533, 325);
@@ -536,7 +547,7 @@ namespace QuanLyNhaSach
             this.txbSo.Location = new System.Drawing.Point(671, 58);
             this.txbSo.Name = "txbSo";
             this.txbSo.Size = new System.Drawing.Size(310, 28);
-            this.txbSo.TabIndex = 54;
+            this.txbSo.TabIndex = 2;
             // 
             // pnTam
             // 
@@ -556,7 +567,7 @@ namespace QuanLyNhaSach
             this.txbDC.Location = new System.Drawing.Point(671, 115);
             this.txbDC.Name = "txbDC";
             this.txbDC.Size = new System.Drawing.Size(310, 28);
-            this.txbDC.TabIndex = 54;
+            this.txbDC.TabIndex = 3;
             // 
             // lbSo
             // 
@@ -598,7 +609,7 @@ namespace QuanLyNhaSach
             this.txbTen.Location = new System.Drawing.Point(162, 115);
             this.txbTen.Name = "txbTen";
             this.txbTen.Size = new System.Drawing.Size(292, 28);
-            this.txbTen.TabIndex = 54;
+            this.txbTen.TabIndex = 1;
             // 
             // lbTen
             // 
@@ -622,17 +633,6 @@ namespace QuanLyNhaSach
             this.label1.TabIndex = 1;
             this.label1.Text = "THÊM DỮ LIỆU";
             // 
-            // ptbHoTro
-            // 
-            this.ptbHoTro.Image = ((System.Drawing.Image)(resources.GetObject("ptbHoTro.Image")));
-            this.ptbHoTro.Location = new System.Drawing.Point(900, 0);
-            this.ptbHoTro.Name = "ptbHoTro";
-            this.ptbHoTro.Size = new System.Drawing.Size(50, 50);
-            this.ptbHoTro.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.ptbHoTro.TabIndex = 4;
-            this.ptbHoTro.TabStop = false;
-            this.ptbHoTro.Click += new System.EventHandler(this.ptbHoTro_Click);
-            // 
             // UCThemDuLieu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -644,6 +644,7 @@ namespace QuanLyNhaSach
             this.Size = new System.Drawing.Size(1000, 720);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbHoTro)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbDangXuat)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbDangXuat)).EndInit();
             this.pnTrang.ResumeLayout(false);
@@ -657,7 +658,6 @@ namespace QuanLyNhaSach
             ((System.ComponentModel.ISupportInitialize)(this.dtgSach)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbHoTro)).EndInit();
             this.ResumeLayout(false);
 
         }

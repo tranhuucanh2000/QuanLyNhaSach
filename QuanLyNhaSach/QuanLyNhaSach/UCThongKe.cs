@@ -40,6 +40,9 @@ namespace QuanLyNhaSach
         {
             InitializeComponent();
             loginAccount = acc;
+            dtpNgayDau.MaxDate = DateTime.Now;
+            dtpNgayCuoi.MaxDate = DateTime.Now;
+            dtpNgayCuoi.MinDate = dtpNgayDau.Value;
         }
 
         private void btnTimKiem_Click(object sender, EventArgs e)
@@ -159,5 +162,9 @@ namespace QuanLyNhaSach
             fThongTinPhanMem.ShowDialog();
         }
 
+        private void dtpNgayDau_ValueChanged(object sender, EventArgs e)
+        {
+            dtpNgayCuoi.MinDate = dtpNgayDau.Value;
+        }
     }
 }

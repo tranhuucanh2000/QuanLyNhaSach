@@ -30,10 +30,10 @@ namespace QuanLyNhaSach
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FHoaDonTT));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label8 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
@@ -72,7 +72,7 @@ namespace QuanLyNhaSach
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI Black", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
-            this.label8.Location = new System.Drawing.Point(218, 17);
+            this.label8.Location = new System.Drawing.Point(223, 22);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(230, 32);
             this.label8.TabIndex = 35;
@@ -86,9 +86,9 @@ namespace QuanLyNhaSach
             this.panel1.Controls.Add(this.panel18);
             this.panel1.Controls.Add(this.btnIN);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 665);
+            this.panel1.Location = new System.Drawing.Point(5, 660);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(650, 55);
+            this.panel1.Size = new System.Drawing.Size(640, 55);
             this.panel1.TabIndex = 36;
             // 
             // label6
@@ -114,7 +114,7 @@ namespace QuanLyNhaSach
             // 
             // txbThanhTien
             // 
-            this.txbThanhTien.BackColor = System.Drawing.SystemColors.Info;
+            this.txbThanhTien.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(179)))), ((int)(((byte)(191)))));
             this.txbThanhTien.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txbThanhTien.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbThanhTien.Location = new System.Drawing.Point(156, 13);
@@ -135,10 +135,11 @@ namespace QuanLyNhaSach
             // btnIN
             // 
             this.btnIN.BackColor = System.Drawing.Color.LimeGreen;
+            this.btnIN.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnIN.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnIN.Image = ((System.Drawing.Image)(resources.GetObject("btnIN.Image")));
             this.btnIN.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnIN.Location = new System.Drawing.Point(524, 0);
+            this.btnIN.Location = new System.Drawing.Point(511, 0);
             this.btnIN.Name = "btnIN";
             this.btnIN.Size = new System.Drawing.Size(126, 55);
             this.btnIN.TabIndex = 1;
@@ -154,11 +155,11 @@ namespace QuanLyNhaSach
             this.dtpNgay.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpNgay.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpNgay.Location = new System.Drawing.Point(215, 138);
-            this.dtpNgay.MaxDate = new System.DateTime(2020, 12, 27, 0, 0, 0, 0);
+            this.dtpNgay.MaxDate = new System.DateTime(2020, 12, 28, 8, 30, 1, 0);
             this.dtpNgay.Name = "dtpNgay";
             this.dtpNgay.Size = new System.Drawing.Size(139, 33);
-            this.dtpNgay.TabIndex = 26;
-            this.dtpNgay.Value = new System.DateTime(2020, 12, 27, 0, 0, 0, 0);
+            this.dtpNgay.TabIndex = 2;
+            this.dtpNgay.Value = new System.DateTime(2020, 12, 28, 0, 0, 0, 0);
             // 
             // panel11
             // 
@@ -171,21 +172,22 @@ namespace QuanLyNhaSach
             // 
             // txbTenNV
             // 
-            this.txbTenNV.BackColor = System.Drawing.SystemColors.Info;
+            this.txbTenNV.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(179)))), ((int)(((byte)(191)))));
             this.txbTenNV.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txbTenNV.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbTenNV.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.txbTenNV.Location = new System.Drawing.Point(215, 63);
             this.txbTenNV.Name = "txbTenNV";
+            this.txbTenNV.ReadOnly = true;
             this.txbTenNV.Size = new System.Drawing.Size(207, 26);
-            this.txbTenNV.TabIndex = 1;
+            this.txbTenNV.TabIndex = 8;
             this.txbTenNV.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txbTen_KeyDown);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(112, 138);
+            this.label2.Location = new System.Drawing.Point(117, 143);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(96, 25);
             this.label2.TabIndex = 0;
@@ -195,7 +197,7 @@ namespace QuanLyNhaSach
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(101, 63);
+            this.label1.Location = new System.Drawing.Point(106, 68);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(107, 25);
             this.label1.TabIndex = 0;
@@ -205,9 +207,9 @@ namespace QuanLyNhaSach
             // 
             this.panel2.Controls.Add(this.dtgHoaDon);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 218);
+            this.panel2.Location = new System.Drawing.Point(5, 213);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(650, 447);
+            this.panel2.Size = new System.Drawing.Size(640, 447);
             this.panel2.TabIndex = 37;
             // 
             // dtgHoaDon
@@ -216,23 +218,23 @@ namespace QuanLyNhaSach
             this.dtgHoaDon.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dtgHoaDon.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dtgHoaDon.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtgHoaDon.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle17.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle17.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle17.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgHoaDon.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle17;
             this.dtgHoaDon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.PowderBlue;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dtgHoaDon.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle18.BackColor = System.Drawing.Color.PowderBlue;
+            dataGridViewCellStyle18.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle18.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtgHoaDon.DefaultCellStyle = dataGridViewCellStyle18;
             this.dtgHoaDon.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtgHoaDon.GridColor = System.Drawing.Color.White;
             this.dtgHoaDon.Location = new System.Drawing.Point(0, 0);
@@ -240,26 +242,26 @@ namespace QuanLyNhaSach
             this.dtgHoaDon.Name = "dtgHoaDon";
             this.dtgHoaDon.ReadOnly = true;
             this.dtgHoaDon.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtgHoaDon.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle19.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle19.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle19.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgHoaDon.RowHeadersDefaultCellStyle = dataGridViewCellStyle19;
             this.dtgHoaDon.RowHeadersVisible = false;
             this.dtgHoaDon.RowHeadersWidth = 51;
             this.dtgHoaDon.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.DeepSkyBlue;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
-            this.dtgHoaDon.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle20.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle20.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle20.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.Color.DeepSkyBlue;
+            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.Color.Black;
+            this.dtgHoaDon.RowsDefaultCellStyle = dataGridViewCellStyle20;
             this.dtgHoaDon.RowTemplate.Height = 24;
             this.dtgHoaDon.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgHoaDon.Size = new System.Drawing.Size(650, 447);
+            this.dtgHoaDon.Size = new System.Drawing.Size(640, 447);
             this.dtgHoaDon.TabIndex = 5;
             // 
             // InHoaDon
@@ -288,14 +290,14 @@ namespace QuanLyNhaSach
             // 
             // txbTienNhan
             // 
-            this.txbTienNhan.BackColor = System.Drawing.SystemColors.Info;
+            this.txbTienNhan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(179)))), ((int)(((byte)(191)))));
             this.txbTienNhan.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txbTienNhan.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbTienNhan.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.txbTienNhan.Location = new System.Drawing.Point(133, 9);
             this.txbTienNhan.Name = "txbTienNhan";
             this.txbTienNhan.Size = new System.Drawing.Size(139, 26);
-            this.txbTienNhan.TabIndex = 2;
+            this.txbTienNhan.TabIndex = 3;
             this.txbTienNhan.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txbTienNhan_KeyDown);
             // 
             // panel3
@@ -325,7 +327,7 @@ namespace QuanLyNhaSach
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(88, 98);
+            this.label5.Location = new System.Drawing.Point(93, 103);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(120, 25);
             this.label5.TabIndex = 0;
@@ -333,7 +335,7 @@ namespace QuanLyNhaSach
             // 
             // txbTen
             // 
-            this.txbTen.BackColor = System.Drawing.SystemColors.Info;
+            this.txbTen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(179)))), ((int)(((byte)(191)))));
             this.txbTen.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txbTen.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbTen.ForeColor = System.Drawing.Color.DarkSlateGray;
@@ -367,7 +369,7 @@ namespace QuanLyNhaSach
             // 
             this.ptClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.ptClose.Image = ((System.Drawing.Image)(resources.GetObject("ptClose.Image")));
-            this.ptClose.Location = new System.Drawing.Point(600, -1);
+            this.ptClose.Location = new System.Drawing.Point(595, 4);
             this.ptClose.Name = "ptClose";
             this.ptClose.Size = new System.Drawing.Size(50, 50);
             this.ptClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -379,7 +381,7 @@ namespace QuanLyNhaSach
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Info;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(179)))), ((int)(((byte)(191)))));
             this.ClientSize = new System.Drawing.Size(650, 720);
             this.Controls.Add(this.pnTien);
             this.Controls.Add(this.ptClose);
@@ -395,10 +397,12 @@ namespace QuanLyNhaSach
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FHoaDonTT";
+            this.Padding = new System.Windows.Forms.Padding(5);
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "FHoaDonTT";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

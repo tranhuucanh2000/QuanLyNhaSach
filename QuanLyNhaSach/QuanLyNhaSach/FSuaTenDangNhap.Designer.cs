@@ -54,7 +54,7 @@ namespace QuanLyNhaSach
             // 
             // txbTenDN
             // 
-            this.txbTenDN.BackColor = System.Drawing.SystemColors.Info;
+            this.txbTenDN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(179)))), ((int)(((byte)(191)))));
             this.txbTenDN.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txbTenDN.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbTenDN.Location = new System.Drawing.Point(204, 213);
@@ -89,7 +89,7 @@ namespace QuanLyNhaSach
             // 
             // txbMatKhau
             // 
-            this.txbMatKhau.BackColor = System.Drawing.SystemColors.Info;
+            this.txbMatKhau.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(179)))), ((int)(((byte)(191)))));
             this.txbMatKhau.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txbMatKhau.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbMatKhau.Location = new System.Drawing.Point(204, 277);
@@ -145,7 +145,7 @@ namespace QuanLyNhaSach
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Info;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(179)))), ((int)(((byte)(191)))));
             this.ClientSize = new System.Drawing.Size(465, 436);
             this.Controls.Add(this.lbThoat);
             this.Controls.Add(this.btnThayDoi);

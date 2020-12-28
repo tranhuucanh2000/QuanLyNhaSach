@@ -111,7 +111,15 @@ namespace QuanLyNhaSach
             if (mucDo == 3) lbHoTro.ForeColor = Color.White;
             lbHoTro.Text = ThongDiep;
         }
-       
+
+        public void DuaThongDiepHT(string str, int mucDo)
+        {
+            string ThongDiep = str;
+            if (mucDo == 1) lbHoTro.ForeColor = Color.FromArgb(102, 255, 102);
+            if (mucDo == 2) lbHoTro.ForeColor = Color.FromArgb(255, 255, 102);
+            if (mucDo == 3) lbHoTro.ForeColor = Color.White;
+            lbHoTroSuaSach.Text = ThongDiep;
+        }
 
         private void pbDangXuat_Click(object sender, EventArgs e)
         {
@@ -165,7 +173,8 @@ namespace QuanLyNhaSach
             int soluong;
             if(txbTen.Text=="")
             {
-                DuaThongDiep("Bạn vui lòng nhập tên sách ", 2);
+                DuaThongDiep("Bạn vui lòng nhập tên sách!", 2);
+                DuaThongDiepHT("Bạn vui lòng nhập tên sách!", 2);
             }
             else if (int.TryParse(txbSo.Text, out soluong))
             {
@@ -176,7 +185,8 @@ namespace QuanLyNhaSach
                         if (giatien > 0)
                         {
                             SachDAO.Instance.SuaSach(txbTen.Text, txbSo.Text, txbGiaTien.Text, txbMa.Text);
-                            DuaThongDiep("Đã sửa sách thành công ", 1);
+                            DuaThongDiep("Đã sửa sách thành công!", 1);
+                            DuaThongDiepHT("Đã sửa sách thành công!", 1);
                             dtgSach.DataSource = SachDAO.Instance.LayTatCaSach();
                             ChinhDTGV();
                             LamMoiTxb();
@@ -189,6 +199,7 @@ namespace QuanLyNhaSach
                         else
                         {
                             DuaThongDiep("Bạn vui lòng nhập vào giá tiền lớn hơn 0!", 2);
+                            DuaThongDiepHT("Bạn vui lòng nhập vào giá tiền lớn hơn 0!", 2);
                             txbGiaTien.Focus();
                             txbGiaTien.SelectAll();
                         }    
@@ -196,6 +207,7 @@ namespace QuanLyNhaSach
                     else
                     {
                         DuaThongDiep("Bạn vui lòng nhập lại giá tiền!", 2);
+                        DuaThongDiepHT("Bạn vui lòng nhập lại giá tiền!", 2);
                         txbGiaTien.Focus();
                         txbGiaTien.SelectAll();
                     }
@@ -203,6 +215,7 @@ namespace QuanLyNhaSach
                 else
                 {
                     DuaThongDiep("Bạn vui lòng nhập số lượng lớn hơn 0!", 2);
+                    DuaThongDiepHT("Bạn vui lòng nhập số lượng lớn hơn 0", 2);
                     txbSo.Focus();
                     txbSo.SelectAll();
                 }
@@ -210,6 +223,7 @@ namespace QuanLyNhaSach
             else
             {
                 DuaThongDiep("Bạn vui lòng nhập lại số lượng!", 2);
+                DuaThongDiepHT("Bạn vui lòng nhập lại số lượng!", 2);
                 txbSo.Focus();
                 txbSo.SelectAll();
             }
@@ -242,6 +256,7 @@ namespace QuanLyNhaSach
                 {
                     SachDAO.Instance.XoaSach(txbMa.Text);
                     DuaThongDiep("Bạn đã xóa sách thành công!", 1);
+                    DuaThongDiepHT("Bạn đã xóa sách thành công!", 1);
                     dtgSach.DataSource = SachDAO.Instance.LayTatCaSach();
                     TrangThaiBanDau();
                     ChinhDTGV();
@@ -250,17 +265,21 @@ namespace QuanLyNhaSach
                 else
                 {
                     DuaThongDiep("Sách đã bán ra nên bạn chỉ có thể ngừng kinh doanh sách này!", 2);
+                    DuaThongDiepHT("Sách đã bán ra nên bạn chỉ có thể ngừng kinh doanh sách này", 2);
                 }
             }
             else
             {
-                DuaThongDiep("Bạn đã hủy thao tác xóa sách!", 2);
+                DuaThongDiep("Bạn đã hủy thao tác xóa sách!", 2); 
+                DuaThongDiepHT("Bạn đã hủy thao tác xóa sách!", 2);
             }
         }
 
         private void btnHuy_Click(object sender, EventArgs e)
         {
             TrangThaiChonSach();
+            DuaThongDiepHT("Bạn đã hủy thao tác vừa chọn!", 1);
+            DuaThongDiep("Bạn đã hủy thao tác vừa chọn!", 1);
             int vitri = dtgSach.CurrentRow.Index;
             DataGridViewRow row = dtgSach.Rows[vitri];
             if (row.Cells[7].Value.ToString() == "Còn")
@@ -285,6 +304,8 @@ namespace QuanLyNhaSach
         private void btnKinhDoanh_Click(object sender, EventArgs e)
         {
             SachDAO.Instance.TTKinhDoanhSach(txbMa.Text);
+            DuaThongDiepHT("Sách đã được tiếp tục kinh doanh", 1);
+            DuaThongDiep("Sách đã được tiếp tục kinh doanh", 1);
             KetNoiKhoSach();
             TrangThaiBanDau();
             LamMoiTxb();
@@ -293,6 +314,8 @@ namespace QuanLyNhaSach
         private void btnNgung_Click(object sender, EventArgs e)
         {
             SachDAO.Instance.NgungKinhDoanhSach(txbMa.Text);
+            DuaThongDiepHT("Sách đã được ngừng kinh doanh", 1);
+            DuaThongDiep("Sách đã được ngừng kinh doanh", 1);
             KetNoiKhoSach();
             TrangThaiBanDau();
             LamMoiTxb();
@@ -340,6 +363,7 @@ namespace QuanLyNhaSach
             KetNoiKhoSach();
             TrangThaiBanDau();
             LamMoiTxb();
+            DuaThongDiep("Đã làm mới danh sách sách!",1);
         }
 
         private void txbTimKiem_KeyDown(object sender, KeyEventArgs e)

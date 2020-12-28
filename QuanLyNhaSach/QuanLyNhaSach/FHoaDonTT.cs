@@ -27,7 +27,8 @@ namespace QuanLyNhaSach
             HienThiDanhSachDonHang();
             LamMoiTongTien();
             trangthai = 0;
-            dtpNgay.MaxDate = DateTime.Today;
+            dtpNgay.MaxDate = DateTime.Now;
+            dtpNgay.Value = DateTime.Now;
         }
 
         public FHoaDonTT(DataTable data, string tennv, string tenkh, DateTime ngayhd)
@@ -99,7 +100,7 @@ namespace QuanLyNhaSach
             dtgHoaDon.Columns[3].HeaderText = "Đơn Giá";
             dtgHoaDon.Columns[4].HeaderText = "Tiền";
             dtgHoaDon.Columns[0].Width = 75;
-            dtgHoaDon.Columns[1].Width = 300;
+            dtgHoaDon.Columns[1].Width = 290;
             dtgHoaDon.Columns[2].Width = 75;
             dtgHoaDon.Columns[3].Width = 100;
             dtgHoaDon.Columns[4].Width = 100;
@@ -116,7 +117,14 @@ namespace QuanLyNhaSach
                 Image image = Resources.logo;
                 e.Graphics.DrawImage(image, 0, 0, image.Width, image.Height);
                 e.Graphics.DrawString("NHÀ SÁCH KVC", new Font("Segoe UI", 40, FontStyle.Bold), Brushes.Black, new Point(195, 30));
-                e.Graphics.DrawString("Ngày: " + dtpNgay.Value.ToString(), new Font("Segoe UI", 22, FontStyle.Bold), Brushes.Black, new Point(0, image.Height + 40));
+                if (dtpNgay.Value.Date == DateTime.Now.Date)
+                {
+                    e.Graphics.DrawString("Ngày: " + DateTime.Now.ToString(), new Font("Segoe UI", 22, FontStyle.Bold), Brushes.Black, new Point(0, image.Height + 40));
+                }
+                else
+                {
+                    e.Graphics.DrawString("Ngày: " + dtpNgay.Value.ToString(), new Font("Segoe UI", 22, FontStyle.Bold), Brushes.Black, new Point(0, image.Height + 40));
+                }
                 e.Graphics.DrawString("Tên khách hàng: " + txbTen.Text, new Font("Segoe UI", 22, FontStyle.Bold), Brushes.Black, new Point(0, image.Height + 80));
                 e.Graphics.DrawString("Tên nhân viên: " + txbTenNV.Text, new Font("Segoe UI", 22, FontStyle.Bold), Brushes.Black, new Point(0, image.Height + 120));
                 e.Graphics.DrawString("----------------------------------------------------------------------------------------------", new Font("Segoe UI", 16, FontStyle.Regular), Brushes.Black, new Point(0, image.Height + 180));
