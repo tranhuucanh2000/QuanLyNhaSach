@@ -131,13 +131,16 @@ namespace QuanLyNhaSach
         {
             if (trangthai == true)
             {
-                DataTable data = HoaDonDAO.Instance.XemThongTinHoaDon(txbMaHD.Text);
-                DataTable table = DataProvider.Instance.ExecuteQuery(string.Concat("SELECT * FROM dbo.HoaDon WHERE SoHD = N'", txbMaHD.Text, "'"));
-                DataRow row = table.Rows[0];
-                string[] ngay = row[1].ToString().Split(' ');
-                DateTime ngayhd = DateTime.Parse(ngay[0]);
-                FHoaDonTT fHoaDon = new FHoaDonTT(data, txbNhanVien.Text, txbKhachHang.Text, ngayhd);
-                fHoaDon.ShowDialog();
+                if (txbMaHD.Text != "")
+                {
+                    DataTable data = HoaDonDAO.Instance.XemThongTinHoaDon(txbMaHD.Text);
+                    DataTable table = DataProvider.Instance.ExecuteQuery(string.Concat("SELECT * FROM dbo.HoaDon WHERE SoHD = N'", txbMaHD.Text, "'"));
+                    DataRow row = table.Rows[0];
+                    string[] ngay = row[1].ToString().Split(' ');
+                    DateTime ngayhd = DateTime.Parse(ngay[0]);
+                    FHoaDonTT fHoaDon = new FHoaDonTT(data, txbNhanVien.Text, txbKhachHang.Text, ngayhd);
+                    fHoaDon.ShowDialog();
+                }
             }
         }
 
@@ -165,6 +168,11 @@ namespace QuanLyNhaSach
         private void dtpNgayDau_ValueChanged(object sender, EventArgs e)
         {
             dtpNgayCuoi.MinDate = dtpNgayDau.Value;
+        }
+
+        private void pbDangXuat_Click(object sender, EventArgs e)
+        {
+            Application.Restart();
         }
     }
 }

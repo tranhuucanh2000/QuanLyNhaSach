@@ -51,6 +51,7 @@ namespace QuanLyNhaSach
         }
         void TaiDanhSachSach()
         {
+            cbSach.Items.Clear();
             DataTable data = SachDAO.Instance.LayDSSach();
             foreach(DataRow row in data.Rows)
             {
@@ -61,6 +62,7 @@ namespace QuanLyNhaSach
         }
         void TaiDanhSachTacGia()
         {
+            cbTacGia.Items.Clear();
             DataTable data = SachDAO.Instance.LayDSTacGia();
             foreach (DataRow row in data.Rows)
             {
@@ -70,6 +72,7 @@ namespace QuanLyNhaSach
         }
         void TaiDanhSachTheLoai()
         {
+            cbTheLoai.Items.Clear();
             DataTable data = SachDAO.Instance.LayDSTheLoai();
             foreach (DataRow row in data.Rows)
             {
@@ -80,6 +83,7 @@ namespace QuanLyNhaSach
 
         void TaiDanhSachNXB()
         {
+            cbNXB.Items.Clear();
             DataTable data = SachDAO.Instance.LayDSNXB();
             foreach (DataRow row in data.Rows)
             {

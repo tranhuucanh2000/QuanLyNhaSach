@@ -5,16 +5,24 @@ VisualStudioVersion = 16.0.30611.23
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuanLyNhaSach", "QuanLyNhaSach\QuanLyNhaSach.csproj", "{C4D3BF65-8FCF-4703-BAB5-7B405A7A3DEE}"
 EndProject
+Project("{840C416C-B8F3-42BC-B0DD-F6BB14C9F8CB}") = "KVCBOOKSHOP", "KVCBOOKSHOP\KVCBOOKSHOP.aiproj", "{90ABD0C9-6749-4415-A5ED-3688FE5ACC8C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		All|Any CPU = All|Any CPU
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C4D3BF65-8FCF-4703-BAB5-7B405A7A3DEE}.All|Any CPU.ActiveCfg = Release|Any CPU
+		{C4D3BF65-8FCF-4703-BAB5-7B405A7A3DEE}.All|Any CPU.Build.0 = Release|Any CPU
 		{C4D3BF65-8FCF-4703-BAB5-7B405A7A3DEE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{C4D3BF65-8FCF-4703-BAB5-7B405A7A3DEE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C4D3BF65-8FCF-4703-BAB5-7B405A7A3DEE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C4D3BF65-8FCF-4703-BAB5-7B405A7A3DEE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{90ABD0C9-6749-4415-A5ED-3688FE5ACC8C}.All|Any CPU.ActiveCfg = DefaultBuild
+		{90ABD0C9-6749-4415-A5ED-3688FE5ACC8C}.Debug|Any CPU.ActiveCfg = DefaultBuild
+		{90ABD0C9-6749-4415-A5ED-3688FE5ACC8C}.Release|Any CPU.ActiveCfg = DefaultBuild
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

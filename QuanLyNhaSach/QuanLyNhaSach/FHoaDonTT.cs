@@ -27,6 +27,7 @@ namespace QuanLyNhaSach
             HienThiDanhSachDonHang();
             LamMoiTongTien();
             trangthai = 0;
+            txbTen.ReadOnly = false;
             dtpNgay.MaxDate = DateTime.Now;
             dtpNgay.Value = DateTime.Now;
         }
@@ -42,6 +43,7 @@ namespace QuanLyNhaSach
             LamMoiTongTienHD();
             txbTienNhan.Text = txbThanhTien.Text;
             dtpNgay.Value = ngayhd;
+            txbTen.ReadOnly = true;
             trangthai = 1;
         }
 

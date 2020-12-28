@@ -270,13 +270,13 @@ namespace QuanLyNhaSach
         private void FHoaDonTT_ThanhToan(object sender, EventArgs e)
         {
             DuaThongDiep("Bạn đã thanh toán thành công!", 1);
-            DataTable data = new DataTable();
+            dtgThanhToan.Rows.Clear();
+            dtgThanhToan.Refresh();
             //data.Columns.Add("Mã");
             //data.Columns.Add("Tên Sách");
             //data.Columns.Add("Số lượng");
             //data.Columns.Add("Đơn Giá");
             //data.Columns.Add("Tiền");
-            dtgThanhToan.DataSource = data;
             LamMoiTxb();
             LamMoiTongTien();
             lbHoTroSuaSach.Text = "";
